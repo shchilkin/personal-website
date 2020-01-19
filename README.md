@@ -1,4 +1,4 @@
 # personal-website
 
-#Personal website 
-#Currently is under development
+Personal website
+Currently is under development
