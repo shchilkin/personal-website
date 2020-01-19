@@ -1,9 +1,16 @@
 import React from "react";
+import Navbar from "./components/Navbar";
+import Contacts from "./components/Contacts";
+import Footer from "./components/Footer";
+import About from "./components/About";
 
 function App() {
   return (
     <div className='App'>
-      <h1>Initial page</h1>
+      <Navbar />
+      <About />
+      <Contacts />
+      <Footer />
     </div>
   );
 }
