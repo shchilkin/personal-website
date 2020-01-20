@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Gradient } from "react-gradient";
 import ContactLink from "./ContactLink";
 import EmailLogo from "./logos/email.svg";
@@ -20,7 +20,7 @@ const Contacts = () => {
       duration={8000}
       angle='45deg'
     >
-      <div className='container-fluid'>
+      <Fragment>
         <div className='d-flex justify-content-center text-white pt-5 pb-1'>
           <h4>Contact me</h4>
         </div>
@@ -28,22 +28,26 @@ const Contacts = () => {
           <ContactLink
             image={Github}
             link={"https://github.com/CrazyRedKitten"}
+            alt='Github'
           />
           <ContactLink
             image={Instagram}
             link={"https://www.instagram.com/crazyredkitten/"}
+            alt='Instagram'
           />
           <ContactLink
             image={Youtube}
             link={"https://www.youtube.com/channel/UCJYmru-hgW4CYYuoyMmWOnw"}
+            alt='YouTube'
           />
           <ContactLink
             image={Twitter}
             link={"https://twitter.com/crazyredkitten"}
+            alt='Twitter'
           />
-          <ContactLink image={EmailLogo} link={"#"} />
+          <ContactLink image={EmailLogo} link={"#"} alt='Email' />
         </div>
-      </div>
+      </Fragment>
     </Gradient>
   );
 };
