@@ -6,6 +6,7 @@ import Instagram from "./logos/instagram.svg";
 import Twitter from "./logos/TwitterD.svg";
 import Youtube from "./logos/YTL.svg";
 import Github from "./logos/Githubwhite.svg";
+import LinkedIn from "./logos/linkedin.svg";
 
 const gradients = [
   ["#59c2ff", "#1270e3"],
@@ -44,6 +45,11 @@ const Contacts = () => {
             image={Twitter}
             link={"https://twitter.com/crazyredkitten"}
             alt='Twitter'
+          />
+          <ContactLink
+            image={LinkedIn}
+            link={"https://www.linkedin.com/in/crazyredkitten/"}
+            alt='LinkedIn'
           />
           <ContactLink image={EmailLogo} link={"#"} alt='Email' />
         </div>
