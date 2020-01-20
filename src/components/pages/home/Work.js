@@ -23,7 +23,7 @@ const Work = () => {
       </div>
       <div className='container pt-3 pb-3'>
         <div className='row'>
-          <div className='col-lg-4 mb-1'>
+          <div className='col-lg-3 mb-1'>
             <h5>Software Development</h5>
             <ul>
               <li>
@@ -34,7 +34,7 @@ const Work = () => {
               <li>Small projects with pure JavaScript</li>
             </ul>
           </div>
-          <div className='col-lg-4 mb-1'>
+          <div className='col-lg-3 mb-1'>
             <h5>Electronics & IoT</h5>
             <ul>
               <li>Home Climate Monitoring with Raspberry Pi and Python</li>
@@ -42,7 +42,7 @@ const Work = () => {
               <li> Small Christmas Lights project with Arduino</li>
             </ul>
           </div>
-          <div className='col-lg-4 mb-1'>
+          <div className='col-lg-3 mb-1'>
             <h5>Networking</h5>
             <ul>
               <li>
@@ -55,6 +55,18 @@ const Work = () => {
               </li>
             </ul>
           </div>
+          <div className='col-lg-3 mb-1'>
+            <h5>Hardware</h5>
+            <ul>
+              <li>
+                <span class='badge badge-danger'>TODO</span> PC building
+              </li>
+              <li>
+                <span class='badge badge-danger'>TODO</span> CPU overclocking
+              </li>
+            </ul>
+          </div>
+          <div className='col-lg-3 mb-1'></div>
         </div>
       </div>
     </div>
