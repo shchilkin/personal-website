@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <Fragment>
-      <nav className='navbar navbar-expand-lg navbar-light bg-light'>
+      <nav className='navbar sticky-top navbar-expand-lg navbar-light bg-light'>
         <span className='navbar-brand mb-0 h1'>CrazyRedKitten</span>
         <button
           class='navbar-toggler'

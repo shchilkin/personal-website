@@ -8,25 +8,22 @@ const Work = () => {
       </div>
       <div className='container'>
         <p>
-          <span class='badge badge-danger'>TODO </span>
-          Line 23:15: The href attribute is required for an anchor to be
-          keyboard accessible. Provide a valid, navigable address as the href
-          value. If you cannot provide an href, but still need the element to
-          resemble a link, use a button and change it with appropriate styles.
-          Learn more:
-          https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md
-          jsx-a11y/anchor-is-valid Line 26:15: The href attribute is required
-          for an anchor to be keyboard accessible. Provide a valid, navigable
-          address as the href value. If you cannot provide an href, but still
-          need the element to resemble a link, use a button and change it with
-          appropriate styles. Learn more:
-          https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md
-          jsx-a11y/anchor-is-valid
+          <span className='badge badge-danger'>TODO </span>{" "}
+          <span className='badge badge-info'>Add description</span> Lorem ipsum
+          dolor sit amet, consectetur adipiscing elit. Nulla faucibus vitae
+          risus at fringilla. Vivamus ut placerat elit. Fusce dignissim urna
+          eget interdum ultricies. Nulla nec ultricies orci, id mollis erat.
+          Aenean augue leo, congue nec ante at, posuere molestie neque. Donec in
+          ipsum pretium, placerat ipsum et, malesuada purus. Sed cursus, ligula
+          eu ullamcorper pharetra, mi felis vehicula ante, ut cursus mi purus id
+          nulla. Sed sit amet lorem mauris. Integer a auctor ipsum. Praesent in
+          leo feugiat, luctus neque nec, consectetur odio. Morbi vel vestibulum
+          arcu.
         </p>
       </div>
       <div className='container pt-3 pb-3'>
         <div className='row'>
-          <div className='col-lg-6 mb-1'>
+          <div className='col-lg-4 mb-1'>
             <h5>Software Development</h5>
             <ul>
               <li>
@@ -37,12 +34,25 @@ const Work = () => {
               <li>Small projects with pure JavaScript</li>
             </ul>
           </div>
-          <div className='col-lg-6 mb-1'>
+          <div className='col-lg-4 mb-1'>
             <h5>Electronics & IoT</h5>
             <ul>
               <li>Home Climate Monitoring with Raspberry Pi and Python</li>
               <li>Surveillance Camera Project with Raspberry Pi</li>
               <li> Small Christmas Lights project with Arduino</li>
+            </ul>
+          </div>
+          <div className='col-lg-4 mb-1'>
+            <h5>Networking</h5>
+            <ul>
+              <li>
+                <span class='badge badge-danger'>TODO</span> Cisco routers and
+                switches configuration
+              </li>
+              <li>
+                <span class='badge badge-danger'>TODO</span> Network
+                configuration
+              </li>
             </ul>
           </div>
         </div>
