@@ -3,10 +3,12 @@ import { Gradient } from "react-gradient";
 import ContactLink from "./ContactLink";
 import EmailLogo from "./logos/email.svg";
 import Instagram from "./logos/instagram.svg";
-import Twitter from "./logos/TwitterD.svg";
-import Youtube from "./logos/YTL.svg";
-import Github from "./logos/Githubwhite.svg";
+import Twitter from "./logos/Twitter.svg";
+import Youtube from "./logos/Youtube.svg";
+import Github from "./logos/Github.svg";
 import LinkedIn from "./logos/linkedin.svg";
+import VK from "./logos/vk.svg";
+import Facebook from "./logos/fb.svg";
 
 const gradients = [
   ["#59c2ff", "#1270e3"],
@@ -45,6 +47,16 @@ const Contacts = () => {
             image={Twitter}
             link={"https://twitter.com/crazyredkitten"}
             alt='Twitter'
+          />
+          <ContactLink
+            image={VK}
+            link={"https://vk.com/crazyredkitten"}
+            alt='VK'
+          />
+          <ContactLink
+            image={Facebook}
+            link={"https://www.facebook.com/crazyredkitten"}
+            alt='Facebook'
           />
           <ContactLink
             image={LinkedIn}

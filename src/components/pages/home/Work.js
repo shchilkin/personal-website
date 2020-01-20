@@ -62,7 +62,7 @@ const Work = () => {
                 <span class='badge badge-danger'>TODO</span> PC building
               </li>
               <li>
-                <span class='badge badge-danger'>TODO</span> CPU overclocking
+                <span class='badge badge-danger'>TODO</span> Overclocking
               </li>
             </ul>
           </div>
