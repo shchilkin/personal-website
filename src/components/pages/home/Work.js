@@ -4,7 +4,7 @@ const Work = () => {
   return (
     <div className='container-fluid text-white pt-5 pb-5 bg-dark'>
       <div className='container'>
-        <h1 class='display-5 pt-3 pb-3'>Work</h1>
+        <h1 class='display-5 pt-3 pb-3'>Work & Studies</h1>
       </div>
       <div className='container'>
         <p>
