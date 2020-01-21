@@ -3,7 +3,7 @@ import TaskList from "../projects/TaskList";
 
 const SmallProjects = () => {
   return (
-    <div className='pt-3 pb-3'>
+    <div className='pt-3'>
       <div className='container'>
         <div className='alert alert-warning'>
           This page is under development
