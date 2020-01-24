@@ -27,7 +27,7 @@ const Work = () => {
             <h5>Software Development</h5>
             <ul>
               <li>
-                <span className='badge badge-danger'>TODO</span> Python
+                <span className='badge badge-danger'>TODO</span> <span className='badge badge-info'>Add explicit description</span> Python
               </li>
               <li>Android applications with Kotlin</li>
               <li>Full-stack Web applications with React and Node.js</li>
@@ -46,11 +46,11 @@ const Work = () => {
             <h5>Networking</h5>
             <ul>
               <li>
-                <span className='badge badge-danger'>TODO</span> Cisco routers
+                <span className='badge badge-danger'>TODO</span> <span className='badge badge-info'>Add explicit description</span> Cisco routers
                 and switches configuration
               </li>
               <li>
-                <span className='badge badge-danger'>TODO</span> Network
+                <span className='badge badge-danger'>TODO</span> <span className='badge badge-info'>Add explicit description</span> Network
                 configuration
               </li>
             </ul>
@@ -59,10 +59,10 @@ const Work = () => {
             <h5>Hardware</h5>
             <ul>
               <li>
-                <span className='badge badge-danger'>TODO</span> PC building
+                <span className='badge badge-danger'>TODO</span> <span className='badge badge-info'>Add explicit description</span> PC building
               </li>
               <li>
-                <span className='badge badge-danger'>TODO</span> Overclocking
+                <span className='badge badge-danger'>TODO</span> <span className='badge badge-info'>Add explicit description</span>  Overclocking
               </li>
             </ul>
           </div>
