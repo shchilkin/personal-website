@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
-import Contacts from "./home/contacts/Contacts";
-import About from "../About";
-import Work from "./home/Work";
-import Plans from "./home/Plans";
+import Contacts from "./contacts/Contacts";
+import About from "../../About";
+import Work from "./Work";
+import Plans from "./Plans";
 
 const Home = () => {
   return (

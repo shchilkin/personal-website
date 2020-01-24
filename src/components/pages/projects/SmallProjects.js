@@ -1,5 +1,5 @@
 import React from "react";
-import TaskList from "../projects/TaskList";
+import TaskList from "./TaskList";
 
 const SmallProjects = () => {
   return (
@@ -29,7 +29,6 @@ const SmallProjects = () => {
       </div>
       <div className='container-fluid bg-dark pt-3 pb-3'>
         <div className='col-lg-4'>
-          {/* <div className='row'></div> */}
           <TaskList />
         </div>
       </div>

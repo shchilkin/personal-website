@@ -89,7 +89,7 @@ const Contacts = () => {
               />
             </li>
             <li className='mb-2' style={{ display: "inline-block" }}>
-              <ContactLink image={EmailLogo} link={"#"} alt='Email' />
+              <ContactLink image={EmailLogo} Link={"/Contact"} alt='Email' />
             </li>
           </ul>
         </div>

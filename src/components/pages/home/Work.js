@@ -4,7 +4,7 @@ const Work = () => {
   return (
     <div className='container-fluid text-white pt-5 pb-5 bg-dark'>
       <div className='container'>
-        <h1 class='display-5 pt-3 pb-3'>Work & Studies</h1>
+        <h1 className='display-5 pt-3 pb-3'>Work & Studies</h1>
       </div>
       <div className='container'>
         <p>
@@ -27,7 +27,7 @@ const Work = () => {
             <h5>Software Development</h5>
             <ul>
               <li>
-                <span class='badge badge-danger'>TODO</span> Python
+                <span className='badge badge-danger'>TODO</span> Python
               </li>
               <li>Android applications with Kotlin</li>
               <li>Full-stack Web applications with React and Node.js</li>
@@ -46,11 +46,11 @@ const Work = () => {
             <h5>Networking</h5>
             <ul>
               <li>
-                <span class='badge badge-danger'>TODO</span> Cisco routers and
-                switches configuration
+                <span className='badge badge-danger'>TODO</span> Cisco routers
+                and switches configuration
               </li>
               <li>
-                <span class='badge badge-danger'>TODO</span> Network
+                <span className='badge badge-danger'>TODO</span> Network
                 configuration
               </li>
             </ul>
@@ -59,10 +59,10 @@ const Work = () => {
             <h5>Hardware</h5>
             <ul>
               <li>
-                <span class='badge badge-danger'>TODO</span> PC building
+                <span className='badge badge-danger'>TODO</span> PC building
               </li>
               <li>
-                <span class='badge badge-danger'>TODO</span> Overclocking
+                <span className='badge badge-danger'>TODO</span> Overclocking
               </li>
             </ul>
           </div>

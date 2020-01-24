@@ -1,13 +1,13 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const NavBar = () => {
   return (
     <Fragment>
       <nav className='navbar sticky-top navbar-expand-lg navbar-light bg-light'>
         <span className='navbar-brand mb-0 h1'>CrazyRedKitten</span>
         <button
-          class='navbar-toggler'
+          className='navbar-toggler'
           type='button'
           data-toggle='collapse'
           data-target='#navbarNavAltMarkup'
@@ -15,15 +15,26 @@ const Navbar = () => {
           aria-expanded='false'
           aria-label='Toggle navigation'
         >
-          <span class='navbar-toggler-icon'></span>
+          <span className='navbar-toggler-icon'></span>
         </button>
-        <div class='collapse navbar-collapse' id='navbarNavAltMarkup'>
-          <div className='navbar-nav'>
-            <Link to='/'>
-              <a className='nav-item nav-link'>Home</a>
+        <div className='navbar-collapse collapse' id='navbarNavAltMarkup'>
+          <ul className='navbar-nav mr-auto'>
+            <Link className='nav-item nav-link' to='/'>
+              <span>Home</span>
             </Link>
-            <Link to='/projects'>
-              <a className='nav-item nav-link'>Small Projets</a>
+            <Link className='nav-item nav-link' to='/projects'>
+              Small Projets
+            </Link>
+            <Link className='nav-item nav-link' to='/Contact'>
+              Contact
+            </Link>
+          </ul>
+          <div className='navbar-nav'>
+            <Link className='nav-item nav-link' to='/Login'>
+              Log in
+            </Link>
+            <Link className='nav-item nav-link' to='/Register'>
+              Register
             </Link>
           </div>
         </div>
@@ -32,4 +43,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavBar;
