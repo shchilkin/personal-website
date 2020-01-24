@@ -6,7 +6,7 @@ const ContactLink = props => {
       <a href={props.link} target='blank'>
         <img
           src={props.image}
-          style={{ width: "50px" }}
+          style={{ width: "3.125rem" }}
           className='mr-3'
           alt={props.alt}
         />

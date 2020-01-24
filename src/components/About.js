@@ -12,7 +12,7 @@ const About = () => {
         <h1 class='display-4'>Aleksandr Shchilkin</h1>
       </div>
       <div className='d-flex display-4 justify-content-center'>
-        <h1>IT Student in Xamk</h1>
+        <h1>IT Student</h1>
       </div>
     </div>
   );
