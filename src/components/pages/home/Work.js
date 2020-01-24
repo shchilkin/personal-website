@@ -4,6 +4,11 @@ const Work = () => {
   return (
     <div className='container-fluid text-white pt-5 pb-5 bg-dark'>
       <div className='container'>
+        <div className='d-flex justify-content-center'>
+          <div className='alert alert-warning col-md-6'>
+            This page is under development
+          </div>
+        </div>
         <h1 className='display-5 pt-3 pb-3'>Work & Studies</h1>
       </div>
       <div className='container'>
@@ -27,7 +32,11 @@ const Work = () => {
             <h5>Software Development</h5>
             <ul>
               <li>
-                <span className='badge badge-danger'>TODO</span> <span className='badge badge-info'>Add explicit description</span> Python
+                <span className='badge badge-danger'>TODO</span>{" "}
+                <span className='badge badge-info'>
+                  Add explicit description
+                </span>{" "}
+                Python
               </li>
               <li>Android applications with Kotlin</li>
               <li>Full-stack Web applications with React and Node.js</li>
@@ -46,12 +55,18 @@ const Work = () => {
             <h5>Networking</h5>
             <ul>
               <li>
-                <span className='badge badge-danger'>TODO</span> <span className='badge badge-info'>Add explicit description</span> Cisco routers
-                and switches configuration
+                <span className='badge badge-danger'>TODO</span>{" "}
+                <span className='badge badge-info'>
+                  Add explicit description
+                </span>{" "}
+                Cisco routers and switches configuration
               </li>
               <li>
-                <span className='badge badge-danger'>TODO</span> <span className='badge badge-info'>Add explicit description</span> Network
-                configuration
+                <span className='badge badge-danger'>TODO</span>{" "}
+                <span className='badge badge-info'>
+                  Add explicit description
+                </span>{" "}
+                Network configuration
               </li>
             </ul>
           </div>
@@ -59,10 +74,18 @@ const Work = () => {
             <h5>Hardware</h5>
             <ul>
               <li>
-                <span className='badge badge-danger'>TODO</span> <span className='badge badge-info'>Add explicit description</span> PC building
+                <span className='badge badge-danger'>TODO</span>{" "}
+                <span className='badge badge-info'>
+                  Add explicit description
+                </span>{" "}
+                PC building
               </li>
               <li>
-                <span className='badge badge-danger'>TODO</span> <span className='badge badge-info'>Add explicit description</span>  Overclocking
+                <span className='badge badge-danger'>TODO</span>{" "}
+                <span className='badge badge-info'>
+                  Add explicit description
+                </span>{" "}
+                Overclocking
               </li>
             </ul>
           </div>
