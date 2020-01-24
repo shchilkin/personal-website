@@ -3,13 +3,13 @@ import { Gradient } from "react-gradient";
 import ContactLink from "./ContactLink";
 import EmailLogo from "./logos/email.svg";
 import Instagram from "./logos/instagram.svg";
-import Twitter from "./logos/twitter.svg";
-import Youtube from "./logos/youtube.svg";
-import Github from "./logos/github.svg";
+import Twitter from "./logos/Twitter.svg";
+import Youtube from "./logos/Youtube.svg";
+import Github from "./logos/Github.svg";
 import LinkedIn from "./logos/linkedin.svg";
 import VK from "./logos/vk.svg";
 import Facebook from "./logos/fb.svg";
-import Snapchat from "./logos/snapchat.svg";
+import Snapchat from "./logos/Snapchat.svg";
 
 const gradients = [
   ["#59c2ff", "#1270e3"],

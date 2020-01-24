@@ -1,14 +1,8 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
-
 const TaskList = () => {
   const [task, setTask] = useState([]);
-  const [tasks, setTasks] = useState([]);
-
-  console.log("Tasks", tasks);
 
   console.log("Task text", task);
-  const element = <h1>{task}</h1>;
 
   const onSubmit = event => {
     event.preventDefault();
