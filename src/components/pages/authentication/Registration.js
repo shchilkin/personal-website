@@ -11,26 +11,21 @@ const Registration = () => {
       </h1>
       <div className='d-flex justify-content-center'>
         <form className='mb-3 col-lg-5'>
-          <div className='form-group'>
-            <label htmlFor='InputFirstName'>First Name</label>
-            <input
-              type='text'
-              className='form-control'
-              id='exampleInputEmail1'
-              aria-describedby='emailHelp'
-              placeholder='Enter your first name'
-            />
+          <div className='row'>
+            <div className='col-md-6'>
+              <div className='form-group'>
+                <label htmlFor='InputFirstName'>First Name</label>
+                <input type='text' className='form-control' />
+              </div>
+            </div>
+            <div className='col-md-6'>
+              <div className='form-group'>
+                <label htmlFor='InputLastName'>Last Name</label>
+                <input type='text' className='form-control' />
+              </div>
+            </div>
           </div>
-          <div className='form-group'>
-            <label htmlFor='InputLastName'>Last Name</label>
-            <input
-              type='email'
-              className='form-control'
-              id='exampleInputEmail1'
-              aria-describedby='emailHelp'
-              placeholder='Enter your last name'
-            />
-          </div>
+
           <div className='form-group'>
             <label htmlFor='InputEmail1'>Email address</label>
             <input

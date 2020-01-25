@@ -6,11 +6,11 @@ import Email from "../../../icons/emailLogo.svg";
 const Login = () => {
   const [email, setEmail] = useState([{ email: "" }]);
   const [password, setPassword] = useState([{ password: "" }]);
-  console.log(email, password);
   const [data, setData] = useState([email, password]);
-  const [pressed, setPressed] = useState(false);
+  const [isPressed, setIsPressed] = useState(false);
 
-  console.log("pressed", pressed);
+  console.log(email, password);
+  console.log("pressed", isPressed);
 
   const changeEmail = event => {
     setEmail({ email: event.target.value });
@@ -19,14 +19,18 @@ const Login = () => {
     setPassword({ password: event.target.value });
   };
 
-  const click = event => {
+  const onSubmit = event => {
     event.preventDefault();
-    setData(email, password);
-    console.log(email, password, data);
+    if (email === "" || password === "") {
+      console.warn("Please fill all fields");
+    } else {
+      setData(email, password);
+      console.log(email, password, data);
+    }
   };
 
   const onPress = () => {
-    pressed ? setPressed(false) : setPressed(true);
+    isPressed ? setIsPressed(false) : setIsPressed(true);
   };
 
   return (
@@ -44,9 +48,8 @@ const Login = () => {
             <div className='input-group'>
               <input
                 type='email'
+                required
                 className='form-control'
-                id='exampleInputEmail1'
-                aria-describedby='emailHelp'
                 placeholder='Enter email'
                 onChange={changeEmail}
               />
@@ -68,9 +71,9 @@ const Login = () => {
             <label htmlFor='InputPassword'>Password</label>
             <div className='input-group'>
               <input
-                type='password'
+                type={isPressed ? "text" : "password"}
+                required
                 className='form-control'
-                id='exampleInputPassword'
                 placeholder='Password'
                 onChange={changePassword}
               />
@@ -86,7 +89,7 @@ const Login = () => {
                   onClick={onPress}
                 >
                   <div>
-                    {pressed ? null : (
+                    {isPressed ? null : (
                       <img
                         src={Eye}
                         style={{ width: "20px" }}
@@ -95,10 +98,9 @@ const Login = () => {
                     )}
                   </div>
                   <div>
-                    {pressed ? (
+                    {isPressed ? (
                       <img
                         src={EyeCrossed}
-                        fill='white'
                         style={{ width: "20px" }}
                         alt='Eye icon'
                       ></img>
@@ -108,8 +110,7 @@ const Login = () => {
               </div>
             </div>
           </div>
-
-          <button onClick={click} type='submit' className='btn btn-primary'>
+          <button onSubmit={onSubmit} type='submit' className='btn btn-primary'>
             Log in
           </button>
         </form>
