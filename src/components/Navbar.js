@@ -1,14 +1,21 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import Cat from "../icons/CatLogoV9.svg";
+import CatTongue from "../icons/CatTongue.svg";
 
 const NavBar = () => {
+  const [pressed, setPressed] = useState(false);
+
+  const changePressed = () => {
+    setPressed(!pressed);
+  };
+
   return (
     <Fragment>
       <nav className='navbar sticky-top navbar-expand-lg navbar-light bg-light'>
-        <Link to='/' className='navbar-brand mb-0 h1'>
+        <Link to='/' className='navbar-brand mb-0 h1' onClick={changePressed}>
           <img
-            src={Cat}
+            src={pressed ? CatTongue : Cat}
             width='30'
             height='30'
             class='d-inline-block align-top'
