@@ -6,6 +6,9 @@ import CatTongue from "../icons/CatTongue.svg";
 const NavBar = () => {
   const [pressed, setPressed] = useState(false);
 
+  const isPressed = () => {
+    setPressed(!pressed);
+  };
   const changePressed = () => {
     setPressed(!pressed);
   };
@@ -13,7 +16,15 @@ const NavBar = () => {
   return (
     <Fragment>
       <nav className='navbar sticky-top navbar-expand-lg navbar-light bg-light'>
-        <Link to='/' className='navbar-brand mb-0 h1' onClick={changePressed}>
+        <Link
+          to='/'
+          className='navbar-brand mb-0 h1'
+          onMouseDown={changePressed}
+          onMouseUp={changePressed}
+          onTouchStart={changePressed}
+          onTouchEnd={changePressed}
+          onTouchCancel={changePressed}
+        >
           <img
             src={pressed ? CatTongue : Cat}
             width='30'
