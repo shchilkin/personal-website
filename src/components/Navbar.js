@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
-import Cat from "../icons/CatLogo.svg";
+import Cat from "../icons/CatLogoV9.svg";
 
 const NavBar = () => {
   return (
     <Fragment>
       <nav className='navbar sticky-top navbar-expand-lg navbar-light bg-light'>
-        <a href='/' className='navbar-brand mb-0 h1'>
+        <Link to='/' className='navbar-brand mb-0 h1'>
           <img
             src={Cat}
             width='30'
@@ -15,7 +15,7 @@ const NavBar = () => {
             alt=''
           />{" "}
           CrazyRedKitten
-        </a>
+        </Link>
         <button
           className='navbar-toggler'
           type='button'
