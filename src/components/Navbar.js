@@ -6,9 +6,6 @@ import CatTongue from "../icons/CatTongue.svg";
 const NavBar = () => {
   const [pressed, setPressed] = useState(false);
 
-  const isPressed = () => {
-    setPressed(!pressed);
-  };
   const changePressed = () => {
     setPressed(!pressed);
   };
@@ -29,7 +26,7 @@ const NavBar = () => {
             src={pressed ? CatTongue : Cat}
             width='30'
             height='30'
-            class='d-inline-block align-top'
+            className='d-inline-block align-top'
             alt=''
           />{" "}
           CrazyRedKitten
@@ -52,6 +49,12 @@ const NavBar = () => {
             </Link>
             <Link className='nav-item nav-link' to='/projects'>
               Small Projets
+            </Link>
+            <Link className='nav-item nav-link' to='/VectorGraphics'>
+              Vector Graphics
+            </Link>
+            <Link className='nav-item nav-link' to='/AvatarGenerator'>
+              Avatar Generator
             </Link>
             <Link className='nav-item nav-link' to='/Contact'>
               Contact

@@ -4,8 +4,8 @@ import EyeCrossed from "../../../icons/eyeCrossed.svg";
 import Email from "../../../icons/emailLogo.svg";
 
 const Login = () => {
-  const [email, setEmail] = useState([{ email: "" }]);
-  const [password, setPassword] = useState([{ password: "" }]);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [data, setData] = useState([email, password]);
   const [isPressed, setIsPressed] = useState(false);
 
@@ -25,6 +25,7 @@ const Login = () => {
       console.warn("Please fill all fields");
     } else {
       setData(email, password);
+      console.warn("sending data");
       console.log(email, password, data);
     }
   };
@@ -54,10 +55,10 @@ const Login = () => {
                 onChange={changeEmail}
               />
               <div
-                class='input-group-append'
+                className='input-group-append'
                 style={{ backgroundColor: "white", width: "50px" }}
               >
-                <span class='input-group-text'>
+                <span className='input-group-text'>
                   <img
                     src={Email}
                     style={{ width: "24px" }}
@@ -85,7 +86,7 @@ const Login = () => {
                   id='button-addon2'
                   data-toggle='button'
                   aria-pressed='false'
-                  autocomplete='off'
+                  autoComplete='off'
                   onClick={onPress}
                 >
                   <div>
