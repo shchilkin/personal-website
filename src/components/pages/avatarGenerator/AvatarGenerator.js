@@ -29,7 +29,7 @@ const AvatarGenerator = () => {
         Avatar Generator <span className='badge badge-info'>v. Alpha 0.3</span>
       </h1>
       <h5 className='text-center'>Avatar:</h5>
-      <div class='row d-flex justify-content-center'>
+      <div className='row d-flex justify-content-center'>
         <img
           src={AvatarBold}
           style={{
@@ -66,6 +66,18 @@ const AvatarGenerator = () => {
         <button className='btn btn-secondary mr-2 mb-2'>Change Glasses</button>
         <button className='btn btn-primary mr-2 mb-2'>Change Skin Color</button>
         <button className='btn btn-success mr-2 mb-2'>Change Glasses</button>
+      </div>
+      <div className='container-fluid text-center'>
+        <h5>Plans:</h5>
+        <div className='row d-flex justify-content-center'>
+          <ul className='list-group  list-group-flush'>
+            <li className='list-group-item'>Add Male avatars</li>
+            <li className='list-group-item'>
+              Add Avatar rendering (server-side)
+            </li>
+            <li className='list-group-item'>Add more customization options</li>
+          </ul>
+        </div>
       </div>
     </div>
   );
