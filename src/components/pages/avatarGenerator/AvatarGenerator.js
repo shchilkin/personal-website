@@ -6,6 +6,11 @@ import Hair_3 from "./Hair_3.svg";
 import Lips_1 from "./Lips_1.svg";
 import Lips_2 from "./Lips_2.svg";
 import Lips_3 from "./Lips_3.svg";
+import Background_1 from "./Background_1.svg";
+import Background_2 from "./Background_2.svg";
+import Background_3 from "./Background_3.svg";
+import Background_4 from "./Background_4.svg";
+
 import Eyes_green from "./Eyes_green.svg";
 import Eyes_blue from "./Eyes_blue.svg";
 import Eyes_brown from "./Eyes_brown.svg";
@@ -17,7 +22,9 @@ const AvatarGenerator = () => {
   const [eyesCounter, setEyesCounter] = useState(1);
   const [glassesCounter, setGlassesCounter] = useState(1);
   const [lipsCounter, setLipsCounter] = useState(1);
+  const [backgroundCounter, setBackgroundCounter] = useState(1);
 
+  // Counters | Used as onClick button function
   const changeHair = () => {
     let Counter = hairCounter;
     if (Counter < 4) {
@@ -58,6 +65,17 @@ const AvatarGenerator = () => {
     setLipsCounter(Counter);
   };
 
+  const changeBackground = () => {
+    let Counter = backgroundCounter;
+    if (Counter < 4) {
+      Counter += 1;
+    } else {
+      Counter = 1;
+    }
+    setBackgroundCounter(Counter);
+  };
+
+  //  Set Feature functions
   const setHair = counter => {
     if (counter === 1) return Hair_1;
     else if (counter === 2) return Hair_2;
@@ -87,10 +105,19 @@ const AvatarGenerator = () => {
     return null;
   };
 
+  const setBackground = counter => {
+    if (counter === 1) return Background_1;
+    else if (counter === 2) return Background_2;
+    else if (counter === 3) return Background_3;
+    else if (counter === 3) return Background_4;
+    return null;
+  };
+
+  //Render
   return (
     <div>
       <h1 className='text-center mb-3 mt-3'>
-        Avatar Generator <span className='badge badge-info'>v. Alpha 0.6</span>
+        Avatar Generator <span className='badge badge-info'>v. Alpha 0.7</span>
       </h1>
       <h5 className='text-center'>Avatar:</h5>
       <div className='row d-flex justify-content-center'>
@@ -149,6 +176,17 @@ const AvatarGenerator = () => {
           className='img-fluid'
           alt='Responsive'
         />
+        <img
+          src={setBackground(backgroundCounter)}
+          style={{
+            width: "300px",
+            height: "300px",
+            zIndex: -1,
+            position: "absolute"
+          }}
+          className='img-fluid'
+          alt='Responsive'
+        />
       </div>
       <p className='text-center'>Currently in early stage of development</p>
       <div className='container-fluid text-center'>
@@ -164,7 +202,12 @@ const AvatarGenerator = () => {
         <button className='btn btn-success mr-2 mb-2' onClick={changeLips}>
           Change Lips
         </button>
-        {/* <button className='btn btn-primary mr-2 mb-2'>Change Skin Color</button>*/}
+        <button
+          className='btn btn-primary mr-2 mb-2'
+          onClick={changeBackground}
+        >
+          Change Background
+        </button>
       </div>
       <div className='container-fluid text-center'>
         <h5>Plans:</h5>
