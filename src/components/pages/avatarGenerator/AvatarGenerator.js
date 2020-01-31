@@ -3,6 +3,9 @@ import Avatar from "./Avatar.svg";
 import Hair_1 from "./Hair_1.svg";
 import Hair_2 from "./Hair_2.svg";
 import Hair_3 from "./Hair_3.svg";
+import Lips_1 from "./Lips_1.svg";
+import Lips_2 from "./Lips_2.svg";
+import Lips_3 from "./Lips_3.svg";
 import Eyes_green from "./Eyes_green.svg";
 import Eyes_blue from "./Eyes_blue.svg";
 import Eyes_brown from "./Eyes_brown.svg";
@@ -13,16 +16,18 @@ const AvatarGenerator = () => {
   const [hairCounter, setHairCounter] = useState(1);
   const [eyesCounter, setEyesCounter] = useState(1);
   const [glassesCounter, setGlassesCounter] = useState(1);
+  const [lipsCounter, setLipsCounter] = useState(1);
 
   const changeHair = () => {
     let Counter = hairCounter;
-    if (Counter < 3) {
+    if (Counter < 4) {
       Counter += 1;
     } else {
       Counter = 1;
     }
     setHairCounter(Counter);
   };
+
   const changeEyes = () => {
     let Counter = eyesCounter;
     if (Counter < 3) {
@@ -43,12 +48,24 @@ const AvatarGenerator = () => {
     setGlassesCounter(Counter);
   };
 
+  const changeLips = () => {
+    let Counter = lipsCounter;
+    if (Counter < 3) {
+      Counter += 1;
+    } else {
+      Counter = 1;
+    }
+    setLipsCounter(Counter);
+  };
+
   const setHair = counter => {
     if (counter === 1) return Hair_1;
     else if (counter === 2) return Hair_2;
     else if (counter === 3) return Hair_3;
+    else if (counter === 4) return EmptyArea;
     return null;
   };
+
   const setEyes = counter => {
     if (counter === 1) return Eyes_green;
     else if (counter === 2) return Eyes_blue;
@@ -63,10 +80,17 @@ const AvatarGenerator = () => {
     return null;
   };
 
+  const setLips = counter => {
+    if (counter === 1) return Lips_1;
+    else if (counter === 2) return Lips_2;
+    else if (counter === 3) return Lips_3;
+    return null;
+  };
+
   return (
     <div>
       <h1 className='text-center mb-3 mt-3'>
-        Avatar Generator <span className='badge badge-info'>v. Alpha 0.5</span>
+        Avatar Generator <span className='badge badge-info'>v. Alpha 0.6</span>
       </h1>
       <h5 className='text-center'>Avatar:</h5>
       <div className='row d-flex justify-content-center'>
@@ -75,7 +99,7 @@ const AvatarGenerator = () => {
           style={{
             width: "300px",
             height: "300px",
-            zIndex: 1,
+            zIndex: 0,
             position: "absolute"
           }}
           className='img-fluid'
@@ -108,7 +132,18 @@ const AvatarGenerator = () => {
           style={{
             width: "300px",
             height: "300px",
-            zIndex: 3,
+            zIndex: 4,
+            position: "absolute"
+          }}
+          className='img-fluid'
+          alt='Responsive'
+        />
+        <img
+          src={setLips(lipsCounter)}
+          style={{
+            width: "300px",
+            height: "300px",
+            zIndex: 1,
             position: "absolute"
           }}
           className='img-fluid'
@@ -126,8 +161,10 @@ const AvatarGenerator = () => {
         <button className='btn btn-secondary mr-2 mb-2' onClick={changeGlasses}>
           Change Glasses
         </button>
-        <button className='btn btn-primary mr-2 mb-2'>Change Skin Color</button>
-        <button className='btn btn-success mr-2 mb-2'>Change Glasses</button>
+        <button className='btn btn-success mr-2 mb-2' onClick={changeLips}>
+          Change Lips
+        </button>
+        {/* <button className='btn btn-primary mr-2 mb-2'>Change Skin Color</button>*/}
       </div>
       <div className='container-fluid text-center'>
         <h5>Plans:</h5>
