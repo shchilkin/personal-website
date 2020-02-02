@@ -369,7 +369,7 @@ const AvatarGenerator = () => {
                 </button>
                 <button
                     className='btn btn-secondary mr-1'
-                    onClick={() => count(clothesCounter, setClothesCounter, 8, false)}
+                    onClick={() => count(clothesCounter, setClothesCounter, 8, true)}
                 >
                     <img
                         src={ArrowRight}
