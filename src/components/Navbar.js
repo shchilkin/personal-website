@@ -28,7 +28,7 @@ const NavBar = () => {
             height='30'
             className='d-inline-block align-top'
             alt=''
-          />{" "}
+          />
           CrazyRedKitten
         </Link>
         <button

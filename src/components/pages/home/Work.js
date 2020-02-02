@@ -6,6 +6,7 @@ const Work = () => {
       <div className='container'>
         <div className='d-flex justify-content-center'>
         </div>
+        <div className='alert alert-danger'>Currently in development!</div>
         <h1 className='display-5 pt-3 pb-3'>Work & Studies</h1>
       </div>
       <div className='container'>

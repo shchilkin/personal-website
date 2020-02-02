@@ -15,7 +15,6 @@ const About = () => {
     >
       <Fragment>
         <div className='pt-5 pb-5'>
-          <div className='container'></div>
           <div className='d-flex justify-content-center'>
             <h1 className='display-4 text-center'>Aleksandr Shchilkin</h1>
           </div>
