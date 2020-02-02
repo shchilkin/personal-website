@@ -50,17 +50,11 @@ const NavBar = () => {
             <Link className='nav-item nav-link' to='/projects'>
               Small Projets
             </Link>
-            <Link className='nav-item nav-link' to='/VectorGraphics'>
-              Vector Graphics
-            </Link>
             <Link className='nav-item nav-link' to='/AvatarGenerator'>
               Avatar Generator
             </Link>
             <Link className='nav-item nav-link' to='/Contact'>
               Contact
-            </Link>
-            <Link className='nav-item nav-link' to='/LayoutTest'>
-              Layout Test
             </Link>
           </ul>
           <div className='navbar-nav'>
@@ -78,3 +72,7 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+// <Link className='nav-item nav-link' to='/VectorGraphics'>
+// Vector Graphics
+// </Link>
