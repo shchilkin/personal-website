@@ -2,12 +2,9 @@ import React from "react";
 
 const Work = () => {
   return (
-    <div className='container-fluid text-white pt-5 pb-5 bg-dark'>
+    <div className='container-fluid pt-5 pb-5' style={{backgroundColor:'#89DBDF'}}>
       <div className='container'>
         <div className='d-flex justify-content-center'>
-          <div className='alert alert-warning col-md-6'>
-            This page is under development
-          </div>
         </div>
         <h1 className='display-5 pt-3 pb-3'>Work & Studies</h1>
       </div>

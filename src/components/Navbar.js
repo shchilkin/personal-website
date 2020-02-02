@@ -40,13 +40,10 @@ const NavBar = () => {
           aria-expanded='false'
           aria-label='Toggle navigation'
         >
-          <span className='navbar-toggler-icon'></span>
+          <span className='navbar-toggler-icon'/>
         </button>
         <div className='navbar-collapse collapse' id='navbarNavAltMarkup'>
           <ul className='navbar-nav mr-auto'>
-            <Link className='nav-item nav-link' to='/'>
-              <span>Home</span>
-            </Link>
             <Link className='nav-item nav-link' to='/projects'>
               Small Projets
             </Link>

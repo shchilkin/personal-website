@@ -23,7 +23,6 @@ function App() {
             <Switch>
               <Route exact path='/' component={Home} />
               <Route exact path='/Projects' component={SmallProjects} />
-              {/*<Route exact path='/VectorGraphics' component={VectorGraphics} />*/}
               <Route exact path='/ColorPalette' component={ColorPalette}/>
               <Route
                 exact

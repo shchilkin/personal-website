@@ -1,5 +1,5 @@
 import React, { useState, Fragment} from "react";
-import Avatar from "./Avatar_4-2.svg";
+import Avatar from "./Avatars-4.2.svg";
 import ArrowRight from "../../../icons/ArrowRight.svg";
 import ArrowLeft from "../../../icons/ArrowLeft.svg";
 import Hair_1 from "./Hair_1.svg";
@@ -18,6 +18,14 @@ import Background_7 from "./Background_7.svg";
 import Background_8 from "./Background_8.svg";
 import Background_9 from "./Background_9.svg";
 import Background_10 from "./Background_10.svg";
+import TShirt_golden from './Clothes/T-shirt_golden.svg'
+import TShirt_skyblue from './Clothes/T-shirt_skyblue.svg'
+import TShirt_green from './Clothes/T-shirt_green.svg'
+import TShirt_light from './Clothes/T-shirt_light.svg'
+import TShirt_dark from './Clothes/T-shirt_dark.svg'
+import TShirt_pink from './Clothes/T-shirt_pink.svg'
+import TShirt_rose from './Clothes/T-shirt_rose.svg'
+import TShirt_brown from './Clothes/T-shirt_brown.svg'
 import Eyes_green from "./Eyes/Eyes_green.svg";
 import Eyes_blue from "./Eyes/Eyes_blue.svg";
 import Eyes_brown from "./Eyes/Eyes_brown.svg";
@@ -38,6 +46,7 @@ const AvatarGenerator = () => {
   const [glassesCounter, setGlassesCounter] = useState(2);
   const [lipsCounter, setLipsCounter] = useState(2);
   const [backgroundCounter, setBackgroundCounter] = useState(1);
+  const [clothesCounter, setClothesCounter] = useState(1);
 
   //Count up function
   // isCountUp = true => Count up, false => count down
@@ -101,25 +110,37 @@ const AvatarGenerator = () => {
     return null;
   };
 
-  const setBackground = counter => {
-    if (counter === 1) return Background_1;
-    else if (counter === 2) return Background_2;
-    else if (counter === 3) return Background_3;
-    else if (counter === 4) return Background_4;
-    else if (counter === 5) return Background_5;
-    else if (counter === 6) return Background_6;
-    else if (counter === 7) return Background_7;
-    else if (counter === 8) return Background_8;
-    else if (counter === 9) return Background_9;
-    else if (counter === 10) return Background_10;
+  const setClothes = counter => {
+    if (counter === 1) return TShirt_golden;
+    else if (counter === 2) return TShirt_skyblue;
+    else if (counter === 3) return TShirt_green;
+    else if (counter === 4) return TShirt_pink;
+    else if (counter === 5) return TShirt_rose;
+    else if (counter === 6) return TShirt_light;
+    else if (counter === 7) return TShirt_dark;
+    else if (counter === 8) return TShirt_brown;
     return null;
   };
+
+    const setBackground = counter => {
+        if (counter === 1) return Background_1;
+        else if (counter === 2) return Background_2;
+        else if (counter === 3) return Background_3;
+        else if (counter === 4) return Background_4;
+        else if (counter === 5) return Background_5;
+        else if (counter === 6) return Background_6;
+        else if (counter === 7) return Background_7;
+        else if (counter === 8) return Background_8;
+        else if (counter === 9) return Background_9;
+        else if (counter === 10) return Background_10;
+        return null;
+    };
 
   //Render
   return (
     <Fragment>
       <h1 className='text-center mb-3 mt-3'>
-        Avatar Generator <span className='badge badge-info'>version 0.10</span>
+        Avatar Generator <span className='badge badge-info'>version 0.11</span>
       </h1>
       <h6 className='text-center'>Currently in early stage of development</h6>
       <div className='row'>
@@ -181,6 +202,17 @@ const AvatarGenerator = () => {
                 className='img-fluid'
                 alt='Responsive'
             />
+              <img
+                  src={setClothes(clothesCounter)}
+                  style={{
+                      width: "100%",
+                      height: "100%",
+                      zIndex: 4,
+                      position: "absolute"
+                  }}
+                  className='img-fluid'
+                  alt='Responsive'
+              />
             <img
                 src={setLips(lipsCounter)}
                 style={{
@@ -325,6 +357,27 @@ const AvatarGenerator = () => {
               />
             </button>
           </div>
+          <div className='mb-2'>
+                <p className='card-title'>
+                    <span className='badge badge-warning'>Change Clothes</span>
+                </p>
+                <button
+                    className='btn btn-secondary mr-1'
+                    onClick={() => count(clothesCounter, setClothesCounter, 8, false)}
+                >
+                    <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
+                </button>
+                <button
+                    className='btn btn-secondary mr-1'
+                    onClick={() => count(clothesCounter, setClothesCounter, 8, false)}
+                >
+                    <img
+                        src={ArrowRight}
+                        style={{ width: "24px" }}
+                        alt='Right'
+                    />
+                </button>
+            </div>
         </div>
       </div>
       <div className='container-fluid text-center'>

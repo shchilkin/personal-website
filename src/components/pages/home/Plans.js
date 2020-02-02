@@ -2,11 +2,11 @@ import React from "react";
 
 const Plans = () => {
   return (
-    <div className='container-fluid text-white pt-5 pb-5 bg-secondary'>
+    <div className='container-fluid text-white pt-5 pb-5' style={{backgroundColor:'#FC4365'}}>
       <div className='container'>
         <h1 className='display-5 pt-3 pb-3'>Plans</h1>
         <p>
-          <span className='badge badge-danger'>TODO </span>{" "}
+          <span className='badge badge-danger'>TODO </span>
           <span className='badge badge-info'>Add description</span> Lorem ipsum
           dolor sit amet, consectetur adipiscing elit. Nulla faucibus vitae
           risus at fringilla. Vivamus ut placerat elit. Fusce dignissim urna
