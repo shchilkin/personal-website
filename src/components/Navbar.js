@@ -12,7 +12,7 @@ const NavBar = () => {
 
   return (
     <Fragment>
-      <nav className='navbar sticky-top navbar-expand-lg navbar-light bg-light'>
+      <nav className='navbar sticky-top navbar-expand-lg navbar-light' style={{backgroundColor:'#ffE138'}}>
         <Link
           to='/'
           className='navbar-brand mb-0 h1'
@@ -53,6 +53,9 @@ const NavBar = () => {
             <Link className='nav-item nav-link' to='/AvatarGenerator'>
               Avatar Generator
             </Link>
+            <Link className='nav-item nav-link' to='/ColorPalette'>
+              Color Palette
+            </Link>
             <Link className='nav-item nav-link' to='/Contact'>
               Contact
             </Link>
@@ -72,7 +75,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-// <Link className='nav-item nav-link' to='/VectorGraphics'>
-// Vector Graphics
-// </Link>

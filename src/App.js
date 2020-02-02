@@ -9,8 +9,10 @@ import ContactPage from "./components/pages/contact/ContactPage";
 import SmallProjects from "./components/pages/projects/SmallProjects";
 // import VectorGraphics from "./components/pages/vectorGraphics/VectorGraphics";
 import AvatarGenerator from "./components/pages/avatarGenerator/AvatarGenerator";
+import ColorPalette from './components/pages/ColorPalette'
 
 // style={{ backgroundColor: "rgb(251	,239	,129)" }} cool yellow color
+// #ff0138 cool red color
 function App() {
   return (
     <div className='App'>
@@ -22,6 +24,7 @@ function App() {
               <Route exact path='/' component={Home} />
               <Route exact path='/Projects' component={SmallProjects} />
               {/*<Route exact path='/VectorGraphics' component={VectorGraphics} />*/}
+              <Route exact path='/ColorPalette' component={ColorPalette}/>
               <Route
                 exact
                 path='/AvatarGenerator'

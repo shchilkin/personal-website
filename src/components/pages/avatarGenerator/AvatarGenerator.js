@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Fragment} from "react";
 import Avatar from "./Avatar_4-2.svg";
 import ArrowRight from "../../../icons/ArrowRight.svg";
 import ArrowLeft from "../../../icons/ArrowLeft.svg";
@@ -98,7 +98,6 @@ const AvatarGenerator = () => {
   const setEyebrows = counter => {
     if (counter === 1) return Eyebrows_ginger;
     else if (counter === 2) return Eyebrows_brown;
-    // else if (counter === 3) return Lips_3;
     return null;
   };
 
@@ -118,47 +117,47 @@ const AvatarGenerator = () => {
 
   //Render
   return (
-    <div>
+    <Fragment>
       <h1 className='text-center mb-3 mt-3'>
-        Avatar Generator <span className='badge badge-info'>version 0.9</span>
+        Avatar Generator <span className='badge badge-info'>version 0.10</span>
       </h1>
       <h6 className='text-center'>Currently in early stage of development</h6>
       <div className='row'>
-        <div className='col-md-5 text-center'>
+        <div className='col-lg-6 text-center mb-5'>
           <h5>Avatar:</h5>
-          <div className='row d-flex justify-content-center' style={{height:'100%'}}>
+          <div className='row d-flex justify-content-center' style={{height:'100%', minHeight:'250px'}}>
             <img
-              src={Avatar}
-              style={{
-                width: "100%",
-                height: "100%",
-                zIndex: 1,
-                position: "absolute"
-              }}
-              className='img-fluid'
-              alt='Responsive'
+                src={Avatar}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  zIndex: 1,
+                  position: "absolute"
+                }}
+                className='img-fluid'
+                alt='Responsive'
             />
             <img
-              src={setGlasses(glassesCounter)}
-              style={{
-                width: "100%",
-                height: "100%",
-                zIndex: 4,
-                position: "absolute"
-              }}
-              className='img-fluid'
-              alt='Responsive'
+                src={setGlasses(glassesCounter)}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  zIndex: 4,
+                  position: "absolute"
+                }}
+                className='img-fluid'
+                alt='Responsive'
             />
             <img
-              src={setEyes(eyesCounter)}
-              style={{
-                width: "100%",
-                height: "100%",
-                zIndex: 3,
-                position: "absolute"
-              }}
-              className='img-fluid'
-              alt='Responsive'
+                src={setEyes(eyesCounter)}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  zIndex: 3,
+                  position: "absolute"
+                }}
+                className='img-fluid'
+                alt='Responsive'
             />
             <img
                 src={setEyebrows(eyeBrowsCounter)}
@@ -172,42 +171,41 @@ const AvatarGenerator = () => {
                 alt='Responsive'
             />
             <img
-              src={setHair(hairCounter)}
-              style={{
-                width: "100%",
-                height: "100%",
-                zIndex: 5,
-                position: "absolute"
-              }}
-              className='img-fluid'
-              alt='Responsive'
+                src={setHair(hairCounter)}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  zIndex: 5,
+                  position: "absolute"
+                }}
+                className='img-fluid'
+                alt='Responsive'
             />
             <img
-              src={setLips(lipsCounter)}
-              style={{
-                width: "100%",
-                height: "100%",
-                zIndex: 2,
-                position: "absolute"
-              }}
-              className='img-fluid'
-              alt='static'
+                src={setLips(lipsCounter)}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  zIndex: 2,
+                  position: "absolute"
+                }}
+                className='img-fluid'
+                alt='static'
             />
             <img
-              src={setBackground(backgroundCounter)}
-              style={{
-                width: "100%",
-                height: "100%",
-                zIndex: 0,
-                position: "absolute"
-              }}
-              className='img-fluid'
-              alt='Responsive'
+                src={setBackground(backgroundCounter)}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  zIndex: 0,
+                  position: "absolute"
+                }}
+                className='img-fluid'
+                alt='Responsive'
             />
           </div>
         </div>
-        <div className='col-md-7 text-center'>
-          <div className='container-fluid text-center'>
+        <div className='col-lg-2 text-center'>
             <div className='mb-2'>
               <p className='card-title'>
                 <span className='badge badge-danger'>Change Hairstyle</span>
@@ -304,27 +302,28 @@ const AvatarGenerator = () => {
                 />
               </button>
             </div>
-            <div className='mb-2'>
-              <p className='card-title'>
-                <span className='badge badge-primary'>Change Background</span>
-              </p>
-              <button
+          </div>
+        <div className='col-lg-2 text-center'>
+          <div className='mb-2'>
+            <p className='card-title'>
+              <span className='badge badge-danger'>Change Background</span>
+            </p>
+            <button
                 className='btn btn-secondary mr-1'
                 onClick={() => count(backgroundCounter, setBackgroundCounter, 10, false)}
-              >
-                <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
-              </button>
-              <button
+            >
+              <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
+            </button>
+            <button
                 className='btn btn-secondary mr-1'
                 onClick={() => count(backgroundCounter, setBackgroundCounter, 10, true)}
-              >
-                <img
+            >
+              <img
                   src={ArrowRight}
                   style={{ width: "24px" }}
                   alt='Right'
-                />
-              </button>
-            </div>
+              />
+            </button>
           </div>
         </div>
       </div>
@@ -339,7 +338,7 @@ const AvatarGenerator = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </Fragment>
   );
 };
 

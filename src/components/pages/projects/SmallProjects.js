@@ -3,7 +3,7 @@ import TaskList from "./TaskList";
 
 const SmallProjects = () => {
   return (
-    <div className='pt-3 bg-warning'>
+    <div className='pt-3'>
       <div className='container'>
         <div
           className='d-flex justify-content-center'
