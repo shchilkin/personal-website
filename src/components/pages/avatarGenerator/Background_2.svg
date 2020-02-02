@@ -2,8 +2,8 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="100%" height="100%" viewBox="0 0 8889 8889" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
     <g transform="matrix(11.1111,0,0,11.1111,0,0)">
-        <g transform="matrix(1.5741,0,0,1.5741,-391.947,-179.919)">
-            <g id="v.4.1--Mariia-" serif:id="v.4.1 (Mariia)">
+        <g transform="matrix(1.5741,0,0,1.5741,-391.683,-181.02)">
+            <g id="v.4.2">
                 <circle id="Background" cx="502.942" cy="375.338" r="215.643" style="fill:url(#_Linear1);"/>
                 <clipPath id="_clip2">
                     <circle id="Background1" serif:id="Background" cx="502.942" cy="375.338" r="215.643"/>
@@ -14,10 +14,8 @@
                 </g>
             </g>
         </g>
-        <g id="губы---Улыбка" serif:id="губы - Улыбка">
-        </g>
     </g>
     <defs>
-        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-41.4178,539.233,-539.233,-41.4178,351.514,256.102)"><stop offset="0" style="stop-color:rgb(254,243,201);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(217,0,166);stop-opacity:1"/></linearGradient>
+        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-41.4178,539.233,-539.233,-41.4178,351.514,256.102)"><stop offset="0" style="stop-color:rgb(4,216,232);stop-opacity:1"/><stop offset="0.67" style="stop-color:rgb(32,187,223);stop-opacity:1"/><stop offset="0.85" style="stop-color:rgb(114,104,198);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(217,0,166);stop-opacity:1"/></linearGradient>
     </defs>
 </svg>

@@ -4,12 +4,14 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./components/pages/home/Home";
 import Login from "./components/pages/authentication/Login";
+import LayoutTest from "./components/LayoutTest";
 import Registration from "./components/pages/authentication/Registration";
 import ContactPage from "./components/pages/contact/ContactPage";
 import SmallProjects from "./components/pages/projects/SmallProjects";
 import VectorGraphics from "./components/pages/vectorGraphics/VectorGraphics";
 import AvatarGenerator from "./components/pages/avatarGenerator/AvatarGenerator";
 
+// style={{ backgroundColor: "rgb(251	,239	,129)" }} cool yellow color
 function App() {
   return (
     <div className='App'>
@@ -29,6 +31,7 @@ function App() {
               <Route exact path='/Contact' component={ContactPage} />
               <Route exact path='/Login' component={Login} />
               <Route exact path='/Register' component={Registration} />
+              <Route exact path='/LayoutTest' component={LayoutTest} />
             </Switch>
           </div>
           <Footer />
