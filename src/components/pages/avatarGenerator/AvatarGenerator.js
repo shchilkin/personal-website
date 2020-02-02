@@ -31,105 +31,27 @@ const AvatarGenerator = () => {
   const [lipsCounter, setLipsCounter] = useState(2);
   const [backgroundCounter, setBackgroundCounter] = useState(1);
 
-  // Hair counters
-  const changeHairUp = () => {
-    let Counter = hairCounter;
-    if (Counter < 4) {
-      Counter += 1;
+  //Count up function
+  // isCountUp = true => Count up, false => count down
+  function count(counterName, setCounter, itemsQuantity, isCountUp) {
+    if (isCountUp){
+      let Counter = counterName;
+      if (Counter < itemsQuantity) {
+        Counter += 1;
+      } else {
+        Counter = 1;
+      }
+      setCounter(Counter);
     } else {
-      Counter = 1;
+      let Counter = counterName;
+      if (Counter > 1) {
+        Counter -= 1;
+      } else {
+        Counter = itemsQuantity;
+      }
+      setCounter(Counter);
     }
-    setHairCounter(Counter);
-  };
-  const changeHairDown = () => {
-    let Counter = hairCounter;
-    if (Counter > 1) {
-      Counter -= 1;
-    } else {
-      Counter = 4;
-    }
-    setHairCounter(Counter);
-  };
-
-  // Eyes counters
-  const changeEyesUp = () => {
-    let Counter = eyesCounter;
-    if (Counter < 3) {
-      Counter += 1;
-    } else {
-      Counter = 1;
-    }
-    setEyesCounter(Counter);
-  };
-  const changeEyesDown = () => {
-    let Counter = eyesCounter;
-    if (Counter > 1) {
-      Counter -= 1;
-    } else {
-      Counter = 3;
-    }
-    setEyesCounter(Counter);
-  };
-
-  // Glasses counters
-  const changeGlassesUp = () => {
-    let Counter = glassesCounter;
-    if (Counter < 2) {
-      Counter += 1;
-    } else {
-      Counter = 1;
-    }
-    setGlassesCounter(Counter);
-  };
-  const changeGlassesDown = () => {
-    let Counter = glassesCounter;
-    if (Counter > 1) {
-      Counter -= 1;
-    } else {
-      Counter = 2;
-    }
-    setGlassesCounter(Counter);
-  };
-
-  // Lips counters
-  const changeLipsUp = () => {
-    let Counter = lipsCounter;
-    if (Counter < 3) {
-      Counter += 1;
-    } else {
-      Counter = 1;
-    }
-    setLipsCounter(Counter);
-  };
-  const changeLipsDown = () => {
-    let Counter = lipsCounter;
-    if (Counter > 1) {
-      Counter -= 1;
-    } else {
-      Counter = 3;
-    }
-    setLipsCounter(Counter);
-  };
-
-  // Background counters
-  const changeBackgroundUp = () => {
-    let Counter = backgroundCounter;
-    if (Counter < 10) {
-      Counter += 1;
-    } else {
-      Counter = 1;
-    }
-    setBackgroundCounter(Counter);
-  };
-  const changeBackgroundDown = () => {
-    let Counter = backgroundCounter;
-    if (Counter > 1) {
-      Counter -= 1;
-    } else {
-      Counter = 10;
-    }
-    setBackgroundCounter(Counter);
-  };
+  }
 
   //  Set Feature functions
   const setHair = counter => {
@@ -184,12 +106,12 @@ const AvatarGenerator = () => {
       <div className='row'>
         <div className='col-md-5 text-center'>
           <h5>Avatar:</h5>
-          <div className='row d-flex justify-content-center'>
+          <div className='row d-flex justify-content-center' style={{height:'100%'}}>
             <img
               src={Avatar}
               style={{
-                width: "300px",
-                height: "300px",
+                width: "95%",
+                height: "95%",
                 zIndex: 1,
                 position: "absolute"
               }}
@@ -199,8 +121,8 @@ const AvatarGenerator = () => {
             <img
               src={setGlasses(glassesCounter)}
               style={{
-                width: "300px",
-                height: "300px",
+                width: "95%",
+                height: "95%",
                 zIndex: 4,
                 position: "absolute"
               }}
@@ -210,8 +132,8 @@ const AvatarGenerator = () => {
             <img
               src={setEyes(eyesCounter)}
               style={{
-                width: "300px",
-                height: "300px",
+                width: "95%",
+                height: "95%",
                 zIndex: 3,
                 position: "relative"
               }}
@@ -221,8 +143,8 @@ const AvatarGenerator = () => {
             <img
               src={setHair(hairCounter)}
               style={{
-                width: "300px",
-                height: "300px",
+                width: "95%",
+                height: "95%",
                 zIndex: 5,
                 position: "absolute"
               }}
@@ -232,8 +154,8 @@ const AvatarGenerator = () => {
             <img
               src={setLips(lipsCounter)}
               style={{
-                width: "300px",
-                height: "300px",
+                width: "95%",
+                height: "95%",
                 zIndex: 2,
                 position: "absolute"
               }}
@@ -243,8 +165,8 @@ const AvatarGenerator = () => {
             <img
               src={setBackground(backgroundCounter)}
               style={{
-                width: "300px",
-                height: "300px",
+                width: "95%",
+                height: "95%",
                 zIndex: 0,
                 position: "absolute"
               }}
@@ -262,16 +184,16 @@ const AvatarGenerator = () => {
               </p>
               <button
                 className='btn btn-secondary mr-1'
-                onClick={changeHairDown}
+                onClick={() => count(hairCounter, setHairCounter,4, false)}
               >
-                <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'></img>
+                <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
               </button>
-              <button className='btn btn-secondary mr-1' onClick={changeHairUp}>
+                <button className='btn btn-secondary mr-1' onClick={() => count(hairCounter, setHairCounter,4, true)}>
                 <img
                   src={ArrowRight}
                   style={{ width: "24px" }}
                   alt='Right'
-                ></img>
+                />
               </button>
             </div>
             <div className='mb-2'>
@@ -280,16 +202,16 @@ const AvatarGenerator = () => {
               </p>
               <button
                 className='btn btn-secondary mr-1'
-                onClick={changeEyesDown}
+                onClick={() => count(eyesCounter, setEyesCounter,3, false)}
               >
-                <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'></img>
+                <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
               </button>
-              <button className='btn btn-secondary mr-1' onClick={changeEyesUp}>
+              <button className='btn btn-secondary mr-1' onClick={() => count(eyesCounter, setEyesCounter,3, true)}>
                 <img
                   src={ArrowRight}
                   style={{ width: "24px" }}
                   alt='Right'
-                ></img>
+                />
               </button>
             </div>
             <div className='mb-2'>
@@ -298,19 +220,19 @@ const AvatarGenerator = () => {
               </p>
               <button
                 className='btn btn-secondary mr-1'
-                onClick={changeGlassesDown}
+                onClick={() => count(glassesCounter, setGlassesCounter,2, false)}
               >
-                <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'></img>
+                <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
               </button>
               <button
                 className='btn btn-secondary mr-1'
-                onClick={changeGlassesUp}
+                onClick={() => count(glassesCounter, setGlassesCounter,2, true)}
               >
                 <img
                   src={ArrowRight}
                   style={{ width: "24px" }}
                   alt='Right'
-                ></img>
+                />
               </button>
             </div>
             <div className='mb-2'>
@@ -319,16 +241,16 @@ const AvatarGenerator = () => {
               </p>
               <button
                 className='btn btn-secondary mr-1'
-                onClick={changeLipsDown}
+                onClick={() => count(lipsCounter, setLipsCounter,3, false)}
               >
-                <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'></img>
+                <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
               </button>
-              <button className='btn btn-secondary mr-1' onClick={changeLipsUp}>
+              <button className='btn btn-secondary mr-1' onClick={() => count(lipsCounter, setLipsCounter,3, true)}>
                 <img
                   src={ArrowRight}
                   style={{ width: "24px" }}
                   alt='Right'
-                ></img>
+                />
               </button>
             </div>
             <div className='mb-2'>
@@ -337,19 +259,19 @@ const AvatarGenerator = () => {
               </p>
               <button
                 className='btn btn-secondary mr-1'
-                onClick={changeBackgroundDown}
+                onClick={() => count(backgroundCounter, setBackgroundCounter, 10, false)}
               >
-                <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'></img>
+                <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
               </button>
               <button
                 className='btn btn-secondary mr-1'
-                onClick={changeBackgroundUp}
+                onClick={() => count(backgroundCounter, setBackgroundCounter, 10, true)}
               >
                 <img
                   src={ArrowRight}
                   style={{ width: "24px" }}
                   alt='Right'
-                ></img>
+                />
               </button>
             </div>
           </div>
