@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Avatar from "./Avatar_1.svg";
+import Avatar from "./Avatar_4-2.svg";
 import ArrowRight from "../../../icons/ArrowRight.svg";
 import ArrowLeft from "../../../icons/ArrowLeft.svg";
 import Hair_1 from "./Hair_1.svg";
@@ -18,15 +18,23 @@ import Background_7 from "./Background_7.svg";
 import Background_8 from "./Background_8.svg";
 import Background_9 from "./Background_9.svg";
 import Background_10 from "./Background_10.svg";
-import Eyes_green from "./Eyes_green.svg";
-import Eyes_blue from "./Eyes_blue.svg";
-import Eyes_brown from "./Eyes_brown.svg";
+import Eyes_green from "./Eyes/Eyes_green.svg";
+import Eyes_blue from "./Eyes/Eyes_blue.svg";
+import Eyes_brown from "./Eyes/Eyes_brown.svg";
+import Eyes_amber from "./Eyes/Eyes_amber.svg";
+import Eyes_grey from "./Eyes/Eyes_grey.svg";
+import Eyes_red from "./Eyes/Eyes_red.svg";
+import Eyes_violet from "./Eyes/Eyes_violet.svg";
+import Eyes_black from "./Eyes/Eyes_black.svg";
 import EmptyArea from "./Empty_area.svg";
 import Glasses from "./Glasses_1.svg";
+import Eyebrows_ginger from './Eyebrows/Eyebrows_ginger.svg'
+import Eyebrows_brown from './Eyebrows/Eyebrows_brown.svg'
 
 const AvatarGenerator = () => {
   const [hairCounter, setHairCounter] = useState(3);
   const [eyesCounter, setEyesCounter] = useState(1);
+  const [eyeBrowsCounter, setEyesBrowsCounter] = useState(1);
   const [glassesCounter, setGlassesCounter] = useState(2);
   const [lipsCounter, setLipsCounter] = useState(2);
   const [backgroundCounter, setBackgroundCounter] = useState(1);
@@ -66,13 +74,17 @@ const AvatarGenerator = () => {
     if (counter === 1) return Eyes_green;
     else if (counter === 2) return Eyes_blue;
     else if (counter === 3) return Eyes_brown;
+    else if (counter === 4) return Eyes_grey;
+    else if (counter === 5) return Eyes_red;
+    else if (counter === 6) return Eyes_black;
+    else if (counter === 7) return Eyes_violet;
+    else if (counter === 8) return Eyes_amber;
     return null;
   };
 
   const setGlasses = counter => {
     if (counter === 1) return EmptyArea;
     else if (counter === 2) return Glasses;
-    // else if (counter === 3) return Eyes_brown;
     return null;
   };
 
@@ -80,6 +92,13 @@ const AvatarGenerator = () => {
     if (counter === 1) return Lips_1;
     else if (counter === 2) return Lips_2;
     else if (counter === 3) return Lips_3;
+    return null;
+  };
+
+  const setEyebrows = counter => {
+    if (counter === 1) return Eyebrows_ginger;
+    else if (counter === 2) return Eyebrows_brown;
+    // else if (counter === 3) return Lips_3;
     return null;
   };
 
@@ -101,8 +120,9 @@ const AvatarGenerator = () => {
   return (
     <div>
       <h1 className='text-center mb-3 mt-3'>
-        Avatar Generator <span className='badge badge-info'>v. Alpha 0.8</span>
+        Avatar Generator <span className='badge badge-info'>version 0.9</span>
       </h1>
+      <h6 className='text-center'>Currently in early stage of development</h6>
       <div className='row'>
         <div className='col-md-5 text-center'>
           <h5>Avatar:</h5>
@@ -110,8 +130,8 @@ const AvatarGenerator = () => {
             <img
               src={Avatar}
               style={{
-                width: "95%",
-                height: "95%",
+                width: "100%",
+                height: "100%",
                 zIndex: 1,
                 position: "absolute"
               }}
@@ -121,8 +141,8 @@ const AvatarGenerator = () => {
             <img
               src={setGlasses(glassesCounter)}
               style={{
-                width: "95%",
-                height: "95%",
+                width: "100%",
+                height: "100%",
                 zIndex: 4,
                 position: "absolute"
               }}
@@ -132,19 +152,30 @@ const AvatarGenerator = () => {
             <img
               src={setEyes(eyesCounter)}
               style={{
-                width: "95%",
-                height: "95%",
+                width: "100%",
+                height: "100%",
                 zIndex: 3,
-                position: "relative"
+                position: "absolute"
               }}
               className='img-fluid'
               alt='Responsive'
             />
             <img
+                src={setEyebrows(eyeBrowsCounter)}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  zIndex: 3,
+                  position: "absolute"
+                }}
+                className='img-fluid'
+                alt='Responsive'
+            />
+            <img
               src={setHair(hairCounter)}
               style={{
-                width: "95%",
-                height: "95%",
+                width: "100%",
+                height: "100%",
                 zIndex: 5,
                 position: "absolute"
               }}
@@ -154,19 +185,19 @@ const AvatarGenerator = () => {
             <img
               src={setLips(lipsCounter)}
               style={{
-                width: "95%",
-                height: "95%",
+                width: "100%",
+                height: "100%",
                 zIndex: 2,
                 position: "absolute"
               }}
               className='img-fluid'
-              alt='Responsive'
+              alt='static'
             />
             <img
               src={setBackground(backgroundCounter)}
               style={{
-                width: "95%",
-                height: "95%",
+                width: "100%",
+                height: "100%",
                 zIndex: 0,
                 position: "absolute"
               }}
@@ -176,7 +207,6 @@ const AvatarGenerator = () => {
           </div>
         </div>
         <div className='col-md-7 text-center'>
-          <p className='text-center'>Currently in early stage of development</p>
           <div className='container-fluid text-center'>
             <div className='mb-2'>
               <p className='card-title'>
@@ -202,11 +232,11 @@ const AvatarGenerator = () => {
               </p>
               <button
                 className='btn btn-secondary mr-1'
-                onClick={() => count(eyesCounter, setEyesCounter,3, false)}
+                onClick={() => count(eyesCounter, setEyesCounter,8, false)}
               >
                 <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
               </button>
-              <button className='btn btn-secondary mr-1' onClick={() => count(eyesCounter, setEyesCounter,3, true)}>
+              <button className='btn btn-secondary mr-1' onClick={() => count(eyesCounter, setEyesCounter,8, true)}>
                 <img
                   src={ArrowRight}
                   style={{ width: "24px" }}
@@ -232,6 +262,27 @@ const AvatarGenerator = () => {
                   src={ArrowRight}
                   style={{ width: "24px" }}
                   alt='Right'
+                />
+              </button>
+            </div>
+            <div className='mb-2'>
+              <p className='card-title'>
+                <span className='badge badge-primary'>Change Eyebrows</span>
+              </p>
+              <button
+                  className='btn btn-secondary mr-1'
+                  onClick={() => count(eyeBrowsCounter, setEyesBrowsCounter, 2, false)}
+              >
+                <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
+              </button>
+              <button
+                  className='btn btn-secondary mr-1'
+                  onClick={() => count(eyeBrowsCounter, setEyesBrowsCounter, 2, false)}
+              >
+                <img
+                    src={ArrowRight}
+                    style={{ width: "24px" }}
+                    alt='Right'
                 />
               </button>
             </div>
