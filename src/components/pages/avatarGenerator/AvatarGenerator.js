@@ -40,6 +40,11 @@ import Eyebrows_ginger from './Eyebrows/Eyebrows_ginger.svg'
 import Eyebrows_brown from './Eyebrows/Eyebrows_brown.svg'
 import Skin_Tone_2 from './Skin_tone_2.svg'
 import Skin_Tone_3 from './Skin_tone_3.svg'
+import Skin_Tone_4 from './Skin_tone_4.svg'
+import Skin_Tone_5 from './Skin_tone_5.svg'
+import Skin_Tone_6 from './Skin_tone_6.svg'
+import Skin_Tone_7 from './Skin_tone_7.svg'
+import Skin_Tone_8 from './Skin_tone_8.svg'
 
 const AvatarGenerator = () => {
   const [hairCounter, setHairCounter] = useState(3);
@@ -129,6 +134,11 @@ const AvatarGenerator = () => {
         if (counter === 1) return Avatar;
         else if (counter === 2) return Skin_Tone_2;
         else if (counter === 3) return Skin_Tone_3;
+        else if (counter === 4) return Skin_Tone_4;
+        else if (counter === 5) return Skin_Tone_5;
+        else if (counter === 6) return Skin_Tone_6;
+        else if (counter === 7) return Skin_Tone_7;
+        else if (counter === 8) return Skin_Tone_8;
         return null;
     };
 
@@ -394,13 +404,13 @@ const AvatarGenerator = () => {
                 </p>
                 <button
                     className='btn btn-secondary mr-1'
-                    onClick={() => count(skinToneCounter, setSkinToneCounter, 3, false)}
+                    onClick={() => count(skinToneCounter, setSkinToneCounter, 8, false)}
                 >
                     <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
                 </button>
                 <button
                     className='btn btn-secondary mr-1'
-                    onClick={() => count(skinToneCounter, setSkinToneCounter, 3, true)}
+                    onClick={() => count(skinToneCounter, setSkinToneCounter, 8, true)}
                 >
                     <img
                         src={ArrowRight}
