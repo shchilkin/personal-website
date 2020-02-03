@@ -45,7 +45,7 @@ const NavBar = () => {
         <div className='navbar-collapse collapse' id='navbarNavAltMarkup'>
           <ul className='navbar-nav mr-auto'>
             <Link className='nav-item nav-link' to='/projects'>
-              Small Projets
+              Small Projects
             </Link>
             <Link className='nav-item nav-link' to='/AvatarGenerator'>
               Avatar Generator

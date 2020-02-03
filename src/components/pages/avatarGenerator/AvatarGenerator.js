@@ -47,6 +47,7 @@ import Skin_Tone_7 from './Skin_tone_7.svg';
 import Skin_Tone_8 from './Skin_tone_8.svg';
 
 const AvatarGenerator = () => {
+  // initial State
   const [hairCounter, setHairCounter] = useState(2);
   const [eyesCounter, setEyesCounter] = useState(0);
   const [eyeBrowsCounter, setEyesBrowsCounter] = useState(0);
