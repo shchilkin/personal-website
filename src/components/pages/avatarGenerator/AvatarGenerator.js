@@ -168,7 +168,7 @@ const AvatarGenerator = () => {
                   style={{
                       width: "100%",
                       height: "100%",
-                      zIndex: 4,
+                      zIndex: 2,
                       position: "absolute"
                   }}
                   className='img-fluid'
@@ -205,11 +205,11 @@ const AvatarGenerator = () => {
               </p>
               <button
                 className='btn btn-secondary mr-1'
-                onClick={() => count(hairCounter, setHairCounter,4, false)}
+                onClick={() => count(hairCounter, setHairCounter, hairArray.length, false)}
               >
                 <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
               </button>
-                <button className='btn btn-secondary mr-1' onClick={() => count(hairCounter, setHairCounter,4, true)}>
+                <button className='btn btn-secondary mr-1' onClick={() => count(hairCounter, setHairCounter, hairArray.length, true)}>
                 <img
                   src={ArrowRight}
                   style={{ width: "24px" }}
@@ -223,11 +223,11 @@ const AvatarGenerator = () => {
               </p>
               <button
                 className='btn btn-secondary mr-1'
-                onClick={() => count(eyesCounter, setEyesCounter,8, false)}
+                onClick={() => count(eyesCounter, setEyesCounter,eyesArray.length, false)}
               >
                 <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
               </button>
-              <button className='btn btn-secondary mr-1' onClick={() => count(eyesCounter, setEyesCounter,8, true)}>
+              <button className='btn btn-secondary mr-1' onClick={() => count(eyesCounter, setEyesCounter,eyesArray.length, true)}>
                 <img
                   src={ArrowRight}
                   style={{ width: "24px" }}
@@ -241,13 +241,13 @@ const AvatarGenerator = () => {
               </p>
               <button
                 className='btn btn-secondary mr-1'
-                onClick={() => count(glassesCounter, setGlassesCounter,2, false)}
+                onClick={() => count(glassesCounter, setGlassesCounter, glassesArray.length, false)}
               >
                 <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
               </button>
               <button
                 className='btn btn-secondary mr-1'
-                onClick={() => count(glassesCounter, setGlassesCounter,2, true)}
+                onClick={() => count(glassesCounter, setGlassesCounter, glassesArray.length, true)}
               >
                 <img
                   src={ArrowRight}
@@ -262,13 +262,13 @@ const AvatarGenerator = () => {
               </p>
               <button
                   className='btn btn-secondary mr-1'
-                  onClick={() => count(eyeBrowsCounter, setEyesBrowsCounter, 2, false)}
+                  onClick={() => count(eyeBrowsCounter, setEyesBrowsCounter, eyebrowsArray.length, false)}
               >
                 <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
               </button>
               <button
                   className='btn btn-secondary mr-1'
-                  onClick={() => count(eyeBrowsCounter, setEyesBrowsCounter, 2, false)}
+                  onClick={() => count(eyeBrowsCounter, setEyesBrowsCounter, eyebrowsArray.length, false)}
               >
                 <img
                     src={ArrowRight}
@@ -283,11 +283,11 @@ const AvatarGenerator = () => {
               </p>
               <button
                 className='btn btn-secondary mr-1'
-                onClick={() => count(lipsCounter, setLipsCounter,3, false)}
+                onClick={() => count(lipsCounter, setLipsCounter,lipsArray.length, false)}
               >
                 <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
               </button>
-              <button className='btn btn-secondary mr-1' onClick={() => count(lipsCounter, setLipsCounter,3, true)}>
+              <button className='btn btn-secondary mr-1' onClick={() => count(lipsCounter, setLipsCounter, lipsArray.length, true)}>
                 <img
                   src={ArrowRight}
                   style={{ width: "24px" }}
@@ -303,13 +303,13 @@ const AvatarGenerator = () => {
             </p>
             <button
                 className='btn btn-secondary mr-1'
-                onClick={() => count(backgroundCounter, setBackgroundCounter, 10, false)}
+                onClick={() => count(backgroundCounter, setBackgroundCounter, backgroundArray.length, false)}
             >
               <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
             </button>
             <button
                 className='btn btn-secondary mr-1'
-                onClick={() => count(backgroundCounter, setBackgroundCounter, 10, true)}
+                onClick={() => count(backgroundCounter, setBackgroundCounter, backgroundArray.length, true)}
             >
               <img
                   src={ArrowRight}
@@ -324,13 +324,13 @@ const AvatarGenerator = () => {
                 </p>
                 <button
                     className='btn btn-secondary mr-1'
-                    onClick={() => count(clothesCounter, setClothesCounter, 8, false)}
+                    onClick={() => count(clothesCounter, setClothesCounter, clothesArray.length, false)}
                 >
                     <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
                 </button>
                 <button
                     className='btn btn-secondary mr-1'
-                    onClick={() => count(clothesCounter, setClothesCounter, 8, true)}
+                    onClick={() => count(clothesCounter, setClothesCounter, clothesArray.length, true)}
                 >
                     <img
                         src={ArrowRight}
@@ -345,13 +345,13 @@ const AvatarGenerator = () => {
                 </p>
                 <button
                     className='btn btn-secondary mr-1'
-                    onClick={() => count(skinToneCounter, setSkinToneCounter, 8, false)}
+                    onClick={() => count(skinToneCounter, setSkinToneCounter, skinToneArray.length, false)}
                 >
                     <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
                 </button>
                 <button
                     className='btn btn-secondary mr-1'
-                    onClick={() => count(skinToneCounter, setSkinToneCounter, 8, true)}
+                    onClick={() => count(skinToneCounter, setSkinToneCounter, skinToneArray.length, true)}
                 >
                     <img
                         src={ArrowRight}
