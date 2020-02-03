@@ -1,5 +1,4 @@
 import React, { useState, Fragment} from "react";
-import Avatar from "./Avatars-4.2.svg";
 import ArrowRight from "../../../icons/ArrowRight.svg";
 import ArrowLeft from "../../../icons/ArrowLeft.svg";
 import Hair_1 from "./Hair_1.svg";
@@ -18,14 +17,14 @@ import Background_7 from "./Background_7.svg";
 import Background_8 from "./Background_8.svg";
 import Background_9 from "./Background_9.svg";
 import Background_10 from "./Background_10.svg";
-import TShirt_golden from './Clothes/T-shirt_golden.svg'
-import TShirt_skyblue from './Clothes/T-shirt_skyblue.svg'
-import TShirt_green from './Clothes/T-shirt_green.svg'
-import TShirt_light from './Clothes/T-shirt_light.svg'
-import TShirt_dark from './Clothes/T-shirt_dark.svg'
-import TShirt_pink from './Clothes/T-shirt_pink.svg'
-import TShirt_rose from './Clothes/T-shirt_rose.svg'
-import TShirt_brown from './Clothes/T-shirt_brown.svg'
+import TShirt_golden from './Clothes/T-shirt_golden.svg';
+import TShirt_skyblue from './Clothes/T-shirt_skyblue.svg';
+import TShirt_green from './Clothes/T-shirt_green.svg';
+import TShirt_light from './Clothes/T-shirt_light.svg';
+import TShirt_dark from './Clothes/T-shirt_dark.svg';
+import TShirt_pink from './Clothes/T-shirt_pink.svg';
+import TShirt_rose from './Clothes/T-shirt_rose.svg';
+import TShirt_brown from './Clothes/T-shirt_brown.svg';
 import Eyes_green from "./Eyes/Eyes_green.svg";
 import Eyes_blue from "./Eyes/Eyes_blue.svg";
 import Eyes_brown from "./Eyes/Eyes_brown.svg";
@@ -36,125 +35,67 @@ import Eyes_violet from "./Eyes/Eyes_violet.svg";
 import Eyes_black from "./Eyes/Eyes_black.svg";
 import EmptyArea from "./Empty_area.svg";
 import Glasses from "./Glasses_1.svg";
-import Eyebrows_ginger from './Eyebrows/Eyebrows_ginger.svg'
-import Eyebrows_brown from './Eyebrows/Eyebrows_brown.svg'
-import Skin_Tone_2 from './Skin_tone_2.svg'
-import Skin_Tone_3 from './Skin_tone_3.svg'
-import Skin_Tone_4 from './Skin_tone_4.svg'
-import Skin_Tone_5 from './Skin_tone_5.svg'
-import Skin_Tone_6 from './Skin_tone_6.svg'
-import Skin_Tone_7 from './Skin_tone_7.svg'
-import Skin_Tone_8 from './Skin_tone_8.svg'
+import Eyebrows_ginger from './Eyebrows/Eyebrows_ginger.svg';
+import Eyebrows_brown from './Eyebrows/Eyebrows_brown.svg';
+import Skin_Tone_1 from "./Avatars-4.2.svg";
+import Skin_Tone_2 from './Skin_tone_2.svg';
+import Skin_Tone_3 from './Skin_tone_3.svg';
+import Skin_Tone_4 from './Skin_tone_4.svg';
+import Skin_Tone_5 from './Skin_tone_5.svg';
+import Skin_Tone_6 from './Skin_tone_6.svg';
+import Skin_Tone_7 from './Skin_tone_7.svg';
+import Skin_Tone_8 from './Skin_tone_8.svg';
 
 const AvatarGenerator = () => {
-  const [hairCounter, setHairCounter] = useState(3);
-  const [eyesCounter, setEyesCounter] = useState(1);
-  const [eyeBrowsCounter, setEyesBrowsCounter] = useState(1);
-  const [glassesCounter, setGlassesCounter] = useState(2);
-  const [lipsCounter, setLipsCounter] = useState(2);
-  const [backgroundCounter, setBackgroundCounter] = useState(1);
-  const [clothesCounter, setClothesCounter] = useState(1);
-    const [skinToneCounter, setSkinToneCounter] = useState(1);
+  const [hairCounter, setHairCounter] = useState(2);
+  const [eyesCounter, setEyesCounter] = useState(0);
+  const [eyeBrowsCounter, setEyesBrowsCounter] = useState(0);
+  const [glassesCounter, setGlassesCounter] = useState(1);
+  const [lipsCounter, setLipsCounter] = useState(1);
+  const [backgroundCounter, setBackgroundCounter] = useState(0);
+  const [clothesCounter, setClothesCounter] = useState(0);
+  const [skinToneCounter, setSkinToneCounter] = useState(0);
 
-  //Count up function
-  // isCountUp = true => Count up, false => count down
+  //    Feature Arrays
+  const skinToneArray = [Skin_Tone_1, Skin_Tone_2, Skin_Tone_3, Skin_Tone_4,
+        Skin_Tone_5, Skin_Tone_6, Skin_Tone_7, Skin_Tone_8];
+  const glassesArray = [Glasses, EmptyArea];
+  const hairArray = [Hair_1, Hair_2, Hair_3, EmptyArea];
+  const eyesArray = [Eyes_green, Eyes_blue, Eyes_grey, Eyes_violet, Eyes_brown,
+        Eyes_amber, Eyes_red, Eyes_black];
+  const lipsArray = [Lips_1, Lips_2, Lips_3];
+  const backgroundArray = [Background_1, Background_2, Background_3, Background_4, Background_5,
+        Background_6, Background_7, Background_8, Background_9, Background_10];
+  const clothesArray = [TShirt_golden, TShirt_skyblue, TShirt_green, TShirt_pink,
+        TShirt_rose, TShirt_light, TShirt_dark, TShirt_brown];
+  const eyebrowsArray = [Eyebrows_ginger ,Eyebrows_brown];
+
+  //  Count function  | isCountUp = true => Count up, false => count down
   function count(counterName, setCounter, itemsQuantity, isCountUp) {
     if (isCountUp){
       let Counter = counterName;
-      if (Counter < itemsQuantity) {
+      if (Counter < itemsQuantity-1) {
         Counter += 1;
       } else {
-        Counter = 1;
+        Counter = 0;
       }
       setCounter(Counter);
     } else {
       let Counter = counterName;
-      if (Counter > 1) {
+      if (Counter > 0) {
         Counter -= 1;
       } else {
-        Counter = itemsQuantity;
+        Counter = itemsQuantity-1;
       }
       setCounter(Counter);
     }
   }
 
-  //  Set Feature functions
-  const setHair = counter => {
-    if (counter === 1) return Hair_1;
-    else if (counter === 2) return Hair_2;
-    else if (counter === 3) return Hair_3;
-    else if (counter === 4) return EmptyArea;
-    return null;
-  };
-
-  const setEyes = counter => {
-    if (counter === 1) return Eyes_green;
-    else if (counter === 2) return Eyes_blue;
-    else if (counter === 3) return Eyes_brown;
-    else if (counter === 4) return Eyes_grey;
-    else if (counter === 5) return Eyes_red;
-    else if (counter === 6) return Eyes_black;
-    else if (counter === 7) return Eyes_violet;
-    else if (counter === 8) return Eyes_amber;
-    return null;
-  };
-
-  const setGlasses = counter => {
-    if (counter === 1) return EmptyArea;
-    else if (counter === 2) return Glasses;
-    return null;
-  };
-
-  const setLips = counter => {
-    if (counter === 1) return Lips_1;
-    else if (counter === 2) return Lips_2;
-    else if (counter === 3) return Lips_3;
-    return null;
-  };
-
-  const setEyebrows = counter => {
-    if (counter === 1) return Eyebrows_ginger;
-    else if (counter === 2) return Eyebrows_brown;
-    return null;
-  };
-
-  const setClothes = counter => {
-    if (counter === 1) return TShirt_golden;
-    else if (counter === 2) return TShirt_skyblue;
-    else if (counter === 3) return TShirt_green;
-    else if (counter === 4) return TShirt_pink;
-    else if (counter === 5) return TShirt_rose;
-    else if (counter === 6) return TShirt_light;
-    else if (counter === 7) return TShirt_dark;
-    else if (counter === 8) return TShirt_brown;
-    return null;
-  };
-
-  const setSkinTone = counter => {
-        if (counter === 1) return Avatar;
-        else if (counter === 2) return Skin_Tone_2;
-        else if (counter === 3) return Skin_Tone_3;
-        else if (counter === 4) return Skin_Tone_4;
-        else if (counter === 5) return Skin_Tone_5;
-        else if (counter === 6) return Skin_Tone_6;
-        else if (counter === 7) return Skin_Tone_7;
-        else if (counter === 8) return Skin_Tone_8;
-        return null;
-    };
-
-  const setBackground = counter => {
-        if (counter === 1) return Background_1;
-        else if (counter === 2) return Background_2;
-        else if (counter === 3) return Background_3;
-        else if (counter === 4) return Background_4;
-        else if (counter === 5) return Background_5;
-        else if (counter === 6) return Background_6;
-        else if (counter === 7) return Background_7;
-        else if (counter === 8) return Background_8;
-        else if (counter === 9) return Background_9;
-        else if (counter === 10) return Background_10;
-        return null;
-    };
+  //    Set Feature function chooses image to display
+  function setFeature(counter, partsArray) {
+    if (partsArray.indexOf(partsArray[counter]) === counter){
+        return partsArray[counter]}
+  }
 
   //Render
   return (
@@ -168,7 +109,7 @@ const AvatarGenerator = () => {
           <h5>Avatar:</h5>
           <div className='row d-flex justify-content-center' style={{height:'100%', minHeight:'250px'}}>
             <img
-                src={setSkinTone(skinToneCounter)}
+                src={setFeature(skinToneCounter, skinToneArray)}
                 style={{
                   width: "100%",
                   height: "100%",
@@ -179,7 +120,7 @@ const AvatarGenerator = () => {
                 alt='Responsive'
             />
             <img
-                src={setGlasses(glassesCounter)}
+                src={setFeature(glassesCounter,glassesArray)}
                 style={{
                   width: "100%",
                   height: "100%",
@@ -190,7 +131,7 @@ const AvatarGenerator = () => {
                 alt='Responsive'
             />
             <img
-                src={setEyes(eyesCounter)}
+                src={setFeature(eyesCounter, eyesArray)}
                 style={{
                   width: "100%",
                   height: "100%",
@@ -201,7 +142,7 @@ const AvatarGenerator = () => {
                 alt='Responsive'
             />
             <img
-                src={setEyebrows(eyeBrowsCounter)}
+                src={setFeature(eyeBrowsCounter, eyebrowsArray)}
                 style={{
                   width: "100%",
                   height: "100%",
@@ -212,7 +153,7 @@ const AvatarGenerator = () => {
                 alt='Responsive'
             />
             <img
-                src={setHair(hairCounter)}
+                src={setFeature(hairCounter, hairArray)}
                 style={{
                   width: "100%",
                   height: "100%",
@@ -223,7 +164,7 @@ const AvatarGenerator = () => {
                 alt='Responsive'
             />
               <img
-                  src={setClothes(clothesCounter)}
+                  src={setFeature(clothesCounter, clothesArray)}
                   style={{
                       width: "100%",
                       height: "100%",
@@ -234,7 +175,7 @@ const AvatarGenerator = () => {
                   alt='Responsive'
               />
             <img
-                src={setLips(lipsCounter)}
+                src={setFeature(lipsCounter, lipsArray)}
                 style={{
                   width: "100%",
                   height: "100%",
@@ -245,7 +186,7 @@ const AvatarGenerator = () => {
                 alt='static'
             />
             <img
-                src={setBackground(backgroundCounter)}
+                src={setFeature(backgroundCounter, backgroundArray)}
                 style={{
                   width: "100%",
                   height: "100%",
