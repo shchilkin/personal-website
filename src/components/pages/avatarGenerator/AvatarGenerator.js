@@ -38,6 +38,8 @@ import EmptyArea from "./Empty_area.svg";
 import Glasses from "./Glasses_1.svg";
 import Eyebrows_ginger from './Eyebrows/Eyebrows_ginger.svg'
 import Eyebrows_brown from './Eyebrows/Eyebrows_brown.svg'
+import Skin_Tone_2 from './Skin_tone_2.svg'
+import Skin_Tone_3 from './Skin_tone_3.svg'
 
 const AvatarGenerator = () => {
   const [hairCounter, setHairCounter] = useState(3);
@@ -47,6 +49,7 @@ const AvatarGenerator = () => {
   const [lipsCounter, setLipsCounter] = useState(2);
   const [backgroundCounter, setBackgroundCounter] = useState(1);
   const [clothesCounter, setClothesCounter] = useState(1);
+    const [skinToneCounter, setSkinToneCounter] = useState(1);
 
   //Count up function
   // isCountUp = true => Count up, false => count down
@@ -122,7 +125,14 @@ const AvatarGenerator = () => {
     return null;
   };
 
-    const setBackground = counter => {
+  const setSkinTone = counter => {
+        if (counter === 1) return Avatar;
+        else if (counter === 2) return Skin_Tone_2;
+        else if (counter === 3) return Skin_Tone_3;
+        return null;
+    };
+
+  const setBackground = counter => {
         if (counter === 1) return Background_1;
         else if (counter === 2) return Background_2;
         else if (counter === 3) return Background_3;
@@ -140,7 +150,7 @@ const AvatarGenerator = () => {
   return (
     <Fragment>
       <h1 className='text-center mb-3 mt-3'>
-        Avatar Generator <span className='badge badge-info'>version 0.11</span>
+        Avatar Generator <span className='badge badge-info'>version 0.12</span>
       </h1>
       <h6 className='text-center'>Currently in early stage of development</h6>
       <div className='row'>
@@ -148,7 +158,7 @@ const AvatarGenerator = () => {
           <h5>Avatar:</h5>
           <div className='row d-flex justify-content-center' style={{height:'100%', minHeight:'250px'}}>
             <img
-                src={Avatar}
+                src={setSkinTone(skinToneCounter)}
                 style={{
                   width: "100%",
                   height: "100%",
@@ -370,6 +380,27 @@ const AvatarGenerator = () => {
                 <button
                     className='btn btn-secondary mr-1'
                     onClick={() => count(clothesCounter, setClothesCounter, 8, true)}
+                >
+                    <img
+                        src={ArrowRight}
+                        style={{ width: "24px" }}
+                        alt='Right'
+                    />
+                </button>
+            </div>
+            <div className='mb-2'>
+                <p className='card-title'>
+                    <span className='badge badge-secondary'>Change Skin tone</span>
+                </p>
+                <button
+                    className='btn btn-secondary mr-1'
+                    onClick={() => count(skinToneCounter, setSkinToneCounter, 3, false)}
+                >
+                    <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
+                </button>
+                <button
+                    className='btn btn-secondary mr-1'
+                    onClick={() => count(skinToneCounter, setSkinToneCounter, 3, true)}
                 >
                     <img
                         src={ArrowRight}
