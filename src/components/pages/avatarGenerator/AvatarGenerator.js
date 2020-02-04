@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ArrowRight from "../../../icons/ArrowRight.svg";
-import ArrowLeft from "../../../icons/ArrowLeft.svg";
+import ArrowRight from "../../../icons/arrow-right.svg";
+import ArrowLeft from "../../../icons/arrow-left.svg";
 import Hair_1 from "./Hair_1.svg";
 import Hair_2 from "./Hair_2.svg";
 import Hair_3 from "./Hair_3.svg";
