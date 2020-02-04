@@ -108,11 +108,12 @@ const AvatarGenerator = () => {
       </h1>
       <h6 className='text-center'>Currently in early stage of development</h6>
       <div className='row' style={{marginRight:'0px', marginLeft:'0px'}}>
-        <div className='col-lg-8 text-center mb-5'>
+        <div className='col-md-8 text-center mb-5'>
           <h5>Avatar:</h5>
             <Container>
           <div className='d-flex justify-content-center' style={{height:'100%', minHeight:'250px'}}>
             <img
+                className='img-fluid'
                 src={setFeature(skinToneCounter, skinToneArray)}
                 style={{
                   height: "100%",
@@ -122,6 +123,7 @@ const AvatarGenerator = () => {
                 alt='Responsive'
             />
             <img
+                className='img-fluid'
                 src={setFeature(glassesCounter,glassesArray)}
                 style={{
                   height: "100%",
@@ -131,6 +133,7 @@ const AvatarGenerator = () => {
                 alt='Responsive'
             />
             <img
+                className='img-fluid'
                 src={setFeature(eyesCounter, eyesArray)}
                 style={{
                   height: "100%",
@@ -140,6 +143,7 @@ const AvatarGenerator = () => {
                 alt='Responsive'
             />
             <img
+                className='img-fluid'
                 src={setFeature(eyeBrowsCounter, eyebrowsArray)}
                 style={{
                   height: "100%",
@@ -149,6 +153,7 @@ const AvatarGenerator = () => {
                 alt='Responsive'
             />
             <img
+                className='img-fluid'
                 src={setFeature(hairCounter, hairArray)}
                 style={{
                   height: "100%",
@@ -158,6 +163,7 @@ const AvatarGenerator = () => {
                 alt='Responsive'
             />
               <img
+                  className='img-fluid'
                   src={setFeature(clothesCounter, clothesArray)}
                   style={{
                       height: "100%",
@@ -167,6 +173,7 @@ const AvatarGenerator = () => {
                   alt='Responsive'
               />
             <img
+                className='img-fluid'
                 src={setFeature(lipsCounter, lipsArray)}
                 style={{
                   height: "100%",
@@ -176,6 +183,7 @@ const AvatarGenerator = () => {
                 alt='static'
             />
             <img
+                className='img-fluid'
                 src={setFeature(backgroundCounter, backgroundArray)}
                 style={{
                   height: "100%",
@@ -187,7 +195,7 @@ const AvatarGenerator = () => {
           </div>
             </Container>
         </div>
-        <div className='col-lg-2 text-center'>
+        <div className='col-sm-2 text-center'>
             <div className='mb-2'>
               <p className='card-title'><span className='badge badge-danger'>Change Hairstyle</span></p>
                 <Button onClick={() => count(hairCounter, setHairCounter, hairArray.length, false)} image={ArrowLeft}/>
@@ -214,7 +222,7 @@ const AvatarGenerator = () => {
                 <Button onClick={() => count(lipsCounter, setLipsCounter,lipsArray.length, true)} image={ArrowRight}/>
             </div>
           </div>
-        <div className='col-lg-2 text-center'>
+        <div className='col-sm-2 text-center'>
           <div className='mb-2'>
             <p className='card-title'><span className='badge badge-danger'>Change Background</span></p>
               <Button onClick={() => count(backgroundCounter, setBackgroundCounter, backgroundArray.length, false)} image={ArrowLeft}/>
