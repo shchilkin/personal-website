@@ -108,7 +108,7 @@ const AvatarGenerator = () => {
       </h1>
       <h6 className='text-center'>Currently in early stage of development</h6>
       <div className='row' style={{marginRight:'0px', marginLeft:'0px'}}>
-        <div className='col-lg-4 text-center mb-5'>
+        <div className='col-lg-8 text-center mb-5'>
           <h5>Avatar:</h5>
             <Container>
           <div className='d-flex justify-content-center' style={{height:'100%', minHeight:'250px'}}>
