@@ -106,10 +106,10 @@ const AvatarGenerator = () => {
         Avatar Generator <span className='badge badge-info'>version 0.13</span>
       </h1>
       <h6 className='text-center'>Currently in early stage of development</h6>
-      <div className='row'>
-        <div className='col-lg-6 text-center mb-5'>
+      <div className='row' style={{marginRight:'0px', marginLeft:'0px'}}>
+        <div className='col-lg-5 text-center mb-5' style={{paddingRight: '0px', paddingLeft:'0px'}}>
           <h5>Avatar:</h5>
-          <div className='row d-flex justify-content-center' style={{height:'100%', minHeight:'250px'}}>
+          <div className='d-flex justify-content-center' style={{height:'100%', minHeight:'250px'}}>
             <img
                 src={setFeature(skinToneCounter, skinToneArray)}
                 style={{
