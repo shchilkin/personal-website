@@ -1,4 +1,4 @@
-import React, { useState, Fragment} from "react";
+import React, { useState } from "react";
 import ArrowRight from "../../../icons/ArrowRight.svg";
 import ArrowLeft from "../../../icons/ArrowLeft.svg";
 import Hair_1 from "./Hair_1.svg";
@@ -45,6 +45,7 @@ import Skin_Tone_5 from './Skin_tone_5.svg';
 import Skin_Tone_6 from './Skin_tone_6.svg';
 import Skin_Tone_7 from './Skin_tone_7.svg';
 import Skin_Tone_8 from './Skin_tone_8.svg';
+import Button from "../../Layout/Button/Button.component";
 
 const AvatarGenerator = () => {
   // initial State
@@ -100,9 +101,9 @@ const AvatarGenerator = () => {
 
   //Render
   return (
-    <Fragment>
-      <h1 className='text-center mb-3 mt-3'>
-        Avatar Generator <span className='badge badge-info'>version 0.12</span>
+    <div style={{background:'#F0F0F0'}}>
+      <h1 className='text-center pb-3 pt-3'>
+        Avatar Generator <span className='badge badge-info'>version 0.13</span>
       </h1>
       <h6 className='text-center'>Currently in early stage of development</h6>
       <div className='row'>
@@ -201,172 +202,53 @@ const AvatarGenerator = () => {
         </div>
         <div className='col-lg-2 text-center'>
             <div className='mb-2'>
-              <p className='card-title'>
-                <span className='badge badge-danger'>Change Hairstyle</span>
-              </p>
-              <button
-                className='btn btn-secondary mr-1'
-                onClick={() => count(hairCounter, setHairCounter, hairArray.length, false)}
-              >
-                <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
-              </button>
-                <button className='btn btn-secondary mr-1' onClick={() => count(hairCounter, setHairCounter, hairArray.length, true)}>
-                <img
-                  src={ArrowRight}
-                  style={{ width: "24px" }}
-                  alt='Right'
-                />
-              </button>
+              <p className='card-title'><span className='badge badge-danger'>Change Hairstyle</span></p>
+                <Button onClick={() => count(hairCounter, setHairCounter, hairArray.length, false)} image={ArrowLeft}/>
+                <Button onClick={() => count(hairCounter, setHairCounter, hairArray.length, true)} image={ArrowRight}/>
             </div>
             <div className='mb-2'>
-              <p className='card-title'>
-                <span className='badge badge-warning'>Change Eye color</span>
-              </p>
-              <button
-                className='btn btn-secondary mr-1'
-                onClick={() => count(eyesCounter, setEyesCounter,eyesArray.length, false)}
-              >
-                <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
-              </button>
-              <button className='btn btn-secondary mr-1' onClick={() => count(eyesCounter, setEyesCounter,eyesArray.length, true)}>
-                <img
-                  src={ArrowRight}
-                  style={{ width: "24px" }}
-                  alt='Right'
-                />
-              </button>
+              <p className='card-title'><span className='badge badge-warning'>Change Eye color</span></p>
+             <Button onClick={() => count(eyesCounter, setEyesCounter,eyesArray.length, false)} image={ArrowLeft}/>
+             <Button onClick={() => count(eyesCounter, setEyesCounter,eyesArray.length, true)} image={ArrowRight}/>
             </div>
             <div className='mb-2'>
-              <p className='card-title'>
-                <span className='badge badge-secondary'>Change Glasses</span>
-              </p>
-              <button
-                className='btn btn-secondary mr-1'
-                onClick={() => count(glassesCounter, setGlassesCounter, glassesArray.length, false)}
-              >
-                <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
-              </button>
-              <button
-                className='btn btn-secondary mr-1'
-                onClick={() => count(glassesCounter, setGlassesCounter, glassesArray.length, true)}
-              >
-                <img
-                  src={ArrowRight}
-                  style={{ width: "24px" }}
-                  alt='Right'
-                />
-              </button>
+              <p className='card-title'><span className='badge badge-secondary'>Change Glasses</span></p>
+                <Button onClick={() => count(glassesCounter, setGlassesCounter,glassesArray.length, false)} image={ArrowLeft}/>
+                <Button onClick={() => count(glassesCounter, setGlassesCounter,glassesArray.length, true)} image={ArrowRight}/>
             </div>
             <div className='mb-2'>
-              <p className='card-title'>
-                <span className='badge badge-primary'>Change Eyebrows</span>
-              </p>
-              <button
-                  className='btn btn-secondary mr-1'
-                  onClick={() => count(eyeBrowsCounter, setEyesBrowsCounter, eyebrowsArray.length, false)}
-              >
-                <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
-              </button>
-              <button
-                  className='btn btn-secondary mr-1'
-                  onClick={() => count(eyeBrowsCounter, setEyesBrowsCounter, eyebrowsArray.length, false)}
-              >
-                <img
-                    src={ArrowRight}
-                    style={{ width: "24px" }}
-                    alt='Right'
-                />
-              </button>
+              <p className='card-title'><span className='badge badge-primary'>Change Eyebrows</span></p>
+                <Button onClick={() => count(eyeBrowsCounter, setEyesBrowsCounter, eyebrowsArray.length, false)} image={ArrowLeft}/>
+                <Button onClick={() => count(eyeBrowsCounter, setEyesBrowsCounter, eyebrowsArray.length, true)} image={ArrowRight}/>
             </div>
             <div className='mb-2'>
-              <p className='card-title'>
-                <span className='badge badge-success'>Change Lips</span>
-              </p>
-              <button
-                className='btn btn-secondary mr-1'
-                onClick={() => count(lipsCounter, setLipsCounter,lipsArray.length, false)}
-              >
-                <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
-              </button>
-              <button className='btn btn-secondary mr-1' onClick={() => count(lipsCounter, setLipsCounter, lipsArray.length, true)}>
-                <img
-                  src={ArrowRight}
-                  style={{ width: "24px" }}
-                  alt='Right'
-                />
-              </button>
+              <p className='card-title'><span className='badge badge-success'>Change Lips</span></p>
+                <Button onClick={() => count(lipsCounter, setLipsCounter,lipsArray.length, false)} image={ArrowLeft}/>
+                <Button onClick={() => count(lipsCounter, setLipsCounter,lipsArray.length, true)} image={ArrowRight}/>
             </div>
           </div>
         <div className='col-lg-2 text-center'>
           <div className='mb-2'>
-            <p className='card-title'>
-              <span className='badge badge-danger'>Change Background</span>
-            </p>
-            <button
-                className='btn btn-secondary mr-1'
-                onClick={() => count(backgroundCounter, setBackgroundCounter, backgroundArray.length, false)}
-            >
-              <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
-            </button>
-            <button
-                className='btn btn-secondary mr-1'
-                onClick={() => count(backgroundCounter, setBackgroundCounter, backgroundArray.length, true)}
-            >
-              <img
-                  src={ArrowRight}
-                  style={{ width: "24px" }}
-                  alt='Right'
-              />
-            </button>
+            <p className='card-title'><span className='badge badge-danger'>Change Background</span></p>
+              <Button onClick={() => count(backgroundCounter, setBackgroundCounter, backgroundArray.length, false)} image={ArrowLeft}/>
+              <Button onClick={() => count(backgroundCounter, setBackgroundCounter, backgroundArray.length, true)} image={ArrowRight}/>
           </div>
           <div className='mb-2'>
-                <p className='card-title'>
-                    <span className='badge badge-warning'>Change Clothes</span>
-                </p>
-                <button
-                    className='btn btn-secondary mr-1'
-                    onClick={() => count(clothesCounter, setClothesCounter, clothesArray.length, false)}
-                >
-                    <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
-                </button>
-                <button
-                    className='btn btn-secondary mr-1'
-                    onClick={() => count(clothesCounter, setClothesCounter, clothesArray.length, true)}
-                >
-                    <img
-                        src={ArrowRight}
-                        style={{ width: "24px" }}
-                        alt='Right'
-                    />
-                </button>
+              <p className='card-title'><span className='badge badge-warning'>Change Clothes</span></p>
+              <Button onClick={() => count(clothesCounter, setClothesCounter, clothesArray.length, false)} image={ArrowLeft}/>
+              <Button onClick={() => count(clothesCounter, setClothesCounter, clothesArray.length, true)} image={ArrowRight}/>
             </div>
-            <div className='mb-2'>
-                <p className='card-title'>
-                    <span className='badge badge-secondary'>Change Skin tone</span>
-                </p>
-                <button
-                    className='btn btn-secondary mr-1'
-                    onClick={() => count(skinToneCounter, setSkinToneCounter, skinToneArray.length, false)}
-                >
-                    <img src={ArrowLeft} style={{ width: "24px" }} alt='Left'/>
-                </button>
-                <button
-                    className='btn btn-secondary mr-1'
-                    onClick={() => count(skinToneCounter, setSkinToneCounter, skinToneArray.length, true)}
-                >
-                    <img
-                        src={ArrowRight}
-                        style={{ width: "24px" }}
-                        alt='Right'
-                    />
-                </button>
+          <div className='mb-2'>
+                <p className='card-title'><span className='badge badge-secondary'>Change Skin tone</span></p>
+                <Button  onClick={() => count(skinToneCounter, setSkinToneCounter, skinToneArray.length, false)} image={ArrowLeft} />
+                <Button  onClick={() => count(skinToneCounter, setSkinToneCounter, skinToneArray.length, true)} image={ArrowRight} />
             </div>
         </div>
       </div>
       <div className='container-fluid text-center'>
         <h5>Plans:</h5>
         <div className='row d-flex justify-content-center'>
-          <ul className='list-group  list-group-flush'>
+          <ul className='list-group  list-group'>
             <li className='list-group-item'>
               Add Avatar rendering (server-side)
             </li>
@@ -374,7 +256,7 @@ const AvatarGenerator = () => {
           </ul>
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 };
 

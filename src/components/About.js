@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React  from "react";
 import { Gradient } from "react-gradient";
 
 const About = () => {
@@ -13,18 +13,17 @@ const About = () => {
       duration={8000}
       angle='45deg'
     >
-      <Fragment>
-        <div className='pt-5 pb-5'>
-          <div className='d-flex justify-content-center'>
-            <h1 className='display-4 text-center'>Aleksandr Shchilkin</h1>
-          </div>
-          <div className='d-flex display-4 justify-content-center'>
-            <h1>IT Student</h1>
-          </div>
+      <div className='pt-5 pb-5'>
+        <div className='d-flex justify-content-center'>
+          <h1 className='display-4 text-center'>Aleksandr Shchilkin</h1>
         </div>
-      </Fragment>
+        <div className='d-flex display-4 justify-content-center'>
+          <h1>IT Student</h1>
+        </div>
+      </div>
     </Gradient>
   );
 };
 
 export default About;
+
