@@ -1,0 +1,11 @@
+.CRK-container {
+    width: auto;
+    height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    background: #F0F0F0;
+    border: 1px solid #F0F0F0;
+    mix-blend-mode: normal;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25), -1px -1px 4px rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+}

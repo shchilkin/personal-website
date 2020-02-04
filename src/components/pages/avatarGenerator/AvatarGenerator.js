@@ -46,6 +46,7 @@ import Skin_Tone_6 from './Skin_tone_6.svg';
 import Skin_Tone_7 from './Skin_tone_7.svg';
 import Skin_Tone_8 from './Skin_tone_8.svg';
 import Button from "../../Layout/Button/Button.component";
+import Container from "../../Layout/Container/Container.component";
 
 const AvatarGenerator = () => {
   // initial State
@@ -107,98 +108,84 @@ const AvatarGenerator = () => {
       </h1>
       <h6 className='text-center'>Currently in early stage of development</h6>
       <div className='row' style={{marginRight:'0px', marginLeft:'0px'}}>
-        <div className='col-lg-5 text-center mb-5' style={{paddingRight: '0px', paddingLeft:'0px'}}>
+        <div className='col-lg-4 text-center mb-5'>
           <h5>Avatar:</h5>
+            <Container>
           <div className='d-flex justify-content-center' style={{height:'100%', minHeight:'250px'}}>
             <img
                 src={setFeature(skinToneCounter, skinToneArray)}
                 style={{
-                  width: "100%",
                   height: "100%",
                   zIndex: 1,
                   position: "absolute"
                 }}
-                className='img-fluid'
                 alt='Responsive'
             />
             <img
                 src={setFeature(glassesCounter,glassesArray)}
                 style={{
-                  width: "100%",
                   height: "100%",
                   zIndex: 4,
                   position: "absolute"
                 }}
-                className='img-fluid'
                 alt='Responsive'
             />
             <img
                 src={setFeature(eyesCounter, eyesArray)}
                 style={{
-                  width: "100%",
                   height: "100%",
                   zIndex: 3,
                   position: "absolute"
                 }}
-                className='img-fluid'
                 alt='Responsive'
             />
             <img
                 src={setFeature(eyeBrowsCounter, eyebrowsArray)}
                 style={{
-                  width: "100%",
                   height: "100%",
                   zIndex: 3,
                   position: "absolute"
                 }}
-                className='img-fluid'
                 alt='Responsive'
             />
             <img
                 src={setFeature(hairCounter, hairArray)}
                 style={{
-                  width: "100%",
                   height: "100%",
                   zIndex: 5,
                   position: "absolute"
                 }}
-                className='img-fluid'
                 alt='Responsive'
             />
               <img
                   src={setFeature(clothesCounter, clothesArray)}
                   style={{
-                      width: "100%",
                       height: "100%",
                       zIndex: 2,
                       position: "absolute"
                   }}
-                  className='img-fluid'
                   alt='Responsive'
               />
             <img
                 src={setFeature(lipsCounter, lipsArray)}
                 style={{
-                  width: "100%",
                   height: "100%",
                   zIndex: 2,
                   position: "absolute"
                 }}
-                className='img-fluid'
                 alt='static'
             />
             <img
                 src={setFeature(backgroundCounter, backgroundArray)}
                 style={{
-                  width: "100%",
                   height: "100%",
                   zIndex: 0,
                   position: "absolute"
                 }}
-                className='img-fluid'
                 alt='Responsive'
             />
           </div>
+            </Container>
         </div>
         <div className='col-lg-2 text-center'>
             <div className='mb-2'>
