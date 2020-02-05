@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import ArrowRight from "../../../icons/arrow-right.svg";
 import ArrowLeft from "../../../icons/arrow-left.svg";
 import Hair_1 from "./Hair_1.svg";
@@ -47,11 +47,24 @@ import Skin_Tone_7 from './Skin_tone_7.svg';
 import Skin_Tone_8 from './Skin_tone_8.svg';
 import Button from "../../Layout/Button/Button.component";
 import Container from "../../Layout/Container/Container.component";
-import eye from '../../../icons/eye.svg'
+import Hair_3_brown from './Hair_3_variations/Hair_3_brown.svg'
+import Hair_3_dark from './Hair_3_variations/Hair_3_dark_brown.svg'
+import Hair_3_blond from './Hair_3_variations/Hair_3_blond.svg'
+import Hair_3_grey from './Hair_3_variations/Hair_3_grey.svg'
+import Hair_3_pink from './Hair_3_variations/Hair_3_pink.svg'
+import Hair_3_blue from './Hair_3_variations/Hair_3_blue.svg'
+import Hair_3_green from './Hair_3_variations/Hair_3_green.svg'
+import Hair_1_brown from './Hair_1_variations/Hair_1_brown.svg'
+import Hair_1_dark from './Hair_1_variations/Hair_1_dark_brown.svg'
+import Hair_1_blond from './Hair_1_variations/Hair_1_blond.svg'
+import Hair_1_grey from './Hair_1_variations/Hair_1_grey.svg'
+import Hair_1_pink from './Hair_1_variations/Hair_1_pink.svg'
+import Hair_1_blue from './Hair_1_variations/Hair_1_blue.svg'
+import Hair_1_green from './Hair_1_variations/Hair_1_green.svg'
 
 const AvatarGenerator = () => {
   // initial State
-  const [hairCounter, setHairCounter] = useState(2);
+  const [hairCounter, setHairCounter] = useState(9);
   const [eyesCounter, setEyesCounter] = useState(0);
   const [eyeBrowsCounter, setEyesBrowsCounter] = useState(0);
   const [glassesCounter, setGlassesCounter] = useState(1);
@@ -64,7 +77,9 @@ const AvatarGenerator = () => {
   const skinToneArray = [Skin_Tone_1, Skin_Tone_2, Skin_Tone_3, Skin_Tone_4,
         Skin_Tone_5, Skin_Tone_6, Skin_Tone_7, Skin_Tone_8];
   const glassesArray = [Glasses, EmptyArea];
-  const hairArray = [Hair_1, Hair_2, Hair_3, EmptyArea];
+  const hairArray = [Hair_1, Hair_1_dark, Hair_1_brown,Hair_1_blond, Hair_1_grey,
+      Hair_1_pink, Hair_1_blue, Hair_1_green, Hair_2 ,Hair_3, Hair_3_dark, Hair_3_brown,Hair_3_blond, Hair_3_grey,
+      Hair_3_pink, Hair_3_blue, Hair_3_green, EmptyArea];
   const eyesArray = [Eyes_green, Eyes_blue, Eyes_grey, Eyes_violet, Eyes_brown,
         Eyes_amber, Eyes_red, Eyes_black];
   const lipsArray = [Lips_1, Lips_2, Lips_3];
@@ -103,97 +118,97 @@ const AvatarGenerator = () => {
 
   //Render
   return (
-    <div style={{background:'#F0F0F0'}}>
+    <Fragment>
       <h1 className='text-center pt-3'>Avatar Generator</h1>
-        <h5 className='text-center'>Version <span className='badge badge-warning'>0.14</span></h5>
+        <h5 className='text-center'>Version <span className='badge badge-warning'>0.15</span></h5>
       <h6 className='text-center'>Currently in early stage of development</h6>
       <div className='row mt-4 mb-4' style={{marginRight:'0px', marginLeft:'0px'}}>
         <div className='col-md-4 text-center m3-5'>
-            <Container>
-          <div className='d-flex justify-content-center' style={{height:'100%', minHeight:'250px'}}>
-            <img
-                className='img-fluid'
-                src={setFeature(skinToneCounter, skinToneArray)}
-                style={{
-                  height: "100%",
-                  zIndex: 1,
-                  position: "absolute"
-                }}
-                alt='Responsive'
-            />
-            <img
-                className='img-fluid'
-                src={setFeature(glassesCounter,glassesArray)}
-                style={{
-                  height: "100%",
-                  zIndex: 4,
-                  position: "absolute"
-                }}
-                alt='Responsive'
-            />
-            <img
-                className='img-fluid'
-                src={setFeature(eyesCounter, eyesArray)}
-                style={{
-                  height: "100%",
-                  zIndex: 3,
-                  position: "absolute"
-                }}
-                alt='Responsive'
-            />
-            <img
-                className='img-fluid'
-                src={setFeature(eyeBrowsCounter, eyebrowsArray)}
-                style={{
-                  height: "100%",
-                  zIndex: 3,
-                  position: "absolute"
-                }}
-                alt='Responsive'
-            />
-            <img
-                className='img-fluid'
-                src={setFeature(hairCounter, hairArray)}
-                style={{
-                  height: "100%",
-                  zIndex: 5,
-                  position: "absolute"
-                }}
-                alt='Responsive'
-            />
-              <img
-                  className='img-fluid'
-                  src={setFeature(clothesCounter, clothesArray)}
-                  style={{
-                      height: "100%",
-                      zIndex: 2,
-                      position: "absolute"
-                  }}
-                  alt='Responsive'
-              />
-            <img
-                className='img-fluid'
-                src={setFeature(lipsCounter, lipsArray)}
-                style={{
-                  height: "100%",
-                  zIndex: 2,
-                  position: "absolute"
-                }}
-                alt='static'
-            />
-            <img
-                className='img-fluid'
-                src={setFeature(backgroundCounter, backgroundArray)}
-                style={{
-                  height: "100%",
-                  zIndex: 0,
-                  position: "absolute"
-                }}
-                alt='Responsive'
-            />
+              <Container>
+                  <div className='d-flex justify-content-center' style={{height:'100%', minHeight:'250px'}}>
+                      <img
+                          className='img-fluid'
+                          src={setFeature(skinToneCounter, skinToneArray)}
+                          style={{
+                              height: "100%",
+                              zIndex: 1,
+                              position: "absolute"
+                          }}
+                          alt='Responsive'
+                      />
+                      <img
+                          className='img-fluid'
+                          src={setFeature(glassesCounter,glassesArray)}
+                          style={{
+                              height: "100%",
+                              zIndex: 4,
+                              position: "absolute"
+                          }}
+                          alt='Responsive'
+                      />
+                      <img
+                          className='img-fluid'
+                          src={setFeature(eyesCounter, eyesArray)}
+                          style={{
+                              height: "100%",
+                              zIndex: 3,
+                              position: "absolute"
+                          }}
+                          alt='Responsive'
+                      />
+                      <img
+                          className='img-fluid'
+                          src={setFeature(eyeBrowsCounter, eyebrowsArray)}
+                          style={{
+                              height: "100%",
+                              zIndex: 3,
+                              position: "absolute"
+                          }}
+                          alt='Responsive'
+                      />
+                      <img
+                          className='img-fluid'
+                          src={setFeature(hairCounter, hairArray)}
+                          style={{
+                              height: "100%",
+                              zIndex: 5,
+                              position: "absolute"
+                          }}
+                          alt='Responsive'
+                      />
+                      <img
+                          className='img-fluid'
+                          src={setFeature(clothesCounter, clothesArray)}
+                          style={{
+                              height: "100%",
+                              zIndex: 2,
+                              position: "absolute"
+                          }}
+                          alt='Responsive'
+                      />
+                      <img
+                          className='img-fluid'
+                          src={setFeature(lipsCounter, lipsArray)}
+                          style={{
+                              height: "100%",
+                              zIndex: 2,
+                              position: "absolute"
+                          }}
+                          alt='static'
+                      />
+                      <img
+                          className='img-fluid'
+                          src={setFeature(backgroundCounter, backgroundArray)}
+                          style={{
+                              height: "100%",
+                              zIndex: 0,
+                              position: "absolute"
+                          }}
+                          alt='Responsive'
+                      />
+                  </div>
+              </Container>
           </div>
-            </Container>
-        </div>
         <div className='col-md-2 mt-3 mb-3 text-center'>
             <Container>
                 <div className='mb-2'>
@@ -322,7 +337,7 @@ const AvatarGenerator = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </Fragment>
   );
 };
 

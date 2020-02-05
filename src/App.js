@@ -15,7 +15,7 @@ import ColorPalette from './components/pages/ColorPalette'
 // #ff0138 cool red color
 function App() {
   return (
-    <div className='App'>
+    <div className='App' style={{background:'#F0F0F0'}}>
       <Router>
         <Fragment>
           <Navbar />
