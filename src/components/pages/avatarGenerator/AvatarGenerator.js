@@ -37,6 +37,12 @@ import EmptyArea from "./Empty_area.svg";
 import Glasses from "./Glasses_1.svg";
 import Eyebrows_ginger from './Eyebrows/Eyebrows_ginger.svg';
 import Eyebrows_brown from './Eyebrows/Eyebrows_brown.svg';
+import Eyebrows_black from './Eyebrows/Eyebrows_black.svg';
+import Eyebrows_blond from './Eyebrows/Eyebrows_blond.svg';
+import Eyebrows_grey from './Eyebrows/Eyebrows_grey.svg';
+import Eyebrows_blue from './Eyebrows/Eyebrows_blue.svg';
+import Eyebrows_pink from './Eyebrows/Eyebrows_pink.svg';
+import Eyebrows_green from './Eyebrows/Eyebrows_green.svg';
 import Skin_Tone_1 from "./Avatars-4.2.svg";
 import Skin_Tone_2 from './Skin_tone_2.svg';
 import Skin_Tone_3 from './Skin_tone_3.svg';
@@ -45,15 +51,19 @@ import Skin_Tone_5 from './Skin_tone_5.svg';
 import Skin_Tone_6 from './Skin_tone_6.svg';
 import Skin_Tone_7 from './Skin_tone_7.svg';
 import Skin_Tone_8 from './Skin_tone_8.svg';
+import Skin_Tone_9 from './Skin_tone_9.svg';
 import Button from "../../Layout/Button/Button.component";
 import Container from "../../Layout/Container/Container.component";
 import Hair_3_brown from './Hair_3_variations/Hair_3_brown.svg'
 import Hair_3_dark from './Hair_3_variations/Hair_3_dark_brown.svg'
-import Hair_3_blond from './Hair_3_variations/Hair_3_blond.svg'
+import Hair_3_blond from './Hair_3_variations/Hair_3_blond_2.svg'
 import Hair_3_grey from './Hair_3_variations/Hair_3_grey.svg'
 import Hair_3_pink from './Hair_3_variations/Hair_3_pink.svg'
 import Hair_3_blue from './Hair_3_variations/Hair_3_blue.svg'
 import Hair_3_green from './Hair_3_variations/Hair_3_green.svg'
+import Hair_2_brown from './Hair_2_variations/Hair_2_brown.svg'
+import Hair_2_dark_brown from './Hair_2_variations/Hair_2_dark_brown.svg'
+import Hair_2_blond from './Hair_2_variations/Hair_2_blond.svg'
 import Hair_1_brown from './Hair_1_variations/Hair_1_brown.svg'
 import Hair_1_dark from './Hair_1_variations/Hair_1_dark_brown.svg'
 import Hair_1_blond from './Hair_1_variations/Hair_1_blond.svg'
@@ -76,21 +86,21 @@ const AvatarGenerator = () => {
 
   //    Feature Arrays
   const skinToneArray = [Skin_Tone_1, Skin_Tone_2, Skin_Tone_3, Skin_Tone_4,
-        Skin_Tone_5, Skin_Tone_6, Skin_Tone_7, Skin_Tone_8];
+        Skin_Tone_5, Skin_Tone_6, Skin_Tone_7, Skin_Tone_8, Skin_Tone_9];
   const glassesArray = [Glasses, EmptyArea];
   // Hair arrays
   const Hair_Type_1 = [Hair_1, Hair_1_dark, Hair_1_brown,Hair_1_blond, Hair_1_grey,
-      Hair_1_pink, Hair_1_blue, Hair_1_green];
-  //TODO Add different colors
-  const Hair_Type_2 = [Hair_2, Hair_2, Hair_2,Hair_2,
-      Hair_2,Hair_2,Hair_2,Hair_2];
+        Hair_1_pink, Hair_1_blue, Hair_1_green];
+  //TODO Add different colorsHair_2_dark_brown.svg
+  const Hair_Type_2 = [Hair_2, Hair_2_dark_brown, Hair_2_brown,Hair_2_blond,
+        Hair_2,Hair_2,Hair_2,Hair_2];
   const Hair_Type_3 = [Hair_3, Hair_3_dark, Hair_3_brown,Hair_3_blond, Hair_3_grey,
-      Hair_3_pink, Hair_3_blue, Hair_3_green];
+        Hair_3_pink, Hair_3_blue, Hair_3_green];
     //TODO fix to return index 0 (bold hair array have only 1 element)
   const Hair_bold = [EmptyArea,EmptyArea,EmptyArea,EmptyArea,
-      EmptyArea,EmptyArea,EmptyArea,EmptyArea];
+        EmptyArea,EmptyArea,EmptyArea,EmptyArea];
   const hairArray = [Hair_Type_1, Hair_Type_2, Hair_Type_3, Hair_bold];
-  // Eyes Array
+  // End of the Hair arrays
   const eyesArray = [Eyes_green, Eyes_blue, Eyes_grey, Eyes_violet, Eyes_brown,
         Eyes_amber, Eyes_red, Eyes_black];
   const lipsArray = [Lips_1, Lips_2, Lips_3];
@@ -98,11 +108,11 @@ const AvatarGenerator = () => {
         Background_6, Background_7, Background_8, Background_9, Background_10];
   const clothesArray = [TShirt_golden, TShirt_skyblue, TShirt_green, TShirt_pink,
         TShirt_rose, TShirt_light, TShirt_dark, TShirt_brown];
-  const eyebrowsArray = [Eyebrows_ginger ,Eyebrows_brown];
+  const eyebrowsArray = [Eyebrows_ginger , Eyebrows_black,Eyebrows_brown, Eyebrows_blond,
+        Eyebrows_grey, Eyebrows_pink, Eyebrows_blue, Eyebrows_green];
 
   //  Count function  | isCountUp = true => Count up, false => count down
   function count(counterName, setCounter, itemsQuantity, isCountUp) {
-      console.log('counter', counterName, 'Items', itemsQuantity)
     if (isCountUp){
       let Counter = counterName;
       if (Counter < itemsQuantity-1) {
@@ -137,7 +147,7 @@ const AvatarGenerator = () => {
   return (
     <Fragment>
       <h1 className='text-center pt-3'>Avatar Generator</h1>
-        <h5 className='text-center'>Version <span className='badge badge-warning'>0.16</span></h5>
+        <h5 className='text-center'>Version <span className='badge badge-warning'>0.17</span></h5>
       <h6 className='text-center'>Currently in early stage of development</h6>
       <div className='row mt-4 mb-4' style={{marginRight:'0px', marginLeft:'0px'}}>
         <div className='col-md-4 text-center m3-5'>
