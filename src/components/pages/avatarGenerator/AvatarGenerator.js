@@ -64,7 +64,7 @@ import Hair_1_green from './Hair_1_variations/Hair_1_green.svg'
 
 const AvatarGenerator = () => {
   // initial State
-  const [hairCounter, setHairCounter] = useState(9);
+  const [hairCounter, setHairCounter] = useState(2);
   const [eyesCounter, setEyesCounter] = useState(0);
   const [eyeBrowsCounter, setEyesBrowsCounter] = useState(0);
   const [glassesCounter, setGlassesCounter] = useState(1);
@@ -72,14 +72,25 @@ const AvatarGenerator = () => {
   const [backgroundCounter, setBackgroundCounter] = useState(0);
   const [clothesCounter, setClothesCounter] = useState(0);
   const [skinToneCounter, setSkinToneCounter] = useState(0);
+  const [hairColorCounter, setHairColorCounter] = useState(0);
 
   //    Feature Arrays
   const skinToneArray = [Skin_Tone_1, Skin_Tone_2, Skin_Tone_3, Skin_Tone_4,
         Skin_Tone_5, Skin_Tone_6, Skin_Tone_7, Skin_Tone_8];
   const glassesArray = [Glasses, EmptyArea];
-  const hairArray = [Hair_1, Hair_1_dark, Hair_1_brown,Hair_1_blond, Hair_1_grey,
-      Hair_1_pink, Hair_1_blue, Hair_1_green, Hair_2 ,Hair_3, Hair_3_dark, Hair_3_brown,Hair_3_blond, Hair_3_grey,
-      Hair_3_pink, Hair_3_blue, Hair_3_green, EmptyArea];
+  // Hair arrays
+  const Hair_Type_1 = [Hair_1, Hair_1_dark, Hair_1_brown,Hair_1_blond, Hair_1_grey,
+      Hair_1_pink, Hair_1_blue, Hair_1_green];
+  //TODO Add different colors
+  const Hair_Type_2 = [Hair_2, Hair_2, Hair_2,Hair_2,
+      Hair_2,Hair_2,Hair_2,Hair_2];
+  const Hair_Type_3 = [Hair_3, Hair_3_dark, Hair_3_brown,Hair_3_blond, Hair_3_grey,
+      Hair_3_pink, Hair_3_blue, Hair_3_green];
+    //TODO fix to return index 0 (bold hair array have only 1 element)
+  const Hair_bold = [EmptyArea,EmptyArea,EmptyArea,EmptyArea,
+      EmptyArea,EmptyArea,EmptyArea,EmptyArea];
+  const hairArray = [Hair_Type_1, Hair_Type_2, Hair_Type_3, Hair_bold];
+  // Eyes Array
   const eyesArray = [Eyes_green, Eyes_blue, Eyes_grey, Eyes_violet, Eyes_brown,
         Eyes_amber, Eyes_red, Eyes_black];
   const lipsArray = [Lips_1, Lips_2, Lips_3];
@@ -91,6 +102,7 @@ const AvatarGenerator = () => {
 
   //  Count function  | isCountUp = true => Count up, false => count down
   function count(counterName, setCounter, itemsQuantity, isCountUp) {
+      console.log('counter', counterName, 'Items', itemsQuantity)
     if (isCountUp){
       let Counter = counterName;
       if (Counter < itemsQuantity-1) {
@@ -111,16 +123,21 @@ const AvatarGenerator = () => {
   }
 
   //    Set Feature function chooses image to display
-  function setFeature(counter, partsArray) {
-    if (partsArray.indexOf(partsArray[counter]) === counter){
-        return partsArray[counter]}
+  function setFeature(counter, partsArray, isArrayNested = false) {
+    if (isArrayNested){
+        if (partsArray.indexOf(partsArray[counter]) === counter){
+        return partsArray[counter][hairColorCounter]}
+    }  else {
+        if (partsArray.indexOf(partsArray[counter]) === counter){
+            return partsArray[counter]}
+    }
   }
 
   //Render
   return (
     <Fragment>
       <h1 className='text-center pt-3'>Avatar Generator</h1>
-        <h5 className='text-center'>Version <span className='badge badge-warning'>0.15</span></h5>
+        <h5 className='text-center'>Version <span className='badge badge-warning'>0.16</span></h5>
       <h6 className='text-center'>Currently in early stage of development</h6>
       <div className='row mt-4 mb-4' style={{marginRight:'0px', marginLeft:'0px'}}>
         <div className='col-md-4 text-center m3-5'>
@@ -168,7 +185,7 @@ const AvatarGenerator = () => {
                       />
                       <img
                           className='img-fluid'
-                          src={setFeature(hairCounter, hairArray)}
+                          src={setFeature(hairCounter, hairArray, true)}
                           style={{
                               height: "100%",
                               zIndex: 5,
@@ -217,6 +234,11 @@ const AvatarGenerator = () => {
                 <Button onClick={() => count(hairCounter, setHairCounter, hairArray.length, true)} image={ArrowRight}/>
             </div>
                 <div className='mb-2'>
+                    <p className='card-title'><span className='badge badge-danger'>Change Hair color</span></p>
+                    <Button onClick={() => count(hairColorCounter, setHairColorCounter,hairArray[hairCounter].length, false)} image={ArrowLeft}/>
+                    <Button onClick={() => count(hairColorCounter, setHairColorCounter,hairArray[hairCounter].length, true)} image={ArrowRight}/>
+                </div>
+                <div className='mb-2'>
                     <p className='card-title'><span className='badge badge-warning'>Change Eye color</span></p>
                     <Button onClick={() => count(eyesCounter, setEyesCounter,eyesArray.length, false)} image={ArrowLeft}/>
                     <Button onClick={() => count(eyesCounter, setEyesCounter,eyesArray.length, true)} image={ArrowRight}/>
@@ -231,15 +253,15 @@ const AvatarGenerator = () => {
                     <Button onClick={() => count(eyeBrowsCounter, setEyesBrowsCounter, eyebrowsArray.length, false)} image={ArrowLeft}/>
                     <Button onClick={() => count(eyeBrowsCounter, setEyesBrowsCounter, eyebrowsArray.length, true)} image={ArrowRight}/>
                 </div>
+            </Container>
+          </div>
+        <div className='col-md-2 mt-3 mb-3 text-center'>
+            <Container>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge badge-success'>Change Lips</span></p>
                     <Button onClick={() => count(lipsCounter, setLipsCounter,lipsArray.length, false)} image={ArrowLeft}/>
                     <Button onClick={() => count(lipsCounter, setLipsCounter,lipsArray.length, true)} image={ArrowRight}/>
                 </div>
-            </Container>
-          </div>
-        <div className='col-md-2 mt-3 mb-3 text-center'>
-            <Container>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge badge-danger'>Change Background</span></p>
                     <Button onClick={() => count(backgroundCounter, setBackgroundCounter, backgroundArray.length, false)} image={ArrowLeft}/>
@@ -254,11 +276,6 @@ const AvatarGenerator = () => {
                     <p className='card-title'><span className='badge badge-secondary'>Change Skin tone</span></p>
                     <Button  onClick={() => count(skinToneCounter, setSkinToneCounter, skinToneArray.length, false)} image={ArrowLeft} />
                     <Button  onClick={() => count(skinToneCounter, setSkinToneCounter, skinToneArray.length, true)} image={ArrowRight} />
-                </div>
-                <div className='mb-2'>
-                    <p className='card-title'><span className='badge badge-secondary'>TODO</span></p>
-                    <Button disabled={true} image={ArrowLeft}/>
-                    <Button disabled={true} image={ArrowRight}/>
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge badge-secondary'>TODO</span></p>
