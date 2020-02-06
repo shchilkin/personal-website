@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-const TaskList = () => {
-  const [task, setTask] = useState([]);
+import ListItem from "./TaskListItem/TaskListItem";
 
-  console.log("Task text", task);
+const TaskList = () => {
+  const [task, setTask] = useState('');
+  const [tasks, setTasks] = useState([]);
 
   const onSubmit = event => {
     event.preventDefault();
-    console.warn(task);
+   let existingTasks = tasks;
+   existingTasks.push(task);
+    setTasks(existingTasks);
+    setTask('')
   };
 
   return (
@@ -19,8 +23,9 @@ const TaskList = () => {
             className='form-control mb-2'
             type='text'
             placeholder='Enter Task'
+            value={task}
             onChange={event => setTask(event.target.value)}
-          ></input>
+          />
           <button
             type='submit'
             onClick={onSubmit}
@@ -30,7 +35,9 @@ const TaskList = () => {
           </button>
         </form>
         <h5 className='text-center'>Tasks:</h5>
-        <div id='tasks'></div>
+          <div>
+             <ul className='list-group'>{tasks.map((item, index) => (<ListItem id={index} task={item}/>))}</ul>
+          </div>
       </div>
     </div>
   );
