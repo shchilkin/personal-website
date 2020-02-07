@@ -1,15 +1,10 @@
 import React from "react";
+import Cross from '../../../../../icons/Cross.svg'
 
 const ListItem = ({id, task}) => {
-    // li.className =  'list-group-item';
-    // li.style.backgroundColor = '#e0115f';
-    // li.style.border = "1px solid rgba(0, 0, 0, 0.125)";
-    // li.appendChild(button);
-    // li.appendChild(document.createTextNode(Text));
-
-    return <li className='list-group-item'>
-        {task}
-    </li>
+    return (<li className='list-group-item' style={{backgroundColor:'#FC4365', border:'1px solid rgba(0, 0, 0, 0.125)'}}>
+                 {task} <span><img src={Cross} style={{width:'24px'}}/></span>
+            </li>)
 };
 
 export default ListItem

@@ -14,7 +14,7 @@ const SmallProjects = () => {
           </h1>
         </div>
       </div>
-      <div className='container-fluid bg-dark pt-3 pb-3'>
+      <div className='container-fluid pt-3 pb-3'>
         <div className='col-lg-4'>
           <TaskList />
         </div>
