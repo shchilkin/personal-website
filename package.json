@@ -1,48 +1,25 @@
 {
-  "name": "website",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.4.0",
-    "@testing-library/user-event": "^7.2.1",
-    "bootstrap": "^4.4.1",
-    "bootstrap-icons": "^1.0.0-alpha2",
-    "jquery": "^3.4.1",
-    "popper.js": "^1.16.0",
-    "react": "^16.12.0",
-    "react-bootstrap": "^1.0.0-beta.16",
-    "react-bootstrap-icons": "^1.0.0-alpha2",
-    "react-dom": "^16.12.0",
-    "react-gradient": "^1.0.2",
-    "react-router-bootstrap": "^0.25.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.0"
-  },
+  "name": "personal-website",
+  "version": "0.0.1",
+  "description": "Personal Website",
+  "main": "server.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "client": "npm start --prefix client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrazyRedKitten/personal-website.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "Aleksandr Shchilkin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CrazyRedKitten/personal-website/issues"
   },
-  "engines": {
-    "node": "12.9.1",
-    "npm": "6.13.6"
+  "homepage": "https://github.com/CrazyRedKitten/personal-website#readme",
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
