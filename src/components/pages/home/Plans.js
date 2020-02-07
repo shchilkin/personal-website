@@ -1,8 +1,9 @@
 import React from "react";
 
+// style={{backgroundColor:'#FC4365'}}
 const Plans = () => {
   return (
-    <div className='container-fluid text-white pt-5 pb-5' style={{backgroundColor:'#FC4365'}}>
+    <div className='container-fluid pt-5 pb-5'>
       <div className='container'>
         <h1 className='display-5 pt-3 pb-3'>Plans</h1>
         <p>

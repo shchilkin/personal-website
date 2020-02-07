@@ -19,7 +19,7 @@ function App() {
       <Router>
         <Fragment>
           <Navbar />
-          <div>
+          <div className='flex-shrink-0' style={{flexShrink:"0"}}>
             <Switch>
               <Route exact path='/' component={Home} />
               <Route exact path='/Projects' component={SmallProjects} />

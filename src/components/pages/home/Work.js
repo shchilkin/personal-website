@@ -1,9 +1,10 @@
 import React from "react";
 import Container from "../../Layout/Container/Container.component";
+// style={{backgroundColor:'#89DBDF'}}
 
 const Work = () => {
   return (
-    <div className='container-fluid pt-5 pb-5' style={{backgroundColor:'#89DBDF'}}>
+    <div className='container-fluid pt-5 pb-5'>
       <div className='container'>
         <div className='d-flex justify-content-center'>
         </div>
