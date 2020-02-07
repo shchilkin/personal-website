@@ -1,7 +1,10 @@
 const express = require('express');
-const app = express();
+const secure = require('express-force-https');
 const path = require('path');
 const port = process.env.PORT || 5000;
+
+const app = express();
+app.use(secure);
 
 //  Static files
 app.use(express.static(path.join(__dirname, 'client/build')));
@@ -12,8 +15,7 @@ if(process.env.NODE_ENV === 'production') {
 
     app.get('*', (req, res) => {
         res.sendfile(path.join(__dirname = 'client/build/index.html'));
-    })
-}
+    })}
 
 //  Build mode
 app.get('*', (req, res) => {
