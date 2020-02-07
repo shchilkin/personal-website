@@ -1,14 +1,14 @@
 import React, { Fragment } from "react";
 import Contacts from "./contacts/Contacts";
 import About from "../../About";
-import Work from "./Work";
+import StudiesAndProjects from "./StudiesAndProjects";
 import Plans from "./Plans";
 
 const Home = () => {
   return (
     <Fragment>
       <About />
-      <Work />
+      <StudiesAndProjects />
       <Plans />
       <Contacts />
     </Fragment>
