@@ -7,7 +7,7 @@ const Registration = () => {
         Registration page is in development
       </div>
       <h1 className='mt-3 mb-3'>
-        <span style={{ color: "cornflowerblue" }}>R</span>egistration
+        <span style={{ color: "#FC4365" }}>R</span>egistration
       </h1>
       <div className='d-flex justify-content-center'>
         <form className='mb-3 col-lg-5'>

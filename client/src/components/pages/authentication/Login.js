@@ -40,7 +40,7 @@ const Login = () => {
         Login page is in development
       </div>
       <h1 className='mt-3 mb-3'>
-        <span style={{ color: "cornflowerblue" }}>L</span>ogin
+        <span style={{ color: "#FC4365" }}>L</span>ogin
       </h1>
       <div className='d-flex justify-content-center'>
         <form className='mb-3 col-lg-5'>
@@ -63,7 +63,7 @@ const Login = () => {
                     src={Email}
                     style={{ width: "24px" }}
                     alt='email logo'
-                  ></img>
+                  />
                 </span>
               </div>
             </div>
@@ -95,7 +95,7 @@ const Login = () => {
                         src={Eye}
                         style={{ width: "20px" }}
                         alt='Eye icon'
-                      ></img>
+                      />
                     )}
                   </div>
                   <div>
@@ -104,7 +104,7 @@ const Login = () => {
                         src={EyeCrossed}
                         style={{ width: "20px" }}
                         alt='Eye icon'
-                      ></img>
+                      />
                     ) : null}
                   </div>
                 </button>
