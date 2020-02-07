@@ -3,7 +3,7 @@
 # dependencies
 .idea/
 /node_modules
-clint/node_modules
+client/node_modules
 /.vscode
 /.pnp
 .pnp.js
