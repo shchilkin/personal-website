@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ListItem from "./TaskListItem/TaskListItem";
+import ListItem from "./TaskListItem/TaskListItem.component";
 import Container from "../../../Layout/Container/Container.component";
 import ButtonBlock from "../../../Layout/Buttons/Button-Block/Button-Block.component";
 
@@ -20,9 +20,13 @@ const TaskList = () => {
     event.preventDefault();
   };
 
+    const  onDelete = (event, id) => {
+        event.preventDefault();
+        console.log('id',id);
+    };
+
   return (
       <Container>
-        {/*<div className='card'>*/}
           <div className='card-body'>
             <h5 className='card-title text-center'>Task list</h5>
             <form className='mb-4'>
@@ -38,10 +42,9 @@ const TaskList = () => {
           </form>
           <h5 className='text-center'>Tasks:</h5>
           <div>
-             <ul className='list-group'>{tasks.map((item, index) => (<ListItem id={index} task={item}/>))}</ul>
+             <ul className='list-group'>{tasks.map((item, index) => (<ListItem id={index} task={item} onDelete={(event, index) => onDelete(event, index)}/>))}</ul>
           </div>
-         </div>
-      {/*</div>*/}
+         </div>git
     </Container>
 
   );

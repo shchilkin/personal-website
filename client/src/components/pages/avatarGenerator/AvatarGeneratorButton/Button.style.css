@@ -3,7 +3,6 @@
     margin-right: 0.50rem;
     mix-blend-mode: normal;
     border: 1px solid #F0F0F0;
-    /*box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4), -2px -2px 8px rgba(255, 255, 255, 1);*/
     box-shadow: 6px 6px 16px 0 rgba(217, 210, 200, 0.51), -6px -6px 26px 0 rgba(255, 255, 255, 0.83);
     border-radius: 10px;
     color: #495057;
@@ -15,7 +14,6 @@
 }
 
 .button:active {
-    /*box-shadow: 1px 1px 4px rgba(255, 255, 255, 1), -1px -1px 4px rgba(0, 0, 0, 0.4);*/
     box-shadow: 6px 6px 16px 0 rgba(255, 255, 255, 0.83), -6px -6px 26px 0  rgba(217, 210, 200, 0.51);
 }
 
