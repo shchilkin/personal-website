@@ -1,4 +1,5 @@
-import React,{useState, useEffect} from "react";
+import React,{useState} from "react";
+import {BrowserRouter as Router,Link, Route, Switch} from "react-router-dom";
 import Search from "./FindOnGithub_Components/Search.component";
 import Users from './FindOnGithub_Components/Users/Users.component'
 import axios from "axios";
@@ -76,7 +77,3 @@ const [alert, set_Alert] = useState(null);
 };
 
 export default FindOnGithub
-
-// const [userInput, setUserInput] = useState('');
-// const [users, setUsers] = useState('');
-// axios.get('https://api.github.com/users').then(response => setUsers(response.data));

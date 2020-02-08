@@ -1,5 +1,5 @@
 import React from "react";
-import User from './User.component';
+import User from './UserItem.component';
 import Spinner from "../Spinner.component";
 
 const Users = ({users, loading}) => {
@@ -16,7 +16,7 @@ const Users = ({users, loading}) => {
 
 const userStyle = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(4, 1fr)',
+    gridTemplateColumns: 'repeat(5, 1fr)',
     gridGap: '1rem'
 };
 

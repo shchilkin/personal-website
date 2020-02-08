@@ -17,7 +17,7 @@ const Search = ({searchUsers, showClear, clearUsers, setAlert}) => {
 
     return(
         <div>
-        <form  onSubmit={onSubmit} className={'form'}>
+        <form  onSubmit={onSubmit} className={'form mb-1'}>
             <input
                 className={'form-control mb-2'}
                 type='text'
@@ -31,7 +31,7 @@ const Search = ({searchUsers, showClear, clearUsers, setAlert}) => {
             />
         </form>
         {showClear && (
-            <button className={'btn btn-light btn-block'} onClick={clearUsers}>
+            <button className={'btn btn-warning btn-block'} onClick={clearUsers}>
             Clear
             </button>
         )}

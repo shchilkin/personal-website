@@ -6,7 +6,7 @@ import Home from "./components/pages/home/Home";
 import Login from "./components/pages/authentication/Login";
 import Registration from "./components/pages/authentication/Registration";
 import ContactPage from "./components/pages/contact/ContactPage";
-import SmallProjects from "./components/pages/projects/SmallProjects";
+import SmallProjects from "./components/pages/smallProjects/SmallProjects";
 import AvatarGenerator from "./components/pages/avatarGenerator/AvatarGenerator";
 import ColorPalette from './components/pages/ColorPalette'
 

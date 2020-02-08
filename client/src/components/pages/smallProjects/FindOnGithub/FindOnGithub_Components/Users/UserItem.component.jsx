@@ -1,6 +1,6 @@
 import React from "react";
 
-const User = ({login, avatar_url,html_url }) => {
+const UserItem = ({login, avatar_url,html_url }) => {
     return (
         <div className={'card text-center mt-2'}>
             <img src={avatar_url} className="card-img-top" alt="Avatar Image"/>
@@ -12,4 +12,4 @@ const User = ({login, avatar_url,html_url }) => {
     )
 };
 
-export default User;
+export default UserItem;

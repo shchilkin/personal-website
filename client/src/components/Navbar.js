@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import Cat from "../icons/CatLogoV9.svg";
-import CatRed from '../icons/CatLogo-Red.svg'
 import CatTongue from "../icons/CatTongue.svg";
 
 const NavBar = () => {
@@ -29,7 +28,7 @@ const NavBar = () => {
             height='30'
             className='d-inline-block align-top'
             alt=''
-          />CrazyRedKitten
+          />{" "}CrazyRedKitten
         </Link>
         <button
           className='navbar-toggler'
