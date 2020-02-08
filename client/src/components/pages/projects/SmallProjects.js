@@ -1,5 +1,5 @@
 import React from "react";
-// import TaskList from "./TaskList/TaskList";
+import FindOnGithub from "./FindOnGithub/FindOnGithub.component";
 
 const SmallProjects = () => {
   return (
@@ -15,9 +15,7 @@ const SmallProjects = () => {
         </div>
       </div>
       <div className='container-fluid pt-3 pb-3'>
-        <div className='col-lg-4'>
-          {/*<TaskList />*/}
-        </div>
+          <FindOnGithub/>
       </div>
     </div>
   );
