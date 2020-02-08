@@ -14,11 +14,11 @@ import ColorPalette from './components/pages/ColorPalette'
 // #ff0138 cool red color
 function App() {
   return (
-    <div className='App' style={{background:'#F0F0F0'}}>
+    <div className='App' style={{background:'#F0F0F0', position:'relative', minHeight:'100vh'}}>
       <Router>
         <Fragment>
           <Navbar />
-          <div className='flex-shrink-0' style={{flexShrink:"0"}}>
+          <div style={{paddingBottom:"80px"}}>
             <Switch>
               <Route exact path='/' component={Home} />
               <Route exact path='/Projects' component={SmallProjects} />
