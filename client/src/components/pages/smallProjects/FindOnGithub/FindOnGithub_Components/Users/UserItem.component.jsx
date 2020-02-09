@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const UserItem = ({login, avatar_url,html_url }) => {
+const UserItem = ({ login, avatar_url }) => {
     return (
         <div className={'card text-center mt-2'}>
             <img src={avatar_url} className="card-img-top" alt="Avatar Image"/>

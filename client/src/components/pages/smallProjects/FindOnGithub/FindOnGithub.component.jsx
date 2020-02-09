@@ -67,7 +67,7 @@ const [alert, set_Alert] = useState(null);
                 <Route
                     exact
                     path='/projects/findOnGithub'
-                    render={props => (
+                    render={() => (
                         <Fragment>
                             <div className='container'>
                             <h4 className={'text-center'}>Find on GitHub</h4>
@@ -87,7 +87,7 @@ const [alert, set_Alert] = useState(null);
                     path='/projects/findOnGithub/user/:login'
                     render={props => (
                         <Fragment>
-                            <User {...props} getUser={getUser} user={user} loading={loading}/>
+                            <User {...props} getUser={getUser} getRepos={getRepos} repos={repos} user={user} loading={loading}/>
                         </Fragment>
                     )}
                 />

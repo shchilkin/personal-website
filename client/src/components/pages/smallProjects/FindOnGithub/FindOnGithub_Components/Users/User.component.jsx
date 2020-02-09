@@ -1,10 +1,11 @@
-import React, {Fragment, useEffect} from "react";
+import React, { useEffect } from "react";
 import Spinner from "../Spinner.component";
+import Repositories from '../Repositories/Repositories.component'
 
-const User = ({user, loading, getUser, getRepos, repos, match}) => {
+const User = ({user, loading, getUser, repos, getRepos, match}) => {
     useEffect(() => {
         getUser(match.params.login);
-        // getRepos(match.params.login);
+        getRepos(match.params.login);
     }, []);
 
     const {
@@ -23,13 +24,11 @@ const User = ({user, loading, getUser, getRepos, repos, match}) => {
         public_gists
     } = user;
 
-
-
     if(loading) return <Spinner/>;
 
     return (<div className={'container'}>
                 <div className={'row'}>
-                    <div className={'col-md-4'}>
+                    <div className={'col-md-4 mb-2'}>
                         <div className="card">
                             <img className="card-img-top" src={avatar_url} alt="Avatar" />
                                 <div className="card-body">
@@ -54,6 +53,9 @@ const User = ({user, loading, getUser, getRepos, repos, match}) => {
                                     <a href={html_url} className="btn btn-block btn-primary">View on Github</a>
                                 </div>
                         </div>
+                    </div>
+                    <div className={'col-md-8'}>
+                        <Repositories repos={repos}/>
                     </div>
                 </div>
             </div>)
