@@ -1,9 +1,9 @@
-import React,{useState} from "react";
+import React,{useState, Fragment} from "react";
 import {BrowserRouter as Router,Link, Route, Switch} from "react-router-dom";
 import Search from "./FindOnGithub_Components/Search.component";
+import User from "./FindOnGithub_Components/Users/User.component";
 import Users from './FindOnGithub_Components/Users/Users.component'
 import axios from "axios";
-
 
 const FindOnGithub = () => {
 const [users, setUsers] = useState([]);
@@ -28,7 +28,7 @@ const [alert, set_Alert] = useState(null);
     const getUser = async username => {
         setLoading(true);
 
-        const response = await axios.get(`https://api.github.com/${username}?client_id=
+        const response = await axios.get(`https://api.github.com/users/${username}?client_id=
         ${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=
         ${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
 
@@ -62,17 +62,37 @@ const [alert, set_Alert] = useState(null);
 
 
     return(
-        <div className={'container'}>
-            <h4 className={'text-center'}>Find on GitHub</h4>
-            <Search
-                searchUsers={searchUsers}
-                clearUsers={clearUsers}
-                // showClear={users.length > 0 ? true : false}
-                showClear={users.length > 0}
-                setAlert={setAlert}
-            />
-            <Users loading={loading} users={users}/>
-        </div>
+        <Router>
+            <Switch>
+                <Route
+                    exact
+                    path='/projects/findOnGithub'
+                    render={props => (
+                        <Fragment>
+                            <div className='container'>
+                            <h4 className={'text-center'}>Find on GitHub</h4>
+                            <Search
+                                searchUsers={searchUsers}
+                                clearUsers={clearUsers}
+                                showClear={users.length > 0}
+                                setAlert={setAlert}
+                            />
+                            <Users loading={loading} users={users}/>
+                            </div>
+                        </Fragment>
+                    )}
+                />
+                <Route
+                    exact
+                    path='/projects/findOnGithub/user/:login'
+                    render={props => (
+                        <Fragment>
+                            <User {...props} getUser={getUser} user={user} loading={loading}/>
+                        </Fragment>
+                    )}
+                />
+            </Switch>
+        </Router>
     )
 };
 

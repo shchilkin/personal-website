@@ -34,14 +34,14 @@ const NavBar = () => {
           className='navbar-toggler'
           type='button'
           data-toggle='collapse'
-          data-target='#navbarNavAltMarkup'
-          aria-controls='navbarNavAltMarkup'
+          data-target='#MainNavbar'
+          aria-controls='MainNavbar'
           aria-expanded='false'
           aria-label='Toggle navigation'
         >
           <span className='navbar-toggler-icon'/>
         </button>
-        <div className='navbar-collapse collapse' id='navbarNavAltMarkup'>
+        <div className='navbar-collapse collapse' id="MainNavbar">
           <ul className='navbar-nav mr-auto'>
             <Link className='nav-item nav-link' to='/projects'>
               Small Projects

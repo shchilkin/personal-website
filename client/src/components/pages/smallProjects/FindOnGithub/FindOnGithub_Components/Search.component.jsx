@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import ButtonBlock from "../../../../Layout/Buttons/Button-Block/Button-Block.component";
 
 const Search = ({searchUsers, showClear, clearUsers, setAlert}) => {
     const [text, setText] = useState('');
@@ -16,8 +17,8 @@ const Search = ({searchUsers, showClear, clearUsers, setAlert}) => {
     };
 
     return(
-        <div>
-        <form  onSubmit={onSubmit} className={'form mb-1'}>
+        <div className={'mb-3'}>
+        <form  onSubmit={onSubmit} className={'form mb-3'}>
             <input
                 className={'form-control mb-2'}
                 type='text'
@@ -31,9 +32,7 @@ const Search = ({searchUsers, showClear, clearUsers, setAlert}) => {
             />
         </form>
         {showClear && (
-            <button className={'btn btn-warning btn-block'} onClick={clearUsers}>
-            Clear
-            </button>
+            <ButtonBlock onClick={clearUsers} text={'Clear'} />
         )}
         </div>
     )
