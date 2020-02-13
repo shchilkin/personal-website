@@ -12,7 +12,8 @@ const NavBar = () => {
 
   return (
     <Fragment>
-      <nav className='navbar sticky-top navbar-expand-lg navbar-light' style={{backgroundColor:'#ffE138'}}>
+      {/*<nav className='navbar sticky-top navbar-expand-lg navbar-light' style={{backgroundColor:'#ffE138'}}>*/}
+      <nav className='navbar sticky-top navbar-expand-lg navbar-light' style={{backgroundColor:'#FFF'}}>
         <Link
           to='/'
           className='navbar-brand mb-0 h1'
