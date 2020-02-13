@@ -1,0 +1,17 @@
+.Input{
+    width: 100%;
+    margin-bottom: 1rem;
+    height: 45px;
+    border-radius: 12px;
+    border: 1px solid #F0F0F0;
+    background-color: #F0F0F0;
+    padding:.375rem .75rem;
+    mix-blend-mode: normal;
+    color: #777B7E;
+    box-shadow: 6px 6px 16px 0 rgba(255, 255, 255, 0.97), -6px -6px 26px 0  rgba(217, 210, 200, 0.81);
+}
+
+.Input:focus{
+    outline: none;
+    border-color: #777B7E;
+}

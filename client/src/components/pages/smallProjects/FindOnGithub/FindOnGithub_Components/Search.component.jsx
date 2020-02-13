@@ -2,6 +2,7 @@ import React,{useState} from "react";
 import ButtonBlock from "../../../../Layout/Buttons/Button-Block/Button-Block.component";
 import '../../../../Layout/Buttons/Button-Block/Button-Block.style.css'
 import '../../../../Layout/Buttons/Button/Button.style.css'
+import '../../../../Layout/Input/Input.style.css'
 
 const Search = ({searchUsers, showClear, clearUsers, setAlert}) => {
     const [text, setText] = useState('');
@@ -22,13 +23,14 @@ const Search = ({searchUsers, showClear, clearUsers, setAlert}) => {
         <div className={'mb-3'}>
         <form  onSubmit={onSubmit} className={'form mb-3'}>
             <input
-                className={'form-control mb-2'}
+                className={'Input'}
                 type='text'
                 placeholder={'Enter an Username...'}
                 value={text}
                 onChange={onChange}
             />
-            <input className={'Button-Block button'}
+            <input
+            className={'Button-Block button button-dark'}
             value={'Search'}
             type={'submit'}
             />

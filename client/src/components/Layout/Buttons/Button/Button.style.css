@@ -24,3 +24,21 @@
     box-shadow: rgba(255, 255, 255, 0.97) 6px 6px 16px 0 , -6px -6px 26px 0 rgba(217, 210, 200, 0.81);
     border: 1px solid #f0f0f0;
 }
+
+.button-dark {
+    background-color:#ABABAB;
+    border: #ABABAB;
+    color: #f2f2f2;
+    /*box-shadow: 6px 6px 16px 0 rgba(85, 85, 85, 0.70), -6px -6px 26px 0 rgba(255, 255, 255, 0.97);*/
+    box-shadow: 6px 6px 16px 0 rgba(217, 210, 200, 0.81), -6px -6px 26px 0 rgba(255, 255, 255, 0.97);
+}
+
+.button-dark:hover {
+    background: #b3b3b3;
+    border: 1px solid #b3b3b3;
+}
+
+.button-dark:active{
+    /*box-shadow: 6px 6px 16px 0 rgba(255, 255, 255, 0.97), -6px -6px 26px 0 rgba(153, 153, 153, 0.53);*/
+    box-shadow: 6px 6px 16px 0 rgba(255, 255, 255, 0.97), -6px -6px 26px 0  rgba(217, 210, 200, 0.81);
+}

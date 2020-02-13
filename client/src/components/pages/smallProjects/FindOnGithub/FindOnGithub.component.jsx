@@ -83,7 +83,7 @@ const [alertType, setAlertType] = useState(null);
                                 <Link to='/projects'>
                                     To the small projects page
                                 </Link>
-                            <h4>Find on GitHub</h4>
+                            <h3>Find on GitHub</h3>
                             <Alert message={alertMessage} type={alertType} />
                             <Search
                                 searchUsers={searchUsers}
