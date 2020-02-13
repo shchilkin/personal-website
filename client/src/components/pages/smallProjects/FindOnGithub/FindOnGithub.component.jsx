@@ -1,9 +1,10 @@
 import React,{useState, Fragment} from "react";
 import {BrowserRouter as Router,Link, Route, Switch} from "react-router-dom";
-import Search from "./FindOnGithub_Components/Search.component";
+import axios from "axios";
 import User from "./FindOnGithub_Components/Users/User.component";
 import Users from './FindOnGithub_Components/Users/Users.component'
-import axios from "axios";
+import Alert from "./FindOnGithub_Components/Alert.component";
+import Search from "./FindOnGithub_Components/Search.component";
 import projectPlaceholder from '../projectPlaceholder.component'
 
 const FindOnGithub = () => {
@@ -11,7 +12,8 @@ const [users, setUsers] = useState([]);
 const [user, setUser] = useState({});
 const [repos, setRepos] = useState([]);
 const [loading, setLoading] = useState(false);
-const [alert, set_Alert] = useState(null);
+const [alertMessage, setAlertMessage] = useState(null);
+const [alertType, setAlertType] = useState(null);
 
     // Search users on Github
     const searchUsers = async text => {
@@ -57,10 +59,11 @@ const [alert, set_Alert] = useState(null);
 
     //Set Alert
     const setAlert = (message, type) => {
-        set_Alert({message,type});
-        setTimeout(()=> set_Alert(null), 5000);
+        setAlertMessage(message);
+        setAlertType(type);
+        setTimeout(()=> (setAlertMessage(null)), 5000);
+        setTimeout(()=> (setAlertType(null)), 5000);
     };
-
 
     return(
         <Router>
@@ -71,6 +74,7 @@ const [alert, set_Alert] = useState(null);
                     component={projectPlaceholder}
                 />
                 <Route
+                    //TODO fix Redirect on blank page after page reload
                     exact
                     path='/projects/findOnGithub'
                     render={() => (
@@ -80,6 +84,7 @@ const [alert, set_Alert] = useState(null);
                                     To the small projects page
                                 </Link>
                             <h4>Find on GitHub</h4>
+                            <Alert message={alertMessage} type={alertType} />
                             <Search
                                 searchUsers={searchUsers}
                                 clearUsers={clearUsers}
