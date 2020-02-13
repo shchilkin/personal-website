@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import Cat from "../icons/CatLogoV9.svg";
 import CatTongue from "../icons/CatTongue.svg";
+import '../components/Layout/Navbar/navbar-item.css'
 
 const NavBar = () => {
   const [pressed, setPressed] = useState(false);
@@ -12,7 +13,6 @@ const NavBar = () => {
 
   return (
     <Fragment>
-      {/*<nav className='navbar sticky-top navbar-expand-lg navbar-light' style={{backgroundColor:'#ffE138'}}>*/}
       <nav className='navbar sticky-top navbar-expand-lg navbar-light' style={{backgroundColor:'#FFF'}}>
         <Link
           to='/'

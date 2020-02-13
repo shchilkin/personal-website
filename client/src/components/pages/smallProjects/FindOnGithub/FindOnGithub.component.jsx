@@ -4,6 +4,7 @@ import Search from "./FindOnGithub_Components/Search.component";
 import User from "./FindOnGithub_Components/Users/User.component";
 import Users from './FindOnGithub_Components/Users/Users.component'
 import axios from "axios";
+import projectPlaceholder from '../projectPlaceholder.component'
 
 const FindOnGithub = () => {
 const [users, setUsers] = useState([]);
@@ -66,11 +67,19 @@ const [alert, set_Alert] = useState(null);
             <Switch>
                 <Route
                     exact
+                    path='/projects'
+                    component={projectPlaceholder}
+                />
+                <Route
+                    exact
                     path='/projects/findOnGithub'
                     render={() => (
                         <Fragment>
                             <div className='container'>
-                            <h4 className={'text-center'}>Find on GitHub</h4>
+                                <Link to='/projects'>
+                                    To the small projects page
+                                </Link>
+                            <h4>Find on GitHub</h4>
                             <Search
                                 searchUsers={searchUsers}
                                 clearUsers={clearUsers}
