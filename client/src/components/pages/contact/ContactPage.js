@@ -35,14 +35,3 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
-
-// <div className='form-group'>
-//           <label>Subject</label>
-//           <input
-//             type='Text'
-//             className='form-control'
-//             id='exampleInputEmail1'
-//             aria-describedby='emailHelp'
-//             placeholder='Enter email'
-//           />
-//         </div>
