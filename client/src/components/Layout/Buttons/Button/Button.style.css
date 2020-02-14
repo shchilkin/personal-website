@@ -1,44 +1,138 @@
 .button {
     background: #F0F0F0;
-    margin-right: 0.50rem;
+    /*margin: 0.5rem;*/
     mix-blend-mode: normal;
     border: 1px solid #F0F0F0;
     box-shadow: 6px 6px 16px 0 rgba(217, 210, 200, 0.81), -6px -6px 26px 0 rgba(255, 255, 255, 0.97);
     border-radius: 10px;
-    color: #495057;
+    color: #222222;
+    padding: .375rem .75rem;
 }
-
 .button:hover {
-    background: #f2f2f2;
-    border: 1px solid #f2f2f2;
+    /*background: #f8f8f8;*/
+    background: #d8d8d8;
+    border: 1px solid #d8d8d8;
 }
-
 .button:active {
-    box-shadow: 6px 6px 16px 0 rgba(255, 255, 255, 0.97), -6px -6px 26px 0  rgba(217, 210, 200, 0.81);
-    opacity: 0.9;
+    background: #F0F0F0;
+    border: 1px solid #F0F0F0;
+    box-shadow: 6px 6px 16px 0 rgba(255, 255, 255, 0.97), -3px -3px 13px 0  rgba(217, 210, 200, 0.81);
 }
-
 .button:disabled {
     background: #f0f0f0;
-    /*box-shadow: 1px 1px 4px rgba(255, 255, 255, 1), -1px -1px 4px rgba(0, 0, 0, 0.4);*/
     box-shadow: rgba(255, 255, 255, 0.97) 6px 6px 16px 0 , -6px -6px 26px 0 rgba(217, 210, 200, 0.81);
     border: 1px solid #f0f0f0;
 }
 
+
 .button-dark {
     background-color:#ABABAB;
-    border: #ABABAB;
+    border: 1px solid #ABABAB;
     color: #f2f2f2;
-    /*box-shadow: 6px 6px 16px 0 rgba(85, 85, 85, 0.70), -6px -6px 26px 0 rgba(255, 255, 255, 0.97);*/
     box-shadow: 6px 6px 16px 0 rgba(217, 210, 200, 0.81), -6px -6px 26px 0 rgba(255, 255, 255, 0.97);
 }
-
 .button-dark:hover {
-    background: #b3b3b3;
-    border: 1px solid #b3b3b3;
+    background: #9a9a9a;
+    border: 1px solid #9a9a9a;
+}
+.button-dark:active{
+    background-color:#ABABAB;
+    border: 1px solid #ABABAB;
+    color: #f2f2f2;
+    box-shadow: 6px 6px 16px 0 rgba(255, 255, 255, 0.97), -3px -3px 13px 0  rgba(217, 210, 200, 0.81);
+}
+.button-dark:disabled {
+    background: #ABABAB;
+    box-shadow: 6px 6px 16px 0 rgba(255, 255, 255, 0.97), -3px -3px 13px 0  rgba(217, 210, 200, 0.81);
+    border: 1px solid #ABABAB;
 }
 
-.button-dark:active{
-    /*box-shadow: 6px 6px 16px 0 rgba(255, 255, 255, 0.97), -6px -6px 26px 0 rgba(153, 153, 153, 0.53);*/
-    box-shadow: 6px 6px 16px 0 rgba(255, 255, 255, 0.97), -6px -6px 26px 0  rgba(217, 210, 200, 0.81);
+
+.button-danger {
+    background-color:#FC4365;
+    border: 1px solid #FC4365;
+    color: #f2f2f2;
+    /*box-shadow: 6px 6px 16px 0 rgba(217, 210, 200, 0.81), -6px -6px 26px 0 rgba(255, 255, 255, 0.97);*/
+    box-shadow: 3px 3px 14px 0 rgba(150, 40, 61, 0.8), -3px -3px 13px 0 rgba(254, 217, 224, 0.97);
+}
+.button-danger:hover {
+    background: #e33c5b;
+    border: 1px solid #e33c5b;
+}
+.button-danger:active{
+    background-color:#FC4365;
+    border: 1px solid #FC4365;
+    color: #f2f2f2;
+    box-shadow: 3px 3px 14px 0 rgba(254, 217, 224, 0.97), -3px -3px 13px 0  rgba(150, 40, 61, 0.8);
+}
+.button-danger:disabled {
+    background-color:#FC4365;
+    border: 1px solid #FC4365;
+    color: #f2f2f2;
+    box-shadow: 6px 6px 16px 0 rgba(254, 217, 224, 0.97), -3px -3px 13px 0  rgba(150, 40, 61, 0.4);
+}
+
+
+.button-warning {
+    background-color:#FFE138;
+    border: 1px solid #FFE138;
+    box-shadow: 6px 6px 16px 0 rgba(128, 113, 28, 0.81), -6px -6px 26px 0 rgba(255, 240, 156, 0.97);
+}
+.button-warning:hover {
+    background: #e6cb32;
+    border: 1px solid #e6cb32;
+}
+.button-warning:active{
+    background-color:#FFE138;
+    border: 1px solid #FFE138;
+    box-shadow: 6px 6px 26px 0 rgba(255, 240, 156, 0.97), -3px -3px 13px 0 rgba(128, 113, 28, 0.81);
+}
+.button-warning:disabled {
+    background-color:#FFE138;
+    border: 1px solid #FFE138;
+    box-shadow: 6px 6px 26px 0 rgba(255, 240, 156, 0.97), -3px -3px 13px 0 rgba(128, 113, 28, 0.81);
+}
+
+
+.button-success {
+    background-color:#70974C;
+    border: 1px solid #70974C;
+    color: #FFF;
+    box-shadow: 6px 6px 16px 0 #384c26CF , -6px -6px 26px 0 #B8CBA6F7;
+}
+.button-success:hover {
+    background: #658844;
+    border: 1px solid #658844;
+}
+.button-success:active{
+    background-color:#70974C;
+    border: 1px solid #70974C;
+    box-shadow: 3px 3px 13px 0 #B8CBA6F7, -3px -3px 13px 0 #384c26CF;
+}
+.button-success:disabled {
+    background-color:#70974C;
+    border: 1px solid #70974C;
+    box-shadow: 3px 3px 13px 0 #B8CBA6F7, -3px -3px 13px 0 #384c26CF;
+}
+
+
+.button-info {
+    background-color:#46A89F;
+    border: 1px solid #46A89F;
+    color: #FFF;
+    box-shadow: 6px 6px 16px 0 #235450CF , -6px -6px 26px 0 #a3d4cfF7;
+}
+.button-info:hover {
+    background: #3f978f;
+    border: 1px solid #3f978f;
+}
+.button-info:active{
+    background-color:#46A89F;
+    border: 1px solid #46A89F;
+    box-shadow: 3px 3px 13px 0 #a3d4cfF7, -3px -3px 13px 0 #a3d4cfCF;
+}
+.button-info:disabled {
+    background-color:#46A89F;
+    border: 1px solid #46A89F;
+    box-shadow: 3px 3px 13px 0 #a3d4cfF7, -3px -3px 13px 0 #a3d4cfCF;
 }
