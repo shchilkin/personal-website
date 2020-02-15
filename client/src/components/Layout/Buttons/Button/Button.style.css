@@ -2,7 +2,7 @@
     background: #F0F0F0;
     mix-blend-mode: normal;
     border: 1px solid #F0F0F0;
-    box-shadow: 6px 6px 16px 0 rgba(217, 210, 200, 0.81), -6px -6px 26px 0 rgba(255, 255, 255, 0.97);
+    box-shadow: 10px 10px 20px 0 rgba(217, 210, 200, 0.83), -10px -10px 20px 0 rgba(255, 255, 255, 0.97);
     border-radius: 10px;
     color: #222222;
     padding: .375rem .75rem;
@@ -14,11 +14,11 @@
 .button:active {
     background: #F0F0F0;
     border: 1px solid #F0F0F0;
-    box-shadow: 6px 6px 16px 0 rgba(255, 255, 255, 0.97), -3px -3px 13px 0  rgba(217, 210, 200, 0.81);
+    box-shadow: 10px 10px 20px 0 rgba(255, 255, 255, 0.97), -10px -10px 20px 0  rgba(217, 210, 200, 0.81);
 }
 .button:disabled {
     background: #f0f0f0;
-    box-shadow: rgba(255, 255, 255, 0.97) 6px 6px 16px 0 , -6px -6px 26px 0 rgba(217, 210, 200, 0.81);
+    box-shadow: rgba(255, 255, 255, 0.97) 10px 10px 20px 0 , -10px -10px 20px 0 rgba(217, 210, 200, 0.81);
     border: 1px solid #f0f0f0;
 }
 
@@ -27,7 +27,7 @@
     background-color:#ABABAB;
     border: 1px solid #ABABAB;
     color: #f2f2f2;
-    box-shadow: 6px 6px 16px 0 rgba(217, 210, 200, 0.81), -6px -6px 26px 0 rgba(255, 255, 255, 0.97);
+    box-shadow: 10px 10px 20px 0 rgba(217, 210, 200, 0.81), -10px -10px 20px 0 rgba(255, 255, 255, 0.97);
 }
 .button-dark:hover {
     background: #9a9a9a;
@@ -37,11 +37,11 @@
     background-color:#ABABAB;
     border: 1px solid #ABABAB;
     color: #f2f2f2;
-    box-shadow: 6px 6px 16px 0 rgba(255, 255, 255, 0.97), -3px -3px 13px 0  rgba(217, 210, 200, 0.81);
+    box-shadow: 10px 10px 20px 0 rgba(255, 255, 255, 0.97), -10px -10px 20px 0  rgba(217, 210, 200, 0.81);
 }
 .button-dark:disabled {
     background: #ABABAB;
-    box-shadow: 6px 6px 16px 0 rgba(255, 255, 255, 0.97), -3px -3px 13px 0  rgba(217, 210, 200, 0.81);
+    box-shadow: 10px 10px 20px 0 rgba(255, 255, 255, 0.97), -10px -10px 20px 0  rgba(217, 210, 200, 0.81);
     border: 1px solid #ABABAB;
 }
 
@@ -50,7 +50,7 @@
     background-color:#FC4365;
     border: 1px solid #FC4365;
     color: #f2f2f2;
-    box-shadow: 3px 3px 14px 0 rgba(150, 40, 61, 0.8), -3px -3px 13px 0 rgba(254, 217, 224, 0.97);
+    box-shadow: 10px 10px 20px 0 rgba(150, 40, 61, 0.8), -10px -10px 20px 0 rgba(254, 217, 224, 0.97);
 }
 .button-danger:hover {
     background: #e33c5b;
@@ -60,7 +60,7 @@
     background-color:#FC4365;
     border: 1px solid #FC4365;
     color: #f2f2f2;
-    box-shadow: 3px 3px 14px 0 rgba(254, 217, 224, 0.97), -3px -3px 13px 0  rgba(150, 40, 61, 0.8);
+    box-shadow: 10px 10px 20px 0 rgba(254, 217, 224, 0.97), -10px -10px 20px 0  rgba(150, 40, 61, 0.8);
 }
 .button-danger:disabled {
     background-color:#FC4365;
