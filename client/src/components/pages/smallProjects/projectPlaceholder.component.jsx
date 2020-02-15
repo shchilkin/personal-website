@@ -11,10 +11,20 @@ const ProjectPlaceholder = () => {
             <div className={'row'}>
                 <div className={'col-md-3'}>
                     <Container>
-                        <img src={FindOnGithubLogo} alt={'Find on Github logo'}/>
-                        <Link className='nav-item nav-link text-center' to='/projects/findOnGithub'>
-                            Find on GitHub
-                        </Link>
+                        <div className='container' style={{width:'90%'}}>
+                            {/*TODO Redisign logo because github logo cannot be modified */}
+                            <img src={FindOnGithubLogo} alt={'Find on Github logo'}/>
+                        </div>
+                            <Link
+                                style={{textDecoration:'none'}}
+                                to='/projects/findOnGithub'
+                                className={'d-flex justify-content-center mb-3'}
+                            >
+                                <button className='button text-center'
+                                        style={{align:'center', width:'90%'}}>
+                                    Find on GitHub
+                                </button>
+                            </Link>
                     </Container>
                 </div>
             </div>
