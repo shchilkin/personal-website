@@ -35,6 +35,7 @@ const Search = ({searchUsers, showClear, clearUsers, setAlert}) => {
             type={'submit'}
             />
         </form>
+
         {showClear && (
             <ButtonBlock onClick={clearUsers} text={'Clear'} />
         )}

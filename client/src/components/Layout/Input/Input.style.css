@@ -7,11 +7,15 @@
     background-color: #F0F0F0;
     padding:.375rem .75rem;
     mix-blend-mode: normal;
-    color: #777B7E;
-    box-shadow: 6px 6px 16px 0 rgba(255, 255, 255, 0.97), -6px -6px 26px 0  rgba(217, 210, 200, 0.81);
+    /*color: #777B7E;*/
+    color: #FC4365;
+    font-weight: bold;
+    box-shadow: 10px 10px 20px 0 rgba(255, 255, 255, 0.97), -10px -10px 20px 0  rgba(217, 210, 200, 0.81);
+    caret-color: #777B7E;
 }
 
 .Input:focus{
     outline: none;
-    border-color: #777B7E;
+    box-shadow: 10px 10px 20px 0 rgba(217, 210, 200, 0.81), -10px -10px 20px 0  rgba(255, 255, 255, 0.97);
+    /*border-color: #777B7E;*/
 }
