@@ -353,17 +353,6 @@ const AvatarGenerator = () => {
               </Container>
           </div>
       </div>
-      <div className='container-fluid text-center'>
-        <h5>Plans:</h5>
-        <div className='row d-flex justify-content-center'>
-          <ul className='list-group  list-group'>
-            <li className='list-group-item'>
-              Add Avatar rendering (server-side)
-            </li>
-            <li className='list-group-item'>Add more customization options</li>
-          </ul>
-        </div>
-      </div>
     </Fragment>
   );
 };
