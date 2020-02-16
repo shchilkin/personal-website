@@ -8,21 +8,26 @@
 }
 
 .Alert-danger{
-    color: #721c24;
+    color: #653941;
     background-color: #fd8ea3;
 }
 
 .Alert-warning{
-     color: #665a16;
+    color: #665e2e;
      background-color: #ffea74;
  }
 
 .Alert-success{
-    color: #2d3c1e;
+    color: #38452d;
     background-color: #8dac70;
 }
 
 .Alert-dark{
     color: #d8d8d8;
     background-color: #303030;
+}
+
+.Alert-info{
+    color: #235450;
+    background-color: #6bb9b2;
 }
