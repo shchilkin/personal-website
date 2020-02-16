@@ -3,6 +3,7 @@ import ButtonBlock from "../../../../Layout/Buttons/Button-Block/Button-Block.co
 import '../../../../Layout/Buttons/Button-Block/Button-Block.style.css'
 import '../../../../Layout/Buttons/Button/Button.style.css'
 import '../../../../Layout/Input/Input.style.css'
+import '../../../../Layout/Alert/Alert.style.css'
 
 const Search = ({searchUsers, showClear, clearUsers, setAlert}) => {
     const [text, setText] = useState('');
@@ -36,7 +37,6 @@ const Search = ({searchUsers, showClear, clearUsers, setAlert}) => {
             type={'submit'}
             />
         </form>
-
         {showClear && (
             <ButtonBlock onClick={clearUsers} style={{marginBottom:'1.25rem'}} text={'Clear'} />
         )}

@@ -2,7 +2,7 @@
     background: #F0F0F0;
     mix-blend-mode: normal;
     border: 1px solid #F0F0F0;
-    box-shadow: 10px 10px 20px 0 rgba(217, 210, 200, 0.83), -10px -10px 20px 0 rgba(255, 255, 255, 0.97);
+    box-shadow: 10px 10px 30px 0 rgba(217, 210, 200, 1), -10px -10px 30px 0 rgba(255, 255, 255, 1);
     border-radius: 10px;
     color: #222222;
     padding: .375rem .75rem;
@@ -10,12 +10,12 @@
 .button:hover {
     /*background: #d8d8d8;*/
     /*border: 1px solid #d8d8d8;*/
-    box-shadow: 5px 5px 10px 0 rgba(217, 210, 200, 0.83), -5px -5px 10px 0 rgba(255, 255, 255, 0.97);
+    box-shadow: 5px 5px 15px 0 rgba(217, 210, 200, 1), -5px -5px 15px 0 rgba(255, 255, 255, 1);
 }
 .button:active {
     background: #F0F0F0;
     border: 1px solid #F0F0F0;
-    box-shadow: 10px 10px 20px 0 rgba(255, 255, 255, 0.97), -10px -10px 20px 0  rgba(217, 210, 200, 0.81);
+    box-shadow: 10px 10px 30px 0 rgba(255, 255, 255, 1), -10px -10px 30px 0  rgba(217, 210, 200, 1);
 }
 .button:disabled {
     background: #f0f0f0;
