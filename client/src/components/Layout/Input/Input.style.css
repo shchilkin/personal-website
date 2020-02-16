@@ -1,14 +1,14 @@
 .Input{
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
     height: 45px;
     border-radius: 12px;
     border: 1px solid #F0F0F0;
     background-color: #F0F0F0;
     padding:.375rem .75rem;
     mix-blend-mode: normal;
-    /*color: #777B7E;*/
-    color: #FC4365;
+    /*color: #FC4365;*/
+    color: #ED2939;
     font-weight: bold;
     box-shadow: 10px 10px 20px 0 rgba(255, 255, 255, 0.97), -10px -10px 20px 0  rgba(217, 210, 200, 0.81);
     caret-color: #777B7E;
@@ -17,5 +17,4 @@
 .Input:focus{
     outline: none;
     box-shadow: 10px 10px 20px 0 rgba(217, 210, 200, 0.81), -10px -10px 20px 0  rgba(255, 255, 255, 0.97);
-    /*border-color: #777B7E;*/
 }

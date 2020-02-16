@@ -30,14 +30,15 @@ const Search = ({searchUsers, showClear, clearUsers, setAlert}) => {
                 onChange={onChange}
             />
             <input
-            className={'Button-Block button button-dark'}
+            className={'Button-Block button'}
+            style={{marginBottom:'1.25rem'}}
             value={'Search'}
             type={'submit'}
             />
         </form>
 
         {showClear && (
-            <ButtonBlock onClick={clearUsers} text={'Clear'} />
+            <ButtonBlock onClick={clearUsers} style={{marginBottom:'1.25rem'}} text={'Clear'} />
         )}
         </div>
     )
