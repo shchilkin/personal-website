@@ -9,6 +9,7 @@ import ContactPage from "./components/pages/contact/ContactPage";
 import SmallProjects from "./components/pages/smallProjects/SmallProjects";
 import AvatarGenerator from "./components/pages/avatarGenerator/AvatarGenerator";
 import ColorPalette from './components/pages/ColorPalette'
+import findOnGithub from './components/pages/smallProjects/FindOnGithub/FindOnGithub.component'
 
 // style={{ backgroundColor: "rgb(251	,239	,129)" }} cool yellow color
 // #ff0138 cool red color
@@ -21,13 +22,10 @@ function App() {
           <div style={{paddingBottom:"80px"}}>
             <Switch>
               <Route exact path='/' component={Home} />
-              <Route exact path='/Projects' component={SmallProjects} />
+              <Route exact path='/projects' component={SmallProjects} />
               <Route exact path='/ColorPalette' component={ColorPalette}/>
-              <Route
-                exact
-                path='/AvatarGenerator'
-                component={AvatarGenerator}
-              />
+              <Route exact path='/AvatarGenerator' component={AvatarGenerator}/>
+              <Route exact path='/projects/findOnGithub' component={findOnGithub}/>
               <Route exact path='/Contact' component={ContactPage} />
               <Route exact path='/Login' component={Login} />
               <Route exact path='/Register' component={Registration} />
