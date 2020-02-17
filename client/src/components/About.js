@@ -1,27 +1,17 @@
 import React  from "react";
-import { Gradient } from "react-gradient";
+import '../components/Layout/About.style.css'
 
 const About = () => {
-  const gradients = [
-    ["#59c2ff", "#1270e3"],
-    ["#8739e5", "#ff63de"]
-  ];
   return (
-    <Gradient
-      gradients={gradients}
-      property='background'
-      duration={8000}
-      angle='45deg'
-    >
-      <div className='pt-5 pb-5'>
-        <div className='d-flex justify-content-center'>
-          <h1 className='display-4 text-center'>Aleksandr Shchilkin</h1>
-        </div>
-        <div className='d-flex display-4 justify-content-center'>
-          <h1>IT Student</h1>
+      <div className='About' style={{backgroundColor:'#303030', color:'#FFF'}}>
+        <div className={'container-fluid'} style={{height:'30%'}}/>
+          <div className={'container'}>
+            <h1 style={{fontSize:'8rem'}}>Hi, I am Aleksandr<span style={{color:'#ED2939'}}>.</span></h1>
+            <h3 style={{fontSize:'3rem'}}>I am a student with a passion for Web Development</h3>
+          </div>
+        <div>
         </div>
       </div>
-    </Gradient>
   );
 };
 
