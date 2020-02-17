@@ -69,14 +69,11 @@ const [alertType, setAlertType] = useState(null);
         <Router>
             <Switch>
                 <Route
-                    exact
-                    path='/projects'
+                    exact path='/projects'
                     component={projectPlaceholder}
                 />
                 <Route
-                    //TODO fix Redirect on blank page after page reload
-                    exact
-                    path='/projects/findOnGithub'
+                    exact path='/projects/findOnGithub'
                     render={() => (
                         <Fragment>
                             <div className='container'>
@@ -96,6 +93,7 @@ const [alertType, setAlertType] = useState(null);
                         </Fragment>
                     )}
                 />
+                //TODO fix Redirect on blank page after page reload
                 <Route
                     exact
                     path='/projects/findOnGithub/user/:login'

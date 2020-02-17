@@ -1,3 +1,18 @@
 .About{
     height: calc(100vh - 56px)
 }
+.MainText{
+    font-size: 8rem;
+}
+.SecondaryText{
+    font-size: 3rem;
+}
+
+@media only screen and (max-width: 576px) {
+    .MainText {
+        font-size:4rem;
+    }
+    .SecondaryText{
+        font-size: 2rem;
+    }
+}

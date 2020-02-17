@@ -9,7 +9,7 @@ const StudiesAndProjects = () => {
         </div><h1 className='display-5 pt-3 pb-3' style={{color:'#D6D6D6'}}>Studies & Projects:</h1></div>
       <div className='container pt-3 pb-3'>
         <div className='row'>
-          <div className='col-lg-4 mb-1'>
+          <div className='col-lg-4 mb-3'>
             <Container className={'CRK-container container-dark'}>
               <div className={'pb-2 pt-3 pr-2 pl-2'}>
               <h5 className={'text-center'} style={{color:'#d6d6d6'}}>Software Development</h5>
@@ -22,7 +22,7 @@ const StudiesAndProjects = () => {
               </div>
             </Container>
           </div>
-          <div className='col-lg-4 mb-1'>
+          <div className='col-lg-4 mb-3'>
             <Container className={'CRK-container container-dark'}>
               <div className={'pb-2 pt-3 pr-2 pl-2'}>
                 <h5 className={'text-center'} style={{color:'#d6d6d6'}}>Networking</h5>
@@ -33,7 +33,7 @@ const StudiesAndProjects = () => {
               </div>
             </Container>
           </div>
-          <div className='col-lg-4 mb-1'>
+          <div className='col-lg-4 mb-3'>
             <Container className={'CRK-container container-dark'}>
               <div className={'pb-2 pt-3 pr-2 pl-2'}>
                 <h5 className={'text-center'} style={{color:'#d6d6d6'}}>Electronics & IoT</h5>
