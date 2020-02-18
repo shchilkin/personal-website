@@ -8,6 +8,10 @@
     margin-right: .5rem;
 }
 
+.ContactLink:hover{
+    box-shadow: 0 0, 0 0;
+}
+
 .ContactLink:active{
     box-shadow: inset 5px 5px 10px #202020,
     inset -5px -5px 10px #454545;
@@ -16,6 +20,18 @@
 .ContactLink-Image{
     fill: #FFF;
 }
+
 .ContactLink:active .ContactLink-Image{
     fill: #ED2939;
+}
+
+@media only screen and (max-width: 576px) {
+    .ContactLink:active, .ContactLink:hover{
+        box-shadow: inset 5px 5px 10px #202020,
+        inset -5px -5px 10px #454545;
+    }
+    .ContactLink:active, .ContactLink:hover .ContactLink-Image{
+        fill: #ED2939;
+    }
+
 }

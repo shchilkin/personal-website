@@ -1,17 +1,15 @@
 import React from "react";
 import ContactLink from "./ContactLink";
-import Icons from "./Icons";
+import { Link } from "react-router-dom";
 
 const Contacts = () => {
-  const githubLogoPath = "M50.9,3.833c-25.939,0 -46.97,21.031 -46.97,46.976c0,20.754 13.459,38.359 32.125,44.574c2.35,0.429 3.207,-1.021 3.207,-2.267c0,-1.113 -0.041,-4.069 -0.064,-7.988c-13.066,2.838 -15.823,-6.298 -15.823,-6.298c-2.137,-5.427 -5.216,-6.872 -5.216,-6.872c-4.265,-2.912 0.323,-2.855 0.323,-2.855c4.715,0.332 7.195,4.842 7.195,4.842c4.19,7.178 10.995,5.104 13.671,3.902c0.427,-3.034 1.638,-5.104 2.982,-6.278c-10.43,-1.185 -21.397,-5.217 -21.397,-23.217c0,-5.127 1.831,-9.32 4.836,-12.605c-0.485,-1.188 -2.097,-5.963 0.458,-12.431c0,0 3.945,-1.263 12.919,4.816c3.746,-1.044 7.766,-1.563 11.76,-1.581c3.988,0.018 8.008,0.537 11.76,1.581c8.968,-6.079 12.905,-4.816 12.905,-4.816c2.563,6.468 0.951,11.243 0.467,12.431c3.01,3.285 4.83,7.478 4.83,12.605c0,18.046 -10.984,22.017 -21.449,23.179c1.687,1.451 3.189,4.317 3.189,8.701c0,6.277 -0.057,11.344 -0.057,12.884c0,1.257 0.844,2.719 3.229,2.261c18.652,-6.226 32.099,-23.82 32.099,-44.568c0,-25.945 -21.034,-46.976 -46.979,-46.976";
-
   return (
       <div style={{backgroundColor:'#303030'}}>
         <div className='d-flex justify-content-center text-white pt-5 pb-1'>
           <h4 className={'text-center'}>Contact me</h4>
         </div>
         <div className='d-flex justify-content-center pb-5'>
-          <ul>
+          <div className='container text-center'>
             <li className='mb-2' style={{ display: "inline-block" }}>
                 <ContactLink icon='Github' link={"https://github.com/CrazyRedKitten"} />
             </li>
@@ -50,10 +48,20 @@ const Contacts = () => {
             <li className='mb-2' style={{ display: "inline-block" }}>
               <ContactLink icon='LinkedIn' link={"https://www.linkedin.com/in/crazyredkitten/"}/>
             </li>
-            <li className='mb-2' style={{ display: "inline-block" }}>
-              <ContactLink icon='Email' link={"/Contact"}/>
-            </li>
-          </ul>
+            {/*<li className='mb-2' style={{ display: "inline-block" }}>*/}
+            {/*  <ContactLink icon='Email' link={"/Contact"}/>*/}
+            {/*</li>*/}
+            {/* TODO Add Link component to the ContactLink */}
+              <Link to={'/contact'}>
+              <button className={'ContactLink'}>
+                  <div style={{width:'2rem', height:'2rem'}}>
+                      <svg  height={'100%'} width={'100%'}  className={'ContactLink-Image'} viewBox={'0 0 500 500'}>
+                          <path d='M34.054 437.99 C18.135 438 5.223 425.104 5.213 409.184 L5.056 153.826 250.137 286.421 495.055 152.792 495.213 408.883 C495.223 424.802 482.325 437.714 466.407 437.723 Z M250.177 236.205 L5.042 132.307 5.018 92.126 C5.008 76.207 17.904 63.294 33.823 63.284 L466.176 63.018 C482.094 63.008 495.008 75.905 495.018 91.824 L495.043 132.751 Z'/>
+                      </svg>
+                  </div>
+              </button>
+              </Link>
+          </div>
         </div>
       </div>
   );

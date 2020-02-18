@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
 import './ContactLink.style.css'
 import Icons from "./Icons";
 
@@ -20,32 +19,3 @@ const ContactLink = ({icon, link, width = '2rem', height = '2rem'}) => {
 };
 
 export default ContactLink;
-
-
-// <Fragment>
-//   {props.link ? (
-//       <button className={'ContactLink'} >
-//         <a  href={props.link} target='blank'>
-//           <img
-//               src={props.image}
-//               style={{ width: "2rem" }}
-//               className='ContactLink-Image'
-//               alt={props.alt}
-//           />
-//         </a>
-//       </button>
-//   ) : (
-//       <Link to={props.Link}>
-//         <button className={'ContactLink'} >
-//           <a  href={props.link} target='blank'>
-//             <img
-//                 src={props.image}
-//                 style={{ width: "2rem" }}
-//                 className='ContactLink-Image'
-//                 alt={props.alt}
-//             />
-//           </a>
-//         </button>
-//       </Link>
-//   )}
-// </Fragment>
