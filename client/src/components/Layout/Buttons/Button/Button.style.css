@@ -2,119 +2,71 @@
     background: #F0F0F0;
     mix-blend-mode: normal;
     border: 1px solid #F0F0F0;
-    box-shadow: 10px 10px 30px 0 rgba(217, 210, 200, 1), -10px -10px 30px 0 rgba(255, 255, 255, 1);
+    box-shadow: 10px 10px 15px 0 rgba(217, 210, 200, 1), -10px -10px 30px 0 rgba(255, 255, 255, 1);
     border-radius: 10px;
     color: #222222;
     padding: .375rem .75rem;
 }
 .button:hover {
-    /*background: #d8d8d8;*/
-    /*border: 1px solid #d8d8d8;*/
-    box-shadow: 5px 5px 15px 0 rgba(217, 210, 200, 1), -5px -5px 15px 0 rgba(255, 255, 255, 1);
+    box-shadow: 5px 5px 15px 0 rgba(217, 210, 200, 1), -10px -10px 10px 0 rgba(255, 255, 255, 1);
 }
-.button:active {
+.button:active, .button:disabled  {
     background: #F0F0F0;
-    border: 1px solid #F0F0F0;
-    box-shadow: 10px 10px 30px 0 rgba(255, 255, 255, 1), -10px -10px 30px 0  rgba(217, 210, 200, 1);
+    border: 1px solid transparent;
+    box-shadow: inset 10px 10px 10px 0 rgba(217, 210, 200, 1), inset -10px -10px 10px 0 rgba(255, 255, 255, 1);
+    /*color: #666666;*/
 }
-.button:disabled {
-    background: #f0f0f0;
-    box-shadow: rgba(255, 255, 255, 0.97) 10px 10px 20px 0 , -10px -10px 20px 0 rgba(217, 210, 200, 0.81);
-    border: 1px solid #f0f0f0;
-}
-
 
 .button-dark {
-    background-color:#ABABAB;
-    border: 1px solid #ABABAB;
+    background-color:#303030;
+    border: 1px solid #303030;
     color: #f2f2f2;
-    box-shadow: 10px 10px 20px 0 rgba(217, 210, 200, 0.81), -10px -10px 20px 0 rgba(255, 255, 255, 0.97);
+    box-shadow: 10px 10px 15px 0 rgba(217, 210, 200, 1), -10px -10px 30px 0 rgba(255, 255, 255, 1);
 }
-.button-dark:hover {
-    background: #9a9a9a;
-    border: 1px solid #9a9a9a;
-}
-.button-dark:active{
-    background-color:#ABABAB;
-    border: 1px solid #ABABAB;
+.button-dark:active, .button-dark:disabled{
+    background-color:#303030;
+    border: 1px solid #303030;
     color: #f2f2f2;
-    box-shadow: 10px 10px 20px 0 rgba(255, 255, 255, 0.97), -10px -10px 20px 0  rgba(217, 210, 200, 0.81);
-}
-.button-dark:disabled {
-    background: #ABABAB;
-    box-shadow: 10px 10px 20px 0 rgba(255, 255, 255, 0.97), -10px -10px 20px 0  rgba(217, 210, 200, 0.81);
-    border: 1px solid #ABABAB;
+    box-shadow: inset 20px 20px 30px 0 #202020, inset -20px -20px 30px 0 #454545;
 }
 
 
 .button-danger {
     background-color:#FC4365;
-    border: 1px solid #F0F0F0;
-    color: #f2f2f2;
-    /*box-shadow: 10px 10px 20px 0 rgba(0, 0, 0, 0.15), -6px -6px 20px 0 rgba(254, 217, 224, 0.97);*/
-    box-shadow: 10px 10px 20px 0 rgba(217, 210, 200, 0.8), -10px -10px 20px 0 rgba(255, 255, 255, 0.9);
-    /*box-shadow: 10px 10px 20px 0 rgba(202, 54, 81, 0.5), -10px -10px 20px 0 rgba(252, 67, 101, 0.3);*/
-}
-.button-danger:hover {
-    background: #e33c5b;
-    border: 1px solid #e33c5b;
-}
-.button-danger:active{
-    background-color:#FC4365;
     border: 1px solid #FC4365;
     color: #f2f2f2;
-    /*box-shadow: 6px 6px 16px 0 rgba(254, 217, 224, 0.97), -6px -6px 13px 0  rgba(0, 0, 0, 0.15);*/
-    box-shadow: 10px 10px 20px 0 rgba(217, 210, 200, 0.8), -10px -10px 20px 0 rgba(255, 255, 255, 0.9);
-    /*box-shadow: 10px 10px 20px 0 rgba(202, 54, 81, 0.5), -10px -10px 20px 0 rgba(252,67,101,0.3);*/
-}
-.button-danger:disabled {
-    background-color:#FC4365;
-    border: 1px solid #FC4365;
-    color: #f2f2f2;
-    box-shadow: 6px 6px 16px 0 rgba(254, 217, 224, 0.97), -3px -3px 13px 0  rgba(150, 40, 61, 0.4);
-}
+    box-shadow: 10px 10px 15px 0 rgba(217, 210, 200, 1), -10px -10px 30px 0 rgba(255, 255, 255, 1);
 
+}
+.button-danger:active,.button-danger:disabled {
+    background-color:#FC4365;
+    border: 1px solid #FC4365;
+    color: #f2f2f2;
+    box-shadow: inset 10px 10px 20px 0 #d63956, inset -10px -10px 20px 0 #ff4d74;
+}
 
 .button-warning {
     background-color:#FFE138;
     border: 1px solid #FFE138;
-    /*box-shadow: 6px 6px 16px 0 rgba(128, 113, 28, 0.81), -6px -6px 26px 0 rgba(255, 240, 156, 0.97);*/
 }
-.button-warning:hover {
-    background: #e6cb32;
-    border: 1px solid #e6cb32;
-}
-.button-warning:active{
+.button-warning:active, .button-warning:disabled{
     background-color:#FFE138;
-    border: 1px solid #FFE138;
-    /*box-shadow: 6px 6px 26px 0 rgba(255, 240, 156, 0.97), -3px -3px 13px 0 rgba(128, 113, 28, 0.81);*/
-}
-.button-warning:disabled {
-    background-color:#FFE138;
-    border: 1px solid #FFE138;
-    box-shadow: 6px 6px 26px 0 rgba(255, 240, 156, 0.97), -3px -3px 13px 0 rgba(128, 113, 28, 0.81);
+    border: 1px solid transparent;
+    box-shadow: inset 10px 10px 10px 0 #d9bf30,
+    inset -10px -10px 10px 0  #ffff40;
 }
 
 
 .button-success {
-    background-color:#70974C;
-    border: 1px solid #70974C;
+    background-color: #4a9730;
+    border: 1px solid #4a9730;
     color: #FFF;
-    box-shadow: 6px 6px 16px 0 #384c26CF , -6px -6px 26px 0 #B8CBA6F7;
 }
-.button-success:hover {
-    background: #658844;
-    border: 1px solid #658844;
-}
-.button-success:active{
-    background-color:#70974C;
-    border: 1px solid #70974C;
-    box-shadow: 3px 3px 13px 0 #B8CBA6F7, -3px -3px 13px 0 #384c26CF;
-}
-.button-success:disabled {
-    background-color:#70974C;
-    border: 1px solid #70974C;
-    box-shadow: 3px 3px 13px 0 #B8CBA6F7, -3px -3px 13px 0 #384c26CF;
+.button-success:active, .button-success:disabled{
+    background-color:#4a9730;
+    border: 1px solid #4a9730;
+    box-shadow: inset 10px 10px 10px #3f8029,
+    inset -10px -10px 10px #55ae37;
 }
 
 
@@ -122,21 +74,12 @@
     background-color:#46A89F;
     border: 1px solid #46A89F;
     color: #FFF;
-    box-shadow: 6px 6px 16px 0 #235450CF , -6px -6px 26px 0 #a3d4cfF7;
 }
-.button-info:hover {
-    background: #3f978f;
-    border: 1px solid #3f978f;
-}
-.button-info:active{
+.button-info:active,.button-info:disabled{
     background-color:#46A89F;
     border: 1px solid #46A89F;
-    box-shadow: 3px 3px 13px 0 #a3d4cfF7, -3px -3px 13px 0 #a3d4cfCF;
-}
-.button-info:disabled {
-    background-color:#46A89F;
-    border: 1px solid #46A89F;
-    box-shadow: 3px 3px 13px 0 #a3d4cfF7, -3px -3px 13px 0 #a3d4cfCF;
+    box-shadow: inset 10px 10px 10px #3c8f87,
+    inset -10px -10px 10px #51c1b7;
 }
 
 .button-block {

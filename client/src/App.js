@@ -18,7 +18,7 @@ function App() {
     <div className='App' style={{background:'#F0F0F0', position:'relative', minHeight:'100vh'}}>
       <Router>
         <Fragment>
-          <Navbar />
+          {/*<Navbar />*/}
           <div style={{paddingBottom:"80px"}}>
             <Switch>
               <Route exact path='/' component={Home} />

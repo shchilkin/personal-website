@@ -29,6 +29,8 @@ const Search = ({searchUsers, showClear, clearUsers, setAlert}) => {
                 placeholder={'Enter an Username...'}
                 value={text}
                 onChange={onChange}
+                onFocus={event=> event.target.placeholder=''}
+                onBlur={event=> event.target.placeholder='Enter an Username...'}
             />
             <input
             className={'Button-Block button'}

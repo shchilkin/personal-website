@@ -1,40 +1,51 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
+import './ContactLink.style.css'
+import Icons from "./logos/Icons";
 
-const ContactLink = props => {
-  /*TODO rewrite this part  if link provided use <a> with href, if Link to other part of the app use <Link> */
+const ContactLink = ({icon, link, width = '2rem', height = '2rem'}) => {
   return (
-    <Fragment>
-      {props.link ? (
-        <a href={props.link} target='blank'>
-          <img
-            src={props.image}
-            style={{ width: "3.125rem" }}
-            className='mr-3'
-            alt={props.alt}
-          />
-        </a>
-      ) : (
-        <Link to={props.Link}>
-          <img
-            src={props.image}
-            style={{ width: "3.125rem" }}
-            className='mr-3'
-            alt={props.alt}
-          />
-        </Link>
-      )}
-    </Fragment>
+      <Fragment>
+        <button className={'ContactLink'}>
+          <a  href={link} target='blank'>
+            <div style={{width:width, height:height}}>
+              <svg  height={'100%'} width={'100%'}  className={'ContactLink-Image'} viewBox={Icons[icon].viewBox}>
+                <path d={Icons[icon].path}/>
+              </svg>
+            </div>
+          </a>
+        </button>
+      </Fragment>
   );
 };
 
 export default ContactLink;
 
-// <a href={props.link} target='blank'>
-// <img
-//   src={props.image}
-//   style={{ width: "3.125rem" }}
-//   className='mr-3'
-//   alt={props.alt}
-// />
-// </a>
+
+// <Fragment>
+//   {props.link ? (
+//       <button className={'ContactLink'} >
+//         <a  href={props.link} target='blank'>
+//           <img
+//               src={props.image}
+//               style={{ width: "2rem" }}
+//               className='ContactLink-Image'
+//               alt={props.alt}
+//           />
+//         </a>
+//       </button>
+//   ) : (
+//       <Link to={props.Link}>
+//         <button className={'ContactLink'} >
+//           <a  href={props.link} target='blank'>
+//             <img
+//                 src={props.image}
+//                 style={{ width: "2rem" }}
+//                 className='ContactLink-Image'
+//                 alt={props.alt}
+//             />
+//           </a>
+//         </button>
+//       </Link>
+//   )}
+// </Fragment>

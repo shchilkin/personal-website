@@ -13,7 +13,7 @@ const NavBar = () => {
 
   return (
     <Fragment>
-      <nav className='navbar sticky-top navbar-expand-lg navbar-light' style={{backgroundColor:'#FFF'}}>
+      <nav className='navbar sticky-top navbar-light navbar-expand-lg' style={{backgroundColor:'#FFF'}}>
         <Link
           to='/'
           className='navbar-brand mb-0 h1'
@@ -49,9 +49,6 @@ const NavBar = () => {
             </Link>
             <Link className='nav-item nav-link' to='/AvatarGenerator'>
               Avatar Generator
-            </Link>
-            <Link className='nav-item nav-link' to='/ColorPalette'>
-              Color Palette
             </Link>
             <Link className='nav-item nav-link' to='/Contact'>
               Contact

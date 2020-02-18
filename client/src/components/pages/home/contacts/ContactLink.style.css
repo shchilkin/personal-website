@@ -1,0 +1,21 @@
+.ContactLink{
+    border-radius: 12px;
+    padding: .5rem;
+    background: #303030;
+    box-shadow:  5px 5px 10px #292929,
+    -5px -5px 10px #373737;
+    border: 1px solid #303030;
+    margin-right: .5rem;
+}
+
+.ContactLink:active{
+    box-shadow: inset 5px 5px 10px #202020,
+    inset -5px -5px 10px #454545;
+}
+
+.ContactLink-Image{
+    fill: #FFF;
+}
+.ContactLink:active .ContactLink-Image{
+    fill: #ED2939;
+}

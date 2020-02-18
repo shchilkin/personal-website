@@ -7,8 +7,8 @@ const Home = () => {
   return (
     <Fragment>
       <About />
-      <StudiesAndProjects />
       <Contacts />
+      <StudiesAndProjects />
     </Fragment>
   );
 };

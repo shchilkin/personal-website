@@ -1,100 +1,61 @@
-import React, { Fragment } from "react";
-import { Gradient } from "react-gradient";
+import React from "react";
 import ContactLink from "./ContactLink";
-import EmailLogo from "./logos/email.svg";
-import Instagram from "./logos/instagram.svg";
-import Twitter from "./logos/Twitter.svg";
-import Youtube from "./logos/Youtube.svg";
-import Github from "./logos/Github.svg";
-import LinkedIn from "./logos/linkedin.svg";
-import VK from "./logos/vk.svg";
-import Facebook from "./logos/fb.svg";
-import Snapchat from "./logos/Snapchat.svg";
-
-const gradients = [
-  ["#59c2ff", "#1270e3"],
-  ["#8739e5", "#ff63de"]
-];
+import Icons from "./logos/Icons";
 
 const Contacts = () => {
+  const githubLogoPath = "M50.9,3.833c-25.939,0 -46.97,21.031 -46.97,46.976c0,20.754 13.459,38.359 32.125,44.574c2.35,0.429 3.207,-1.021 3.207,-2.267c0,-1.113 -0.041,-4.069 -0.064,-7.988c-13.066,2.838 -15.823,-6.298 -15.823,-6.298c-2.137,-5.427 -5.216,-6.872 -5.216,-6.872c-4.265,-2.912 0.323,-2.855 0.323,-2.855c4.715,0.332 7.195,4.842 7.195,4.842c4.19,7.178 10.995,5.104 13.671,3.902c0.427,-3.034 1.638,-5.104 2.982,-6.278c-10.43,-1.185 -21.397,-5.217 -21.397,-23.217c0,-5.127 1.831,-9.32 4.836,-12.605c-0.485,-1.188 -2.097,-5.963 0.458,-12.431c0,0 3.945,-1.263 12.919,4.816c3.746,-1.044 7.766,-1.563 11.76,-1.581c3.988,0.018 8.008,0.537 11.76,1.581c8.968,-6.079 12.905,-4.816 12.905,-4.816c2.563,6.468 0.951,11.243 0.467,12.431c3.01,3.285 4.83,7.478 4.83,12.605c0,18.046 -10.984,22.017 -21.449,23.179c1.687,1.451 3.189,4.317 3.189,8.701c0,6.277 -0.057,11.344 -0.057,12.884c0,1.257 0.844,2.719 3.229,2.261c18.652,-6.226 32.099,-23.82 32.099,-44.568c0,-25.945 -21.034,-46.976 -46.979,-46.976";
+
   return (
-    <Gradient
-      gradients={gradients}
-      property='background'
-      duration={8000}
-      angle='45deg'
-    >
-      <Fragment>
+      <div style={{backgroundColor:'#303030'}}>
         <div className='d-flex justify-content-center text-white pt-5 pb-1'>
-          <h4>Contact me</h4>
+          <h4 className={'text-center'}>Contact me</h4>
         </div>
         <div className='d-flex justify-content-center pb-5'>
           <ul>
             <li className='mb-2' style={{ display: "inline-block" }}>
-              <ContactLink
-                image={Github}
-                link={"https://github.com/CrazyRedKitten"}
-                alt='Github'
-              />
+                <ContactLink icon='Github' link={"https://github.com/CrazyRedKitten"} />
+            </li>
+            {/*<li className='mb-2' style={{ display: "inline-block" }}>*/}
+            {/*  <ContactLink icon='Instagram' link={"https://www.instagram.com/crazyredkitten/"}/>*/}
+            {/*</li>*/}
+            {/*TODO Fix instagram logo error*/}
+              <button className={'ContactLink'}>
+                  <a  href={'https://www.instagram.com/crazyredkitten'} target='blank'>
+                      <div style={{width:'2rem', height:'2rem'}}>
+                          <svg  height={'100%'} width={'100%'}  className={'ContactLink-Image'} viewBox={'0 0 504 504'}>
+                              <g>
+                                  <path d="M251.921,0.159c-68.418,0 -76.997,0.29 -103.867,1.516c-26.814,1.224 -45.127,5.482 -61.152,11.71c-16.566,6.438 -30.615,15.052 -44.62,29.057c-14.005,14.005 -22.619,28.054 -29.057,44.62c-6.228,16.024 -10.486,34.337 -11.71,61.151c-1.226,26.87 -1.515,35.449 -1.515,103.867c0,68.417 0.289,76.996 1.515,103.866c1.224,26.814 5.482,45.127 11.71,61.151c6.438,16.566 15.052,30.615 29.057,44.621c14.005,14.005 28.054,22.619 44.62,29.057c16.025,6.227 34.338,10.486 61.152,11.709c26.87,1.226 35.449,1.516 103.867,1.516c68.417,0 76.996,-0.29 103.866,-1.516c26.814,-1.223 45.127,-5.482 61.151,-11.709c16.566,-6.438 30.615,-15.052 44.621,-29.057c14.005,-14.006 22.619,-28.055 29.057,-44.621c6.227,-16.024 10.486,-34.337 11.709,-61.151c1.226,-26.87 1.516,-35.449 1.516,-103.866c0,-68.418 -0.29,-76.997 -1.516,-103.867c-1.223,-26.814 -5.482,-45.127 -11.709,-61.151c-6.438,-16.566 -15.052,-30.615 -29.057,-44.62c-14.006,-14.005 -28.055,-22.619 -44.621,-29.057c-16.024,-6.228 -34.337,-10.486 -61.151,-11.71c-26.87,-1.226 -35.449,-1.516 -103.866,-1.516Zm0,45.392c67.265,0 75.233,0.256 101.797,1.468c24.562,1.121 37.901,5.225 46.778,8.674c11.759,4.57 20.151,10.03 28.966,18.845c8.816,8.815 14.275,17.208 18.845,28.966c3.45,8.877 7.554,22.216 8.674,46.778c1.212,26.564 1.469,34.532 1.469,101.798c0,67.265 -0.257,75.233 -1.469,101.797c-1.12,24.562 -5.224,37.901 -8.674,46.778c-4.57,11.759 -10.029,20.151 -18.845,28.966c-8.815,8.816 -17.207,14.275 -28.966,18.845c-8.877,3.45 -22.216,7.554 -46.778,8.674c-26.56,1.212 -34.527,1.469 -101.797,1.469c-67.271,0 -75.237,-0.257 -101.798,-1.469c-24.562,-1.12 -37.901,-5.224 -46.778,-8.674c-11.759,-4.57 -20.151,-10.029 -28.967,-18.845c-8.815,-8.815 -14.275,-17.207 -18.844,-28.966c-3.45,-8.877 -7.554,-22.216 -8.675,-46.778c-1.212,-26.564 -1.468,-34.532 -1.468,-101.797c0,-67.266 0.256,-75.234 1.468,-101.798c1.121,-24.562 5.225,-37.901 8.675,-46.778c4.569,-11.758 10.029,-20.151 18.844,-28.966c8.816,-8.815 17.208,-14.275 28.967,-18.845c8.877,-3.449 22.216,-7.553 46.778,-8.674c26.564,-1.212 34.532,-1.468 101.798,-1.468Z"/>
+                                  <path d="M251.921,336.053c-46.378,0 -83.974,-37.596 -83.974,-83.973c0,-46.378 37.596,-83.974 83.974,-83.974c46.377,0 83.973,37.596 83.973,83.974c0,46.377 -37.596,83.973 -83.973,83.973Zm0,-213.338c-71.447,0 -129.365,57.918 -129.365,129.365c0,71.446 57.918,129.364 129.365,129.364c71.446,0 129.364,-57.918 129.364,-129.364c0,-71.447 -57.918,-129.365 -129.364,-129.365Z"/>
+                                  <path d="M416.627,117.604c0,16.696 -13.535,30.23 -30.231,30.23c-16.695,0 -30.23,-13.534 -30.23,-30.23c0,-16.696 13.535,-30.23 30.23,-30.23c16.696,0 30.231,13.534 30.231,30.23Z"/>
+                              </g>
+                          </svg>
+                      </div>
+                  </a>
+              </button>
+            <li className='mb-2' style={{ display: "inline-block" }}>
+                <ContactLink icon='Snapchat' link={"https://www.snapchat.com/add/crazyredkitten"}/>
             </li>
             <li className='mb-2' style={{ display: "inline-block" }}>
-              <ContactLink
-                image={Instagram}
-                link={"https://www.instagram.com/crazyredkitten/"}
-                alt='Instagram'
-              />
+              <ContactLink icon='Twitter' link={"https://twitter.com/crazyredkitten"}/>
             </li>
             <li className='mb-2' style={{ display: "inline-block" }}>
-              <ContactLink
-                image={Snapchat}
-                link={"https://www.snapchat.com/add/crazyredkitten"}
-                alt='Snapchat'
-              />
+              <ContactLink icon='YouTube' link={"https://www.youtube.com/channel/UCJYmru-hgW4CYYuoyMmWOnw"}/>
             </li>
             <li className='mb-2' style={{ display: "inline-block" }}>
-              <ContactLink
-                image={Twitter}
-                link={"https://twitter.com/crazyredkitten"}
-                alt='Twitter'
-              />
+              <ContactLink icon='VK' link={"https://vk.com/crazyredkitten"}/>
             </li>
             <li className='mb-2' style={{ display: "inline-block" }}>
-              <ContactLink
-                image={Youtube}
-                link={
-                  "https://www.youtube.com/channel/UCJYmru-hgW4CYYuoyMmWOnw"
-                }
-                alt='YouTube'
-              />
+              <ContactLink icon='Facebook' link={"https://www.facebook.com/crazyredkitten"}/>
             </li>
             <li className='mb-2' style={{ display: "inline-block" }}>
-              <ContactLink
-                image={VK}
-                link={"https://vk.com/crazyredkitten"}
-                alt='VK'
-              />
+              <ContactLink icon='LinkedIn' link={"https://www.linkedin.com/in/crazyredkitten/"}/>
             </li>
             <li className='mb-2' style={{ display: "inline-block" }}>
-              <ContactLink
-                image={Facebook}
-                link={"https://www.facebook.com/crazyredkitten"}
-                alt='Facebook'
-              />
-            </li>
-            <li className='mb-2' style={{ display: "inline-block" }}>
-              <ContactLink
-                image={LinkedIn}
-                link={"https://www.linkedin.com/in/crazyredkitten/"}
-                alt='LinkedIn'
-              />
-            </li>
-            <li className='mb-2' style={{ display: "inline-block" }}>
-              <ContactLink image={EmailLogo} Link={"/Contact"} alt='Email' />
+              <ContactLink icon='Email' link={"/Contact"}/>
             </li>
           </ul>
         </div>
-      </Fragment>
-    </Gradient>
+      </div>
   );
 };
 
