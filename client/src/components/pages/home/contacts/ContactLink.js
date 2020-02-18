@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import './ContactLink.style.css'
-import Icons from "./logos/Icons";
+import Icons from "./Icons";
 
 const ContactLink = ({icon, link, width = '2rem', height = '2rem'}) => {
   return (
