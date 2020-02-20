@@ -1,13 +1,18 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import Container from "../../Layout/Container/Container.component";
+import '../../Layout/Buttons/Button/Button.style.css'
 
 const StudiesAndProjects = () => {
   return (
-    <div className='container-fluid pt-5 pb-5' style={{backgroundColor:'#303030'}}>
+    <div className='container-fluid pt-5 pb-5' style={{backgroundColor:'#303030', height:'75vh'}}>
       <div className='container'>
         <div className='d-flex justify-content-center'>
         </div><h1 className='display-5 pt-3 pb-3' style={{color:'#D6D6D6'}}>Studies & Projects:</h1></div>
       <div className='container pt-3 pb-3'>
+        <Link to='/projects'>
+          <button className='button button-dark background-dark mb-3'> Projects</button>
+        </Link>
         <div className='row'>
           <div className='col-lg-4 mb-3'>
             <Container className={'CRK-container container-dark'}>

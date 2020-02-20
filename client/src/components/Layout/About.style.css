@@ -1,11 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700&display=swap');
+
 .About{
-    /*height: calc(100vh - 56px);*/
-    height: 100vh;
+    height: calc(100vh);
 }
 .MainText{
+    font-family: 'Monoton', cursive;
     font-size: 8rem;
 }
 .SecondaryText{
+    font-family: 'Comfortaa', cursive;
     font-size: 3rem;
 }
 
@@ -16,7 +22,7 @@
 
 @media only screen and (max-width: 576px) {
     .MainText {
-        font-size:4rem;
+        font-size:3rem;
     }
     .SecondaryText{
         font-size: 2rem;

@@ -1,0 +1,71 @@
+.HomepageNavbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.HomepageNavbar li{
+    list-style: none;
+}
+
+.HomepageNavbar-Links{
+    display: flex;
+    width: 15%;
+    justify-content: space-around;
+}
+
+
+.HomepageNav{
+    align-items: center;
+}
+
+.HomepageBrand{
+    display: flex;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
+.HomepageNavItem {
+    color: #F0F0F0;
+    padding-right: 0;
+    padding-left: 0;
+    display: inline-block;
+}
+
+.HomepageNavItem:hover{
+    color: #ED2939;
+    text-decoration: none;
+}
+
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #303030;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: right;
+    color: #F0F0F0;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    color: #ED2939;
+    text-decoration: none;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    color: #F0F0F0;
+}
+

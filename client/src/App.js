@@ -13,13 +13,14 @@ import findOnGithub from './components/pages/smallProjects/FindOnGithub/FindOnGi
 
 // style={{ backgroundColor: "rgb(251	,239	,129)" }} cool yellow color
 // #ff0138 cool red color
+// style={{background:'#F0F0F0', position:'relative', minHeight:'100vh'}}
 function App() {
   return (
-    <div className='App' style={{background:'#F0F0F0', position:'relative', minHeight:'100vh'}}>
+    <div className='App'>
       <Router>
         <Fragment>
           {/*<Navbar />*/}
-          <div style={{paddingBottom:"80px"}}>
+          <div>
             <Switch>
               <Route exact path='/' component={Home} />
               <Route exact path='/projects' component={SmallProjects} />
@@ -31,7 +32,7 @@ function App() {
               <Route exact path='/Register' component={Registration} />
             </Switch>
           </div>
-          <Footer />
+          {/*<Footer />*/}
         </Fragment>
       </Router>
     </div>

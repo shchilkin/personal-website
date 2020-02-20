@@ -1,8 +1,9 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
-import Cat from "../../../icons/CatLogoV9.svg";
-import CatTongue from "../../../icons/CatTongue.svg";
-import '../../../components/Layout/Navbar/navbar-item.css'
+import Cat from "../../../../icons/CatLogoV9.svg";
+import CatTongue from "../../../../icons/CatTongue.svg";
+import '../../../Layout/Navbar/navbar-item.css'
+import './HomepageNavbar.style.css'
 
 const HomepageNavbar = () => {
     const [pressed, setPressed] = useState(false);
@@ -13,56 +14,20 @@ const HomepageNavbar = () => {
 
     return (
         <Fragment>
-            <nav className='navbar navbar-expand-lg' style={{backgroundColor:'#303030'}}>
-                <Link
-                    to='/'
-                    className='navbar-brand mb-0 h1'
-                    onMouseDown={changePressed}
-                    onMouseUp={changePressed}
-                    onTouchStart={changePressed}
-                    onTouchEnd={changePressed}
-                    onTouchCancel={changePressed}
-                >
-                    <img
-                        src={pressed ? CatTongue : Cat}
-                        width='30'
-                        height='30'
-                        className='d-inline-block align-top'
-                        alt=''
-                    />{" "}CrazyRedKitten
-                </Link>
-                <button
-                    className='navbar-toggler'
-                    type='button'
-                    data-toggle='collapse'
-                    data-target='#MainNavbar'
-                    aria-controls='MainNavbar'
-                    aria-expanded='false'
-                    aria-label='Toggle navigation'
-                >
-                    <span className='navbar-toggler-icon'/>
-                </button>
-                <div className='navbar-collapse collapse' id="MainNavbar">
-                    <ul className='navbar-nav mr-auto'>
-                        <Link className='nav-item nav-link' to='/projects'>
-                            Small Projects
-                        </Link>
-                        <Link className='nav-item nav-link' to='/AvatarGenerator'>
-                            Avatar Generator
-                        </Link>
-                        <Link className='nav-item nav-link' to='/Contact'>
-                            Contact
-                        </Link>
-                    </ul>
-                    <div className='navbar-nav'>
-                        <Link className='nav-item nav-link' to='/Login'>
-                            Log in
-                        </Link>
-                        <Link className='nav-item nav-link' to='/Register'>
-                            Register
-                        </Link>
-                    </div>
-                </div>
+            {/*<nav className={'HomepageNavbar'} style={{backgroundColor:'#303030'}}>*/}
+            {/*    <p>CrazyRedKitten</p>*/}
+            {/*    <ul className={'HomepageNavbar-Links'}>*/}
+            {/*        <li>*/}
+            {/*            <Link className={'HomepageNavItem'} to='/contact'>Contact</Link>*/}
+            {/*        </li>*/}
+            {/*        <li>*/}
+            {/*            <Link className={'HomepageNavItem'} to='/login'>Log in</Link>*/}
+            {/*        </li>*/}
+            {/*    </ul>*/}
+            {/*</nav>*/}
+            <nav className="topnav">
+                <Link className={'HomepageNavItem'} to='/login' style={{marginRight:'1rem'}}>Log in</Link>
+                <Link className={'HomepageNavItem'} to='/contact'>Contact</Link>
             </nav>
         </Fragment>
     );
