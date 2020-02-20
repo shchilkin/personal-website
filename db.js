@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const db = process.env.MONGO_DB_URI;
 
 const connectDB = async () => {
-  console.log("db", db);
   try {
     await mongoose.connect(db, {
       useNewUrlParser: true,
@@ -12,7 +11,7 @@ const connectDB = async () => {
     });
     console.log("MongoDB connected");
   } catch (error) {
-    console.error(error.message);
+    console.error("DB ERROR", error.message);
     process.exit(1);
   }
 };
