@@ -1,14 +1,18 @@
 import React from "react";
+import Card from "../../../../../Layout/Card/Card.component";
 
 const RepoItem = ({repo}) => {
     return (
-        <div className="card mb-2">
-            <div className="card-body">
-                <a href={repo.html_url}>{repo.name}</a>
-                <h6><span className={'badge badge-secondary'}>{repo.language}</span></h6>
-                <p>{repo.description}</p>
-            </div>
-        </div>
+        <Card>
+            <a href={repo.html_url} style={{margin:"1rem 0 0 1rem"}}>{repo.name}</a>
+            <h6 style={{margin:"1rem 0 0 1rem"}}><span className={'badge badge-secondary'}>{repo.language}</span></h6>
+            <p style={{margin:"1rem 0 1rem 1rem"}}>{repo.description}</p>
+        </Card>
+        // <div className="card mb-2">
+        //     <div className="card-body">
+        //
+        //     </div>
+        // </div>
     )
 };
 

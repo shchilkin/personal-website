@@ -1,7 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import Container from "../../Layout/Container/Container.component";
-import '../../Layout/Buttons/Button/Button.style.css'
+import '../../Layout/Buttons/Button/Button.style.css';
+import './StudiesAndProjects.style.css';
 
 const StudiesAndProjects = () => {
   return (
@@ -11,7 +12,7 @@ const StudiesAndProjects = () => {
         </div><h1 className='display-5 pt-3 pb-3' style={{color:'#D6D6D6'}}>Studies & Projects:</h1></div>
       <div className='container pt-3 pb-3'>
         <Link to='/projects'>
-          <button className='button button-dark background-dark mb-3'> Projects</button>
+          <button className='button button-dark background-dark project-button mb-3'>[my_projects]</button>
         </Link>
         <div className='row'>
           <div className='col-lg-4 mb-3'>

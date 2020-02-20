@@ -1,0 +1,11 @@
+.avatar-image{
+    flex-shrink: 0;
+    width: 100%;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.FOG-link:hover{
+    color: #000;
+    text-decoration: none;
+}
