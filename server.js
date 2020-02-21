@@ -21,13 +21,14 @@ if (process.env.NODE_ENV === "production") {
   app.get("/", (req, res) =>
     res.sendfile(path.join((__dirname = "client/build/index.html")))
   );
+  app.use("/api/users", require("./routes/users"));
+  app.use("/api/auth", require("./routes/auth"));
 }
 
 //  Build mode
 app.get("/", (req, res) =>
   res.sendFile(path.join(__dirname + "/client/public/index.html"))
 );
-
 app.use("/api/users", require("./routes/users"));
 app.use("/api/auth", require("./routes/auth"));
 
