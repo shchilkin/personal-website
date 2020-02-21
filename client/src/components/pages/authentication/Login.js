@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import Eye from "../../../icons/eye.svg";
-import EyeCrossed from "../../../icons/eyeCrossed.svg";
-import Email from "../../../icons/emailLogo.svg";
+import '../../Layout/Input/Input.style.css'
+import '../../Layout/Buttons/Button/Button.style.css'
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -15,6 +14,7 @@ const Login = () => {
   const changeEmail = event => {
     setEmail({ email: event.target.value });
   };
+
   const changePassword = event => {
     setPassword({ password: event.target.value });
   };
@@ -30,88 +30,44 @@ const Login = () => {
     }
   };
 
-  const onPress = () => {
-    isPressed ? setIsPressed(false) : setIsPressed(true);
-  };
-
   return (
-    <div className='container text-center'>
-      <div className='alert alert-warning mt-2'>
-        Login page is in development
-      </div>
+    <div
+        className='container text-center'
+        style={{height:'100vh',marginTop:"auto",marginBottom:"auto"}}
+    >
       <h1 className='mt-3 mb-3'>
-        <span style={{ color: "#FC4365" }}>L</span>ogin
+        <span style={{ color: "#ED2939" }}>L</span>ogin
       </h1>
       <div className='d-flex justify-content-center'>
         <form className='mb-3 col-lg-5'>
           <div className='form-group'>
-            <label htmlFor='InputEmail1'>Email address</label>
-            <div className='input-group'>
+            <div className='input-grou'>
               <input
                 type='email'
                 required
-                className='form-control'
+                className='Input'
                 placeholder='Enter email'
                 onChange={changeEmail}
               />
-              <div
-                className='input-group-append'
-                style={{ backgroundColor: "white", width: "50px" }}
-              >
-                <span className='input-group-text'>
-                  <img
-                    src={Email}
-                    style={{ width: "24px" }}
-                    alt='email logo'
-                  />
-                </span>
-              </div>
             </div>
           </div>
           <div className='form-group'>
-            <label htmlFor='InputPassword'>Password</label>
             <div className='input-group'>
               <input
                 type={isPressed ? "text" : "password"}
                 required
-                className='form-control'
+                className='Input'
                 placeholder='Password'
                 onChange={changePassword}
               />
-              <div className='input-group-append'>
-                <button
-                  style={{ width: "50px" }}
-                  className='btn btn-outline-secondary'
-                  type='button'
-                  id='button-addon2'
-                  data-toggle='button'
-                  aria-pressed='false'
-                  autoComplete='off'
-                  onClick={onPress}
-                >
-                  <div>
-                    {isPressed ? null : (
-                      <img
-                        src={Eye}
-                        style={{ width: "20px" }}
-                        alt='Eye icon'
-                      />
-                    )}
-                  </div>
-                  <div>
-                    {isPressed ? (
-                      <img
-                        src={EyeCrossed}
-                        style={{ width: "20px" }}
-                        alt='Eye icon'
-                      />
-                    ) : null}
-                  </div>
-                </button>
-              </div>
             </div>
           </div>
-          <button onSubmit={onSubmit} type='submit' className='btn btn-primary'>
+          <button
+              onSubmit={onSubmit}
+              type='submit'
+              className='button button-block'
+              style={{height:'50px'}}
+          >
             Log in
           </button>
         </form>
