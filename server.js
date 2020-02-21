@@ -5,32 +5,25 @@ const connectDB = require("./db");
 
 const app = express();
 
-//  Middleware
+//  JSON parser middleware
 app.use(express.json({extended:false}));
-
+//  Force HTTPS Middleware
+app.use(secure);
 //  Connect MongoDB
 connectDB();
-
-app.use(secure);
-//  Static files
-app.use(express.static(path.join(__dirname, "client/build")));
+//  Routes
+app.use("/api/users", require("./routes/users"));
+app.use("/api/auth", require("./routes/auth"));
 
 //  Production mode
 if (process.env.NODE_ENV === "production") {
+  //  Static folder
   app.use(express.static(path.join(__dirname, "client/build")));
-  app.get("/", (req, res) =>
+
+  app.get("*", (req, res) =>
     res.sendfile(path.join((__dirname = "client/build/index.html")))
   );
-  app.use("/api/users", require("./routes/users"));
-  app.use("/api/auth", require("./routes/auth"));
 }
-
-//  Build mode
-app.get("/", (req, res) =>
-  res.sendFile(path.join(__dirname + "/client/public/index.html"))
-);
-app.use("/api/users", require("./routes/users"));
-app.use("/api/auth", require("./routes/auth"));
 
 //  Start server
 const port = process.env.PORT || 5000;
