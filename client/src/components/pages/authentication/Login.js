@@ -36,12 +36,12 @@ const Login = () => {
         style={{height:'100vh',marginTop:"auto",marginBottom:"auto"}}
     >
       <h1 className='mt-3 mb-3'>
-        <span style={{ color: "#ED2939" }}>L</span>ogin
+        <span style={{ color: "#ED2939" }}>L</span>og in
       </h1>
       <div className='d-flex justify-content-center'>
         <form className='mb-3 col-lg-5'>
           <div className='form-group'>
-            <div className='input-grou'>
+            <div className='input-group'>
               <input
                 type='email'
                 required
@@ -66,9 +66,9 @@ const Login = () => {
               onSubmit={onSubmit}
               type='submit'
               className='button button-block'
-              style={{height:'50px'}}
+              style={{height:'50px', fontWeight:'bold'}}
           >
-            Log in
+            <span style={{ color: "#ED2939" }}>L</span>og in
           </button>
         </form>
       </div>
