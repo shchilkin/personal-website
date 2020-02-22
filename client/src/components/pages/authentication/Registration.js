@@ -1,8 +1,19 @@
-import React, {useState} from "react";
+import React, {useState, useContext, useEffect} from "react";
 import '../../Layout/Input/Input.style.css'
 import '../../Layout/Buttons/Button/Button.style.css'
+import AuthContext from '../../../context/auth/AuthContext'
 
 const Registration = () => {
+    const authContext =  useContext(AuthContext);
+
+    const {register, error} = AuthContext;
+
+    useEffect(() => {
+        if(error === "User already exist!"){
+            console.log('User already exist!');
+        }
+    }, [error]);
+
     const [user, setUser] = useState({
         firstName:'',
         lastName:'',
@@ -18,7 +29,18 @@ const Registration = () => {
 
    const onSubmit = event => {
        event.preventDefault();
-       console.log('Register submit');
+       if (firstName === '' || lastName ==='' || email === '' || password === '') {
+           console.log('Please enter all fields');
+       } else if (password !== passwordConfirmation) {
+           console.log('Passwords do not match');
+       } else {
+           register({
+               firstName,
+               lastName,
+               email,
+               password
+           });
+       }
    };
 
   return (
@@ -37,6 +59,7 @@ const Registration = () => {
                         onChange={onChange}
                         placeholder={'First name'}
                         className='Input'
+                        required
                     />
                 </div>
                 <div className='col-sm-6'>
@@ -47,6 +70,7 @@ const Registration = () => {
                         onChange={onChange}
                         placeholder={'Last name'}
                         className='Input'
+                        required
                     />
                 </div>
             </div>
@@ -57,6 +81,7 @@ const Registration = () => {
                 onChange={onChange}
                 placeholder={'Email'}
                 className='Input'
+                required
             />
             <input
                 type='password'
@@ -65,6 +90,7 @@ const Registration = () => {
                 onChange={onChange}
                 placeholder={'Password'}
                 className='Input'
+                required
             />
             <input
                 type='password'
@@ -73,6 +99,7 @@ const Registration = () => {
                 onChange={onChange}
                 placeholder={'Confirm password'}
                 className='Input'
+                required
             />
           <button
               type='submit'
