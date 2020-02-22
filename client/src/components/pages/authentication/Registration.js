@@ -5,8 +5,7 @@ import AuthContext from '../../../context/auth/AuthContext'
 
 const Registration = () => {
     const authContext =  useContext(AuthContext);
-
-    const {register, error} = AuthContext;
+    const {register, error} = authContext;
 
     useEffect(() => {
         if(error === "User already exist!"){

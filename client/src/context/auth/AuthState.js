@@ -36,13 +36,14 @@ const AuthState = props => {
                 'Content-Type': 'application/json'
             }
         };
-
         try{
             const response = await Axios.post('/api/users', formData, config);
             dispatch({
                 type: REGISTER_SUCCESS,
                 payload: response.data
-            })
+            });
+
+            loadUser();
         } catch (error) {
             dispatch({
                 type: REGISTER_FAIL,
