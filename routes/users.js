@@ -1,9 +1,18 @@
 const express = require('express');
+const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const router = express.Router();
 const {check, validationResult} = require('express-validator/check');
+const router = express.Router();
 
 const User = require('../models/User');
+const jwtSecret = process.env.JWT_SECRET;
+
+// @route           GET api/users
+// @description     API endpoint information
+// @access          Public
+router.get('/', (request, response)=>{
+    response.send('User registration endpoint')
+});
 
 // @route           POST api/users
 // @description     Register a user
@@ -48,7 +57,19 @@ router.post('/',[
 
         await user.save();
 
-        response.send('user saved');
+        const payload = {
+            user: {
+                id: user.id
+            }
+        };
+
+        jwt.sign(payload, jwtSecret, {
+            expiresIn: 3600
+        }, (error, token) => {
+            if (error) throw error;
+            response.json({token});
+
+        })
     } catch (error) {
         console.error(error.message);
         response.status(500).send('Server error');
