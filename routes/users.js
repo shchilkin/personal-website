@@ -1,7 +1,7 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const {check, validationResult} = require('express-validator/check');
+const {check, validationResult} = require('express-validator');
 const router = express.Router();
 
 const User = require('../models/User');
@@ -18,7 +18,10 @@ router.get('/', (request, response)=>{
 // @description     Register a user
 // @access          Public
 router.post('/',[
-    check('name', 'Name is required')
+    check('firstName', 'First name is required')
+        .not()
+        .isEmpty(),
+    check('lastName', 'Last name is required')
         .not()
         .isEmpty(),
     check('email', 'Please enter valid email')
@@ -32,7 +35,7 @@ router.post('/',[
         return response.status(400).json({errors: errors.array()});
     }
 
-    const {name, email, password}  = request.body;
+    const {firstName, lastName, email, password}  = request.body;
 
     try {
         //Is user already exist check
@@ -44,7 +47,8 @@ router.post('/',[
 
         // If user do not exist, create new user
         user = new User({
-            name,
+            firstName,
+            lastName,
             email,
             password
         });
