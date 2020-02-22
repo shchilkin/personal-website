@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 const {check, validationResult} = require('express-validator/check');
 
 const User = require('../models/User');
+const jwtSecret = process.env.JWT_SECRET;
 
 // @route           GET api/auth
 // @description     Get logged in user
