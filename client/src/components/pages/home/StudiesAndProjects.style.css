@@ -4,3 +4,39 @@
     font-family: 'Libre Barcode 128 Text', cursive;
     font-size: 36px;
 }
+
+.square-top-right{
+     height: 2rem;
+     width: 2rem;
+     position: relative;
+     float: right;
+     border-bottom: solid 3px white;
+     border-left: 3px solid white;
+ }
+
+.square-top-left{
+    height: 2rem;
+    width: 2rem;
+    position: relative;
+    float: left;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+}
+
+.square-bottom-right{
+    height: 2rem;
+    width: 2rem;
+    /*position: relative;*/
+    float: right;
+    border-top: solid 3px white;
+    border-left: 3px solid white;
+}
+
+.square-bottom-left{
+    height: 2rem;
+    width: 2rem;
+    /*position: relative;*/
+    float: left;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+}
