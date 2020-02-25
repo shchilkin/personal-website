@@ -27,6 +27,23 @@ const ProjectPlaceholder = () => {
                             </Link>
                     </Container>
                 </div>
+                <div className={'col-md-3'}>
+                    <Container>
+                        <div className='container' style={{width:'90%'}}>
+                            <img src={FindOnGithubLogo} alt={'Find on Github logo'}/>
+                        </div>
+                        <Link
+                            style={{textDecoration:'none'}}
+                            to='/projects/AvatarGenerator'
+                            className={'d-flex justify-content-center mb-3'}
+                        >
+                            <button className='button text-center'
+                                    style={{align:'center', width:'90%'}}>
+                                Avatar Generator
+                            </button>
+                        </Link>
+                    </Container>
+                </div>
             </div>
         </div>
     );
