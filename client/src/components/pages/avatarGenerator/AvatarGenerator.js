@@ -151,7 +151,7 @@ const AvatarGenerator = () => {
       <h6 className='text-center'>Currently in early stage of development</h6>
       <div className='row mt-4 mb-4' style={{marginRight:'0px', marginLeft:'0px'}}>
         <div className='col-md-4 text-center m3-5'>
-              <Container>
+              <Container style={{height:'100%'}}>
                   <div className='d-flex justify-content-center' style={{height:'100%', minHeight:'250px'}}>
                       <img
                           className='img-fluid'

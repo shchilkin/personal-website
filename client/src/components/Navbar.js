@@ -4,7 +4,7 @@ import Cat from "../icons/CatLogoV9.svg";
 import CatTongue from "../icons/CatTongue.svg";
 import '../components/Layout/Navbar/navbar-item.css'
 
-const NavBar = () => {
+const Navbar = () => {
   const [pressed, setPressed] = useState(false);
 
   const changePressed = () => {
@@ -13,7 +13,7 @@ const NavBar = () => {
 
   return (
     <Fragment>
-      <nav className='navbar sticky-top navbar-light navbar-expand-lg' style={{backgroundColor:'#FFF'}}>
+      <nav className='navbar sticky-top navbar-dark navbar-expand-lg' style={{backgroundColor:'#303030'}}>
         <Link
           to='/'
           className='navbar-brand mb-0 h1'
@@ -47,9 +47,6 @@ const NavBar = () => {
             <Link className='nav-item nav-link' to='/projects'>
               Small Projects
             </Link>
-            <Link className='nav-item nav-link' to='/AvatarGenerator'>
-              Avatar Generator
-            </Link>
             <Link className='nav-item nav-link' to='/Contact'>
               Contact
             </Link>
@@ -68,4 +65,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Navbar;
