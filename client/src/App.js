@@ -1,12 +1,13 @@
-import React, { Fragment } from "react";
+import React, { Fragment }                        from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./components/pages/home/Home";
-import Login from "./components/pages/authentication/Login";
-import Registration from "./components/pages/authentication/Registration";
-import ContactPage from "./components/pages/contact/ContactPage";
-import AvatarGenerator from "./components/pages/avatarGenerator/AvatarGenerator";
-import findOnGithub from './components/pages/smallProjects/FindOnGithub/FindOnGithub.component'
-import AuthState from "./context/auth/AuthState";
+
+import Home               from "./components/pages/home/Home";
+import Login              from "./components/pages/authentication/Login";
+import AuthState          from "./context/auth/AuthState";
+import ContactPage        from "./components/pages/contact/ContactPage";
+import Registration       from "./components/pages/authentication/Registration";
+import findOnGithub       from './components/pages/smallProjects/FindOnGithub/FindOnGithub.component';
+import AvatarGenerator    from "./components/pages/avatarGenerator/AvatarGenerator";
 import ProjectPlaceholder from "./components/pages/smallProjects/projectPlaceholder.component";
 
 function App() {
