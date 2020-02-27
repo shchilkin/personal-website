@@ -7,14 +7,35 @@
     background-color: #F0F0F0;
     padding:.375rem .75rem;
     mix-blend-mode: normal;
-    /*color: #FC4365;*/
     color: #ED2939;
     font-weight: bold;
-    box-shadow: inset 2px 2px 10px 0 rgba(217, 210, 200, 1), inset -2px -2px 10px 0  rgba(255, 255, 255, 1);
+    box-shadow: inset 2px 2px 10px 0 rgba(217, 210, 200, 1), inset -2px -2px 10px 0  #F0F0F0;
     caret-color: #777B7E;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 .Input:focus{
     outline: none;
-    box-shadow: 5px 5px 20px 0 rgba(217, 210, 200, 1), -10px -10px 20px 0  rgba(255, 255, 255, 1);
+    box-shadow: 2px 2px 10px 0 rgba(217, 210, 200, 1), -2px -2px 10px 0  #f0f0f0;
+}
+
+.Input-Dark{
+    width: 100%;
+    margin-bottom: 1.25rem;
+    height: 50px;
+    border-radius: 12px;
+    border: 1px solid #303030;
+    background-color: #303030;
+    padding:.375rem .75rem;
+    mix-blend-mode: normal;
+    color: #ED2939;
+    font-weight: bold;
+    box-shadow: inset 2px 2px 10px 0 #151515, inset -2px -2px 10px 0  #303030;
+    caret-color: #777B7E;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.Input-Dark:focus{
+    outline: none;
+    box-shadow: 2px 2px 10px 0 #151515, -2px -2px 10px 0   #373737;
 }

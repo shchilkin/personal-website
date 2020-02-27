@@ -4,6 +4,7 @@ import '../../../../Layout/Buttons/Button-Block/Button-Block.style.css'
 import '../../../../Layout/Buttons/Button/Button.style.css'
 import '../../../../Layout/Input/Input.style.css'
 import '../../../../Layout/Alert/Alert.style.css'
+import Input from "../../../../Layout/Input/Input.component";
 
 const Search = ({searchUsers, showClear, clearUsers, setAlert}) => {
     const [text, setText] = useState('');
@@ -23,20 +24,20 @@ const Search = ({searchUsers, showClear, clearUsers, setAlert}) => {
     return(
         <div className={'mb-3'}>
         <form  onSubmit={onSubmit} className={'form mb-3'}>
-            <input
-                className={'Input'}
-                type='text'
-                placeholder={'Enter an Username...'}
-                value={text}
-                onChange={onChange}
+            <Input
+                // TODO Move classname to component itself and add dark mode
+                type={'text'}
+                placeholder={'Enter a Username'}
+                value={text} onChange={onChange}
                 onFocus={event=> event.target.placeholder=''}
                 onBlur={event=> event.target.placeholder='Enter an Username...'}
             />
+
             <input
-            className={'Button-Block button'}
-            style={{marginBottom:'1.25rem'}}
-            value={'Search'}
-            type={'submit'}
+                className={'Button-Block button'}
+                style={{marginBottom:'1.25rem'}}
+                value={'Search'}
+                type={'submit'}
             />
         </form>
         {showClear && (
