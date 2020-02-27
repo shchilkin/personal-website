@@ -1,7 +1,6 @@
 import React, {useContext} from "react";
 import '../../Layout/About.style.css'
 import ThemeContext from '../../../context/theme/ThemeContext'
-import {Link} from "react-router-dom";
 
 const About = () => {
     const themeContext =  useContext(ThemeContext);

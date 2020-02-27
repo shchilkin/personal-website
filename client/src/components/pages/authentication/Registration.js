@@ -1,6 +1,6 @@
 import React, {useState, useContext, useEffect} from "react";
 import '../../Layout/Buttons/Button/Button.style.css'
-import './Registration.style.css'
+import '../../Layout/PageComponent.style.css'
 import AuthContext from '../../../context/auth/AuthContext'
 import Input from "../../Layout/Input/Input.component";
 import Button from "../../Layout/Buttons/Button/Button.component";

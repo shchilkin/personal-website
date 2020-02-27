@@ -1,8 +1,17 @@
-import React, { useState } from "react";
+import React, {useContext, useState} from "react";
 import '../../Layout/Input/Input.style.css'
+
 import '../../Layout/Buttons/Button/Button.style.css'
+import '../../Layout/PageComponent.style.css'
+import AuthContext from '../../../context/auth/AuthContext'
+import Input from "../../Layout/Input/Input.component";
+import Button from "../../Layout/Buttons/Button/Button.component";
+import ThemeContext from "../../../context/theme/ThemeContext";
 
 const Login = () => {
+  const themeContext =  useContext(ThemeContext);
+  const {darkMode} = themeContext;
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [data, setData] = useState([email, password]);
@@ -31,46 +40,45 @@ const Login = () => {
   };
 
   return (
-    <div
-        className='container text-center'
-        style={{height:'100vh',marginTop:"auto",marginBottom:"auto"}}
-    >
-      <h1 className='mt-3 mb-3'>
-        <span style={{ color: "#ED2939" }}>L</span>og in
-      </h1>
-      <div className='d-flex justify-content-center'>
-        <form className='mb-3 col-lg-5'>
-          <div className='form-group'>
-            <div className='input-group'>
-              <input
-                type='email'
-                required
-                className='Input'
-                placeholder='Enter email'
-                onChange={changeEmail}
-              />
+    <div className={`page ${darkMode ? 'Background-Dark':'Background-Light'}`}>
+      <div
+          className='container text-center'
+      >
+        <h1 className='pt-3 pb-3'>
+          <span style={{ color: "#ED2939" }}>L</span>og in
+        </h1>
+        <div className='d-flex justify-content-center'>
+          <form className='mb-3 col-lg-5'>
+            <div className='form-group'>
+              <div className='input-group'>
+                <Input
+                  type='email'
+                  required={true}
+                  placeholder='Enter email'
+                  onChange={changeEmail}
+                />
+              </div>
             </div>
-          </div>
-          <div className='form-group'>
-            <div className='input-group'>
-              <input
-                type={isPressed ? "text" : "password"}
-                required
-                className='Input'
-                placeholder='Password'
-                onChange={changePassword}
-              />
+            <div className='form-group'>
+              <div className='input-group'>
+                <Input
+                  // type={isPressed ? "text" : "password"}
+                  required={true}
+                  placeholder='Password'
+                  onChange={changePassword}
+                />
+              </div>
             </div>
-          </div>
-          <button
-              onSubmit={onSubmit}
-              type='submit'
-              className='button button-block'
-              style={{height:'50px', fontWeight:'bold'}}
-          >
-            <span style={{ color: "#ED2939" }}>L</span>og in
-          </button>
-        </form>
+            <Button
+                onSubmit={onSubmit}
+                type='submit'
+                block={true}
+                style={{height:'50px', fontWeight:'bold'}}
+            >
+              Log in
+            </Button>
+          </form>
+        </div>
       </div>
     </div>
   );
