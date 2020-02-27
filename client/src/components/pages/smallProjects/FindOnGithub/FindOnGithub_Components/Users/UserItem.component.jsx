@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Card from "../../../../../Layout/Card/Card.component";
 import '../../../../../Layout/Buttons/Button/Button.style.css'
+import Button from "../../../../../Layout/Buttons/Button/Button.component";
 
 const UserItem = ({ login, avatar_url }) => {
     return (
@@ -13,7 +14,7 @@ const UserItem = ({ login, avatar_url }) => {
                 <Link to={`/projects/findOnGithub/user/${login}`}
                       style={{textDecoration:'none'}}
                 >
-                    <button className="button button-block">View Profile</button>
+                    <Button block={true}>View Profile</Button>
                 </Link>
             </div>
         </Card>

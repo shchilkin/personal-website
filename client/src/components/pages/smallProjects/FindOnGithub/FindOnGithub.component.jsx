@@ -1,4 +1,4 @@
-import React,{useState, Fragment} from "react";
+import React, {useState, Fragment, useContext} from "react";
 import {BrowserRouter as Router,Link, Route, Switch} from "react-router-dom";
 import axios from "axios";
 import User from "./FindOnGithub_Components/Users/User.component";
@@ -6,6 +6,9 @@ import Users from './FindOnGithub_Components/Users/Users.component'
 import Alert from "./FindOnGithub_Components/Alert.component";
 import Search from "./FindOnGithub_Components/Search.component";
 import projectPlaceholder from '../projectPlaceholder.component'
+import Page from "../../../Layout/Page/Page.component";
+import ThemeContext from "../../../../context/theme/ThemeContext";
+import '../../../Layout/PageComponent.style.css'
 
 const FindOnGithub = () => {
 const [users, setUsers] = useState([]);
@@ -14,6 +17,8 @@ const [repos, setRepos] = useState([]);
 const [loading, setLoading] = useState(false);
 const [alertMessage, setAlertMessage] = useState(null);
 const [alertType, setAlertType] = useState(null);
+const themeContext =  useContext(ThemeContext);
+const {darkMode} = themeContext;
 
     // Search users on Github
     const searchUsers = async text => {
@@ -66,6 +71,7 @@ const [alertType, setAlertType] = useState(null);
     };
 
     return(
+        <Page>
         <Router>
             <Switch>
                 <Route
@@ -75,8 +81,8 @@ const [alertType, setAlertType] = useState(null);
                 <Route
                     exact path='/projects/findOnGithub'
                     render={() => (
-                        <Fragment>
-                            <div className='container'>
+                        <div className={`${darkMode ? 'Background-Dark':'Background-Light'}`}>
+                            <div className={`container`}>
                                 <Link to='/projects'>
                                     To the small projects page
                                 </Link>
@@ -90,7 +96,7 @@ const [alertType, setAlertType] = useState(null);
                             />
                             <Users loading={loading} users={users}/>
                             </div>
-                        </Fragment>
+                        </div>
                     )}
                 />
                 //TODO fix Redirect on blank page after page reload
@@ -105,6 +111,7 @@ const [alertType, setAlertType] = useState(null);
                 />
             </Switch>
         </Router>
+        </Page>
     )
 };
 

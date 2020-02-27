@@ -1,4 +1,4 @@
-.CRK-card{
+.Card-Light{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -9,6 +9,21 @@
     border: 1px solid rgba(255,255,255,0.2);
     mix-blend-mode: normal;
     box-shadow: 10px 10px 30px 0 rgba(217, 210, 200, 1), -10px -10px 30px 0 rgba(255, 255, 255, 1);
+    border-radius: 12px;
+    margin-bottom: 1.25rem;
+}
+
+.Card-Dark{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    background: #303030;
+    border: 1px solid #303030;
+    mix-blend-mode: normal;
+    box-shadow: 10px 10px 10px 0 #292929, -10px -10px 10px 0 #353535;
     border-radius: 12px;
     margin-bottom: 1.25rem;
 }

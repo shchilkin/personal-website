@@ -1,4 +1,4 @@
-.CRK-container {
+.Container-Light {
     width: auto;
     height: auto;
     margin-right: auto;
@@ -10,7 +10,7 @@
     border-radius: 12px;
 }
 
-.container-dark {
+.Container-Dark {
     background: #303030;
     color: #c1c1c1;
     mix-blend-mode: normal;

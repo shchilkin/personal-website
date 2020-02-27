@@ -1,17 +1,13 @@
 import React, {useContext, useState} from "react";
-import '../../Layout/Input/Input.style.css'
-
+import '../../Layout/Inputs/Input.style.css'
 import '../../Layout/Buttons/Button/Button.style.css'
 import '../../Layout/PageComponent.style.css'
 import AuthContext from '../../../context/auth/AuthContext'
-import Input from "../../Layout/Input/Input.component";
+import Input from "../../Layout/Inputs/Input.component";
 import Button from "../../Layout/Buttons/Button/Button.component";
-import ThemeContext from "../../../context/theme/ThemeContext";
+import Page from "../../Layout/Page/Page.component";
 
 const Login = () => {
-  const themeContext =  useContext(ThemeContext);
-  const {darkMode} = themeContext;
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [data, setData] = useState([email, password]);
@@ -40,11 +36,11 @@ const Login = () => {
   };
 
   return (
-    <div className={`page ${darkMode ? 'Background-Dark':'Background-Light'}`}>
+    <Page>
       <div
-          className='container text-center'
+          className='container text-center pt-3 pb-3'
       >
-        <h1 className='pt-3 pb-3'>
+        <h1 className='mt-4 mb-5'>
           <span style={{ color: "#ED2939" }}>L</span>og in
         </h1>
         <div className='d-flex justify-content-center'>
@@ -80,7 +76,7 @@ const Login = () => {
           </form>
         </div>
       </div>
-    </div>
+    </Page>
   );
 };
 

@@ -1,14 +1,13 @@
 import React, {useContext} from "react";
 import ThemeContext from "../../../context/theme/ThemeContext";
 
-const Input = ({type, placeholder, value, onChange, onFocus, onBlur,required = false,  name}) => {
+const TextArea = ({placeholder, value, onChange, onFocus, onBlur,required = false,  name, style}) => {
     const themeContext =  useContext(ThemeContext);
     const {darkMode} = themeContext;
 
     return(
-        <input
+        <textarea style={style}
             className={darkMode ? "Input-Dark" : "Input"}
-            type={type}
             placeholder={placeholder}
             value={value}
             onChange={onChange}
@@ -20,4 +19,4 @@ const Input = ({type, placeholder, value, onChange, onFocus, onBlur,required = f
     )
 };
 
-export default Input;
+export default TextArea;

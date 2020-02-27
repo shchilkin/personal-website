@@ -1,12 +1,10 @@
-import React, {useContext} from "react";
+import React from "react";
 import '../../Layout/About.style.css'
-import ThemeContext from '../../../context/theme/ThemeContext'
+import Page from "../../Layout/Page/Page.component";
 
 const About = () => {
-    const themeContext =  useContext(ThemeContext);
-    const {darkMode} = themeContext;
     return (
-        <div className={`About ${darkMode ? 'background-dark' : 'background-light'}`}>
+        <Page>
             <div className='TextContainer h-100 align-items-center background' style={{zIndex:5}}>
                 <div className={'container'}>
                     <h1 className={'MainText'}>Hi<span style={{color:'#ED2939'}}>.</span>{' '}
@@ -21,7 +19,7 @@ const About = () => {
                     </h3>
                 </div>
             </div>
-        </div>
+        </Page>
     );
 };
 

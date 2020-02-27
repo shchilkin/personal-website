@@ -1,8 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
 import './Button.style.css';
+import ThemeContext from "../../../../context/theme/ThemeContext";
 
 const Button = ({image = null, text = '', onClick, disabled = false, style}) => {
-    return <button style={style} className='button' onClick={onClick} disabled={disabled}>
+    const themeContext =  useContext(ThemeContext);
+    const {darkMode} = themeContext;
+
+    return <button style={style} className={`button ${darkMode && 'button-dark'}`} onClick={onClick} disabled={disabled}>
         <img src={image} style={{ width: "24px" }} alt='arrow'/>
         {text}
     </button>

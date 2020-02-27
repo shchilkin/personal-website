@@ -56,7 +56,7 @@ const Navbar = () => {
             </Link>
           </ul>
           <div className='navbar-nav'>
-            <button className='btn btn-dark' onClick={changeTheme}>{darkMode ? 'Light' : 'Dark'} Mode</button>
+            <button className={`btn ${darkMode ? 'btn-light' : 'btn-dark'}`} onClick={changeTheme}>{darkMode ? 'Light' : 'Dark'} Mode</button>
             <Link className='nav-item nav-link' to='/Login'>
               Log in
             </Link>

@@ -5,6 +5,7 @@ import Card from "../../../../../Layout/Card/Card.component";
 import '../../../../../Layout/Buttons/Button/Button.style.css'
 import './User.style.css'
 import {Link} from "react-router-dom";
+import Button from "../../../../../Layout/Buttons/Button/Button.component";
 
 const User = ({user, loading, getUser, repos, getRepos, match}) => {
     useEffect(() => {
@@ -57,7 +58,9 @@ const User = ({user, loading, getUser, repos, getRepos, match}) => {
                                 </h6>
                                 <p className="card-text">{bio}</p>
                                     {blog && (<p className="card-text"><a href={blog}>{blog}</a></p>)}
-                                <a href={html_url} className="button button-block FOG-link text-center">View on Github</a>
+                                <a href={html_url} className="FOG-link">
+                                    <Button block={true}>View on Github</Button>
+                                </a>
                             </div>
                         </Card>
                     </div>

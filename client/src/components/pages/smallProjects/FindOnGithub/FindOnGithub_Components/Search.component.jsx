@@ -2,9 +2,10 @@ import React,{useState} from "react";
 import ButtonBlock from "../../../../Layout/Buttons/Button-Block/Button-Block.component";
 import '../../../../Layout/Buttons/Button-Block/Button-Block.style.css'
 import '../../../../Layout/Buttons/Button/Button.style.css'
-import '../../../../Layout/Input/Input.style.css'
+import '../../../../Layout/Inputs/Input.style.css'
 import '../../../../Layout/Alert/Alert.style.css'
-import Input from "../../../../Layout/Input/Input.component";
+import Input from "../../../../Layout/Inputs/Input.component";
+import Button from "../../../../Layout/Buttons/Button/Button.component";
 
 const Search = ({searchUsers, showClear, clearUsers, setAlert}) => {
     const [text, setText] = useState('');
@@ -33,15 +34,19 @@ const Search = ({searchUsers, showClear, clearUsers, setAlert}) => {
                 onBlur={event=> event.target.placeholder='Enter an Username...'}
             />
 
-            <input
-                className={'Button-Block button'}
-                style={{marginBottom:'1.25rem'}}
+            <Button
+                block={true}
+                style={{height:'50px'}}
                 value={'Search'}
                 type={'submit'}
-            />
+            >
+                Search
+            </Button>
         </form>
         {showClear && (
-            <ButtonBlock onClick={clearUsers} style={{marginBottom:'1.25rem'}} text={'Clear'} />
+            <Button onClick={clearUsers} style={{height:'50px'}} block={true}>
+                Clear
+            </Button>
         )}
         </div>
     )

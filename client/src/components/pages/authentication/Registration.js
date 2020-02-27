@@ -2,16 +2,13 @@ import React, {useState, useContext, useEffect} from "react";
 import '../../Layout/Buttons/Button/Button.style.css'
 import '../../Layout/PageComponent.style.css'
 import AuthContext from '../../../context/auth/AuthContext'
-import Input from "../../Layout/Input/Input.component";
+import Input from "../../Layout/Inputs/Input.component";
 import Button from "../../Layout/Buttons/Button/Button.component";
-import ThemeContext from "../../../context/theme/ThemeContext";
+import Page from "../../Layout/Page/Page.component";
 
 const Registration = () => {
     const authContext =  useContext(AuthContext);
     const {register, error} = authContext;
-
-    const themeContext =  useContext(ThemeContext);
-    const {darkMode} = themeContext;
 
     useEffect(() => {
         if(error === "User already exist!"){
@@ -49,9 +46,9 @@ const Registration = () => {
    };
 
   return (
-      <div className={`page ${darkMode ? 'Background-Dark':'Background-Light'}`}>
-          <div className='container text-center'>
-              <h1 className='pt-3 pb-3'>
+      <Page>
+          <div className='container text-center pt-3 pb-3'>
+              <h1 className='mt-4 mb-5'>
                   <span style={{ color: "#ED2939" }}>R</span>egistration
               </h1>
               <div className='d-flex justify-content-center'>
@@ -115,7 +112,7 @@ const Registration = () => {
                   </form>
               </div>
           </div>
-      </div>
+      </Page>
   );
 };
 

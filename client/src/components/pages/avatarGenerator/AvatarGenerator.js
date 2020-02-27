@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState } from "react";
 import ArrowRight from "../../../icons/arrow-right.svg";
 import ArrowLeft from "../../../icons/arrow-left.svg";
 import Hair_1 from "./Hair_1.svg";
@@ -71,6 +71,7 @@ import Hair_1_grey from './Hair_1_variations/Hair_1_grey.svg'
 import Hair_1_pink from './Hair_1_variations/Hair_1_pink.svg'
 import Hair_1_blue from './Hair_1_variations/Hair_1_blue.svg'
 import Hair_1_green from './Hair_1_variations/Hair_1_green.svg'
+import Page from "../../Layout/Page/Page.component";
 
 const AvatarGenerator = () => {
   // initial State
@@ -145,7 +146,7 @@ const AvatarGenerator = () => {
 
   //Render
   return (
-    <Fragment>
+    <Page>
       <h1 className='text-center pt-3'>Avatar Generator</h1>
         <h5 className='text-center'>Version <span className='badge badge-warning'>0.17</span></h5>
       <h6 className='text-center'>Currently in early stage of development</h6>
@@ -353,7 +354,7 @@ const AvatarGenerator = () => {
               </Container>
           </div>
       </div>
-    </Fragment>
+    </Page>
   );
 };
 
