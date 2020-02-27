@@ -1,4 +1,4 @@
-.ContactLink{
+.ContactLink-Dark{
     border-radius: 12px;
     padding: .5rem;
     background: #303030;
@@ -7,25 +7,57 @@
     border: 1px solid #303030;
     margin-right: .5rem;
 }
+.ContactLink-Light{
+    border-radius: 12px;
+    padding: .5rem;
+    background: #F0F0F0;
+    box-shadow:  5px 5px 10px #D9D2C8,
+    -5px -5px 10px #FFFFFF;
+    border: 1px solid #F0F0F0;
+    margin-right: .5rem;
+}
 
-.ContactLink:hover{
+.ContactLink-Dark:hover{
+    box-shadow: 0 0, 0 0;
+    background-color: #ED2939;
+}
+.ContactLink-Light:hover{
     box-shadow: 0 0, 0 0;
     background-color: #ED2939;
 }
 
-.ContactLink:active{
+.ContactLink-Dark:active{
     background-color: #303030;
     box-shadow: inset 5px 5px 10px #202020,
     inset -5px -5px 10px #454545;
 }
+.ContactLink-Light:active{
+     background-color: #F0F0F0;
+     box-shadow: inset 5px 5px 10px  #cccccc,
+     inset -5px -5px 10px #FFFFFF;
+ }
 
-.ContactLink-Image{
+.ContactLink-Dark-Image{
     fill: #F0F0F0;
 }
+.ContactLink-Light-Image{
+    fill: #303030;
+}
 
-.ContactLink:active .ContactLink-Image{
+.ContactLink-Dark:active .ContactLink-Dark-Image {
     fill: #ED2939;
 }
+
+.ContactLink-Light:active .ContactLink-Light-Image {
+    fill: #ED2939;
+}
+
+
+
+
+
+
+
 
 @media only screen and (max-width: 576px) {
     .ContactLink:active, .ContactLink:hover{
