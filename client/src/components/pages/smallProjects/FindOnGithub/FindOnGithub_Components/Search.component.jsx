@@ -25,10 +25,10 @@ const Search = ({searchUsers, showClear, clearUsers, setAlert}) => {
         <div className={'mb-3'}>
         <form  onSubmit={onSubmit} className={'form mb-3'}>
             <Input
-                // TODO Move classname to component itself and add dark mode
                 type={'text'}
                 placeholder={'Enter a Username'}
-                value={text} onChange={onChange}
+                value={text}
+                onChange={onChange}
                 onFocus={event=> event.target.placeholder=''}
                 onBlur={event=> event.target.placeholder='Enter an Username...'}
             />

@@ -16,10 +16,10 @@ const About = () => {
                         <br/>
                         Aleksandr
                     </h1>
-                    <Link to='/test'>to test</Link>
                     <h3 className={'SecondaryText'}>I am a student with a passion for
                         <br/>
-                        <span style={{color:'#ED2939'}}>Web Development</span></h3>
+                        <span style={{color:'#ED2939'}}>Web Development</span>
+                    </h3>
                 </div>
             </div>
         </div>

@@ -1,0 +1,13 @@
+.Background-Dark {
+    background-color: #303030;
+    color: #F0F0F0;
+}
+
+.Background-Light {
+    background-color: #F0F0F0;
+    color: #303030;
+}
+
+.page{
+    height: 100vh;
+}

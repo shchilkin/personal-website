@@ -1,11 +1,20 @@
-import React from "react";
+import React, {useContext} from "react";
 import './Button.style.css';
+import ThemeContext from "../../../../context/theme/ThemeContext";
 
-const Button = ({image = null, text = '', onClick, disabled = false, style}) => {
-    return <button style={style} className='button' onClick={onClick} disabled={disabled}>
-        <img src={image} style={{ width: "24px" }} alt='arrow'/>
-        {text}
-    </button>
+const Button = ({onClick, disabled = false, style, children, block = false}) => {
+    const themeContext =  useContext(ThemeContext);
+    const {darkMode} = themeContext;
+
+    return (
+        <button
+            style={style}
+            className={`button ${block && 'button-block'} ${darkMode && 'button-dark'}`}
+            onClick={onClick}
+            disabled={disabled}>
+            {children}
+        </button>
+    )
 };
 
 export default Button;

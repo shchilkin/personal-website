@@ -52,7 +52,7 @@ import Skin_Tone_6 from './Skin_tone_6.svg';
 import Skin_Tone_7 from './Skin_tone_7.svg';
 import Skin_Tone_8 from './Skin_tone_8.svg';
 import Skin_Tone_9 from './Skin_tone_9.svg';
-import Button from "../../Layout/Buttons/Button/Button.component";
+import Button from "../../Layout/Buttons/Button/AvGen_Button.component";
 import Container from "../../Layout/Container/Container.component";
 import Hair_3_brown from './Hair_3_variations/Hair_3_brown.svg'
 import Hair_3_dark from './Hair_3_variations/Hair_3_dark_brown.svg'

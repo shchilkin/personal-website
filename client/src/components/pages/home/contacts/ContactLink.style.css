@@ -6,6 +6,7 @@
     -5px -5px 10px #373737;
     border: 1px solid #303030;
     margin-right: .5rem;
+    transition: background-color 1s, color 1s;
 }
 .ContactLink-Light{
     border-radius: 12px;
@@ -15,6 +16,7 @@
     -5px -5px 10px #FFFFFF;
     border: 1px solid #F0F0F0;
     margin-right: .5rem;
+    transition: background-color 1s, color 1s;
 }
 
 .ContactLink-Dark:hover{
@@ -52,13 +54,6 @@
     fill: #ED2939;
 }
 
-
-
-
-
-
-
-
 @media only screen and (max-width: 576px) {
     .ContactLink:active, .ContactLink:hover{
         box-shadow: inset 5px 5px 10px #202020,
@@ -67,5 +62,4 @@
     .ContactLink:active, .ContactLink:hover .ContactLink-Image{
         fill: #ED2939;
     }
-
 }

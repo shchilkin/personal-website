@@ -1,12 +1,17 @@
-import React, {useState, useContext, useEffect, Fragment} from "react";
-import '../../Layout/Input/Input.style.css'
+import React, {useState, useContext, useEffect} from "react";
 import '../../Layout/Buttons/Button/Button.style.css'
+import './Registration.style.css'
 import AuthContext from '../../../context/auth/AuthContext'
-import Navbar from "../../Navbar";
+import Input from "../../Layout/Input/Input.component";
+import Button from "../../Layout/Buttons/Button/Button.component";
+import ThemeContext from "../../../context/theme/ThemeContext";
 
 const Registration = () => {
     const authContext =  useContext(AuthContext);
     const {register, error} = authContext;
+
+    const themeContext =  useContext(ThemeContext);
+    const {darkMode} = themeContext;
 
     useEffect(() => {
         if(error === "User already exist!"){
@@ -44,28 +49,25 @@ const Registration = () => {
    };
 
   return (
-      <Fragment>
-          <Navbar/>
+      <div className={`page ${darkMode ? 'Background-Dark':'Background-Light'}`}>
           <div className='container text-center'>
-              <h1 className='mt-3 mb-3'>
+              <h1 className='pt-3 pb-3'>
                   <span style={{ color: "#ED2939" }}>R</span>egistration
               </h1>
               <div className='d-flex justify-content-center'>
                   <form className='mb-5 col-lg-5' onSubmit={onSubmit}>
                       <div className='row'>
                           <div className='col-sm-6'>
-                              <input
+                              <Input
                                   type='text'
                                   name='firstName'
                                   value={firstName}
                                   onChange={onChange}
                                   placeholder={'First name'}
-                                  className='Input'
-                                  required
                               />
                           </div>
                           <div className='col-sm-6'>
-                              <input
+                              <Input
                                   type='text'
                                   name='lastName'
                                   value={lastName}
@@ -76,7 +78,7 @@ const Registration = () => {
                               />
                           </div>
                       </div>
-                      <input
+                      <Input
                           type='email'
                           name='email'
                           value={email}
@@ -85,7 +87,7 @@ const Registration = () => {
                           className='Input'
                           required
                       />
-                      <input
+                      <Input
                           type='password'
                           name='password'
                           value={password}
@@ -94,7 +96,7 @@ const Registration = () => {
                           className='Input'
                           required
                       />
-                      <input
+                      <Input
                           type='password'
                           name='passwordConfirmation'
                           value={passwordConfirmation}
@@ -103,17 +105,17 @@ const Registration = () => {
                           className='Input'
                           required
                       />
-                      <button
+                      <Button
                           type='submit'
-                          className='button button-block'
                           style={{height:'50px', fontWeight:'bold'}}
+                          block={true}
                       >
-                          <span style={{ color: "#ED2939" }}>C</span>reate account
-                      </button>
+                          Create account
+                      </Button>
                   </form>
               </div>
           </div>
-      </Fragment>
+      </div>
   );
 };
 
