@@ -10,9 +10,10 @@ import Registration       from "./components/pages/authentication/Registration";
 import findOnGithub       from './components/pages/smallProjects/FindOnGithub/FindOnGithub.component';
 import AvatarGenerator    from "./components/pages/avatarGenerator/AvatarGenerator";
 import ProjectPlaceholder from "./components/pages/smallProjects/projectPlaceholder.component";
+import NotFound from  './components/pages/NotFound.page';
 import Navbar from "./components/Navbar";
 
-function App() {
+const App = () => {
   return (
     <AuthState>
       <ThemeState>
@@ -28,6 +29,7 @@ function App() {
                 <Route exact path='/projects' component={ProjectPlaceholder}/>
                 <Route exact path='/projects/findOnGithub' component={findOnGithub}/>
                 <Route exact path='/projects/AvatarGenerator' component={AvatarGenerator}/>
+                <Route component={NotFound} />
               </Switch>
             </div>
           </Fragment>
@@ -35,6 +37,6 @@ function App() {
       </ThemeState>
     </AuthState>
   );
-}
+};
 
 export default App;
