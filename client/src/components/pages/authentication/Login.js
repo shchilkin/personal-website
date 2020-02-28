@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import '../../Layout/Inputs/Input.style.css'
 import '../../Layout/Buttons/Button/Button.style.css'
 import '../../Layout/PageComponent.style.css'
@@ -7,14 +7,24 @@ import Input from "../../Layout/Inputs/Input.component";
 import Button from "../../Layout/Buttons/Button/Button.component";
 import Page from "../../Layout/Page/Page.component";
 
-const Login = () => {
+const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [data, setData] = useState([email, password]);
-  const [isPressed, setIsPressed] = useState(false);
+  const authContext = useContext(AuthContext);
 
-  console.log(email, password);
-  console.log("pressed", isPressed);
+  const {logIn, error, clearErrors, isAuthenticated} = authContext;
+
+  useEffect(() => {
+    if(isAuthenticated){
+      props.history.push('/')
+    }
+
+    if(error === "Invalid credentials"){
+      console.log('Invalid credentials!');
+    }
+    //eslint-disable-next-line
+  }, [error, isAuthenticated, props.history]);
 
   const changeEmail = event => {
     setEmail({ email: event.target.value });

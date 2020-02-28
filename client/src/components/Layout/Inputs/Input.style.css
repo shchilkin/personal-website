@@ -9,9 +9,10 @@
     mix-blend-mode: normal;
     color: #ED2939;
     font-weight: bold;
-    box-shadow: inset 2px 2px 10px 0 rgba(217, 210, 200, 1), inset -2px -2px 10px 0  #F0F0F0;
+    box-shadow: inset 2px 2px 10px 0 rgba(217, 210, 200, 1), inset -2px -2px 10px 0 #FFFFFF;
     caret-color: #777B7E;
     transition: background-color 0.2s, color 0.2s;
+    -webkit-appearance: none;
 }
 
 .Input:focus{
@@ -33,6 +34,7 @@
     box-shadow: inset 2px 2px 10px 0 #151515, inset -2px -2px 10px 0  #303030;
     caret-color: #777B7E;
     transition: background-color 0.2s, color 0.2s;
+    -webkit-appearance: none;
 }
 
 .Input-Dark:focus{
