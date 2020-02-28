@@ -3,16 +3,22 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Home               from "./components/pages/home/Home";
 import Login              from "./components/pages/authentication/Login";
+import Navbar             from "./components/Navbar";
+import NotFound           from  './components/pages/NotFound.page';
+import App_page           from "./components/Layout/Page/App_page.component";
 import AuthState          from "./context/auth/AuthState";
-import ThemeState         from './context/theme/ThemeState'
+import ThemeState         from './context/theme/ThemeState';
 import ContactPage        from "./components/pages/contact/ContactPage";
+import setAuthToken       from "./utils/setAuthToken";
 import Registration       from "./components/pages/authentication/Registration";
 import findOnGithub       from './components/pages/smallProjects/FindOnGithub/FindOnGithub.component';
 import AvatarGenerator    from "./components/pages/avatarGenerator/AvatarGenerator";
 import ProjectPlaceholder from "./components/pages/smallProjects/projectPlaceholder.component";
-import NotFound from  './components/pages/NotFound.page';
-import Navbar from "./components/Navbar";
-import App_page from "./components/Layout/Page/App_page.component";
+
+
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 
 const App = () => {
   return (

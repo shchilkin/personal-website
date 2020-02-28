@@ -1,11 +1,11 @@
 import React, {useContext} from "react";
-import {Link} from "react-router-dom";
+import ThemeContext from "../../../context/theme/ThemeContext";
+
 import Container from "../../Layout/Container/Container.component";
-import '../../Layout/Buttons/Button/Button.style.css';
+
 import './StudiesAndProjects.style.css';
 import '../../Layout/About.style.css'
-import ThemeContext from "../../../context/theme/ThemeContext";
-import Button from "../../Layout/Buttons/Button/Button.component";
+
 
 const StudiesAndProjects = () => {
   const themeContext =  useContext(ThemeContext);
@@ -18,11 +18,6 @@ const StudiesAndProjects = () => {
             <div className='d-flex justify-content-center'>
             </div><h1 className='display-5 pt-3 pb-3'>Studies & Projects:</h1></div>
           <div className='container pt-3 pb-3'>
-            <div className={'mb-3'}>
-              <Link to='/projects'>
-                <Button>[my_projects]</Button>
-              </Link>
-            </div>
             <div className='row'>
               <div className='col-lg-4 mb-3'>
                 <Container className={`CRK-container ${darkMode && 'container-dark'}`}>
@@ -63,40 +58,6 @@ const StudiesAndProjects = () => {
             </div>
           </div>
         </div>
-      {/*<div className='row'>*/}
-      {/*  <div className='col-4'>*/}
-      {/*    <div>*/}
-      {/*      <div className={'text-center'}>*/}
-      {/*        <h5 style={{color:'#ED2939'}}>[Software Development]</h5>*/}
-      {/*        <ul style={{color:'#F0F0F0'}}>*/}
-      {/*          <li style={{listStyle:'none'}}>Weather Data Analyser with [Python]</li>*/}
-      {/*          <li style={{listStyle:'none'}}>Android Applications with [Kotlin]</li>*/}
-      {/*          <li style={{listStyle:'none'}}>Full-stack Web applications with [React] and [Node.js]</li>*/}
-      {/*          <li style={{listStyle:'none'}}>Small projects with [JavaScript]</li>*/}
-      {/*        </ul>*/}
-      {/*      </div>*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/*  <div className={'col-md-4'}>*/}
-      {/*    <div className={'container text-center'}>*/}
-      {/*      <div style={{width:'100%', height:'100%', backgroundColor:'red'}}>*/}
-      {/*        <div className={'square-top-right'}/>*/}
-      {/*        <div className={'square-top-left'}/>*/}
-      {/*      </div>*/}
-      {/*      <div className={'container'} style={{width:'80%',height:'80%'}}>*/}
-      {/*        <h5 style={{color:'#ED2939'}}>[Software Development]</h5>*/}
-      {/*          <li style={{listStyle:'none',color:'#f0f0f0'}}>Weather Data Analyser with [Python]</li>*/}
-      {/*          <li style={{listStyle:'none',color:'#f0f0f0'}}>Android Applications with [Kotlin]</li>*/}
-      {/*          <li style={{listStyle:'none',color:'#f0f0f0'}}>Full-stack Web applications with [React] and [Node.js]</li>*/}
-      {/*          <li style={{listStyle:'none',color:'#f0f0f0'}}>Small projects with [JavaScript]</li>*/}
-      {/*      </div>*/}
-      {/*      <div style={{width:'100%', backgroundColor:'blue'}}>*/}
-      {/*        <div className={'square-bottom-right'}/>*/}
-      {/*        <div className={'square-bottom-left'}/>*/}
-      {/*      </div>*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
     </div>
   );
 };

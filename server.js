@@ -1,5 +1,6 @@
 const express = require("express");
 const secure = require("express-force-https");
+require('dotenv').config();
 const path = require("path");
 const connectDB = require("./db");
 

@@ -6,15 +6,20 @@ import Input from "../../Layout/Inputs/Input.component";
 import Button from "../../Layout/Buttons/Button/Button.component";
 import Page from "../../Layout/Page/Page.component";
 
-const Registration = () => {
+const Registration = (props) => {
     const authContext =  useContext(AuthContext);
-    const {register, error} = authContext;
+    const {register, error, clearErrors, isAuthenticated} = authContext;
 
     useEffect(() => {
+        if(isAuthenticated){
+            props.history.push('/')
+        }
+
         if(error === "User already exist!"){
             console.log('User already exist!');
         }
-    }, [error]);
+        //eslint-disable-next-line
+    }, [error, isAuthenticated, props.history]);
 
     const [user, setUser] = useState({
         firstName:'',
