@@ -4,6 +4,8 @@ import Cat from "../icons/CatLogoV9.svg";
 import CatTongue from "../icons/CatTongue.svg";
 import '../components/Layout/Navbar/navbar-item.css'
 import ThemeContext from '../context/theme/ThemeContext'
+import Moon from '../icons/Moon.svg'
+import Sun from '../icons/Sun.svg'
 
 const Navbar = () => {
   const [pressed, setPressed] = useState(false);
@@ -56,7 +58,9 @@ const Navbar = () => {
             </Link>
           </ul>
           <div className='navbar-nav'>
-            <button className={`btn ${darkMode ? 'btn-light' : 'btn-dark'}`} onClick={changeTheme}>{darkMode ? 'Light' : 'Dark'} Mode</button>
+            <button className={`btn ${darkMode ? 'btn-dark' : 'btn-secondary' }`} onClick={changeTheme}>
+              <img src={darkMode ? Moon : Sun} style={{ width: "24px" }} alt='arrow'/>
+            </button>
             <Link className='nav-item nav-link' to='/Login'>
               Log in
             </Link>

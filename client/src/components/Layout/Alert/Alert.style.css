@@ -1,10 +1,19 @@
-.Alert{
+.Alert-Light{
     position: relative;
     border-radius: 12px;
     padding: .75rem 1.25rem;
     margin-bottom: 1.25rem;
     border: 1px solid transparent;
     box-shadow: 10px 10px 30px 0 rgba(217, 210, 200, 1), -10px -10px 30px 0 rgba(255, 255, 255, 1);
+}
+
+.Alert-Dark{
+    position: relative;
+    border-radius: 12px;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid transparent;
+    box-shadow: 10px 10px 10px 0 #252525, -10px -10px 10px 0 #353535;
 }
 
 .Alert-danger{

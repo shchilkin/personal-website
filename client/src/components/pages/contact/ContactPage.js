@@ -10,7 +10,7 @@ import TextArea from "../../Layout/Inputs/TextArea.component";
 const ContactPage = () => {
   return (
       <Page>
-        <div className='container col-md-6 text-center pt-3 pb-3'>
+        <div className='container col-md-6 text-center pt-3 pb-5'>
             <h1 className={'mt-4 mb-5'}> <span style={{ color: "#ED2939" }}>S</span>end me an email</h1>
           <form>
               <div className={'row'}>

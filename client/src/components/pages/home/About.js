@@ -5,7 +5,7 @@ import Page from "../../Layout/Page/Page.component";
 const About = () => {
     return (
         <Page>
-            <div className='TextContainer h-100 align-items-center background' style={{zIndex:5}}>
+            <div className='TextContainer h-100 align-items-center background'>
                 <div className={'container'}>
                     <h1 className={'MainText'}>Hi<span style={{color:'#ED2939'}}>.</span>{' '}
                         <br className={'break'}/>

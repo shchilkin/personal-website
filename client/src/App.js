@@ -12,6 +12,7 @@ import AvatarGenerator    from "./components/pages/avatarGenerator/AvatarGenerat
 import ProjectPlaceholder from "./components/pages/smallProjects/projectPlaceholder.component";
 import NotFound from  './components/pages/NotFound.page';
 import Navbar from "./components/Navbar";
+import App_page from "./components/Layout/Page/App_page.component";
 
 const App = () => {
   return (
@@ -20,7 +21,7 @@ const App = () => {
         <Router>
           <Navbar/>
           <Fragment>
-            <div>
+            <App_page>
               <Switch>
                 <Route exact path='/' component={Home} />
                 <Route exact path='/Login' component={Login} />
@@ -31,7 +32,7 @@ const App = () => {
                 <Route exact path='/projects/AvatarGenerator' component={AvatarGenerator}/>
                 <Route component={NotFound} />
               </Switch>
-            </div>
+            </App_page>
           </Fragment>
         </Router>
       </ThemeState>

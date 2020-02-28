@@ -3,7 +3,7 @@ import {BrowserRouter as Router,Link, Route, Switch} from "react-router-dom";
 import axios from "axios";
 import User from "./FindOnGithub_Components/Users/User.component";
 import Users from './FindOnGithub_Components/Users/Users.component'
-import Alert from "./FindOnGithub_Components/Alert.component";
+import Alert from "../../../Layout/Alert/Alert.component";
 import Search from "./FindOnGithub_Components/Search.component";
 import projectPlaceholder from '../projectPlaceholder.component'
 import Page from "../../../Layout/Page/Page.component";
