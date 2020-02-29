@@ -16,12 +16,11 @@ import findOnGithub       from './components/pages/smallProjects/FindOnGithub/Fi
 import AvatarGenerator    from "./components/pages/avatarGenerator/AvatarGenerator";
 import ProjectPlaceholder from "./components/pages/smallProjects/projectPlaceholder.component";
 
-
-if (localStorage.token) {
-  setAuthToken(localStorage.token);
-}
-
 const App = () => {
+  if (localStorage.token) {
+    setAuthToken(localStorage.token);
+  }
+  
   return (
     <AuthState>
       <ThemeState>
