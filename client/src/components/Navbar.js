@@ -21,8 +21,8 @@ const Navbar = () => {
 
   const authenticatedLinks = (
       <Fragment>
-        <li>Hello {user && user.name}</li>
-        <a href={'#!'}>Log out</a>
+        <li className={'navbar-text'}>Hello {user && user.firstName} {user && user.lastName}</li>
+        <a  className={'nav-item nav-link'} href={'#!'}>Log out</a>
       </Fragment>
   );
 
@@ -79,10 +79,10 @@ const Navbar = () => {
             </Link>
           </ul>
           <div className='navbar-nav'>
-            <button className={`btn ${darkMode ? 'btn-dark' : 'btn-secondary' }`} onClick={changeTheme}>
+            <button className={`mr-3 btn ${darkMode ? 'btn-dark' : 'btn-secondary' }`} onClick={changeTheme}>
               <img src={darkMode ? Moon : Sun} style={{ width: "24px" }} alt='arrow'/>
             </button>
-            {isAuthenticated ? authenticatedLinks : authenticationLinks}
+            {isAuthenticated ? authenticatedLinks : authenticationLinks }
           </div>
         </div>
       </nav>
