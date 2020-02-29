@@ -58,7 +58,7 @@ const AuthState = props => {
                 payload: response.data
             });
 
-            loadUser();
+            await loadUser();
         } catch (error) {
             console.log(error);
             dispatch({
@@ -82,7 +82,7 @@ const AuthState = props => {
                 payload: response.data
             });
 
-            loadUser();
+            await loadUser();
         } catch (error) {
             console.log(error);
             dispatch({
@@ -93,9 +93,7 @@ const AuthState = props => {
     };
 
     //  Logout
-    const logOut = () => {
-        console.log('Load USer')
-    };
+    const logout = () => dispatch({type: LOGOUT});
 
     //  Clear Errors
     const clearErrors = () => dispatch({ type: CLEAR_ERRORS });
@@ -112,7 +110,7 @@ const AuthState = props => {
                 logIn,
                 loadUser,
                 register,
-                logOut
+                logout
             }}
         >
             {props.children}

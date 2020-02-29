@@ -21,8 +21,8 @@ const Navbar = () => {
 
   const authenticatedLinks = (
       <Fragment>
-        <li className={'navbar-text'}>Hello {user && user.firstName} {user && user.lastName}</li>
-        <a  className={'nav-item nav-link'} href={'#!'}>Log out</a>
+        <li className={'navbar-text'} style={{color:'#ED2939',fontWeight:'bold'}}>Hello, {user && user.firstName} {user && user.lastName}</li>
+        <a  className={'nav-item nav-link'} href={'#!'} onClick={logout}>Log out</a>
       </Fragment>
   );
 
