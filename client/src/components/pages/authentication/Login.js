@@ -61,8 +61,6 @@ const Login = (props) => {
         <div className='d-flex justify-content-center'>
           <form className='mb-3 col-lg-5' onSubmit={onSubmit}>
             <Alerts />
-            <div className='form-group'>
-              <div className='input-group'>
                 <Input
                   type='email'
                   name='email'
@@ -71,10 +69,6 @@ const Login = (props) => {
                   placeholder='Enter email'
                   onChange={onChange}
                 />
-              </div>
-            </div>
-            <div className='form-group'>
-              <div className='input-group'>
                 <Input
                   // type={isPressed ? "text" : "password"}
                   type={'password'}
@@ -84,8 +78,6 @@ const Login = (props) => {
                   placeholder='Password'
                   onChange={onChange}
                 />
-              </div>
-            </div>
             <Button
                 type='submit'
                 block={true}
