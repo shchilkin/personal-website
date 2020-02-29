@@ -12,7 +12,7 @@ import Alerts from "../../Layout/Alert/Alerts.component";
 const Login = (props) => {
   const authContext = useContext(AuthContext);
   const alertContext = useContext(AlertContext);
-  const {logIn, error, clearErrors, isAuthenticated} = authContext;
+  const {login, error, clearErrors, isAuthenticated} = authContext;
   const { setAlert } = alertContext;
 
   const [user, setUser] = useState({
@@ -42,12 +42,11 @@ const Login = (props) => {
     if (email === "" || password === "") {
       setAlert('Please fill all fields', 'warning');
     } else {
-      logIn({
+      login({
         email,
         password
       });
       setAlert('Log in success', 'success');
-      console.log('Login success')
     }
   };
 
@@ -78,6 +77,7 @@ const Login = (props) => {
               <div className='input-group'>
                 <Input
                   // type={isPressed ? "text" : "password"}
+                  type={'password'}
                   name='password'
                   value={password}
                   required={true}
