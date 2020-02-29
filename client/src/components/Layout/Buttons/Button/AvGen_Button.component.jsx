@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import './Button.style.css';
-import ThemeContext from "../../../../context/theme/ThemeContext";
+import ThemeContext from "../../../../contexts/theme/ThemeContext";
 
 const Button = ({image = null, text = '', onClick, disabled = false, style}) => {
     const themeContext =  useContext(ThemeContext);

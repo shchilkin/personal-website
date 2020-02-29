@@ -2,46 +2,52 @@ import React, {useContext, useEffect, useState} from "react";
 import '../../Layout/Inputs/Input.style.css'
 import '../../Layout/Buttons/Button/Button.style.css'
 import '../../Layout/PageComponent.style.css'
-import AuthContext from '../../../context/auth/AuthContext'
+import AuthContext from '../../../contexts/auth/AuthContext'
 import Input from "../../Layout/Inputs/Input.component";
 import Button from "../../Layout/Buttons/Button/Button.component";
 import Page from "../../Layout/Page/Page.component";
+import AlertContext from "../../../contexts/alert/AlertContext";
+import Alerts from "../../Layout/Alert/Alerts.component";
 
 const Login = (props) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [data, setData] = useState([email, password]);
   const authContext = useContext(AuthContext);
-
+  const alertContext = useContext(AlertContext);
   const {logIn, error, clearErrors, isAuthenticated} = authContext;
+  const { setAlert } = alertContext;
+
+  const [user, setUser] = useState({
+        email:'',
+        password:'',
+      }
+  );
+  const { email, password } = user;
 
   useEffect(() => {
     if(isAuthenticated){
+      // TODO Use react router dom redirect instead of history.push
       props.history.push('/')
     }
 
     if(error === "Invalid credentials"){
-      console.log('Invalid credentials!');
+      setAlert('Invalid credentials!', 'danger');
     }
     //eslint-disable-next-line
   }, [error, isAuthenticated, props.history]);
 
-  const changeEmail = event => {
-    setEmail({ email: event.target.value });
-  };
 
-  const changePassword = event => {
-    setPassword({ password: event.target.value });
-  };
+  const onChange = event => {setUser({...user, [event.target.name]: event.target.value} )};
 
   const onSubmit = event => {
     event.preventDefault();
     if (email === "" || password === "") {
-      console.warn("Please fill all fields");
+      setAlert('Please fill all fields', 'warning');
     } else {
-      setData(email, password);
-      console.warn("sending data");
-      console.log(email, password, data);
+      logIn({
+        email,
+        password
+      });
+      setAlert('Log in success', 'success');
+      console.log('Login success')
     }
   };
 
@@ -55,13 +61,16 @@ const Login = (props) => {
         </h1>
         <div className='d-flex justify-content-center'>
           <form className='mb-3 col-lg-5'>
+            <Alerts />
             <div className='form-group'>
               <div className='input-group'>
                 <Input
                   type='email'
+                  name='email'
+                  value={email}
                   required={true}
                   placeholder='Enter email'
-                  onChange={changeEmail}
+                  onChange={onChange}
                 />
               </div>
             </div>
@@ -69,9 +78,11 @@ const Login = (props) => {
               <div className='input-group'>
                 <Input
                   // type={isPressed ? "text" : "password"}
+                  name='password'
+                  value={password}
                   required={true}
                   placeholder='Password'
-                  onChange={changePassword}
+                  onChange={onChange}
                 />
               </div>
             </div>

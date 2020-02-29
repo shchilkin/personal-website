@@ -1,5 +1,5 @@
 import React, {Fragment, useContext} from "react";
-import ThemeContext from '../../../../context/theme/ThemeContext'
+import ThemeContext from '../../../../contexts/theme/ThemeContext'
 import './ContactLink.style.css'
 import Icons from "./Icons";
 

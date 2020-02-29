@@ -1,14 +1,19 @@
 import React, {useState, useContext, useEffect} from "react";
 import '../../Layout/Buttons/Button/Button.style.css'
 import '../../Layout/PageComponent.style.css'
-import AuthContext from '../../../context/auth/AuthContext'
+import AuthContext from '../../../contexts/auth/AuthContext'
 import Input from "../../Layout/Inputs/Input.component";
 import Button from "../../Layout/Buttons/Button/Button.component";
 import Page from "../../Layout/Page/Page.component";
+import AlertContext from "../../../contexts/alert/AlertContext";
+import Alerts from "../../Layout/Alert/Alerts.component";
 
 const Registration = (props) => {
     const authContext =  useContext(AuthContext);
+    const alertContext = useContext(AlertContext);
+
     const {register, error, clearErrors, isAuthenticated} = authContext;
+    const { setAlert } = alertContext;
 
     useEffect(() => {
         if(isAuthenticated){
@@ -16,7 +21,7 @@ const Registration = (props) => {
         }
 
         if(error === "User already exist!"){
-            console.log('User already exist!');
+            setAlert('User already exist!', 'warning');
         }
         //eslint-disable-next-line
     }, [error, isAuthenticated, props.history]);
@@ -37,10 +42,11 @@ const Registration = (props) => {
    const onSubmit = event => {
        event.preventDefault();
        if (firstName === '' || lastName ==='' || email === '' || password === '') {
-           console.log('Please enter all fields');
+           setAlert('Please enter all fields', 'danger');
        } else if (password !== passwordConfirmation) {
-           console.log('Passwords do not match');
+           setAlert('Passwords do not match', 'danger');
        } else {
+           setAlert('Register success', 'success');
            register({
                firstName,
                lastName,
@@ -58,6 +64,7 @@ const Registration = (props) => {
               </h1>
               <div className='d-flex justify-content-center'>
                   <form className='mb-5 col-lg-5' onSubmit={onSubmit}>
+                      <Alerts/>
                       <div className='row'>
                           <div className='col-sm-6'>
                               <Input

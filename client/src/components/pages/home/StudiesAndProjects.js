@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import ThemeContext from "../../../context/theme/ThemeContext";
+import ThemeContext from "../../../contexts/theme/ThemeContext";
 
 import Container from "../../Layout/Container/Container.component";
 

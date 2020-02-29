@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import './Container.style.css'
-import ThemeContext from "../../../context/theme/ThemeContext";
+import ThemeContext from "../../../contexts/theme/ThemeContext";
 
 const Container = ({children, style}) => {
     const themeContext =  useContext(ThemeContext);

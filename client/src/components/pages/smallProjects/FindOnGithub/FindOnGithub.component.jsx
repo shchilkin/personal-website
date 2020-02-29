@@ -7,7 +7,7 @@ import Alert from "../../../Layout/Alert/Alert.component";
 import Search from "./FindOnGithub_Components/Search.component";
 import projectPlaceholder from '../projectPlaceholder.component'
 import Page from "../../../Layout/Page/Page.component";
-import ThemeContext from "../../../../context/theme/ThemeContext";
+import ThemeContext from "../../../../contexts/theme/ThemeContext";
 import '../../../Layout/PageComponent.style.css'
 
 const FindOnGithub = () => {
@@ -63,6 +63,7 @@ const {darkMode} = themeContext;
     };
 
     //Set Alert
+    // TODO use global alert
     const setAlert = (message, type) => {
         setAlertMessage(message);
         setAlertType(type);

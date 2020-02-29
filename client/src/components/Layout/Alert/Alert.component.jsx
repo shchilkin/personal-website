@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import './Alert.style.css'
-import ThemeContext from "../../../context/theme/ThemeContext";
+import ThemeContext from "../../../contexts/theme/ThemeContext";
 
 const Alert = ({message, type}) => {
     const themeContext =  useContext(ThemeContext);

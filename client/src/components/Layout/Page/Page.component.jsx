@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import ThemeContext from "../../../context/theme/ThemeContext";
+import ThemeContext from "../../../contexts/theme/ThemeContext";
 import '../../Layout/PageComponent.style.css'
 
 const Page = ({children}) => {

@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import ContactLink from "./ContactLink";
 import { Link } from "react-router-dom";
-import ThemeContext from '../../../../context/theme/ThemeContext'
+import ThemeContext from '../../../../contexts/theme/ThemeContext'
 
 const Contacts = () => {
     const themeContext =  useContext(ThemeContext);

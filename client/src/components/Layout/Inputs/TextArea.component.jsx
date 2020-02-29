@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import ThemeContext from "../../../context/theme/ThemeContext";
+import ThemeContext from "../../../contexts/theme/ThemeContext";
 
 const TextArea = ({placeholder, value, onChange, onFocus, onBlur,required = false,  name, style}) => {
     const themeContext =  useContext(ThemeContext);

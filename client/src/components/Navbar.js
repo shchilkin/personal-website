@@ -2,19 +2,40 @@ import React, {Fragment, useContext, useState} from "react";
 import { Link } from "react-router-dom";
 import Cat from "../icons/CatLogoV9.svg";
 import CatTongue from "../icons/CatTongue.svg";
-import '../components/Layout/Navbar/navbar-item.css'
-import ThemeContext from '../context/theme/ThemeContext'
-import Moon from '../icons/Moon.svg'
-import Sun from '../icons/Sun.svg'
+import '../components/Layout/Navbar/navbar-item.css';
+import ThemeContext from '../contexts/theme/ThemeContext';
+import AuthContext from '../contexts/auth/AuthContext';
+import Moon from '../icons/Moon.svg';
+import Sun from '../icons/Sun.svg';
 
 const Navbar = () => {
   const [pressed, setPressed] = useState(false);
   const themeContext =  useContext(ThemeContext);
+  const authContext = useContext(AuthContext);
   const {changeTheme, darkMode} = themeContext;
+  const {isAuthenticated, logout, user} = authContext;
 
   const changePressed = () => {
     setPressed(!pressed);
   };
+
+  const authenticatedLinks = (
+      <Fragment>
+        <li>Hello {user && user.name}</li>
+        <a href={'#!'}>Log out</a>
+      </Fragment>
+  );
+
+  const authenticationLinks = (
+      <Fragment>
+        <Link className='nav-item nav-link' to='/Login'>
+          Log in
+        </Link>
+        <Link className='nav-item nav-link' to='/Register'>
+          Register
+        </Link>
+      </Fragment>
+  );
 
   return (
     <Fragment>
@@ -61,12 +82,7 @@ const Navbar = () => {
             <button className={`btn ${darkMode ? 'btn-dark' : 'btn-secondary' }`} onClick={changeTheme}>
               <img src={darkMode ? Moon : Sun} style={{ width: "24px" }} alt='arrow'/>
             </button>
-            <Link className='nav-item nav-link' to='/Login'>
-              Log in
-            </Link>
-            <Link className='nav-item nav-link' to='/Register'>
-              Register
-            </Link>
+            {isAuthenticated ? authenticatedLinks : authenticationLinks}
           </div>
         </div>
       </nav>

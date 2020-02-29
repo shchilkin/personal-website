@@ -9,8 +9,13 @@ const  ThemeState = props => {
     const getThemeStateFromLocalStorage = () => {
         let state = JSON.parse(localStorage.getItem('theme'));
         if (state === null) {
-            document.body.style = 'background: #F0F0F0;';
-            return false
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.body.style = 'background: #303030;';
+                return true
+            } else {
+                document.body.style = 'background: #F0F0F0;';
+                return false
+            }
         } else {
             if (state){
                 document.body.style = 'background: #F0F0F0;';

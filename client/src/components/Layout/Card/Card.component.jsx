@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import './Card.style.css'
-import ThemeContext from "../../../context/theme/ThemeContext";
+import ThemeContext from "../../../contexts/theme/ThemeContext";
 
 const Card = (props) => {
     const themeContext =  useContext(ThemeContext);
