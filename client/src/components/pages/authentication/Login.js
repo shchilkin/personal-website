@@ -59,7 +59,7 @@ const Login = (props) => {
           <span style={{ color: "#ED2939" }}>L</span>og in
         </h1>
         <div className='d-flex justify-content-center'>
-          <form className='mb-3 col-lg-5'>
+          <form className='mb-3 col-lg-5' onSubmit={onSubmit}>
             <Alerts />
             <div className='form-group'>
               <div className='input-group'>
@@ -87,7 +87,6 @@ const Login = (props) => {
               </div>
             </div>
             <Button
-                onSubmit={onSubmit}
                 type='submit'
                 block={true}
                 style={{height:'50px', fontWeight:'bold'}}
