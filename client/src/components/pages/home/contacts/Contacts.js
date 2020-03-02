@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import ContactLink from "./ContactLink";
 import { Link } from "react-router-dom";
 import ThemeContext from '../../../../contexts/theme/ThemeContext'
+import '../StudiesAndProjects.style.css';
 
 const Contacts = () => {
     const themeContext =  useContext(ThemeContext);
@@ -10,7 +11,7 @@ const Contacts = () => {
   return (
       <div style={darkMode ? {backgroundColor:'#303030'} : {backgroundColor:'#F0F0F0'}}>
         <div className='d-flex justify-content-center text-white pt-5 pb-1'>
-          <h4 className={'text-center'} style={darkMode ? {color:"#F0F0F0"} : {color:"#303030"}}>Contact me</h4>
+          <h4 className={'text-center header mb-3'} style={darkMode ? {color:"#F0F0F0"} : {color:"#303030"}}>Contact me</h4>
         </div>
         <div className='d-flex justify-content-center pb-5'>
           <div className='container text-center'>

@@ -8,7 +8,7 @@ const UserItem = ({ login, avatar_url }) => {
     return (
         <Card>
             <img src={avatar_url} className="card-img-top" style={{ borderTopLeftRadius: 12,
-                borderTopRightRadius: 12,}} alt="Avatar Image"/>
+                borderTopRightRadius: 12,}} alt="Avatar"/>
             <div className={'card-body'}>
                 <h5 className="card-title text-center" style={{color:'#FC4365'}}>{login}</h5>
                 <Link to={`/projects/findOnGithub/user/${login}`}

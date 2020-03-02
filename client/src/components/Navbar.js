@@ -7,6 +7,7 @@ import ThemeContext from '../contexts/theme/ThemeContext';
 import AuthContext from '../contexts/auth/AuthContext';
 import Moon from '../icons/Moon.svg';
 import Sun from '../icons/Sun.svg';
+import './Layout/slider.style.css'
 
 const Navbar = () => {
   const [pressed, setPressed] = useState(false);
@@ -79,10 +80,16 @@ const Navbar = () => {
             </Link>
           </ul>
           <div className='navbar-nav'>
-            <button className={`mr-3 btn ${darkMode ? 'btn-dark' : 'btn-secondary' }`} onClick={changeTheme}>
-              <img src={darkMode ? Moon : Sun} style={{ width: "24px" }} alt='arrow'/>
+            <button className={`mr-3 btn ${darkMode ? 'btn-outline-dark' : 'btn-outline-secondary' }`} onClick={changeTheme}>
+              <img src={darkMode ? Moon : Sun} style={{ width: "30px" }} alt='arrow'/>
             </button>
             {isAuthenticated ? authenticatedLinks : authenticationLinks }
+          </div>
+          <div className={'navbar-text'}>
+            <label className="switch">
+              <input type="checkbox" onChange={changeTheme} />
+              <span className="slider round"/>
+            </label>
           </div>
         </div>
       </nav>

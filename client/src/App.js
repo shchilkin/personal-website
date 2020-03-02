@@ -5,7 +5,7 @@ import Home               from "./components/pages/home/Home";
 import Login              from "./components/pages/authentication/Login";
 import Navbar             from "./components/Navbar";
 import NotFound           from  './components/pages/NotFound.page';
-import App_page           from "./components/Layout/Page/App_page.component";
+import AppPage           from "./components/Layout/Page/AppPage.component";
 import AuthState          from "./contexts/auth/AuthState";
 import AlertState         from "./contexts/alert/AlertState";
 import ThemeState         from './contexts/theme/ThemeState';
@@ -28,7 +28,7 @@ const App = () => {
           <Router>
             <Navbar/>
             <Fragment>
-              <App_page>
+              <AppPage>
                 <Switch>
                   <Route exact path='/' component={Home} />
                   <Route exact path='/Login' component={Login} />
@@ -39,7 +39,7 @@ const App = () => {
                   <Route exact path='/projects/AvatarGenerator' component={AvatarGenerator}/>
                   <Route component={NotFound} />
                 </Switch>
-              </App_page>
+              </AppPage>
             </Fragment>
           </Router>
         </AlertState>

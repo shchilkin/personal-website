@@ -8,20 +8,25 @@ const app = express();
 
 //  JSON parser middleware
 app.use(express.json({extended:false}));
+
 //  Force HTTPS Middleware
 app.use(secure);
+
 //  Connect MongoDB
 connectDB();
-//  Routes
+
+//  API Routes
 app.use("/api/users", require("./routes/users"));
 app.use("/api/auth", require("./routes/auth"));
+
+app.use(express.static(path.join(__dirname, "client/build")));
 
 //  Production mode
 if (process.env.NODE_ENV === "production") {
   //  Static folder
   app.use(express.static(path.join(__dirname, "client/build")));
 
-  app.get("/", (req, res) =>
+  app.get("*", (req, res) =>
     res.sendfile(path.join((__dirname = "client/build/index.html")))
   );
 }
