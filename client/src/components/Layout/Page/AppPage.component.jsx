@@ -3,7 +3,7 @@ import ThemeContext from "../../../contexts/theme/ThemeContext";
 import '../../Layout/PageComponent.style.css'
 
 //TODO remove this component hence it is temporary solution for background mismatch error
-const App_page = ({children}) => {
+const AppPage = ({children}) => {
     const themeContext =  useContext(ThemeContext);
     const {darkMode, changeBackground} = themeContext;
     changeBackground();
@@ -16,4 +16,4 @@ const App_page = ({children}) => {
 
 };
 
-export default App_page
+export default AppPage

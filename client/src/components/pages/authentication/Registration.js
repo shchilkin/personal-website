@@ -12,7 +12,7 @@ const Registration = (props) => {
     const authContext =  useContext(AuthContext);
     const alertContext = useContext(AlertContext);
 
-    const {register, error, clearErrors, isAuthenticated} = authContext;
+    const {register, error, isAuthenticated} = authContext;
     const { setAlert } = alertContext;
 
     useEffect(() => {

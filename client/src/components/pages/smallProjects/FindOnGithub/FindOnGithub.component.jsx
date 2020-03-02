@@ -100,7 +100,6 @@ const {darkMode} = themeContext;
                         </div>
                     )}
                 />
-                //TODO fix Redirect on blank page after page reload
                 <Route
                     exact
                     path='/projects/findOnGithub/user/:login'

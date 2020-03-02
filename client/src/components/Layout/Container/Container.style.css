@@ -14,7 +14,15 @@
     background: #303030;
     color: #c1c1c1;
     mix-blend-mode: normal;
-    box-shadow:  10px 10px 30px 0 #292929, -5px -5px 10px 0 #373737;
+    box-shadow:  10px 10px 10px 0 #292929, -5px -5px 10px 0 #373737;
     border: 1px solid #303030;
     border-radius: 12px;
+}
+
+.Container-Light h5 {
+    color: #303030;
+}
+
+.Container-Dark h5 {
+    color: #F0F0F0;
 }
