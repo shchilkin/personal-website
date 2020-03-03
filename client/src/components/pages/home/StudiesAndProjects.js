@@ -22,8 +22,7 @@ const StudiesAndProjects = () => {
                <div className={'container pt-3 pb-3'}>
                  <div className={'row'}>
                    <div className={'col-lg-4 mb-4'}>
-                     <Container className={`CRK-container ${darkMode && 'container-dark'}`}
-                     >
+                     <Container className={`CRK-container ${darkMode && 'container-dark'}`}>
                        <div className={'pb-2 pt-3 pr-2 pl-2'}>
                          <h5 className={'text-center header'}>Software Development</h5>
                          <ul>
@@ -51,8 +50,7 @@ const StudiesAndProjects = () => {
                        <div className={'pb-2 pt-3 pr-2 pl-2'}>
                          <h5 className={'text-center header'}>Electronics & IoT</h5>
                          <ul>
-                           <li>Home Climate Monitoring with <span className='badge' style={{backgroundColor:'rgb(182,0,58)', color:'#FFF'}}>Raspberry Pi</span> and <span className='badge' style={{backgroundColor:'rgb(42,93,148)',color:'#FFF'}}>Python</span></li>
-                           <li>Surveillance Camera Project with <span className='badge' style={{backgroundColor:'rgb(182,0,58)',color:'#FFF'}}>Raspberry Pi</span></li>
+                           <li>Home Climate Monitoring and Surveillance Camera Projects with <span className='badge' style={{backgroundColor:'rgb(182,0,58)', color:'#FFF'}}>Raspberry Pi</span> and <span className='badge' style={{backgroundColor:'rgb(42,93,148)',color:'#FFF'}}>Python</span></li>
                            <li> Small Christmas Lights project with <span className='badge' style={{backgroundColor:'rgb(17,134,139)',color:'#FFF'}}>Arduino</span></li>
                          </ul>
                        </div>
