@@ -1,7 +1,7 @@
 import React, {Fragment, useContext} from "react";
 import ThemeContext from '../../../../contexts/theme/ThemeContext'
 import './ContactLink.style.css'
-import Icons from "./Icons";
+import Icons from "../../../Icons";
 import { Link } from "react-router-dom";
 
 const ContactLink = ({icon, link, width = '2rem', height = '2rem', internalLink = false}) => {
