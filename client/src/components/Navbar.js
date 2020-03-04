@@ -80,10 +80,10 @@ const Navbar = () => {
               </Link>
             </ul>
             <div className='navbar-nav'>
-              <label className="switch">
-                <input type="checkbox" onChange={changeTheme} />
-                <span className="slider round"/>
-              </label>
+              {/*<label className="switch">*/}
+              {/*  <input type="checkbox" onChange={changeTheme} />*/}
+              {/*  <span className="slider round"/>*/}
+              {/*</label>*/}
               <button className={`mr-3 btn ${darkMode ? 'btn-outline-dark' : 'btn-outline-secondary' }`} onClick={changeTheme}>
                 <img src={darkMode ? Moon : Sun} style={{ width: "24px" }} alt='arrow'/>
               </button>

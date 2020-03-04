@@ -19,10 +19,10 @@
     border-radius: 12px;
 }
 
-.Container-Light h5 {
+.Container-Light h5 h4 {
     color: #303030;
 }
 
-.Container-Dark h5 {
+.Container-Dark h5 h4 {
     color: #F0F0F0;
 }
