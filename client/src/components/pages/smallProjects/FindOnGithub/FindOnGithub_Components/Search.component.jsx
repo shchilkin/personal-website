@@ -26,11 +26,12 @@ const Search = ({searchUsers, showClear, clearUsers, setAlert}) => {
         <form  onSubmit={onSubmit} className={'form mb-3'}>
             <Input
                 type={'text'}
-                placeholder={'Enter a Username'}
+                placeholder={'Enter an Username'}
                 value={text}
                 onChange={onChange}
                 onFocus={event=> event.target.placeholder=''}
-                onBlur={event=> event.target.placeholder='Enter an Username...'}
+                onBlur={event=> event.target.placeholder='Enter an Username'}
+                autoComplete={'off'}
             />
 
             <Button

@@ -84,7 +84,7 @@ const {darkMode} = themeContext;
                     render={() => (
                         <div className={`${darkMode ? 'Background-Dark':'Background-Light'}`}>
                             <div className={`container`}>
-                                <Link to='/projects'>
+                                <Link to='/projects' style={{color:'#ed2939'}}>
                                     To the small projects page
                                 </Link>
                             <h3 className={'mb-4'}>Find on GitHub</h3>

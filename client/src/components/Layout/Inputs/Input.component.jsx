@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import './Input.style.css'
 import ThemeContext from "../../../contexts/theme/ThemeContext";
 
-const Input = ({type, placeholder, value, onChange, onFocus, onBlur,required = false,  name}) => {
+const Input = ({type, placeholder, value, onChange, onFocus, onBlur,required = false,  name, autoComplete='on'}) => {
     const themeContext =  useContext(ThemeContext);
     const {darkMode} = themeContext;
 
@@ -17,6 +17,7 @@ const Input = ({type, placeholder, value, onChange, onFocus, onBlur,required = f
             onBlur={onBlur}
             required={required}
             name={name}
+            autoComplete={autoComplete}
         />
     )
 };

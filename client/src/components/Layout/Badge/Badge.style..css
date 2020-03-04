@@ -1,5 +1,5 @@
 .Badge-Dark {
-    background-color: #f0f0f0;
+    background-color: #ed2939;
     color: black;
     padding: .25em .4em;
     border-radius:6px;
@@ -11,7 +11,7 @@
 }
 
 .Badge-Light {
-    background-color: #303030;
+    background-color: #ed2939;
     color: white;
     padding: .25em .4em;
     border-radius:6px;
@@ -23,7 +23,7 @@
 }
 
 .Badge-Small-Dark {
-    background-color: #f0f0f0;
+    background-color: #ed2939;
     color: black;
     padding: .25em .4em;
     margin-right:0.25rem;
@@ -40,7 +40,7 @@
 }
 
 .Badge-Small-Light {
-    background-color: #303030;
+    background-color: #ed2939;
     color: white;
     padding: .25em .4em;
     margin-right:0.25rem;
