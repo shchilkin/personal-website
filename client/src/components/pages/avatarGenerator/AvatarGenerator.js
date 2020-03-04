@@ -248,27 +248,27 @@ const AvatarGenerator = () => {
                 <div className='mb-2'>
                 <p className='card-title'><span className='badge'>Change Hairstyle</span></p>
                 <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(hairCounter, setHairCounter, hairArray.length, false)} image={ArrowLeft}/>
-                <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(hairCounter, setHairCounter, hairArray.length, true)} image={ArrowRight}/>
+                <IconButton onClick={() => count(hairCounter, setHairCounter, hairArray.length, true)} image={ArrowRight}/>
             </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge'>Change Hair color</span></p>
                     <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(hairColorCounter, setHairColorCounter,hairArray[hairCounter].length, false)} image={ArrowLeft}/>
-                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(hairColorCounter, setHairColorCounter,hairArray[hairCounter].length, true)} image={ArrowRight}/>
+                    <IconButton onClick={() => count(hairColorCounter, setHairColorCounter,hairArray[hairCounter].length, true)} image={ArrowRight}/>
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge'>Change Eye color</span></p>
                     <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(eyesCounter, setEyesCounter,eyesArray.length, false)} image={ArrowLeft}/>
-                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(eyesCounter, setEyesCounter,eyesArray.length, true)} image={ArrowRight}/>
+                    <IconButton onClick={() => count(eyesCounter, setEyesCounter,eyesArray.length, true)} image={ArrowRight}/>
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge'>Change Glasses</span></p>
                     <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(glassesCounter, setGlassesCounter,glassesArray.length, false)} image={ArrowLeft}/>
-                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(glassesCounter, setGlassesCounter,glassesArray.length, true)} image={ArrowRight}/>
+                    <IconButton onClick={() => count(glassesCounter, setGlassesCounter,glassesArray.length, true)} image={ArrowRight}/>
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge'>Change Eyebrows</span></p>
                     <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(eyeBrowsCounter, setEyesBrowsCounter, eyebrowsArray.length, false)} image={ArrowLeft}/>
-                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(eyeBrowsCounter, setEyesBrowsCounter, eyebrowsArray.length, true)} image={ArrowRight}/>
+                    <IconButton onClick={() => count(eyeBrowsCounter, setEyesBrowsCounter, eyebrowsArray.length, true)} image={ArrowRight}/>
                 </div>
             </Container>
           </div>
@@ -277,27 +277,27 @@ const AvatarGenerator = () => {
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge'>Change Lips</span></p>
                     <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(lipsCounter, setLipsCounter,lipsArray.length, false)} image={ArrowLeft}/>
-                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(lipsCounter, setLipsCounter,lipsArray.length, true)} image={ArrowRight}/>
+                    <IconButton onClick={() => count(lipsCounter, setLipsCounter,lipsArray.length, true)} image={ArrowRight}/>
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge'>Change Background</span></p>
                     <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(backgroundCounter, setBackgroundCounter, backgroundArray.length, false)} image={ArrowLeft}/>
-                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(backgroundCounter, setBackgroundCounter, backgroundArray.length, true)} image={ArrowRight}/>
+                    <IconButton onClick={() => count(backgroundCounter, setBackgroundCounter, backgroundArray.length, true)} image={ArrowRight}/>
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge'>Change Clothes</span></p>
                     <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(clothesCounter, setClothesCounter, clothesArray.length, false)} image={ArrowLeft}/>
-                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(clothesCounter, setClothesCounter, clothesArray.length, true)} image={ArrowRight}/>
+                    <IconButton onClick={() => count(clothesCounter, setClothesCounter, clothesArray.length, true)} image={ArrowRight}/>
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge'>Change Skin tone</span></p>
                     <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(skinToneCounter, setSkinToneCounter, skinToneArray.length, false)} image={ArrowLeft} />
-                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(skinToneCounter, setSkinToneCounter, skinToneArray.length, true)} image={ArrowRight} />
+                    <IconButton onClick={() => count(skinToneCounter, setSkinToneCounter, skinToneArray.length, true)} image={ArrowRight} />
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge badge-secondary'>TODO</span></p>
                     <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
+                    <IconButton disabled={true} image={ArrowRight}/>
                 </div>
             </Container>
         </div>
@@ -306,27 +306,27 @@ const AvatarGenerator = () => {
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge badge-secondary'>TODO</span></p>
                     <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
+                    <IconButton disabled={true} image={ArrowRight}/>
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge badge-secondary'>TODO</span></p>
                     <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
+                    <IconButton disabled={true} image={ArrowRight}/>
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge badge-secondary'>TODO</span></p>
                     <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
+                    <IconButton disabled={true} image={ArrowRight}/>
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge badge-secondary'>TODO</span></p>
                     <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
+                    <IconButton disabled={true} image={ArrowRight}/>
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge badge-secondary'>TODO</span></p>
                     <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
+                    <IconButton disabled={true} image={ArrowRight}/>
                 </div>
             </Container>
           </div>
@@ -335,22 +335,22 @@ const AvatarGenerator = () => {
                   <div className='mb-2'>
                       <p className='card-title'><span className='badge badge-info'>TODO</span></p>
                       <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                      <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
+                      <IconButton disabled={true} image={ArrowRight}/>
                   </div>
                   <div className='mb-2'>
                       <p className='card-title'><span className='badge badge-info'>TODO</span></p>
                       <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                      <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
+                      <IconButton disabled={true} image={ArrowRight}/>
                   </div>
                   <div className='mb-2'>
                       <p className='card-title'><span className='badge badge-info'>TODO</span></p>
                       <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                      <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
+                      <IconButton disabled={true} image={ArrowRight}/>
                   </div>
                   <div className='mb-2'>
                       <p className='card-title'><span className='badge badge-info'>TODO</span></p>
                       <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                      <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
+                      <IconButton disabled={true} image={ArrowRight}/>
                   </div>
                   <div className='mb-2'>
                       <p className='card-title'><span className='badge badge-info'>TODO</span></p>

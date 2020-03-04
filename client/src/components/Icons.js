@@ -1,5 +1,3 @@
-import React from "react";
-
 const Icons = {
     Github: {
         viewBox:'0 0 378 369',
