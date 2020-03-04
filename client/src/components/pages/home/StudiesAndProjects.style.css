@@ -11,7 +11,10 @@
 }
 
 .Badge {
-    background-color:transparent;
+    /*background-color:#a61d28;*/
+    /*background-color: #d52533;*/
+    background-color: #f0f0f0;
+    color: black;
     padding: .25em .4em;
     border-radius:6px;
     margin-right:0.25rem;
@@ -21,38 +24,25 @@
 
 }
 
-.square-top-right{
-     height: 2rem;
-     width: 2rem;
-     position: relative;
-     float: right;
-     border-bottom: solid 3px white;
-     border-left: 3px solid white;
- }
 
-.square-top-left{
-    height: 2rem;
-    width: 2rem;
-    position: relative;
-    float: left;
-    border-bottom: 3px solid white;
-    border-right: 3px solid white;
-}
+.Badge-small {
+    /*background-color:#a61d28;*/
+    /*background-color: #d52533;*/
+    background-color: #f0f0f0;
+    color: black;
+    padding: .25em .4em;
+    margin-right:0.25rem;
+    margin-bottom:0.25rem;
+    /*font-weight:bold;*/
+    display: inline-block;
 
-.square-bottom-right{
-    height: 2rem;
-    width: 2rem;
-    /*position: relative;*/
-    float: right;
-    border-top: solid 3px white;
-    border-left: 3px solid white;
-}
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 
-.square-bottom-left{
-    height: 2rem;
-    width: 2rem;
-    /*position: relative;*/
-    float: left;
-    border-top: 3px solid white;
-    border-right: 3px solid white;
 }
