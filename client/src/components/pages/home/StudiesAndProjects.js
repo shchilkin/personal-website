@@ -1,5 +1,6 @@
 import React from "react";
 import Container from "../../Layout/Container/Container.component";
+import Badge from "../../Layout/Badge/Badge.component";
 import './StudiesAndProjects.style.css';
 import '../../Layout/About.style.css'
 
@@ -19,22 +20,22 @@ const StudiesAndProjects = () => {
                       <Container style={{paddingLeft:'1rem',paddingTop:'1rem', marginBottom:'1rem'}}>
                           <h4 className={'header mb-3'} style={{display:'inline-block'}}>Languages</h4>
                           <p>
-                              <span className={'Badge'}>Kotlin</span>
-                              <span className={'Badge'}>Python</span>
-                              <span className={'Badge'}>JavaScript</span>
+                              <Badge type={'normal'} className={'Badge'}>Kotlin</Badge>
+                              <Badge type={'normal'} className={'Badge'}>Python</Badge>
+                              <Badge type={'normal'} className={'Badge'}>JavaScript</Badge>
                       </p>
                           <h4 className={'header mb-3'}>Technologies</h4>
                           <p>
-                              <span className={'Badge'}>React</span>
-                              <span className={'Badge'}>Node.js</span>
-                              <span className={'Badge'}>Docker</span>
-                              <span className={'Badge'}>Raspberry Pi</span>
-                              <span className={'Badge'}>Arduino</span>
+                              <Badge type={'normal'} className={'Badge'}>React</Badge>
+                              <Badge type={'normal'} className={'Badge'}>Node.js</Badge>
+                              <Badge type={'normal'} className={'Badge'}>Docker</Badge>
+                              <Badge type={'normal'} className={'Badge'}>Raspberry Pi</Badge>
+                              <Badge type={'normal'} className={'Badge'}>Arduino</Badge>
                           </p>
                           <h4 className={'header mb-3'}>Other Skills</h4>
                           <p>
-                              <span className={'Badge'}>Vector assets creation</span>
-                              <span className={'Badge'}>Network configuration</span>
+                              <Badge type={'normal'} className={'Badge'}>Vector assets creation</Badge>
+                              <Badge type={'normal'} className={'Badge'}>Network configuration</Badge>
                          </p>
                       </Container>
                   </div>
@@ -45,10 +46,10 @@ const StudiesAndProjects = () => {
                               <div className={'pb-2 pt-3 pr-2 pl-2'}>
                                   <h5 className={'text-center header'}>Software Development</h5>
                                   <ul>
-                                      <li>Weather Data Analyser with <span className='Badge-small'>Python</span></li>
-                                      <li>Android Applications with <span className='Badge-small'>Kotlin</span></li>
-                                      <li>Full-stack Web applications with <span className='Badge-small'>React</span> and <span className='Badge-small'>Node.js</span></li>
-                                      <li>Small projects with pure <span className='Badge-small'>JavaScript</span></li>
+                                      <li>Weather Data Analyser with <Badge type={'small'}>Python</Badge></li>
+                                      <li>Android Applications with <Badge type={'small'}>Kotlin</Badge></li>
+                                      <li>Full-stack Web applications with <Badge type={'small'}>React</Badge> and <Badge type={'small'}>Node.js</Badge></li>
+                                      <li>Small projects with pure <Badge type={'small'}>JavaScript</Badge></li>
                                   </ul>
                               </div>
                           </Container>
@@ -58,8 +59,8 @@ const StudiesAndProjects = () => {
                               <div className={'pb-2 pt-3 pr-2 pl-2'}>
                                   <h5 className={'text-center header'}>Electronics & IoT</h5>
                                   <ul>
-                                      <li>Home Climate Monitoring and Surveillance Camera Projects with <span className='Badge-small'>Raspberry Pi</span> and <span className='Badge-small'>Python</span></li>
-                                      <li> Small Christmas Lights project with <span className='Badge-small'>Arduino</span></li>
+                                      <li>Home Climate Monitoring and Surveillance Camera Projects with <Badge type={'small'}>Raspberry Pi</Badge> and <Badge type={'small'}>Python</Badge></li>
+                                      <li> Small Christmas Lights project with <Badge type={'small'}>Arduino</Badge></li>
                                   </ul>
                               </div>
                           </Container>

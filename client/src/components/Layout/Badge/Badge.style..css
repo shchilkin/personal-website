@@ -1,0 +1,57 @@
+.Badge-Dark {
+    background-color: #f0f0f0;
+    color: black;
+    padding: .25em .4em;
+    border-radius:6px;
+    margin-right:0.25rem;
+    margin-bottom:0.25rem;
+    font-weight:bold;
+    display: inline-block;
+
+}
+
+.Badge-Light {
+    background-color: #303030;
+    color: white;
+    padding: .25em .4em;
+    border-radius:6px;
+    margin-right:0.25rem;
+    margin-bottom:0.25rem;
+    font-weight:bold;
+    display: inline-block;
+
+}
+
+.Badge-Small-Dark {
+    background-color: #f0f0f0;
+    color: black;
+    padding: .25em .4em;
+    margin-right:0.25rem;
+    margin-bottom:0.25rem;
+    display: inline-block;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.Badge-Small-Light {
+    background-color: #303030;
+    color: white;
+    padding: .25em .4em;
+    margin-right:0.25rem;
+    margin-bottom:0.25rem;
+    display: inline-block;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
