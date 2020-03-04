@@ -14,7 +14,7 @@ const ProjectPlaceholder = () => {
                     <span style={{ color: "#ED2939" }}>S</span>mall projects
                 </h1>
                 <div className={'row'}>
-                    <div className={'col-md-3'}>
+                    <div className={'col-md-3 mb-4'}>
                         <Container>
                             <div className='container' style={{width:'90%'}}>
                                 {/*TODO Redisign logo because github logo cannot be modified */}
@@ -32,7 +32,7 @@ const ProjectPlaceholder = () => {
                                 </Link>
                         </Container>
                     </div>
-                    <div className={'col-md-3'}>
+                    <div className={'col-md-3 mb-4'}>
                         <Container>
                             <div className='container' style={{width:'90%'}}>
                                 <img src={FindOnGithubLogo} alt={'Find on Github logo'}/>

@@ -22,29 +22,29 @@ const App = () => {
   }
   
   return (
-    <AuthState>
-      <ThemeState>
-        <AlertState>
-          <Router>
-            <Navbar/>
-            <Fragment>
-              <AppPage>
-                <Switch>
-                  <Route exact path='/' component={Home} />
-                  <Route exact path='/Login' component={Login} />
-                  <Route exact path='/Contact' component={ContactPage} />
-                  <Route exact path='/Register' component={Registration} />
-                  <Route exact path='/projects' component={ProjectPlaceholder}/>
-                  <Route exact path='/projects/findOnGithub' component={findOnGithub}/>
-                  <Route exact path='/projects/AvatarGenerator' component={AvatarGenerator}/>
-                  <Route component={NotFound} />
-                </Switch>
-              </AppPage>
-            </Fragment>
-          </Router>
-        </AlertState>
-      </ThemeState>
-    </AuthState>
+      <AuthState>
+        <ThemeState>
+          <AlertState>
+            <Router>
+              <Navbar/>
+              <Fragment>
+                <AppPage>
+                  <Switch>
+                    <Route exact path='/' component={Home} />
+                    <Route exact path='/Login' component={Login} />
+                    <Route exact path='/Contact' component={ContactPage} />
+                    <Route exact path='/Register' component={Registration} />
+                    <Route exact path='/projects' component={ProjectPlaceholder}/>
+                    <Route exact path='/projects/findOnGithub' component={findOnGithub}/>
+                    <Route exact path='/projects/AvatarGenerator' component={AvatarGenerator}/>
+                    <Route component={NotFound} />
+                  </Switch>
+                </AppPage>
+              </Fragment>
+            </Router>
+          </AlertState>
+        </ThemeState>
+      </AuthState>
   );
 };
 

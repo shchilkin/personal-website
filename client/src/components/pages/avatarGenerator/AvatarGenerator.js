@@ -52,7 +52,7 @@ import Skin_Tone_6 from './Skin_tone_6.svg';
 import Skin_Tone_7 from './Skin_tone_7.svg';
 import Skin_Tone_8 from './Skin_tone_8.svg';
 import Skin_Tone_9 from './Skin_tone_9.svg';
-import Button from "../../Layout/Buttons/Button/AvGen_Button.component";
+import IconButton from "../../Layout/Buttons/Button/IconButton.component";
 import Container from "../../Layout/Container/Container.component";
 import Hair_3_brown from './Hair_3_variations/Hair_3_brown.svg'
 import Hair_3_dark from './Hair_3_variations/Hair_3_dark_brown.svg'
@@ -74,20 +74,26 @@ import Hair_1_green from './Hair_1_variations/Hair_1_green.svg'
 import Page from "../../Layout/Page/Page.component";
 
 const AvatarGenerator = () => {
-  // initial State
-  const [hairCounter, setHairCounter] = useState(2);
-  const [eyesCounter, setEyesCounter] = useState(0);
-  const [eyeBrowsCounter, setEyesBrowsCounter] = useState(0);
-  const [glassesCounter, setGlassesCounter] = useState(1);
-  const [lipsCounter, setLipsCounter] = useState(1);
-  const [backgroundCounter, setBackgroundCounter] = useState(0);
-  const [clothesCounter, setClothesCounter] = useState(0);
-  const [skinToneCounter, setSkinToneCounter] = useState(0);
-  const [hairColorCounter, setHairColorCounter] = useState(0);
+    //TODO Refactor this mess
+
+    // initial State
+    //TODO refactor to the one object
+    const
+        [hairCounter, setHairCounter] = useState(2),
+        [eyesCounter, setEyesCounter] = useState(0),
+        [eyeBrowsCounter, setEyesBrowsCounter] = useState(0),
+        [glassesCounter, setGlassesCounter] = useState(1),
+        [lipsCounter, setLipsCounter] = useState(1),
+        [backgroundCounter, setBackgroundCounter] = useState(0),
+        [clothesCounter, setClothesCounter] = useState(0),
+        [skinToneCounter, setSkinToneCounter] = useState(0),
+        [hairColorCounter, setHairColorCounter] = useState(0);
+
+    //TODO use svg wrapper instead of assets import
 
   //    Feature Arrays
-  const skinToneArray = [Skin_Tone_1, Skin_Tone_2, Skin_Tone_3, Skin_Tone_4,
-        Skin_Tone_5, Skin_Tone_6, Skin_Tone_7, Skin_Tone_8, Skin_Tone_9];
+  const skinToneArray =
+      [Skin_Tone_1, Skin_Tone_2, Skin_Tone_3, Skin_Tone_4, Skin_Tone_5, Skin_Tone_6, Skin_Tone_7, Skin_Tone_8, Skin_Tone_9];
   const glassesArray = [Glasses, EmptyArea];
   // Hair arrays
   const Hair_Type_1 = [Hair_1, Hair_1_dark, Hair_1_brown,Hair_1_blond, Hair_1_grey,
@@ -146,12 +152,12 @@ const AvatarGenerator = () => {
 
   //Render
   return (
-    <Page>
-      <h1 className='text-center pt-3'>Avatar Generator</h1>
-        <h5 className='text-center'>Version <span className='badge badge-warning'>0.17</span></h5>
-      <h6 className='text-center'>Currently in early stage of development</h6>
-      <div className='row mt-4 mb-4' style={{marginRight:'0px', marginLeft:'0px'}}>
-        <div className='col-md-4 text-center m3-5'>
+      <Page>
+          <h1 className='text-center pt-3'>Avatar Generator</h1>
+          <h5 className='text-center'>Version <span className='badge badge-warning'>0.17</span></h5>
+          <h6 className='text-center'>Currently in early stage of development</h6>
+          <div className='row mt-4 mb-4' style={{marginRight:'0px', marginLeft:'0px'}}>
+              <div className='col-md-4 text-center m3-5'>
               <Container style={{height:'100%'}}>
                   <div className='d-flex justify-content-center' style={{height:'100%', minHeight:'250px'}}>
                       <img
@@ -237,124 +243,124 @@ const AvatarGenerator = () => {
                   </div>
               </Container>
           </div>
-        <div className='col-md-2 mt-3 mb-3 text-center'>
+              <div className='col-md-2 mt-3 mb-3 text-center'>
             <Container>
                 <div className='mb-2'>
                 <p className='card-title'><span className='badge'>Change Hairstyle</span></p>
-                <Button style={{marginRight:'0.5rem'}} onClick={() => count(hairCounter, setHairCounter, hairArray.length, false)} image={ArrowLeft}/>
-                <Button style={{marginRight:'0.5rem'}} onClick={() => count(hairCounter, setHairCounter, hairArray.length, true)} image={ArrowRight}/>
+                <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(hairCounter, setHairCounter, hairArray.length, false)} image={ArrowLeft}/>
+                <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(hairCounter, setHairCounter, hairArray.length, true)} image={ArrowRight}/>
             </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge'>Change Hair color</span></p>
-                    <Button style={{marginRight:'0.5rem'}} onClick={() => count(hairColorCounter, setHairColorCounter,hairArray[hairCounter].length, false)} image={ArrowLeft}/>
-                    <Button style={{marginRight:'0.5rem'}} onClick={() => count(hairColorCounter, setHairColorCounter,hairArray[hairCounter].length, true)} image={ArrowRight}/>
+                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(hairColorCounter, setHairColorCounter,hairArray[hairCounter].length, false)} image={ArrowLeft}/>
+                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(hairColorCounter, setHairColorCounter,hairArray[hairCounter].length, true)} image={ArrowRight}/>
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge'>Change Eye color</span></p>
-                    <Button style={{marginRight:'0.5rem'}} onClick={() => count(eyesCounter, setEyesCounter,eyesArray.length, false)} image={ArrowLeft}/>
-                    <Button style={{marginRight:'0.5rem'}} onClick={() => count(eyesCounter, setEyesCounter,eyesArray.length, true)} image={ArrowRight}/>
+                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(eyesCounter, setEyesCounter,eyesArray.length, false)} image={ArrowLeft}/>
+                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(eyesCounter, setEyesCounter,eyesArray.length, true)} image={ArrowRight}/>
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge'>Change Glasses</span></p>
-                    <Button style={{marginRight:'0.5rem'}} onClick={() => count(glassesCounter, setGlassesCounter,glassesArray.length, false)} image={ArrowLeft}/>
-                    <Button style={{marginRight:'0.5rem'}} onClick={() => count(glassesCounter, setGlassesCounter,glassesArray.length, true)} image={ArrowRight}/>
+                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(glassesCounter, setGlassesCounter,glassesArray.length, false)} image={ArrowLeft}/>
+                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(glassesCounter, setGlassesCounter,glassesArray.length, true)} image={ArrowRight}/>
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge'>Change Eyebrows</span></p>
-                    <Button style={{marginRight:'0.5rem'}} onClick={() => count(eyeBrowsCounter, setEyesBrowsCounter, eyebrowsArray.length, false)} image={ArrowLeft}/>
-                    <Button style={{marginRight:'0.5rem'}} onClick={() => count(eyeBrowsCounter, setEyesBrowsCounter, eyebrowsArray.length, true)} image={ArrowRight}/>
+                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(eyeBrowsCounter, setEyesBrowsCounter, eyebrowsArray.length, false)} image={ArrowLeft}/>
+                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(eyeBrowsCounter, setEyesBrowsCounter, eyebrowsArray.length, true)} image={ArrowRight}/>
                 </div>
             </Container>
           </div>
-        <div className='col-md-2 mt-3 mb-3 text-center'>
+              <div className='col-md-2 mt-3 mb-3 text-center'>
             <Container>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge'>Change Lips</span></p>
-                    <Button style={{marginRight:'0.5rem'}} onClick={() => count(lipsCounter, setLipsCounter,lipsArray.length, false)} image={ArrowLeft}/>
-                    <Button style={{marginRight:'0.5rem'}} onClick={() => count(lipsCounter, setLipsCounter,lipsArray.length, true)} image={ArrowRight}/>
+                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(lipsCounter, setLipsCounter,lipsArray.length, false)} image={ArrowLeft}/>
+                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(lipsCounter, setLipsCounter,lipsArray.length, true)} image={ArrowRight}/>
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge'>Change Background</span></p>
-                    <Button style={{marginRight:'0.5rem'}} onClick={() => count(backgroundCounter, setBackgroundCounter, backgroundArray.length, false)} image={ArrowLeft}/>
-                    <Button style={{marginRight:'0.5rem'}} onClick={() => count(backgroundCounter, setBackgroundCounter, backgroundArray.length, true)} image={ArrowRight}/>
+                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(backgroundCounter, setBackgroundCounter, backgroundArray.length, false)} image={ArrowLeft}/>
+                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(backgroundCounter, setBackgroundCounter, backgroundArray.length, true)} image={ArrowRight}/>
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge'>Change Clothes</span></p>
-                    <Button style={{marginRight:'0.5rem'}} onClick={() => count(clothesCounter, setClothesCounter, clothesArray.length, false)} image={ArrowLeft}/>
-                    <Button style={{marginRight:'0.5rem'}} onClick={() => count(clothesCounter, setClothesCounter, clothesArray.length, true)} image={ArrowRight}/>
+                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(clothesCounter, setClothesCounter, clothesArray.length, false)} image={ArrowLeft}/>
+                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(clothesCounter, setClothesCounter, clothesArray.length, true)} image={ArrowRight}/>
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge'>Change Skin tone</span></p>
-                    <Button style={{marginRight:'0.5rem'}} onClick={() => count(skinToneCounter, setSkinToneCounter, skinToneArray.length, false)} image={ArrowLeft} />
-                    <Button style={{marginRight:'0.5rem'}} onClick={() => count(skinToneCounter, setSkinToneCounter, skinToneArray.length, true)} image={ArrowRight} />
+                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(skinToneCounter, setSkinToneCounter, skinToneArray.length, false)} image={ArrowLeft} />
+                    <IconButton style={{marginRight:'0.5rem'}} onClick={() => count(skinToneCounter, setSkinToneCounter, skinToneArray.length, true)} image={ArrowRight} />
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge badge-secondary'>TODO</span></p>
-                    <Button style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                    <Button style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
+                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
+                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
                 </div>
             </Container>
         </div>
-        <div className='col-md-2 mt-3  mb-3 text-center'>
+              <div className='col-md-2 mt-3  mb-3 text-center'>
             <Container>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge badge-secondary'>TODO</span></p>
-                    <Button style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                    <Button style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
+                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
+                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge badge-secondary'>TODO</span></p>
-                    <Button style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                    <Button style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
+                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
+                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge badge-secondary'>TODO</span></p>
-                    <Button style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                    <Button style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
+                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
+                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge badge-secondary'>TODO</span></p>
-                    <Button style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                    <Button style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
+                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
+                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
                 </div>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge badge-secondary'>TODO</span></p>
-                    <Button style={{marginRight:'0.5rem'}}disabled={true} image={ArrowLeft}/>
-                    <Button style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
+                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
+                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
                 </div>
             </Container>
           </div>
-        <div className='col-md-2 mt-3  mb-3 text-center'>
+              <div className='col-md-2 mt-3  mb-3 text-center'>
               <Container>
                   <div className='mb-2'>
                       <p className='card-title'><span className='badge badge-info'>TODO</span></p>
-                      <Button style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                      <Button style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
+                      <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
+                      <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
                   </div>
                   <div className='mb-2'>
                       <p className='card-title'><span className='badge badge-info'>TODO</span></p>
-                      <Button style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                      <Button style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
+                      <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
+                      <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
                   </div>
                   <div className='mb-2'>
                       <p className='card-title'><span className='badge badge-info'>TODO</span></p>
-                      <Button style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                      <Button style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
+                      <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
+                      <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
                   </div>
                   <div className='mb-2'>
                       <p className='card-title'><span className='badge badge-info'>TODO</span></p>
-                      <Button style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                      <Button style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
+                      <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
+                      <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowRight}/>
                   </div>
                   <div className='mb-2'>
                       <p className='card-title'><span className='badge badge-info'>TODO</span></p>
-                      <Button disabled={true} image={ArrowLeft}/>
-                      <Button disabled={true} image={ArrowRight}/>
+                      <IconButton disabled={true} image={ArrowLeft}/>
+                      <IconButton disabled={true} image={ArrowRight}/>
                   </div>
               </Container>
           </div>
-      </div>
-    </Page>
+          </div>
+      </Page>
   );
 };
 
