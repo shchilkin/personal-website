@@ -2,15 +2,15 @@ import React, {useContext} from "react";
 import ThemeContext from '../../../contexts/theme/ThemeContext'
 import './Badge.style..css'
 
-const Badge = ({children, type = 'normal'}) => {
+const Badge = ({children, type = 'normal', className}) => {
     const themeContext = useContext(ThemeContext);
     const {darkMode} = themeContext;
 
     const badgeNormal = (
-        <span className={`Badge-${darkMode ? "Dark" : 'Light'}`}>{children}</span>
+        <span className={`Badge-${darkMode ? "Dark" : 'Light'} ${className ? className : ""}`}>{children}</span>
     );
     const badgeSmall = (
-        <span className={`Badge-Small-${darkMode ? "Dark" : 'Light'}`}>{children}</span>
+        <span className={`Badge-Small-${darkMode ? "Dark" : 'Light'} ${className ? className : ""}`}>{children}</span>
     );
 
     if (type === 'normal'){

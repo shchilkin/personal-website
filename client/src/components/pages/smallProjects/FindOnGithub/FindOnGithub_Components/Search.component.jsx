@@ -1,5 +1,4 @@
 import React,{useState} from "react";
-import '../../../../Layout/Buttons/Button-Block/Button-Block.style.css'
 import '../../../../Layout/Buttons/Button/Button.style.css'
 import '../../../../Layout/Inputs/Input.style.css'
 import '../../../../Layout/Alert/Alert.style.css'
@@ -26,11 +25,12 @@ const Search = ({searchUsers, showClear, clearUsers, setAlert}) => {
         <form  onSubmit={onSubmit} className={'form mb-3'}>
             <Input
                 type={'text'}
-                placeholder={'Enter a Username'}
+                placeholder={'Enter an Username'}
                 value={text}
                 onChange={onChange}
                 onFocus={event=> event.target.placeholder=''}
-                onBlur={event=> event.target.placeholder='Enter an Username...'}
+                onBlur={event=> event.target.placeholder='Enter an Username'}
+                autoComplete={'off'}
             />
 
             <Button

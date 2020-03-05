@@ -59,95 +59,20 @@ const Navbar = () => {
                 alt=''
           />{" "}CrazyRedKitten
           </Link>
-          <button
-              className='navbar-toggler'
-              type='button'
-              data-toggle='collapse'
-              data-target='#MainNavbar'
-              aria-controls='MainNavbar'
-              aria-expanded='false'
-              aria-label='Toggle navigation'
-          >
-            <span className='navbar-toggler-icon'/>
-          </button>
-          <div className='navbar-collapse collapse' id="MainNavbar">
             <ul className='navbar-nav mr-auto'>
-              <Link className='nav-item nav-link' to='/projects'>
-                Small Projects
-              </Link>
               <Link className='nav-item nav-link' to='/Contact'>
                 Contact
               </Link>
             </ul>
             <div className='navbar-nav'>
-              {/*<label className="switch">*/}
-              {/*  <input type="checkbox" onChange={changeTheme} />*/}
-              {/*  <span className="slider round"/>*/}
-              {/*</label>*/}
               <button className={`mr-3 btn ${darkMode ? 'btn-outline-dark' : 'btn-outline-secondary' }`} onClick={changeTheme}>
                 <img src={darkMode ? Moon : Sun} style={{ width: "24px" }} alt='arrow'/>
               </button>
-              {isAuthenticated ? authenticatedLinks : authenticationLinks }
+              {/*{isAuthenticated ? authenticatedLinks : authenticationLinks }*/}
             </div>
-          </div>
         </nav>
       </Fragment>
   );
 };
 
 export default Navbar;
-
-
-// <nav className={`navbar sticky-top ${darkMode ? `navbar-dark` : `navbar-light`} navbar-expand-lg`}
-//      style={darkMode ? {backgroundColor:'#303030'} : {backgroundColor:'#F0F0F0'}}>
-//   <Link
-//       to='/'
-//       className='navbar-brand mb-0 h1'
-//       onMouseDown={changePressed}
-//       onMouseUp={changePressed}
-//       onTouchStart={changePressed}
-//       onTouchEnd={changePressed}
-//       onTouchCancel={changePressed}
-//   >
-//     <img
-//         src={pressed ? CatTongue : Cat}
-//         width='30'
-//         height='30'
-//         className='d-inline-block align-top'
-//         alt=''
-//     />{" "}CrazyRedKitten
-//   </Link>
-//   <button
-//       className='navbar-toggler'
-//       type='button'
-//       data-toggle='collapse'
-//       data-target='#MainNavbar'
-//       aria-controls='MainNavbar'
-//       aria-expanded='false'
-//       aria-label='Toggle navigation'
-//   >
-//     <span className='navbar-toggler-icon'/>
-//   </button>
-//   <div className='navbar-collapse collapse' id="MainNavbar">
-//     <ul className='navbar-nav mr-auto'>
-//       <Link className='nav-item nav-link' to='/projects'>
-//         Small Projects
-//       </Link>
-//       <Link className='nav-item nav-link' to='/Contact'>
-//         Contact
-//       </Link>
-//     </ul>
-//     <div className='navbar-nav'>
-//       <button className={`mr-3 btn ${darkMode ? 'btn-outline-dark' : 'btn-outline-secondary' }`} onClick={changeTheme}>
-//         <img src={darkMode ? Moon : Sun} style={{ width: "30px" }} alt='arrow'/>
-//       </button>
-//       {isAuthenticated ? authenticatedLinks : authenticationLinks }
-//     </div>
-//     <div className={'navbar-text'}>
-//       <label className="switch">
-//         <input type="checkbox" onChange={changeTheme} />
-//         <span className="slider round"/>
-//       </label>
-//     </div>
-//   </div>
-// </nav>

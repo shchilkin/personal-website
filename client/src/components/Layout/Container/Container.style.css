@@ -19,6 +19,14 @@
     border-radius: 12px;
 }
 
+.Container-Light ul {
+    list-style: none;
+}
+
+.Container-Dark ul {
+    list-style: none;
+}
+
 .Container-Light h5 h4 {
     color: #303030;
 }

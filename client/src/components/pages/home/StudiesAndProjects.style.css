@@ -1,48 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-
 .project-button{
-    font-family: 'Libre Barcode 128 Text', cursive;
-    font-size: 36px;
+    width: 49%;
+    color: #303030;
+}
+
+@media only screen and (max-width: 500px) {
+    .project-button {
+        width: 48%;
+        font-weight: 500;
+    }
 }
 
 .header{
     font-family: 'Montserrat', cursive;
-}
-
-.Badge {
-    /*background-color:#a61d28;*/
-    /*background-color: #d52533;*/
-    background-color: #f0f0f0;
-    color: black;
-    padding: .25em .4em;
-    border-radius:6px;
-    margin-right:0.25rem;
-    margin-bottom:0.25rem;
-    font-weight:bold;
-    display: inline-block;
-
-}
-
-
-.Badge-small {
-    /*background-color:#a61d28;*/
-    /*background-color: #d52533;*/
-    background-color: #f0f0f0;
-    color: black;
-    padding: .25em .4em;
-    margin-right:0.25rem;
-    margin-bottom:0.25rem;
-    /*font-weight:bold;*/
-    display: inline-block;
-
-    font-size: 75%;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: .25rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-
 }
