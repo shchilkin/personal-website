@@ -99,3 +99,14 @@
     width: 100%;
 }
 
+.project-button{
+    width: 49%;
+}
+
+@media only screen and (max-width: 500px) {
+    .project-button {
+        width: 48%;
+        font-weight: 500;
+    }
+}
+

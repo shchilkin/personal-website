@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ListItem from "./TaskListItem/TaskListItem.component";
 import Container from "../../../Layout/Container/Container.component";
-import ButtonBlock from "../../../Layout/Buttons/Button-Block/Button-Block.component";
+import Button from "../../../Layout/Buttons/Button/Button.component";
 
 const TaskList = () => {
   const [task, setTask] = useState('');
@@ -38,7 +38,7 @@ const TaskList = () => {
               value={task}
               onChange={event => setTask(event.target.value)}
             />
-            <ButtonBlock text={'Add item'} onClick={(event) => onSubmit(event)}/>
+            <Button text={'Add item'} onClick={(event) => onSubmit(event)}/>
           </form>
           <h5 className='text-center'>Tasks:</h5>
           <div>

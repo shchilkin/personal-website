@@ -4,6 +4,8 @@ import Container from "../../Layout/Container/Container.component";
 import Badge from "../../Layout/Badge/Badge.component";
 import './StudiesAndProjects.style.css';
 import '../../Layout/About.style.css'
+import Button from "../../Layout/Buttons/Button/Button.component";
+import {Link} from "react-router-dom";
 
 const StudiesAndProjects = () => {
 
@@ -23,7 +25,7 @@ const StudiesAndProjects = () => {
           </div>
           <div className={'container pt-3 pb-3'}>
               <div className={'row'}>
-                  <div className={'col-md-6'}>
+                  <div className={'col-md-6 mb-3'}>
                       <h2 className={'header mb-3'}>Skills<span style={{color:'#ED2939'}}>:</span></h2>
                       <Container style={{paddingLeft:'1rem',paddingTop:'1rem', marginBottom:'1rem'}}>
                           <h4 className={'header mb-3'} style={{display:'inline-block'}}>Languages</h4>
@@ -57,6 +59,14 @@ const StudiesAndProjects = () => {
                               )}
                           </p>
                       </Container>
+                      <div>
+                          <Link to='/projects/findOnGithub'>
+                              <Button className={'project-button'} style={{marginRight:'.5rem'}}>Find on Github</Button>
+                          </Link>
+                          <Link to='/projects/AvatarGenerator'>
+                              <Button className={'project-button'} >Avatar generator</Button>
+                          </Link>
+                      </div>
                   </div>
                   <div className={'col-md-6'}>
                       <h2 className={'header mb-3'}>Projects<span style={{color:'#ED2939'}}>:</span> </h2>

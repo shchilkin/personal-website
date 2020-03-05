@@ -5,10 +5,10 @@ import User from "./FindOnGithub_Components/Users/User.component";
 import Users from './FindOnGithub_Components/Users/Users.component'
 import Alert from "../../../Layout/Alert/Alert.component";
 import Search from "./FindOnGithub_Components/Search.component";
-import projectPlaceholder from '../projectPlaceholder.component'
 import Page from "../../../Layout/Page/Page.component";
 import ThemeContext from "../../../../contexts/theme/ThemeContext";
 import '../../../Layout/PageComponent.style.css'
+import Home from "../../home/Home";
 
 const FindOnGithub = () => {
 const [users, setUsers] = useState([]);
@@ -76,16 +76,16 @@ const {darkMode} = themeContext;
         <Router>
             <Switch>
                 <Route
-                    exact path='/projects'
-                    component={projectPlaceholder}
+                    exact path='/'
+                    component={Home}
                 />
                 <Route
                     exact path='/projects/findOnGithub'
                     render={() => (
                         <div className={`${darkMode ? 'Background-Dark':'Background-Light'}`}>
                             <div className={`container`}>
-                                <Link to='/projects' style={{color:'#ed2939'}}>
-                                    To the small projects page
+                                <Link to='/' style={{color:'#ed2939'}}>
+                                    Back to the homepage
                                 </Link>
                             <h3 className={'mb-4'}>Find on GitHub</h3>
                             <Alert message={alertMessage} type={alertType} />

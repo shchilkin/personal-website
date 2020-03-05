@@ -72,6 +72,8 @@ import Hair_1_pink from './Hair_1_variations/Hair_1_pink.svg'
 import Hair_1_blue from './Hair_1_variations/Hair_1_blue.svg'
 import Hair_1_green from './Hair_1_variations/Hair_1_green.svg'
 import Page from "../../Layout/Page/Page.component";
+import {Link} from "react-router-dom";
+import Badge from "../../Layout/Badge/Badge.component";
 
 const AvatarGenerator = () => {
     //TODO Refactor this mess
@@ -152,12 +154,19 @@ const AvatarGenerator = () => {
 
   //Render
   return (
+      <div className={'container'}>
       <Page>
-          <h1 className='text-center pt-3'>Avatar Generator</h1>
-          <h5 className='text-center'>Version <span className='badge badge-warning'>0.17</span></h5>
-          <h6 className='text-center'>Currently in early stage of development</h6>
+          <div className={'container'}>
+              <Link to='/' style={{color:'#ed2939'}}>
+                  Back to the homepage
+              </Link>
+              <h3>Avatar generator</h3>
+              {/*<h1 className='text-center pt-3'>Avatar Generator</h1>*/}
+              <h5>Version <Badge type={'small'}>0.17</Badge></h5>
+              <h6>Currently in early stage of development</h6>
+          </div>
           <div className='row mt-4 mb-4' style={{marginRight:'0px', marginLeft:'0px'}}>
-              <div className='col-md-4 text-center m3-5'>
+              <div className='col-md-6 text-center m3-5'>
               <Container style={{height:'100%'}}>
                   <div className='d-flex justify-content-center' style={{height:'100%', minHeight:'250px'}}>
                       <img
@@ -243,7 +252,7 @@ const AvatarGenerator = () => {
                   </div>
               </Container>
           </div>
-              <div className='col-md-2 mt-3 mb-3 text-center'>
+              <div className='col-md-3 mt-3 mb-3 text-center'>
             <Container>
                 <div className='mb-2'>
                 <p className='card-title'><span className='badge'>Change Hairstyle</span></p>
@@ -272,7 +281,7 @@ const AvatarGenerator = () => {
                 </div>
             </Container>
           </div>
-              <div className='col-md-2 mt-3 mb-3 text-center'>
+              <div className='col-md-3 mt-3 mb-3 text-center'>
             <Container>
                 <div className='mb-2'>
                     <p className='card-title'><span className='badge'>Change Lips</span></p>
@@ -301,66 +310,9 @@ const AvatarGenerator = () => {
                 </div>
             </Container>
         </div>
-              <div className='col-md-2 mt-3  mb-3 text-center'>
-            <Container>
-                <div className='mb-2'>
-                    <p className='card-title'><span className='badge badge-secondary'>TODO</span></p>
-                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                    <IconButton disabled={true} image={ArrowRight}/>
-                </div>
-                <div className='mb-2'>
-                    <p className='card-title'><span className='badge badge-secondary'>TODO</span></p>
-                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                    <IconButton disabled={true} image={ArrowRight}/>
-                </div>
-                <div className='mb-2'>
-                    <p className='card-title'><span className='badge badge-secondary'>TODO</span></p>
-                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                    <IconButton disabled={true} image={ArrowRight}/>
-                </div>
-                <div className='mb-2'>
-                    <p className='card-title'><span className='badge badge-secondary'>TODO</span></p>
-                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                    <IconButton disabled={true} image={ArrowRight}/>
-                </div>
-                <div className='mb-2'>
-                    <p className='card-title'><span className='badge badge-secondary'>TODO</span></p>
-                    <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                    <IconButton disabled={true} image={ArrowRight}/>
-                </div>
-            </Container>
-          </div>
-              <div className='col-md-2 mt-3  mb-3 text-center'>
-              <Container>
-                  <div className='mb-2'>
-                      <p className='card-title'><span className='badge badge-info'>TODO</span></p>
-                      <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                      <IconButton disabled={true} image={ArrowRight}/>
-                  </div>
-                  <div className='mb-2'>
-                      <p className='card-title'><span className='badge badge-info'>TODO</span></p>
-                      <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                      <IconButton disabled={true} image={ArrowRight}/>
-                  </div>
-                  <div className='mb-2'>
-                      <p className='card-title'><span className='badge badge-info'>TODO</span></p>
-                      <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                      <IconButton disabled={true} image={ArrowRight}/>
-                  </div>
-                  <div className='mb-2'>
-                      <p className='card-title'><span className='badge badge-info'>TODO</span></p>
-                      <IconButton style={{marginRight:'0.5rem'}} disabled={true} image={ArrowLeft}/>
-                      <IconButton disabled={true} image={ArrowRight}/>
-                  </div>
-                  <div className='mb-2'>
-                      <p className='card-title'><span className='badge badge-info'>TODO</span></p>
-                      <IconButton disabled={true} image={ArrowLeft}/>
-                      <IconButton disabled={true} image={ArrowRight}/>
-                  </div>
-              </Container>
-          </div>
           </div>
       </Page>
+      </div>
   );
 };
 
