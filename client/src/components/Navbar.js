@@ -59,18 +59,6 @@ const Navbar = () => {
                 alt=''
           />{" "}CrazyRedKitten
           </Link>
-          <button
-              className='navbar-toggler'
-              type='button'
-              data-toggle='collapse'
-              data-target='#MainNavbar'
-              aria-controls='MainNavbar'
-              aria-expanded='false'
-              aria-label='Toggle navigation'
-          >
-            <span className='navbar-toggler-icon'/>
-          </button>
-          <div className='navbar-collapse collapse' id="MainNavbar">
             <ul className='navbar-nav mr-auto'>
               <Link className='nav-item nav-link' to='/Contact'>
                 Contact
@@ -82,7 +70,6 @@ const Navbar = () => {
               </button>
               {/*{isAuthenticated ? authenticatedLinks : authenticationLinks }*/}
             </div>
-          </div>
         </nav>
       </Fragment>
   );
