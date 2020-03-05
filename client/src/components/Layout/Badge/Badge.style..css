@@ -55,3 +55,18 @@
     border-radius: .25rem;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
+.Language {
+    background-color: #fdce26;
+    color: #191504;
+}
+
+.Technology {
+    background-color: #149cea;
+    color: #041f2f;
+}
+
+.Skill {
+    background-color: #ea1458;
+    color: white;
+}
