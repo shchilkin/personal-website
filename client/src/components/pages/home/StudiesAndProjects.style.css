@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300&display=swap');
+
 .project-button{
     width: 49%;
     color: #303030;
@@ -10,6 +12,14 @@
     }
 }
 
-.header{
+.header {
     font-family: 'Montserrat', cursive;
+}
+
+.text {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.section {
+    min-height: 100vh;
 }
