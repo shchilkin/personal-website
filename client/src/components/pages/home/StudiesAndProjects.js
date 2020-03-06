@@ -17,7 +17,7 @@ const StudiesAndProjects = () => {
     };
 
   return (
-      <div className='container-fluid pt-5 pb-5'>
+      <section id={'StudiesAndProjects'} className='container-fluid pt-5 pb-5'>
           <div className='container'>
               <div className='d-flex justify-content-center'>
             </div>
@@ -97,7 +97,7 @@ const StudiesAndProjects = () => {
                   </div>
               </div>
           </div>
-      </div>
+      </section>
   );
 };
 
