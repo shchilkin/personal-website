@@ -6,6 +6,7 @@ import '../../../../../Layout/Buttons/Button/Button.style.css'
 import './User.style.css'
 import {Link} from "react-router-dom";
 import Button from "../../../../../Layout/Buttons/Button/Button.component";
+import Badge from "../../../../../Layout/Badge/Badge.component";
 
 const User = ({user, loading, getUser, repos, getRepos, match}) => {
     useEffect(() => {
@@ -35,7 +36,7 @@ const User = ({user, loading, getUser, repos, getRepos, match}) => {
 
     return (
         <div className={'container'}>
-            <Link to='/projects/findOnGithub'>Back to the search page</Link>
+            <Link to='/projects/findOnGithub' style={{color:'#ed2939'}}>Back to the search page</Link>
             <div className={'row'}>
                 <div className={'col-md-4 mb-2'}>
                     <div className={'container mt-3'}>
@@ -47,19 +48,19 @@ const User = ({user, loading, getUser, repos, getRepos, match}) => {
                                 {location && (<h6 className="card-subtitle mb-2">{location}</h6>)}
                                 {company && (<h6 className="card-subtitle mb-2">{company}</h6>)}
                                 <h6 className={'card-subtitle mb-2'}>
-                                  {hirable ? <span className={'badge badge-danger'}>{hirable} Not Hirable</span>  :
-                                             <span className={'badge badge-success'}>{hirable} Hirable</span>}
+                                  {hirable ? <Badge>{hirable} Not Hirable</Badge>  :
+                                             <Badge type={'small'} className={'Green'}>{hirable} Hirable</Badge>}
                                 </h6>
                                 <h6 className={'card-subtitle mb-2'}>
-                                    <span className={'badge badge-warning'}>{public_repos} Public Repositories</span>{' '}
-                                   {public_gists > 0  &&( <span className={'badge badge-info'}>{public_gists} Public Gists</span>)}
+                                    <Badge type={'small'} className={'Yellow'}>{public_repos} Public Repositories</Badge>{' '}
+                                   {public_gists > 0  &&( <Badge type={'small'} className={'Yellow-Light'}>{public_gists} Public Gists</Badge>)}
                                 </h6>
                                 <h6 className={'card-subtitle mb-2'}>
-                                    <span className={'badge badge-secondary'}>{followers} followers</span>{' '}
-                                    <span className={'badge badge-primary'}>{following} following</span>
+                                    <Badge type={'small'} className={'Cyan'}>{followers} followers</Badge>{' '}
+                                    <Badge type={'small'} className={'Cyan-Light'}>{following} following</Badge>
                                 </h6>
                                 <p className="card-text">{bio}</p>
-                                    {blog && (<p className="card-text"><a href={blog}>{blog}</a></p>)}
+                                    {blog && (<p className="card-text"><a style={{color:'#ed2939'}} href={blog}>{blog}</a></p>)}
                                 <a href={html_url} className="FOG-link">
                                     <Button block={true}>View on Github</Button>
                                 </a>

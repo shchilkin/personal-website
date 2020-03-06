@@ -62,11 +62,42 @@
 }
 
 .Technology {
-    background-color: #149cea;
-    color: #041f2f;
+    /*background-color: #149cea;*/
+    background-color: #B0D85D;
+    /*color: #041f2f;*/
+    color: #232b13;
 }
 
 .Skill {
-    background-color: #ea1458;
-    color: white;
+    /*background-color: #8BBC90;*/
+    background-color: #26C4BE;
+    color: #082726;
+}
+
+.Yellow {
+    background-color: #fdce26;
+    color: #191504;
+}
+
+.Yellow-Light {
+    background-color: #f3db4b;
+    color: #181607;
+}
+
+.Green {
+    /*background-color: #149cea;*/
+    background-color: #B0D85D;
+    /*color: #041f2f;*/
+    color: #232b13;
+}
+
+.Cyan {
+    /*background-color: #8BBC90;*/
+    background-color: #26C4BE;
+    color: #082726;
+}
+
+.Cyan-Light{
+    background-color: #58C6B8;
+    color: #122825;
 }
