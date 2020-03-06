@@ -25,9 +25,10 @@ const About = () => {
                             <br className={'break'}/>
                             <span style={{color:'#ED2939'}}> Web Development</span>
                         </h3>
+                    </div>
                 </div>
-            </div>
-                <a href={'#StudiesAndProjects'} className={'readMore-button'}>
+                <div className={'readMore-button pulse'}>
+                    <a href={'#StudiesAndProjects'}>
                         <svg
                             height={'64px'}
                             width={'64px'}
@@ -36,7 +37,8 @@ const About = () => {
                         >
                             <path d={Icons['ArrowBottom'].path}/>
                         </svg>
-                </a>
+                    </a>
+                </div>
             </section>
         </Page>
     );

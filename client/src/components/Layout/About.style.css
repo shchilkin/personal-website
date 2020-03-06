@@ -97,3 +97,23 @@
         display: block;
     }
 }
+
+@keyframes Pulse {
+    0% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+    50% {
+        transform: scale(1.25);
+        -webkit-transform: scale(1.25);
+    }
+    100% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+
+.pulse {
+    animation: Pulse 2s ease-in-out infinite alternate;
+    -webkit-animation: Pulse 2s ease-in-out infinite alternate;
+}
