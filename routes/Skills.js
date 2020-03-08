@@ -21,8 +21,6 @@ client.connect(error => {
     client.close();
 });
 
-
-
 // @route           GET skills from db
 // @description     Skills data
 // @access          Public
