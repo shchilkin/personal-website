@@ -41,9 +41,11 @@
 
 .ContactLink-Dark-Image{
     fill: #F0F0F0;
+    transition: background-color 1s, color 1s;
 }
 .ContactLink-Light-Image{
     fill: #303030;
+    transition: background-color 1s, color 1s;
 }
 
 .ContactLink-Dark:active .ContactLink-Dark-Image {

@@ -18,6 +18,7 @@ connectDB();
 //  API Routes
 app.use("/api/users", require("./routes/users"));
 app.use("/api/auth", require("./routes/auth"));
+app.use('/api/skills', require('./routes/Skills'));
 
 app.use(express.static(path.join(__dirname, "client/build")));
 

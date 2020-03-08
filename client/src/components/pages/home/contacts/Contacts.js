@@ -14,7 +14,7 @@ const Contacts = () => {
                     className={'text-center header mb-3'}
                     style={darkMode ? {color:"#F0F0F0"} : {color:"#303030"}}
                 >
-                    Contact me<span className={'blink'}>_</span>
+                    Contact me{/*{<span className={'blink'}>_</span>}*/}
                 </h4>
             </div>
             <div className='d-flex justify-content-center pb-5'>

@@ -18,11 +18,17 @@ const StudiesAndProjects = () => {
 
   return (
       <section id={'StudiesAndProjects'} className='container-fluid pt-5 pb-5'>
-          <div className='container'>
-              <div className='d-flex justify-content-center'>
-            </div>
-              <h1 className='display-5 pt-3 pb-3 header'>Studies <span style={{color:'#ED2939'}}>&</span> Projects</h1>
-          </div>
+              <div className='container'>
+                  <h1 className='display-5 pt-5 pb-3 header'>Studies <span style={{color:'#ED2939'}}>&</span> Projects</h1>
+                  <p className={'text'} style={{display:'none'}}>
+                      //TODO Add description
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies, nibh id facilisis
+                  consectetur, lacus libero tincidunt tellus, quis gravida dolor magna dapibus ligula. Maecenas faucibus
+                  purus non libero condimentum consectetur. Quisque suscipit faucibus sem, id bibendum mi mollis at.
+                  Donec imperdiet faucibus metus, ut sagittis leo ultricies at. Aliquam erat volutpat. Nam dui nisi,
+                  volutpat vel faucibus lacinia, condimentum semper risus. Sed rhoncus imperdiet scelerisque.
+                  Donec ullamcorper dolor at convallis vulputate. Sed volutpat turpis non ultrices pretium.</p>
+              </div>
           <div className={'container pt-3 pb-3'}>
               <div className={'row'}>
                   <div className={'col-md-6 mb-3'}>
