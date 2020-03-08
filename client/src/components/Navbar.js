@@ -65,8 +65,8 @@ const Navbar = () => {
               </Link>
             </ul>
             <div className='navbar-nav'>
-              <button className={`mr-3 btn ${darkMode ? 'btn-outline-dark' : 'btn-outline-secondary' }`} onClick={changeTheme}>
-                <img src={darkMode ? Moon : Sun} style={{ width: "24px" }} alt='arrow'/>
+              <button className={`btn`} onClick={changeTheme}>
+                <img src={darkMode ? Moon : Sun} style={{ width: "48px" }} alt='arrow'/>
               </button>
               {/*{isAuthenticated ? authenticatedLinks : authenticationLinks }*/}
             </div>
