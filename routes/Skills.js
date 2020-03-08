@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const MongoClient = require('mongodb').MongoClient;
-const url = 'mongodb+srv://CrazyKasF:laZymNI4tAsV7OXX@personal-website-egkye.mongodb.net/test?retryWrites=true&w=majority';
+const url = process.env.MONGO_DB_URI;
 const client = new MongoClient(url,
     {
         useNewUrlParser: true,
