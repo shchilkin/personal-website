@@ -1,5 +1,6 @@
 .Alert-Light{
     position: relative;
+    font-weight: bold;
     border-radius: 12px;
     padding: .75rem 1.25rem;
     margin-bottom: 1.25rem;
@@ -9,6 +10,7 @@
 
 .Alert-Dark{
     position: relative;
+    font-weight: bold;
     border-radius: 12px;
     padding: .75rem 1.25rem;
     margin-bottom: 1.25rem;
@@ -22,8 +24,8 @@
 }
 
 .Alert-warning{
-    color: #665e2e;
-     background-color: #ffea74;
+    color: #191504;
+    background-color: #fdce26;
  }
 
 .Alert-success{
@@ -37,6 +39,6 @@
 }
 
 .Alert-info{
-    color: #235450;
-    background-color: #6bb9b2;
+    color: #082726;
+    background-color: #26C4BE;
 }
