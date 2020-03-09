@@ -3,6 +3,7 @@ import '../../Layout/Inputs/Input.style.css'
 import '../../Layout/Buttons/Button/Button.style.css'
 import '../../Layout/Alert/Alert.style.css'
 import Page from "../../Layout/Page/Page.component";
+import Alert from "../../Layout/Alert/Alert.component";
 import Input from "../../Layout/Inputs/Input.component";
 import Button from "../../Layout/Buttons/Button/Button.component";
 import TextArea from "../../Layout/Inputs/TextArea.component";
@@ -41,6 +42,8 @@ const ContactPage = () => {
       <Page>
         <div className='container col-md-6 text-center pt-3 pb-5'>
             <h1 className={'mt-4 mb-5'}> <span style={{ color: "#ED2939" }}>S</span>end me an email</h1>
+            <Alert type={'warning'} message={'Currently is under development'}/>
+            <Alert type={'info'} message={'crazyredkitten@icloud.com'}/>
           <form onSubmit={onSubmit}>
               <div className={'row'}>
                   <div className={'col-md'}>
@@ -85,6 +88,7 @@ const ContactPage = () => {
                         onBlur={event=> event.target.placeholder='Your message...'}
               />
               <Button
+                  disabled={true}
                   type={"submit"}
                   block={true}
                   style={{height:'50px', fontWeight:'bold'}}
