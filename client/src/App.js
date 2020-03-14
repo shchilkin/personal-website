@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home               from "./components/pages/home/Home";
 import Login              from "./components/pages/authentication/Login";
 import Navbar             from "./components/Navbar";
+import Footer             from "./components/Footer";
 import NotFound           from  './components/pages/NotFound.page';
-import AppPage           from "./components/Layout/Page/AppPage.component";
+import AppPage            from "./components/Layout/Page/AppPage.component";
 import AuthState          from "./contexts/auth/AuthState";
 import AlertState         from "./contexts/alert/AlertState";
 import ThemeState         from './contexts/theme/ThemeState';
@@ -41,6 +42,7 @@ const App = () => {
                   </Switch>
                 </AppPage>
               </Fragment>
+              <Footer/>
             </Router>
           </AlertState>
         </ThemeState>
