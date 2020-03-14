@@ -27,7 +27,7 @@ const App = () => {
         <ThemeState>
           <AlertState>
             <Router>
-              <Navbar/>
+              {/*<Navbar/>*/}
               <Fragment>
                 <AppPage>
                   <Switch>
