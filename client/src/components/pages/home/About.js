@@ -3,7 +3,8 @@ import '../../Layout/About.style.css'
 import Page from "../../Layout/Page/Page.component";
 import ThemeContext from '../../../contexts/theme/ThemeContext'
 import Moon from "../../../icons/Moon.svg";
-import Sun from "../../../icons/Sun.svg";
+// import Sun from "../../../icons/Sun.svg";
+import Sun from '../../../icons/Sun-home.svg'
 import smoothScroll from 'smooth-scroll'
 import Icons from "../../Icons";
 
@@ -16,7 +17,18 @@ const About = () => {
     });
 
     return (
-        <Page>
+        <div className={`page ${darkMode ? 'Background-Dark':'Background-Light'}`}>
+            {/*<div className={'Sun'}>*/}
+            {/*    /!*<img isrc={Sun}/>*!/*/}
+            {/*        /!*<svg*!/*/}
+            {/*        /!*    height={'64px'}*!/*/}
+            {/*        /!*    width={'64px'}*!/*/}
+            {/*        /!*    className={darkMode ? 'ContactLink-Dark-Image' : 'ContactLink-Light-Image'}*!/*/}
+            {/*        /!*    viewBox={Icons['ArrowBottom'].viewBox}*!/*/}
+            {/*        /!*>*!/*/}
+            {/*        /!*    <path d={Icons['ArrowBottom'].path}/>*!/*/}
+            {/*        /!*</svg>*!/*/}
+            {/*</div>*/}
             <section  id={'About'} className='TextContainer h-100 align-items-center background'>
                 <div className={'container-fluid'}>
                     <div className={'center container'}>
@@ -40,7 +52,7 @@ const About = () => {
                     </a>
                 </div>
             </section>
-        </Page>
+        </div>
     );
 };
 
