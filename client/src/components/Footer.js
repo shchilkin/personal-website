@@ -5,6 +5,7 @@ import './Footer.style.css'
 import {Link} from "react-router-dom";
 import Alert from "./Layout/Alert/Alert.component";
 import Badge from "./Layout/Badge/Badge.component";
+import Button from "./Layout/Buttons/Button/Button.component";
 
 const Footer = () => {
     const themeContext =  useContext(ThemeContext);
@@ -18,7 +19,7 @@ const Footer = () => {
                         <div className="col-md-6 mt-md-0 mt-3">
                             <h5 className="text-uppercase">Footer Content</h5>
                             <p style={{color:'#fdce26'}}><Badge className={'Yellow'}>Currently is under development!</Badge></p>
-                            <button className={`btn ${darkMode ? 'btn-light': 'btn-dark' }`} onClick={changeTheme}>Dark mode</button>
+                            <Button onClick={changeTheme}>Dark mode: { + darkMode ? 'on' : 'off'}</Button>
                         </div>
                         <hr className="clearfix w-100 d-md-none pb-3"/>
                             <div className="col-md-3 mb-md-0 mb-3">
@@ -31,10 +32,10 @@ const Footer = () => {
                                         <Link style={{color:'#ed2939'}} to={'/projects/avatarGenerator'}>Avatar generator</Link>
                                     </li>
                                     <li>
-                                        <a href="#!">TODO</a>
+                                        <a href="#">TODO</a>
                                     </li>
                                     <li>
-                                        <a href="#!">TODO</a>
+                                        <a href="#">TODO</a>
                                     </li>
                                 </ul>
                             </div>
@@ -48,10 +49,10 @@ const Footer = () => {
                                         <Link style={{color:'#ed2939'}} to={'/contact'}>Contact</Link>
                                     </li>
                                     <li>
-                                        <a href="#!">TODO</a>
+                                        <a style={{color:'#ed2939'}} href="#">Log in</a>
                                     </li>
                                     <li>
-                                        <a href="#!">TODO</a>
+                                        <a href="#">TODO</a>
                                     </li>
                                 </ul>
                             </div>
