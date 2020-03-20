@@ -3,7 +3,6 @@ import '../components/Layout/Navbar/navbar-item.css';
 import ThemeContext from '../contexts/theme/ThemeContext';
 import './Footer.style.css'
 import {Link} from "react-router-dom";
-import Alert from "./Layout/Alert/Alert.component";
 import Badge from "./Layout/Badge/Badge.component";
 import Button from "./Layout/Buttons/Button/Button.component";
 
@@ -17,9 +16,8 @@ const Footer = () => {
                 <div className="container-fluid text-center">
                     <div className="row">
                         <div className="col-md-6 mt-md-0 mt-3">
-                            <h5 className="text-uppercase">Footer Content</h5>
-                            <p style={{color:'#fdce26'}}><Badge className={'Yellow'}>Currently is under development!</Badge></p>
-                            <Button onClick={changeTheme}>Dark mode: { + darkMode ? 'on' : 'off'}</Button>
+                            <h5 className="text-uppercase">Dark mode toggler:</h5>
+                            <Button onClick={changeTheme}>Switch to {darkMode ? "Light" : "Dark"} mode</Button>
                         </div>
                         <hr className="clearfix w-100 d-md-none pb-3"/>
                             <div className="col-md-3 mb-md-0 mb-3">
@@ -30,12 +28,6 @@ const Footer = () => {
                                     </li>
                                     <li>
                                         <Link style={{color:'#ed2939'}} to={'/projects/avatarGenerator'}>Avatar generator</Link>
-                                    </li>
-                                    <li>
-                                        <a href="#">TODO</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">TODO</a>
                                     </li>
                                 </ul>
                             </div>
@@ -49,10 +41,7 @@ const Footer = () => {
                                         <Link style={{color:'#ed2939'}} to={'/contact'}>Contact</Link>
                                     </li>
                                     <li>
-                                        <a style={{color:'#ed2939'}} href="#">Log in</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">TODO</a>
+                                        <Link style={{color:'#ed2939'}} to="/login">Log in</Link>
                                     </li>
                                 </ul>
                             </div>

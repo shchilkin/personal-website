@@ -154,8 +154,8 @@ const AvatarGenerator = () => {
 
   //Render
   return (
-      <div className={'container'}>
       <Page>
+          <div className={'container'}>
           <div className={'container'}>
               <Link to='/' style={{color:'#ed2939'}}>
                   Back to the homepage
@@ -311,8 +311,8 @@ const AvatarGenerator = () => {
             </Container>
         </div>
           </div>
+          </div>
       </Page>
-      </div>
   );
 };
 
