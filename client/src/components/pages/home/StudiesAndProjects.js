@@ -21,7 +21,7 @@ const StudiesAndProjects = () => {
               <div className='container'>
                   <h1 className='display-5 pt-5 pb-3 header'>Studies <span style={{color:'#ED2939'}}>&</span> Projects</h1>
                   {/*<Container style={{paddingLeft:'1rem',paddingTop:'1rem', marginBottom:'1rem'}}>*/}
-                  <p className={'text'}>
+                  <p className={'text'} style={{display:'none'}}>
                       {/*//TODO Add description*/}
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies, nibh id facilisis
                   consectetur, lacus libero tincidunt tellus, quis gravida dolor magna dapibus ligula. Maecenas faucibus
