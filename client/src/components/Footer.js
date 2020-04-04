@@ -3,7 +3,6 @@ import '../components/Layout/Navbar/navbar-item.css';
 import ThemeContext from '../contexts/theme/ThemeContext';
 import './Footer.style.css'
 import {Link} from "react-router-dom";
-import Badge from "./Layout/Badge/Badge.component";
 import Button from "./Layout/Buttons/Button/Button.component";
 
 const Footer = () => {
@@ -24,10 +23,10 @@ const Footer = () => {
                                 <h5 className="text-uppercase">Projects</h5>
                                 <ul className="list-unstyled">
                                     <li>
-                                        <Link style={{color:'#ed2939'}} to={'/projects/findOnGithub'}>Find on GitHub</Link>
+                                        <Link style={{color:'#ed2939',fontFamily:'Futura'}} to={'/projects/findOnGithub'}>Find on GitHub</Link>
                                     </li>
                                     <li>
-                                        <Link style={{color:'#ed2939'}} to={'/projects/avatarGenerator'}>Avatar generator</Link>
+                                        <Link style={{color:'#ed2939',fontFamily:'Futura'}} to={'/projects/avatarGenerator'}>Avatar generator</Link>
                                     </li>
                                 </ul>
                             </div>
@@ -35,13 +34,13 @@ const Footer = () => {
                                 <h5 className="text-uppercase">Links</h5>
                                 <ul className="list-unstyled">
                                     <li>
-                                        <Link style={{color:'#ed2939'}} to={'/'}>Home</Link>
+                                        <Link style={{color:'#ed2939',fontFamily:'Futura'}} to={'/'}>Home</Link>
                                     </li>
                                     <li>
-                                        <Link style={{color:'#ed2939'}} to={'/contact'}>Contact</Link>
+                                        <Link style={{color:'#ed2939',fontFamily:'Futura'}} to={'/contact'}>Contact</Link>
                                     </li>
                                     <li>
-                                        <Link style={{color:'#ed2939'}} to="/login">Log in</Link>
+                                        <Link style={{color:'#ed2939',fontFamily:'Futura'}} to="/login">Log in</Link>
                                     </li>
                                 </ul>
                             </div>

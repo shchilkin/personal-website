@@ -3,6 +3,7 @@ import ContactLink from "./ContactLink";
 import ThemeContext from '../../../../contexts/theme/ThemeContext'
 import '../StudiesAndProjects.style.css';
 import './Contacts.style.css'
+
 const Contacts = () => {
     const themeContext =  useContext(ThemeContext);
     const {darkMode} = themeContext;

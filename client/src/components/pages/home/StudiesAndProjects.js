@@ -12,7 +12,7 @@ const StudiesAndProjects = () => {
     // TODO Grab this data from DB
     const skills = {
         languages:['Kotlin', 'Python', 'JavaScript'],
-        technologies:['React', 'Node.js', 'Docker', 'Raspberry Pi', 'Arduino'],
+        technologies:['React', 'Node.js', 'Docker', 'Raspberry Pi', 'Arduino', 'MongoDB'],
         otherSkills:['Vector assets creation','Network configuration']
     };
 
