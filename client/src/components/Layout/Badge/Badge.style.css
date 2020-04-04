@@ -58,13 +58,18 @@
 
 .Language {
     background-color: #fdce26;
+    /*border: solid 2px #191504;*/
+    /*background-image: linear-gradient(to right, #fdce26, #f9c521, #f4bb1c, #f0b217, #eba912);*/
+    /*background-image: linear-gradient(to left top, #fdce26,#ff5e5c);*/
     color: #191504;
 }
+
 
 .Technology {
     /*background-color: #149cea;*/
     background-color: #B0D85D;
     /*color: #041f2f;*/
+    /*border: solid 2px #191504;*/
     color: #232b13;
 }
 
@@ -75,7 +80,7 @@
 }
 
 .Yellow {
-    background-color: #fdce26;
+    /*background-color: #fdce26;*/
     color: #191504;
 }
 
