@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import ThemeContext from "../../../contexts/theme/ThemeContext";
-import Navbar from "../../Navbar";
+import Navbar from "../../Old_Navbar";
 
 const Page = ({children}) => {
     const themeContext =  useContext(ThemeContext);

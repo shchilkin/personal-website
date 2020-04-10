@@ -18,14 +18,12 @@ const StudiesAndProjects = () => {
       <section id={'StudiesAndProjects'} className='container-fluid pt-5 pb-5'>
               <div className='container'>
                   <h1 className='display-5 pt-5 pb-3 header'>Studies <span style={{color:'#ED2939'}}>&</span> Projects</h1>
-                  {/*<Container style={{paddingLeft:'1rem',paddingTop:'1rem', marginBottom:'1rem'}}>*/}
-                  <p className={'text'} style={{display:'none'}}>
+                  <p className={'text'}>
                       {/*//TODO Add description*/}
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies, nibh id facilisis
                   consectetur, lacus libero tincidunt tellus, quis gravida dolor magna dapibus ligula. Maecenas faucibus
                   purus non libero condimentum consectetur. Quisque suscipit faucibus sem, id bibendum mi mollis at.
                  </p>
-                  {/*</Container>*/}
               </div>
           <div className={'container pt-3 pb-3'}>
               <div className={'row'}>
@@ -38,7 +36,7 @@ const StudiesAndProjects = () => {
                                   language => <Badge
                                       key={uuidv4()}
                                       type={'normal'}
-                                      className={'Language'}>{language}
+                                      className={'Yellow'}>{language}
                                   </Badge>
                               )}
                           </p>
@@ -48,7 +46,7 @@ const StudiesAndProjects = () => {
                                   technology => <Badge
                                       key={uuidv4()}
                                       type={'normal'}
-                                      className={'Technology'}>{technology}
+                                      className={'Green'}>{technology}
                                   </Badge>
                               )}
                           </p>
@@ -58,7 +56,7 @@ const StudiesAndProjects = () => {
                                   otherSkill => <Badge
                                       key={uuidv4()}
                                       type={'normal'}
-                                      className={'Skill'}>{otherSkill}
+                                      className={'Cyan'}>{otherSkill}
                                   </Badge>
                               )}
                           </p>
@@ -79,10 +77,10 @@ const StudiesAndProjects = () => {
                               <div className={'pb-2 pt-3 pr-2 pl-2'}>
                                   <h5 className={'text-center header'}>Software Development</h5>
                                   <ul>
-                                      <li>Weather Data Analyser with <Badge  className={'Language'} type={'small'}>Python</Badge></li>
-                                      <li>Android Applications with <Badge className={'Language'} type={'small'}>Kotlin</Badge></li>
-                                      <li>Full-stack Web applications with <Badge className={'Technology'} type={'small'}>React</Badge> and <Badge className={'Technology'} type={'small'}>Node.js</Badge></li>
-                                      <li>Small projects with pure <Badge className={'Language'} type={'small'}>JavaScript</Badge></li>
+                                      <li>Weather Data Analyser with <Badge  className={'Yellow'} type={'small'}>Python</Badge></li>
+                                      <li>Android Applications with <Badge className={'Yellow'} type={'small'}>Kotlin</Badge></li>
+                                      <li>Full-stack Web applications with <Badge className={'Green'} type={'small'}>React</Badge> and <Badge className={'Green'} type={'small'}>Node.js</Badge></li>
+                                      <li>Small projects with pure <Badge className={'Yellow'} type={'small'}>JavaScript</Badge></li>
                                   </ul>
                               </div>
                           </Container>
@@ -92,8 +90,10 @@ const StudiesAndProjects = () => {
                               <div className={'pb-2 pt-3 pr-2 pl-2'}>
                                   <h5 className={'text-center header'}>Electronics & IoT</h5>
                                   <ul>
-                                      <li>Home Climate Monitoring and Surveillance Camera Projects with <Badge className={'Technology'} type={'small'}>Raspberry Pi</Badge> and <Badge className={'Language'} type={'small'}>Python</Badge></li>
-                                      <li> Small Christmas Lights project with <Badge className={'Technology'} type={'small'}>Arduino</Badge></li>
+                                      <li>Home Climate Monitoring and Surveillance Camera Projects with
+                                          <Badge className={'Green'} type={'small'}>Raspberry Pi</Badge>
+                                          and <Badge className={'Yellow'} type={'small'}>Python</Badge></li>
+                                      <li> Small Christmas Lights project with <Badge className={'Green'} type={'small'}>Arduino</Badge></li>
                                   </ul>
                               </div>
                           </Container>

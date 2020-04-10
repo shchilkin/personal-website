@@ -22,7 +22,32 @@
     --dark-theme-gray: #c1c1c1 ;
 
     --main-accent: #ed2939;
+    --main-accent-darkmode: #f47f88;
+
     --lighting-yellow: #fdce26;
+    --conifer-green: #b0d85d;
+
+    --lighting-yellow-darkmode: #fee27d;
+    --conifer-green-darkmode: #d0e89e;
+
+    --turquoise: #26C4BE;
+    --turquoise-darkmode: #7ddcd8;
+
+}
+
+
+/* Navbar component related css */
+
+.Navbar-Dark{
+    background-color: var(--bg-color-dark);
+    color: var(--bg-color-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1)
+}
+
+.Navbar-Light{
+    background-color: var(--bg-color-light);
+    color: var(--bg-color-dark);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2)
 }
 
 /* Alert component related css */
@@ -74,7 +99,7 @@
 /* Badge component related css */
 
 .Badge-Dark {
-    background-color: var(--main-accent);
+    background-color: var(--main-accent-darkmode);
     color: black;
     padding: .25em .4em;
     border-radius:6px;
@@ -98,7 +123,7 @@
 }
 
 .Badge-Small-Dark {
-    background-color: var(--main-accent);
+    background-color: var(--main-accent-darkmode);
     color: black;
     padding: .25em .4em;
     margin-right:0.25rem;
@@ -131,52 +156,31 @@
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-.Language {
+.Yellow{
     background-color: var(--lighting-yellow);
     color: #191504;
 }
-
-
-.Technology {
-    /*background-color: #149cea;*/
-    background-color: #B0D85D;
-    /*color: #041f2f;*/
-    /*border: solid 2px #191504;*/
-    color: #232b13;
-}
-
-.Skill {
-    /*background-color: #8BBC90;*/
-    background-color: #26C4BE;
-    color: #082726;
-}
-
-.Yellow {
-    /*background-color: #fdce26;*/
-    color: #191504;
-}
-
-.Yellow-Light {
-    background-color: #f3db4b;
+.Yellow-Dark {
+    background-color: var(--lighting-yellow-darkmode);
     color: #181607;
 }
 
 .Green {
-    /*background-color: #149cea;*/
-    background-color: #B0D85D;
-    /*color: #041f2f;*/
+    background-color: var(--conifer-green);
+    color: #232b13;
+}
+.Green-Dark {
+    background-color: var(--conifer-green-darkmode);
     color: #232b13;
 }
 
 .Cyan {
-    /*background-color: #8BBC90;*/
-    background-color: #26C4BE;
+    background-color: var(--turquoise);
     color: #082726;
 }
-
-.Cyan-Light{
-    background-color: #58C6B8;
-    color: #122825;
+.Cyan-Dark {
+    background-color: var(--turquoise-darkmode);
+    color: #082726;
 }
 
 /* Button component related css */
@@ -235,10 +239,13 @@
 }
 
 .button-dark:active{
-    background-color:#303030;
-    border: 1px solid #303030;
+    background-color:var(--bg-color-dark);
+    border: 1px solid var(--bg-color-dark);
     color: #ED2939;
-    box-shadow: inset 20px 20px 30px 0 #202020, inset -20px -20px 30px 0 #454545;
+    box-shadow: inset 20px 20px 30px 0
+    var(--bg-color-dark-darker-shadow),
+    inset -20px -20px 30px 0
+    var(--bg-color-dark-lighter-shadow);
 }
 
 .button-dark:disabled{

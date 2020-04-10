@@ -14,6 +14,7 @@ import Registration       from "./components/pages/authentication/Registration";
 import findOnGithub       from './components/pages/smallProjects/FindOnGithub/FindOnGithub.component';
 import AvatarGenerator    from "./components/pages/avatarGenerator/AvatarGenerator";
 import ProjectPlaceholder from "./components/pages/smallProjects/projectPlaceholder.component";
+import Navbar from "./components/Layout/Navbar/Navbar.component";
 
 const App = () => {
   if (localStorage.token) {
@@ -27,6 +28,7 @@ const App = () => {
             <Router>
               <Fragment>
                 <AppPage>
+                  <Navbar/>
                   <Switch>
                     <Route exact path='/' component={Home} />
                     <Route exact path='/Login' component={Login} />
