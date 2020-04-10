@@ -48,15 +48,15 @@ const User = ({user, loading, getUser, repos, getRepos, match}) => {
                                 {company && (<h6 className="card-subtitle mb-2">{company}</h6>)}
                                 <h6 className={'card-subtitle mb-2'}>
                                   {hirable ? <Badge>{hirable} Not Hirable</Badge>  :
-                                             <Badge type={'small'} className={'Green'}>{hirable} Hirable</Badge>}
+                                             <Badge type={'small'} color={'Green'}>{hirable} Hirable</Badge>}
                                 </h6>
                                 <h6 className={'card-subtitle mb-2'}>
-                                    <Badge type={'small'} className={'Yellow'}>{public_repos} Public Repositories</Badge>{' '}
-                                   {public_gists > 0  &&( <Badge type={'small'} className={'Yellow-Light'}>{public_gists} Public Gists</Badge>)}
+                                    <Badge type={'small'} color={'Yellow'}>{public_repos} Public Repositories</Badge>{' '}
+                                   {public_gists > 0  &&( <Badge type={'small'} color={'Yellow'}>{public_gists} Public Gists</Badge>)}
                                 </h6>
                                 <h6 className={'card-subtitle mb-2'}>
-                                    <Badge type={'small'} className={'Cyan'}>{followers} followers</Badge>{' '}
-                                    <Badge type={'small'} className={'Cyan-Light'}>{following} following</Badge>
+                                    <Badge type={'small'} color={'Cyan'}>{followers} followers</Badge>{' '}
+                                    <Badge type={'small'} color={'Cyan'}>{following} following</Badge>
                                 </h6>
                                 <p className="card-text">{bio}</p>
                                     {blog && (<p className="card-text"><a style={{color:'#ed2939'}} href={blog}>{blog}</a></p>)}

@@ -161,7 +161,6 @@ const AvatarGenerator = () => {
                   Back to the homepage
               </Link>
               <h3>Avatar generator</h3>
-              {/*<h1 className='text-center pt-3'>Avatar Generator</h1>*/}
               <h5>Version <Badge type={'small'}>0.17</Badge></h5>
               <h6>Currently in early stage of development</h6>
           </div>
