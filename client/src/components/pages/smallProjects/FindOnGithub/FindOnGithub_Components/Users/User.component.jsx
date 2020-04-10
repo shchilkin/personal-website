@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import Spinner from "../Spinner.component";
 import Repositories from '../Repositories/Repositories.component'
 import Card from "../../../../../Layout/Card/Card.component";
-import '../../../../../Layout/Buttons/Button/Button.style.css'
 import './User.style.css'
 import {Link} from "react-router-dom";
 import Button from "../../../../../Layout/Buttons/Button/Button.component";

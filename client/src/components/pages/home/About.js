@@ -1,10 +1,5 @@
 import React, {useContext} from "react";
-import '../../Layout/About.style.css'
-import Page from "../../Layout/Page/Page.component";
 import ThemeContext from '../../../contexts/theme/ThemeContext'
-import Moon from "../../../icons/Moon.svg";
-// import Sun from "../../../icons/Sun.svg";
-import Sun from '../../../icons/Sun-home.svg'
 import smoothScroll from 'smooth-scroll'
 import Icons from "../../Icons";
 
@@ -42,8 +37,8 @@ const About = () => {
                 <div className={'readMore-button pulse'}>
                     <a href={'#StudiesAndProjects'}>
                         <svg
-                            height={'64px'}
-                            width={'64px'}
+                            height={'50px'}
+                            width={'50px'}
                             className={darkMode ? 'ContactLink-Dark-Image' : 'ContactLink-Light-Image'}
                             viewBox={Icons['ArrowBottom'].viewBox}
                         >

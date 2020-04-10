@@ -1,5 +1,4 @@
 import React, {useContext} from "react";
-import './Button.style.css';
 import ThemeContext from "../../../../contexts/theme/ThemeContext";
 
 const IconButton = ({image = null, onClick, disabled = false, style}) => {

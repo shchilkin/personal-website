@@ -2,7 +2,6 @@ import React from "react";
 import {Link} from "react-router-dom";
 import Container from "../../Layout/Container/Container.component";
 import FindOnGithubLogo from './FindOnGithub/FindOnGithubLogo.svg';
-import '../../Layout/Buttons/Button/Button.style.css'
 import Page from "../../Layout/Page/Page.component";
 import Button from "../../Layout/Buttons/Button/Button.component";
 

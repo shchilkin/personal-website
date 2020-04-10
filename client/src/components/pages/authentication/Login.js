@@ -1,7 +1,4 @@
 import React, {useContext, useEffect, useState} from "react";
-import '../../Layout/Inputs/Input.style.css'
-import '../../Layout/Buttons/Button/Button.style.css'
-import '../../Layout/PageComponent.style.css'
 import AuthContext from '../../../contexts/auth/AuthContext'
 import Input from "../../Layout/Inputs/Input.component";
 import Button from "../../Layout/Buttons/Button/Button.component";

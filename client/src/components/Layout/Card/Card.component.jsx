@@ -1,5 +1,4 @@
 import React, {useContext} from "react";
-import './Card.style.css'
 import ThemeContext from "../../../contexts/theme/ThemeContext";
 
 const Card = (props) => {

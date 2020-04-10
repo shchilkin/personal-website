@@ -1,5 +1,4 @@
 import React, {useContext} from "react";
-import './Alert.style.css'
 import ThemeContext from "../../../contexts/theme/ThemeContext";
 import AlertContext from '../../../contexts/alert/AlertContext'
 

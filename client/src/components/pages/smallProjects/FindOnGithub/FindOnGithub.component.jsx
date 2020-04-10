@@ -7,18 +7,18 @@ import Alert from "../../../Layout/Alert/Alert.component";
 import Search from "./FindOnGithub_Components/Search.component";
 import Page from "../../../Layout/Page/Page.component";
 import ThemeContext from "../../../../contexts/theme/ThemeContext";
-import '../../../Layout/PageComponent.style.css'
 import Home from "../../home/Home";
 
 const FindOnGithub = () => {
-const [users, setUsers] = useState([]);
-const [user, setUser] = useState({});
-const [repos, setRepos] = useState([]);
-const [loading, setLoading] = useState(false);
-const [alertMessage, setAlertMessage] = useState(null);
-const [alertType, setAlertType] = useState(null);
-const themeContext =  useContext(ThemeContext);
-const {darkMode} = themeContext;
+    // TODO Refactor state to one object
+    const [users, setUsers] = useState([]);
+    const [user, setUser] = useState({});
+    const [repos, setRepos] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [alertMessage, setAlertMessage] = useState(null);
+    const [alertType, setAlertType] = useState(null);
+    const themeContext =  useContext(ThemeContext);
+    const {darkMode} = themeContext;
 
     // Search users on Github
     const searchUsers = async text => {

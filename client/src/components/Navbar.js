@@ -7,7 +7,6 @@ import ThemeContext from '../contexts/theme/ThemeContext';
 import AuthContext from '../contexts/auth/AuthContext';
 import Moon from '../icons/Moon.svg';
 import Sun from '../icons/Sun.svg';
-import './Layout/slider.style.css'
 
 const Navbar = () => {
   const [pressed, setPressed] = useState(false);
@@ -40,8 +39,7 @@ const Navbar = () => {
 
   return (
       <Fragment>
-        <nav className={`navbar sticky-top ${darkMode ? `navbar-dark` : `navbar-light`} navbar-expand-lg`}
-           style={darkMode ? {backgroundColor:'#303030'} : {backgroundColor:'#F0F0F0'}}>
+        <nav className={`navbar sticky-top ${darkMode ? `navbar-dark` : `navbar-light`} navbar-expand-lg`}>
           <Link
               to='/'
               className='navbar-brand mb-0 h1'

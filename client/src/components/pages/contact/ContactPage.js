@@ -1,7 +1,4 @@
 import React, {useState} from "react";
-import '../../Layout/Inputs/Input.style.css'
-import '../../Layout/Buttons/Button/Button.style.css'
-import '../../Layout/Alert/Alert.style.css'
 import Page from "../../Layout/Page/Page.component";
 import Alert from "../../Layout/Alert/Alert.component";
 import Input from "../../Layout/Inputs/Input.component";
