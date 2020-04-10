@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Card from "../../../../../Layout/Card/Card.component";
-import '../../../../../Layout/Buttons/Button/Button.style.css'
 import Button from "../../../../../Layout/Buttons/Button/Button.component";
 
 const UserItem = ({ login, avatar_url }) => {

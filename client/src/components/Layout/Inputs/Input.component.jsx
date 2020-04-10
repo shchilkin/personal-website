@@ -1,5 +1,4 @@
 import React, {useContext} from "react";
-import './Input.style.css'
 import ThemeContext from "../../../contexts/theme/ThemeContext";
 
 const Input = ({type, placeholder, value, onChange, onFocus, onBlur,required = false,  name, autoComplete='on'}) => {

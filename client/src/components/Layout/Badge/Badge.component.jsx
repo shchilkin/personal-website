@@ -1,6 +1,5 @@
 import React, {useContext} from "react";
 import ThemeContext from '../../../contexts/theme/ThemeContext'
-import './Badge.style.css'
 
 const Badge = ({children, type = 'normal', className}) => {
     const themeContext = useContext(ThemeContext);

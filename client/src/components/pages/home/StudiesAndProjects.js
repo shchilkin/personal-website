@@ -2,8 +2,6 @@ import React from "react";
 import { v4 as uuidv4 } from 'uuid';
 import Container from "../../Layout/Container/Container.component";
 import Badge from "../../Layout/Badge/Badge.component";
-import './StudiesAndProjects.style.css';
-import '../../Layout/About.style.css'
 import Button from "../../Layout/Buttons/Button/Button.component";
 import {Link} from "react-router-dom";
 

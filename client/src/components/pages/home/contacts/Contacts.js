@@ -1,8 +1,6 @@
 import React, {useContext} from "react";
 import ContactLink from "./ContactLink";
 import ThemeContext from '../../../../contexts/theme/ThemeContext'
-import '../StudiesAndProjects.style.css';
-import './Contacts.style.css'
 
 const Contacts = () => {
     const themeContext =  useContext(ThemeContext);
@@ -15,7 +13,7 @@ const Contacts = () => {
                     className={'text-center header mb-3'}
                     style={darkMode ? {color:"#F0F0F0"} : {color:"#303030"}}
                 >
-                    Contact me{/*{<span className={'blink'}>_</span>}*/}
+                    Contact me
                 </h4>
             </div>
             <div className='d-flex justify-content-center pb-5'>

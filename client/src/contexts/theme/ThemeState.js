@@ -10,7 +10,7 @@ const  ThemeState = props => {
         let state = JSON.parse(localStorage.getItem('theme'));
         if (state === null) {
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.body.style = 'background: #303030;';
+                document.body.style = 'background: #121212;';
                 return true
             } else {
                 document.body.style = 'background: #F0F0F0;';
@@ -20,7 +20,7 @@ const  ThemeState = props => {
             if (state){
                 document.body.style = 'background: #F0F0F0;';
             } else if (!state){
-                document.body.style = 'background: #303030;';
+                document.body.style = 'background: #121212;';
             }
             return state
         }
@@ -34,7 +34,7 @@ const  ThemeState = props => {
             document.body.style = 'background: #F0F0F0;';
         } else {
             if (state){
-                document.body.style = 'background: #303030;';
+                document.body.style = 'background: #121212;';
             } else if (!state){
                 document.body.style = 'background: #F0F0F0;';
             }
