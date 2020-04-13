@@ -376,23 +376,36 @@
     background: var(--bg-color-light);
     border: 1px solid var(--bg-color-light);
     mix-blend-mode: normal;
+    box-shadow: 5px 5px 30px 0
+    var(--bg-color-light-darker-shadow),
+    -5px -5px 20px 0
+    var(--bg-color-light-lighter-shadow);
+    border-radius: 12px;
+}
+.Container-Light:hover {
     box-shadow: 10px 10px 30px 0
     var(--bg-color-light-darker-shadow),
     -10px -10px 20px 0
     var(--bg-color-light-lighter-shadow);
-    border-radius: 12px;
 }
 
 .Container-Dark {
     background: var(--bg-color-dark);
     color: var(--dark-theme-gray);
     mix-blend-mode: normal;
+    box-shadow:  5px 5px 10px 0
+    var(--bg-color-dark-darker-shadow),
+    -5px -5px 10px 0
+    var(--bg-color-dark-lighter-shadow);
+    border: 1px solid var(--bg-color-dark);
+    border-radius: 12px;
+}
+
+.Container-Dark:hover{
     box-shadow:  10px 10px 20px 0
     var(--bg-color-dark-darker-shadow),
     -10px -10px 20px 0
     var(--bg-color-dark-lighter-shadow);
-    border: 1px solid var(--bg-color-dark);
-    border-radius: 12px;
 }
 
 .Container-Light ul {
@@ -500,13 +513,12 @@ select:-webkit-autofill:focus {
 .MainText{
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    font-size: 4rem;
+    font-size: 96px;
 }
 
 .SecondaryText{
     font-family: 'Montserrat', cursive;
-    letter-spacing: 2px;
-    font-size: 2rem;
+    font-size: 36px;
     text-align: center;
 }
 
