@@ -1,13 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import Page from "../../Layout/Page/Page.component";
 import {Link} from "react-router-dom";
 import Badge from "../../Layout/Badge/Badge.component";
+import Input from "../../Layout/Inputs/Input.component";
 
 
 const NeumorphicGenerator = () => {
-    const Red = 237;
-    const Green = 41;
-    const Blue = 57;
+    const [Red, setRed] = useState(237);
+    const [Green, setGreen] = useState(41);
+    const [Blue, setBlue] = useState(57)
 
     function calculateShadows(Red, Green, Blue) {
         function calculateColor(color, factor){
@@ -46,6 +47,34 @@ const NeumorphicGenerator = () => {
     const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`
     const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`
 
+    const onChangeRed = (event) => {
+        if (event.target.value > 255) {
+            setRed(255)
+        } else if (event.target.value < 0) {
+            setRed(0)
+        } else {
+            setRed(event.target.value)
+        }
+    };
+    const onChangeGreen = (event) => {
+        if (event.target.value > 255) {
+            setGreen(255)
+        } else if (event.target.value < 0) {
+            setGreen(0)
+        } else {
+            setGreen(event.target.value)
+        }
+    };
+    const onChangeBlue = (event) => {
+        if (event.target.value > 255) {
+            setBlue(255)
+        } else if (event.target.value < 0) {
+            setBlue(0)
+        } else {
+            setBlue(event.target.value)
+        }
+    };
+
     return(
         <Page>
             <div className={'container'}>
@@ -74,6 +103,14 @@ const NeumorphicGenerator = () => {
                                     ${lighterShadow}`
                             }}/>
                         </div>
+                    </div>
+                    <div className={'col-md-6 mt-3'}>
+                        <h6 style={{color:'#ED2939', fontWeight:'bold'}}>Red</h6>
+                        <Input type={'number'} onChange={onChangeRed} value={Red} placeholder={Red}/>
+                        <h6 style={{color:'#0B6623', fontWeight:'bold'}}>Green</h6>
+                        <Input type={'number'}  onChange={onChangeGreen} value={Green} placeholder={Green}/>
+                        <h6 style={{color:'#0f52Ba', fontWeight:'bold'}} >Blue</h6>
+                        <Input type={'number'} onChange={onChangeBlue} value={Blue} placeholder={Blue}/>
                     </div>
                 </div>
             </div>
