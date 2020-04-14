@@ -48,6 +48,9 @@
     --shock-pink: #ff00d5;
     --shock-pink-darkmode: #ff66e6;
 
+    --denim-blue: #165DC0;
+    --denim-blue-darkmode: #739ed9;
+
 }
 
 
@@ -187,6 +190,15 @@
 .Green-Dark {
     background-color: var(--conifer-green-darkmode);
     color: #232b13;
+}
+
+.Blue {
+    background-color: var(--denim-blue);
+    color: #e8eff9;
+}
+.Blue-Dark {
+    background-color: var(--denim-blue-darkmode);
+    color: #041326;
 }
 
 .Cyan {
