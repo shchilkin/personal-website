@@ -4,6 +4,8 @@ import Container from "../../Layout/Container/Container.component";
 import Badge from "../../Layout/Badge/Badge.component";
 import Button from "../../Layout/Buttons/Button/Button.component";
 import {Link} from "react-router-dom";
+import Icons from "../../Icons";
+import LanguageIcon from "./ProgrammingLanguageIcon/LanguageIcon.Component";
 
 const StudiesAndProjects = () => {
 
@@ -29,28 +31,66 @@ const StudiesAndProjects = () => {
               <div className={'row'}>
                   <div className={'col-md-6 mb-3'}>
                       <h2 className={'header mb-3'}>Skills<span style={{color:'#ED2939'}}>:</span></h2>
+                      {/*<Container style={{paddingLeft:'1rem',paddingTop:'1rem', marginBottom:'1rem'}}>*/}
+                      {/*    <h5 className={'header mb-3'} style={{display:'inline-block'}}>Languages</h5>*/}
+                      {/*    <p>*/}
+                      {/*        {skills.languages.map(*/}
+                      {/*            language => <Badge*/}
+                      {/*                key={uuidv4()}*/}
+                      {/*                type={'normal'}*/}
+                      {/*                className={'Yellow'}>{language}*/}
+                      {/*            </Badge>*/}
+                      {/*        )}*/}
+                      {/*    </p>*/}
+                      {/*    <h5 className={'header mb-3'}>Technologies</h5>*/}
+                      {/*    <p>*/}
+                      {/*        {skills.technologies.map(*/}
+                      {/*            technology => <Badge*/}
+                      {/*                key={uuidv4()}*/}
+                      {/*                type={'normal'}*/}
+                      {/*                className={'Green'}>{technology}*/}
+                      {/*            </Badge>*/}
+                      {/*        )}*/}
+                      {/*    </p>*/}
+                      {/*    <h5 className={'header mb-3'}>Other Skills</h5>*/}
+                      {/*    <p>*/}
+                      {/*        {skills.otherSkills.map(*/}
+                      {/*            otherSkill => <Badge*/}
+                      {/*                key={uuidv4()}*/}
+                      {/*                type={'normal'}*/}
+                      {/*                className={'Cyan'}>{otherSkill}*/}
+                      {/*            </Badge>*/}
+                      {/*        )}*/}
+                      {/*    </p>*/}
+                      {/*</Container>*/}
                       <Container style={{paddingLeft:'1rem',paddingTop:'1rem', marginBottom:'1rem'}}>
-                          <h4 className={'header mb-3'} style={{display:'inline-block'}}>Languages</h4>
+                          <h5 className={'header mb-3'} style={{display:'inline-block'}}>Languages</h5>
                           <p>
                               {skills.languages.map(
                                   language => <Badge
                                       key={uuidv4()}
                                       type={'normal'}
-                                      className={'Yellow'}>{language}
+                                      className={'Yellow text-center'}>
+                                      {Icons[language] && LanguageIcon(language)} {language}
                                   </Badge>
                               )}
                           </p>
-                          <h4 className={'header mb-3'}>Technologies</h4>
+                      </Container>
+                      <Container style={{paddingLeft:'1rem',paddingTop:'1rem', marginBottom:'1rem'}}>
+                          <h5 className={'header mb-3'}>Technologies</h5>
                           <p>
                               {skills.technologies.map(
                                   technology => <Badge
                                       key={uuidv4()}
                                       type={'normal'}
-                                      className={'Green'}>{technology}
+                                      className={'Green'}>
+                                      {Icons[technology] && LanguageIcon(technology)} {technology}
                                   </Badge>
                               )}
                           </p>
-                          <h4 className={'header mb-3'}>Other Skills</h4>
+                      </Container>
+                      <Container style={{paddingLeft:'1rem',paddingTop:'1rem', marginBottom:'1rem'}}>
+                          <h5 className={'header mb-3'}>Other Skills</h5>
                           <p>
                               {skills.otherSkills.map(
                                   otherSkill => <Badge

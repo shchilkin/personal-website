@@ -40,7 +40,7 @@
 /* Navbar component related css */
 
 .Navbar-Dark{
-    background-color: var(--dark-1);
+    background-color: var(--bg-color-dark);
     color: var(--bg-color-light);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 1)
 }
@@ -235,8 +235,10 @@
 }
 .button-dark:hover{
     background-color: #ED2939;
-    box-shadow:  5px 5px 10px #292929,
-    -5px -5px 10px #373737;
+    box-shadow:  5px 5px 10px 0
+    var(--bg-color-dark-darker-shadow),
+    -5px -5px 10px
+    var(--bg-color-dark-lighter-shadow);
 }
 
 .button-dark:active{
