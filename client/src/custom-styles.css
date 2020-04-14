@@ -45,6 +45,9 @@
     --turquoise: #26C4BE;
     --turquoise-darkmode: #7ddcd8;
 
+    --shock-pink: #ff00d5;
+    --shock-pink-darkmode: #ff66e6;
+
 }
 
 
@@ -193,6 +196,16 @@
 .Cyan-Dark {
     background-color: var(--turquoise-darkmode);
     color: #082726;
+}
+
+.Pink {
+    background-color: var(--shock-pink);
+    color: white;
+}
+
+.Pink-Dark {
+    background-color: var(--shock-pink-darkmode);
+    color: black;
 }
 
 /* Button component related css */

@@ -15,6 +15,7 @@ import findOnGithub       from './components/pages/smallProjects/FindOnGithub/Fi
 import AvatarGenerator    from "./components/pages/avatarGenerator/AvatarGenerator";
 import ProjectPlaceholder from "./components/pages/smallProjects/projectPlaceholder.component";
 import Navbar from "./components/Layout/Navbar/Navbar.component";
+import NeumorphicGenerator from "./components/pages/NeumorphicGenerator/NeumorphicGenerator";
 
 const App = () => {
   if (localStorage.token) {
@@ -37,6 +38,7 @@ const App = () => {
                     <Route exact path='/projects' component={ProjectPlaceholder}/>
                     <Route exact path='/projects/findOnGithub' component={findOnGithub}/>
                     <Route exact path='/projects/AvatarGenerator' component={AvatarGenerator}/>
+                    <Route exact path={'/neumorphic'} component={NeumorphicGenerator} />
                     <Route component={NotFound} />
                   </Switch>
                 </AppPage>

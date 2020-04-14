@@ -47,6 +47,9 @@ const Navbar = () => {
                     <li className="nav-item">
                         <a className="nav-link" href={'#StudiesAndProjects'}>About</a>
                     </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to={'/neumorphic'}>Neumorphic generator</Link>
+                    </li>
                 </ul>
                 <button className={'btn'} onClick={changeTheme} >
                     {darkMode ?
