@@ -8,7 +8,7 @@ const ContactLink = ({icon, link, width = '2rem', height = '2rem', internalLink 
     const {darkMode} = themeContext;
 
     const contactLinkButton = (
-        <button className={ darkMode ? 'ContactLink-Dark' : 'ContactLink-Light'}>
+        <button className={`${darkMode ? 'ContactLink-Dark'  : 'ContactLink-Light'} ${Icons[icon].Name}`}>
             <div style={{width:width, height:height}}>
                 {Icons[icon].group ? (
                     <svg

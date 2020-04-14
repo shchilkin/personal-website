@@ -16,13 +16,39 @@
     --bg-color-light-lighter-shadow: #FFF;
 
     --bg-color-dark: #121212;
+    --dark-1: #161616;
     --bg-color-dark-darker-shadow: #000;
     --bg-color-dark-lighter-shadow: #181818;
 
     --dark-theme-gray: #c1c1c1 ;
 
     --main-accent: #ed2939;
+    --main-accent-darkmode: #f47f88;
+
     --lighting-yellow: #fdce26;
+    --lighting-yellow-darkmode: #fee27d;
+
+    --conifer-green: #b0d85d;
+    --conifer-green-darkmode: #d0e89e;
+
+    --turquoise: #26C4BE;
+    --turquoise-darkmode: #7ddcd8;
+
+}
+
+
+/* Navbar component related css */
+
+.Navbar-Dark{
+    background-color: var(--bg-color-dark);
+    color: var(--bg-color-light);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1)
+}
+
+.Navbar-Light{
+    background-color: var(--bg-color-light);
+    color: var(--bg-color-dark);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2)
 }
 
 /* Alert component related css */
@@ -74,7 +100,7 @@
 /* Badge component related css */
 
 .Badge-Dark {
-    background-color: var(--main-accent);
+    background-color: var(--main-accent-darkmode);
     color: black;
     padding: .25em .4em;
     border-radius:6px;
@@ -98,7 +124,7 @@
 }
 
 .Badge-Small-Dark {
-    background-color: var(--main-accent);
+    background-color: var(--main-accent-darkmode);
     color: black;
     padding: .25em .4em;
     margin-right:0.25rem;
@@ -131,52 +157,31 @@
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-.Language {
+.Yellow{
     background-color: var(--lighting-yellow);
     color: #191504;
 }
-
-
-.Technology {
-    /*background-color: #149cea;*/
-    background-color: #B0D85D;
-    /*color: #041f2f;*/
-    /*border: solid 2px #191504;*/
-    color: #232b13;
-}
-
-.Skill {
-    /*background-color: #8BBC90;*/
-    background-color: #26C4BE;
-    color: #082726;
-}
-
-.Yellow {
-    /*background-color: #fdce26;*/
-    color: #191504;
-}
-
-.Yellow-Light {
-    background-color: #f3db4b;
+.Yellow-Dark {
+    background-color: var(--lighting-yellow-darkmode);
     color: #181607;
 }
 
 .Green {
-    /*background-color: #149cea;*/
-    background-color: #B0D85D;
-    /*color: #041f2f;*/
+    background-color: var(--conifer-green);
+    color: #232b13;
+}
+.Green-Dark {
+    background-color: var(--conifer-green-darkmode);
     color: #232b13;
 }
 
 .Cyan {
-    /*background-color: #8BBC90;*/
-    background-color: #26C4BE;
+    background-color: var(--turquoise);
     color: #082726;
 }
-
-.Cyan-Light{
-    background-color: #58C6B8;
-    color: #122825;
+.Cyan-Dark {
+    background-color: var(--turquoise-darkmode);
+    color: #082726;
 }
 
 /* Button component related css */
@@ -219,7 +224,7 @@
 }
 
 .button-dark {
-    background-color:var(--bg-color-dark);
+    background-color:var(--dark-1);
     border: 1px solid var(--bg-color-dark);
     color: var(--bg-color-light);
     box-shadow: 2px 2px 10px 0
@@ -230,15 +235,20 @@
 }
 .button-dark:hover{
     background-color: #ED2939;
-    box-shadow:  5px 5px 10px #292929,
-    -5px -5px 10px #373737;
+    box-shadow:  5px 5px 10px 0
+    var(--bg-color-dark-darker-shadow),
+    -5px -5px 10px
+    var(--bg-color-dark-lighter-shadow);
 }
 
 .button-dark:active{
-    background-color:#303030;
-    border: 1px solid #303030;
+    background-color:var(--bg-color-dark);
+    border: 1px solid var(--bg-color-dark);
     color: #ED2939;
-    box-shadow: inset 20px 20px 30px 0 #202020, inset -20px -20px 30px 0 #454545;
+    box-shadow: inset 20px 20px 30px 0
+    var(--bg-color-dark-darker-shadow),
+    inset -20px -20px 30px 0
+    var(--bg-color-dark-lighter-shadow);
 }
 
 .button-dark:disabled{
@@ -368,23 +378,36 @@
     background: var(--bg-color-light);
     border: 1px solid var(--bg-color-light);
     mix-blend-mode: normal;
+    box-shadow: 5px 5px 30px 0
+    var(--bg-color-light-darker-shadow),
+    -5px -5px 20px 0
+    var(--bg-color-light-lighter-shadow);
+    border-radius: 12px;
+}
+.Container-Light:hover {
     box-shadow: 10px 10px 30px 0
     var(--bg-color-light-darker-shadow),
     -10px -10px 20px 0
     var(--bg-color-light-lighter-shadow);
-    border-radius: 12px;
 }
 
 .Container-Dark {
     background: var(--bg-color-dark);
     color: var(--dark-theme-gray);
     mix-blend-mode: normal;
+    box-shadow:  5px 5px 10px 0
+    var(--bg-color-dark-darker-shadow),
+    -5px -5px 10px 0
+    var(--bg-color-dark-lighter-shadow);
+    border: 1px solid var(--bg-color-dark);
+    border-radius: 12px;
+}
+
+.Container-Dark:hover{
     box-shadow:  10px 10px 20px 0
     var(--bg-color-dark-darker-shadow),
     -10px -10px 20px 0
     var(--bg-color-dark-lighter-shadow);
-    border: 1px solid var(--bg-color-dark);
-    border-radius: 12px;
 }
 
 .Container-Light ul {
@@ -492,13 +515,12 @@ select:-webkit-autofill:focus {
 .MainText{
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    font-size: 4rem;
+    font-size: 96px;
 }
 
 .SecondaryText{
     font-family: 'Montserrat', cursive;
-    letter-spacing: 2px;
-    font-size: 2rem;
+    font-size: 36px;
     text-align: center;
 }
 
@@ -709,3 +731,48 @@ select:-webkit-autofill:focus {
      background-color: var(--bg-color-light);
      color: var(--bg-color-dark);
 }
+
+/* Colored contact items */
+
+.Twitter:hover{
+    background-color: #1da1f2;
+}
+
+.YouTube:hover{
+    background-color: red;
+}
+
+.Github:hover{
+    background-color: #333;
+}
+.Github:hover .ContactLink-Light-Image{
+    fill: #fafafa;
+    transition: background-color 1s, color 1s;
+}
+
+.VK:hover{
+    background-color: #4680C2;
+}
+.Facebook:hover{
+    background-color: #4267B2;
+}
+
+.LinkedIn:hover{
+    background-color: #0077b5;
+}
+
+.Snapchat:hover{
+    background-color: #FFFC00;
+}
+.Snapchat:hover .ContactLink-Dark-Image{
+    fill: black;
+    transition: background-color 1s, color 1s;
+}
+
+.Instagram:hover{
+    transition: background 1s, opacity 1s;
+    background-image: linear-gradient(90deg, #fd1d1d, #e1306c);
+}
+
+
+
