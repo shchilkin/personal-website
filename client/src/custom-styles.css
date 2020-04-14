@@ -11,16 +11,27 @@
 @import url('https://fonts.googleapis.com/css?family=Monoton&display=swap');
 
 :root{
+    /*--bg-color-light: #F0F0F0;*/
+    /*--bg-color-light-darker-shadow: #BCBCBC;*/
+    /*--bg-color-light-lighter-shadow: #FFF;*/
+
+    /*--bg-color-dark: #121212;*/
+    /*--bg-color-dark-darker-shadow: #000;*/
+    /*--bg-color-dark-lighter-shadow: #181818;*/
+
+
     --bg-color-light: #f0f0f0;
-    --bg-color-light-darker-shadow: #BCBCBC;
-    --bg-color-light-lighter-shadow: #FFF;
+    --bg-color-light-darker-shadow: rgba(0, 0, 0, 0.15);
+    --bg-color-light-lighter-shadow: rgba(255,255,255,0.15);
 
     --bg-color-dark: #121212;
-    --dark-1: #161616;
-    --bg-color-dark-darker-shadow: #000;
-    --bg-color-dark-lighter-shadow: #181818;
+    --bg-color-dark-darker-shadow:  rgba(0,0,0,0.6);
+    --bg-color-dark-lighter-shadow: rgba(255,255,255,0.03);
 
     --dark-theme-gray: #c1c1c1 ;
+
+    --dark-1: #161616;
+    --beige: #fcf2e3;
 
     --main-accent: #ed2939;
     --main-accent-darkmode: #f47f88;
@@ -33,6 +44,9 @@
 
     --turquoise: #26C4BE;
     --turquoise-darkmode: #7ddcd8;
+
+    --shock-pink: #ff00d5;
+    --shock-pink-darkmode: #ff66e6;
 
 }
 
@@ -184,6 +198,16 @@
     color: #082726;
 }
 
+.Pink {
+    background-color: var(--shock-pink);
+    color: white;
+}
+
+.Pink-Dark {
+    background-color: var(--shock-pink-darkmode);
+    color: black;
+}
+
 /* Button component related css */
 
 
@@ -203,7 +227,9 @@
 }
 
 .button:hover {
+    transition: border-color .5s, color .5s;
     background-color: var(--main-accent);
+    border: 1px solid var(--main-accent);
     box-shadow: 5px 5px 15px 0
     var(--bg-color-light-darker-shadow),
     -10px -10px 10px 0
@@ -235,6 +261,7 @@
 }
 .button-dark:hover{
     background-color: #ED2939;
+    border: 1px solid var(--main-accent);
     box-shadow:  5px 5px 10px 0
     var(--bg-color-dark-darker-shadow),
     -5px -5px 10px
@@ -503,13 +530,15 @@ select:-webkit-autofill:focus {
 }
 
 .page{
-    height: 100vh;
+    height: calc(100vh);
+    padding-top: 70px;
 }
 
 /*About page related css*/
 
 .About{
     height: calc(100vh);
+    padding-top: 56px;
 }
 
 .MainText{

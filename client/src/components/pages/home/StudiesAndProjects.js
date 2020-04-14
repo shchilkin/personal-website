@@ -15,6 +15,9 @@ const StudiesAndProjects = () => {
         technologies:['React', 'Node.js', 'Docker', 'Raspberry Pi', 'Arduino', 'MongoDB','Linux/UNIX',"Git",'Bootstrap'],
         otherSkills:['Vector assets creation','Network configuration', 'Adobe Illustrator']
     };
+    const description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies, nibh id facilisis\n" +
+        "                  consectetur, lacus libero tincidunt tellus, quis gravida dolor magna dapibus ligula. Maecenas faucibus\n" +
+        "                  purus non libero condimentum consectetur. Quisque suscipit faucibus sem, id bibendum mi mollis at."
 
   return (
       <section id={'StudiesAndProjects'} className='container-fluid pt-5 pb-5'>
@@ -22,49 +25,15 @@ const StudiesAndProjects = () => {
                   <h1 className='display-5 pt-5 pb-3 header'>Studies <span style={{color:'#ED2939'}}>&</span> Projects</h1>
                   <p className={'text'} style={{display:'none'}}>
                       {/*//TODO Add description*/}
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies, nibh id facilisis
-                  consectetur, lacus libero tincidunt tellus, quis gravida dolor magna dapibus ligula. Maecenas faucibus
-                  purus non libero condimentum consectetur. Quisque suscipit faucibus sem, id bibendum mi mollis at.
+                      {description}
                  </p>
               </div>
           <div className={'container pt-3 pb-3'}>
               <div className={'row'}>
                   <div className={'col-md-6 mb-3'}>
                       <h2 className={'header mb-3'}>Skills<span style={{color:'#ED2939'}}>:</span></h2>
-                      {/*<Container style={{paddingLeft:'1rem',paddingTop:'1rem', marginBottom:'1rem'}}>*/}
-                      {/*    <h5 className={'header mb-3'} style={{display:'inline-block'}}>Languages</h5>*/}
-                      {/*    <p>*/}
-                      {/*        {skills.languages.map(*/}
-                      {/*            language => <Badge*/}
-                      {/*                key={uuidv4()}*/}
-                      {/*                type={'normal'}*/}
-                      {/*                className={'Yellow'}>{language}*/}
-                      {/*            </Badge>*/}
-                      {/*        )}*/}
-                      {/*    </p>*/}
-                      {/*    <h5 className={'header mb-3'}>Technologies</h5>*/}
-                      {/*    <p>*/}
-                      {/*        {skills.technologies.map(*/}
-                      {/*            technology => <Badge*/}
-                      {/*                key={uuidv4()}*/}
-                      {/*                type={'normal'}*/}
-                      {/*                className={'Green'}>{technology}*/}
-                      {/*            </Badge>*/}
-                      {/*        )}*/}
-                      {/*    </p>*/}
-                      {/*    <h5 className={'header mb-3'}>Other Skills</h5>*/}
-                      {/*    <p>*/}
-                      {/*        {skills.otherSkills.map(*/}
-                      {/*            otherSkill => <Badge*/}
-                      {/*                key={uuidv4()}*/}
-                      {/*                type={'normal'}*/}
-                      {/*                className={'Cyan'}>{otherSkill}*/}
-                      {/*            </Badge>*/}
-                      {/*        )}*/}
-                      {/*    </p>*/}
-                      {/*</Container>*/}
-                      <Container style={{paddingLeft:'1rem',paddingTop:'1rem', marginBottom:'1rem'}}>
-                          <h5 className={'header mb-3'} style={{display:'inline-block'}}>Languages</h5>
+                      <Container style={{paddingLeft:'1rem',paddingRight:"1rem",paddingTop:'1rem', marginBottom:'1rem'}}>
+                          <h5 className={'header mb-3'} style={{display:'inline-block'}}>Programming languages</h5>
                           <p>
                               {skills.languages.map(
                                   language => <Badge
@@ -76,7 +45,7 @@ const StudiesAndProjects = () => {
                               )}
                           </p>
                       </Container>
-                      <Container style={{paddingLeft:'1rem',paddingTop:'1rem', marginBottom:'1rem'}}>
+                      <Container style={{paddingLeft:'1rem',paddingRight:"1rem",paddingTop:'1rem', marginBottom:'1rem'}}>
                           <h5 className={'header mb-3'}>Technologies</h5>
                           <p>
                               {skills.technologies.map(
@@ -89,7 +58,7 @@ const StudiesAndProjects = () => {
                               )}
                           </p>
                       </Container>
-                      <Container style={{paddingLeft:'1rem',paddingTop:'1rem', marginBottom:'1rem'}}>
+                      <Container style={{paddingLeft:'1rem' ,paddingRight:"1rem",paddingTop:'1rem', marginBottom:'1rem'}}>
                           <h5 className={'header mb-3'}>Other Skills</h5>
                           <p>
                               {skills.otherSkills.map(
@@ -101,19 +70,11 @@ const StudiesAndProjects = () => {
                               )}
                           </p>
                       </Container>
-                      <div>
-                          <Link to='/projects/findOnGithub'>
-                              <Button className={'project-button'} style={{marginRight:'.5rem'}}>Find on Github</Button>
-                          </Link>
-                          <Link to='/projects/AvatarGenerator'>
-                              <Button className={'project-button'} >Avatar generator</Button>
-                          </Link>
-                      </div>
                   </div>
                   <div className={'col-md-6'}>
                       <h2 className={'header mb-3'}>Projects<span style={{color:'#ED2939'}}>:</span> </h2>
                       <div className={'mb-4'}>
-                          <Container>
+                          <Container style={{paddingLeft:'1rem'}}>
                               <div className={'pb-2 pt-3 pr-2 pl-2'}>
                                   <h5 className={'text-center header'}>Software Development</h5>
                                   <ul>
@@ -137,6 +98,14 @@ const StudiesAndProjects = () => {
                                   </ul>
                               </div>
                           </Container>
+                      </div>
+                      <div>
+                          <Link to='/projects/findOnGithub'>
+                              <Button className={'project-button'} style={{marginRight:'.5rem'}}>Find on Github</Button>
+                          </Link>
+                          <Link to='/projects/AvatarGenerator'>
+                              <Button className={'project-button'} >Avatar generator</Button>
+                          </Link>
                       </div>
                   </div>
               </div>
