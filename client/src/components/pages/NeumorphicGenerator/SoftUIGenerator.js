@@ -32,9 +32,12 @@ const SoftUIGenerator = () => {
     const [Green, setGreen] = useAsyncState(187);
     const [Blue, setBlue] = useAsyncState(255);
 
+    const [codeBG, setCodeBB] = useState("#121212")
+    const [codeFontColor, setCodeFontColor] = useState('#f0f0f0')
+
     const [darkFactor, setDarkFactor] = useState(0.85);
     const [lightFactor, setLightFactor] = useState(1.0);
-    const version = "v. 0.4"
+    const version = "v. 0.5"
 
     const [Blur, setBlur] = useState(30);
     const [Radius, setRadius] = useState(12);
@@ -53,17 +56,18 @@ const SoftUIGenerator = () => {
             setBlue(parseInt(`${color.slice(4, 6)}`,16))
         }
     }
-    function rgbToHex(colorValue, colorName) {
-        function toHex(colorValue){
-            let color
-            if (colorValue <= 15) {
-                color = `0${Number(colorValue).toString(16).toUpperCase()}`
-            } else {
-                color = `${Number(colorValue).toString(16).toUpperCase()}`
-            }
-            return color;
-        }
 
+    // TODO RGBtoHex function after refactor (function toHex)
+    function toHex(colorValue){
+        let color
+        if (colorValue <= 15) {
+            color = `0${Number(colorValue).toString(16).toUpperCase()}`
+        } else {
+            color = `${Number(colorValue).toString(16).toUpperCase()}`
+        }
+        return color;
+    }
+    function rgbToHex(colorValue, colorName) {
         switch (colorName) {
             case 'Red':
                     return `${toHex(Red)}${toHex(Green)}${toHex(Blue)}`
@@ -130,6 +134,17 @@ const SoftUIGenerator = () => {
 
     // TODO Refactor to one function onChangeColor
     const onChangeRed = (event) => {
+        // TODO improve code (to many repeats)
+        if (fontColor(Red, Green, Blue) === "#000"){
+            setCodeBB('#121212')
+            setCodeFontColor('#f0f0f0')
+        }
+
+        if (fontColor(Red, Green, Blue) === "#FFF"){
+            setCodeBB('#F0F0F0')
+            setCodeFontColor('#121212')
+        }
+
         // TODO Refactor to function which returns red value
         if (event.target.value > 255) {
             setRed(255).then(color => setHexColor(rgbToHex(color, "Red")))
@@ -142,6 +157,16 @@ const SoftUIGenerator = () => {
         }
     };
     const onChangeGreen = (event) => {
+        // TODO improve code (to many repeats)
+        if (fontColor(Red, Green, Blue) === "#000"){
+            setCodeBB('#121212')
+            setCodeFontColor('#f0f0f0')
+        }
+
+        if (fontColor(Red, Green, Blue) === "#FFF"){
+            setCodeBB('#CCCCCC')
+            setCodeFontColor('#121212')
+        }
         // TODO Refactor to function which returns green value
         if (event.target.value > 255) {
             setGreen(255).then(color => setHexColor(rgbToHex(color, "Green")))
@@ -152,6 +177,17 @@ const SoftUIGenerator = () => {
         }
     };
     const onChangeBlue = (event) => {
+        // TODO improve code (to many repeats)
+        if (fontColor(Red, Green, Blue) === "#000"){
+            setCodeBB('#121212')
+            setCodeFontColor('#f0f0f0')
+        }
+
+        if (fontColor(Red, Green, Blue) === "#FFF"){
+            setCodeBB('#CCCCCC')
+            setCodeFontColor('#121212')
+        }
+
         // TODO Refactor to function which returns blue value
         if (event.target.value > 255) {
             setBlue(255).then(color => setHexColor(rgbToHex(color, "Blue")))
@@ -180,6 +216,17 @@ const SoftUIGenerator = () => {
         }
     };
     const onChangeColor = (event) => {
+        // TODO improve code (to many repeats)
+        if (fontColor(Red, Green, Blue) === "#000"){
+            setCodeBB('#121212')
+            setCodeFontColor('#f0f0f0')
+        }
+
+        if (fontColor(Red, Green, Blue) === "#FFF"){
+            setCodeBB('#CCCCCC')
+            setCodeFontColor('#121212')
+        }
+
         setHexColor(event.target.value).then(value => {
             if (value.indexOf("#") !== -1 ){
                 const hexColorWithoutHash = value.replace(/#/,'')
@@ -331,6 +378,16 @@ const SoftUIGenerator = () => {
                                     <Badge type={'small'} color={'Cyan'}>Radius: {Radius}px</Badge>
                                     <Badge type={'small'} color={'Cyan'}>Dark shadow: {darkFactor*100}%</Badge>
                                     <Badge type={'small'} color={'Cyan'}>Light shadow: {Math.round(lightFactor*100)}%</Badge>
+                                </div>
+                                <div>
+                                    <pre className={'pt-3 pb-3 pr-1 pl-3'} style={{backgroundColor:codeBG,borderRadius:'12px'}}>
+                                        <code style={{fontSize:'10px',color:codeFontColor}}>
+                                            <span style={{color:'#ed2939'}} >background:</span> <span style={{color:`#${hexColor}`}}>#{hexColor}</span>;<br/>
+                                            <span style={{color:'#ed2939'}}>border-radius:</span> {Radius}px;<br/>
+                                            <span style={{color:'#ed2939'}}>box-shadow:</span> 5px 5px {Blur}px 0 <span style={{color:darkerShadow}}>{`#${toHex(darkerShadows[0])}${toHex(darkerShadows[1])}${darkerShadows[2]}`}</span>,<br/>
+                                            {"            "}-5px -5px {Blur}px 0 <span style={{color:lighterShadow}}>{`#${toHex(lighterShadows[0])}${toHex(lighterShadows[1])}${lighterShadows[2]}`}</span>;
+                                        </code>
+                                    </pre>
                                 </div>
                             </div>
                         </div>
