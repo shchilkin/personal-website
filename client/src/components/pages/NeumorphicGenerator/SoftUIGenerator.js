@@ -25,28 +25,62 @@ function useAsyncState(initialValue) {
     return [value, setter];
 }
 
+//rgb 0 9 62 night sky color
+
 const SoftUIGenerator = () => {
-    const [color, setColor] = useAsyncState("0xED2939");
+    const [hexColor, setHexColor] = useAsyncState("ED2939");
     const [darkFactor, setDarkFactor] = useState(0.85);
     const [lightFactor, setLightFactor] = useState(1.15);
-    const [Red, setRed] = useState(237);
-    const [Green, setGreen] = useState(41);
-    const [Blue, setBlue] = useState(57);
+
+    const [Red, setRed] = useAsyncState(205);
+    const [Green, setGreen] = useAsyncState(237);
+    const [Blue, setBlue] = useAsyncState(206);
+
     const [Blur, setBlur] = useState(30);
     const [Radius, setRadius] = useState(12);
 
     const font = fontColor(Red, Green, Blue)
 
+    // console.log('int, hex string', parseInt('ED2939',16))
+
     function hexToRGB(color) {
-        if (color.length === 5) {
-            setRed(parseInt(`0x${color.slice(2, 3)}${color.slice(2, 3)}`))
-            setGreen(parseInt(`0x${color.slice(3, 4)}${color.slice(3, 4)}`))
-            setBlue(parseInt(`0x${color.slice(4, 5)}${color.slice(4, 5)}`))
+        if (color.length === 3) {
+            setRed(parseInt(`${color.slice(0, 1)}${color.slice(0, 1)}`,16))
+            setGreen(parseInt(`${color.slice(1, 2)}${color.slice(1, 2)}`,16))
+            setBlue(parseInt(`${color.slice(2, 3)}${color.slice(2, 3)}`,16))
         }
-        if (color.length === 8){
-            setRed(parseInt(`0x${color.slice(2, 4)}`))
-            setGreen(parseInt(`0x${color.slice(4, 6)}`))
-            setBlue(parseInt(`0x${color.slice(6, 8)}`))
+        if (color.length === 6){
+            setRed(parseInt(`${color.slice(0, 2)}`,16))
+            setGreen(parseInt(`${color.slice(2, 4)}`,16))
+            setBlue(parseInt(`${color.slice(4, 6)}`,16))
+        }
+    }
+    function rgbToHex(hexColor, colorValue, colorName) {
+        switch (colorName) {
+            case 'Red':
+            case 'red':
+                let hexRed = Number(colorValue).toString(16);
+                if (Number(colorValue) <= 15)
+                    return `0${hexRed.toUpperCase()}${hexColor.slice(2,6)}`
+                 else
+                    return `${hexRed.toUpperCase()}${hexColor.slice(2,6)}`
+            case 'Green':
+            case 'green':
+                let hexGreen = Number(colorValue).toString(16);
+                if (Number(colorValue) <= 15)
+                    return `${hexColor.slice(0,2)}0${hexGreen.toUpperCase()}${hexColor.slice(4,6)}`
+                else
+                    return `${hexColor.slice(0,2)}${hexGreen.toUpperCase()}${hexColor.slice(4,6)}`
+            case 'Blue':
+            case 'blue':
+                let hexBlue = Number(colorValue).toString(16);
+                if (Number(colorValue) <= 15)
+                    return `${hexColor.slice(0,4)}0${hexBlue.toUpperCase()}`
+                else
+                    return `${hexColor.slice(0,4)}${hexBlue.toUpperCase()}`
+            default:
+                console.log('returned default case')
+                return hexColor
         }
     }
 
@@ -96,32 +130,37 @@ const SoftUIGenerator = () => {
     const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`
     const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`
 
-
+    // TODO Refactor to one function onChangeColor
     const onChangeRed = (event) => {
+        // TODO Refactor to function which returns red value
         if (event.target.value > 255) {
-            setRed(255)
+            setRed(255).then(color => setHexColor(rgbToHex(hexColor, color, "Red")))
+
         } else if (event.target.value < 0) {
-            setRed(0)
+            setRed(0).then(color => setHexColor(rgbToHex(hexColor, color, "Red")))
         } else {
-            setRed(event.target.value)
+            console.log(rgbToHex(hexColor, event.target.value, "Red"))
+            setRed(event.target.value).then(color => setHexColor(rgbToHex(hexColor, color, "Red")))
         }
     };
     const onChangeGreen = (event) => {
+        // TODO Refactor to function which returns green value
         if (event.target.value > 255) {
-            setGreen(255)
+            setGreen(255).then(color => setHexColor(rgbToHex(hexColor, color, "Green")))
         } else if (event.target.value < 0) {
-            setGreen(0)
+            setGreen(0).then(color => setHexColor(rgbToHex(hexColor, color, "Green")))
         } else {
-            setGreen(event.target.value)
+            setGreen(event.target.value).then(color => setHexColor(rgbToHex(hexColor, color, "Green")))
         }
     };
     const onChangeBlue = (event) => {
+        // TODO Refactor to function which returns blue value
         if (event.target.value > 255) {
-            setBlue(255)
+            setBlue(255).then(color => setHexColor(rgbToHex(hexColor, color, "Blue")))
         } else if (event.target.value < 0) {
-            setBlue(0)
+            setBlue(0).then(color => setHexColor(rgbToHex(hexColor, color, "Blue")))
         } else {
-            setBlue(event.target.value)
+            setBlue(event.target.value).then(color => setHexColor(rgbToHex(hexColor, color, "Blue")))
         }
     };
     const onChangeBlur = (event) => {
@@ -143,15 +182,12 @@ const SoftUIGenerator = () => {
         }
     };
     const onChangeColor = (event) => {
-        setColor(event.target.value).then(value => {
-            console.log('x', value)
+        setHexColor(event.target.value).then(value => {
             if (value.indexOf("#") !== -1 ){
-                console.log('in IF', value)
                 const hexColorWithoutHash = value.replace(/#/,'')
-                setColor(`0x${hexColorWithoutHash}`).then(color => hexToRGB(color))
+                setHexColor(`${hexColorWithoutHash}`).then(color => hexToRGB(color))
             } else {
-                console.log('in else', value)
-                setColor(`0x${value}`).then(color => hexToRGB(color))
+                setHexColor(`${value}`).then(color => hexToRGB(color))
             }
         })
     };
@@ -217,7 +253,7 @@ const SoftUIGenerator = () => {
                                     <div className={'col-md-4'}>
                                         <Input type={'text'}
                                                onChange={onChangeColor}
-                                               value={color.replace(/0x/,'#')}
+                                               value={hexColor}
                                                placeholder={'#'}
                                                style={inputStyle} />
                                     </div>
