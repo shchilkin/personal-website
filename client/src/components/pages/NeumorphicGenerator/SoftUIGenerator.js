@@ -28,20 +28,18 @@ function useAsyncState(initialValue) {
 //rgb 0 9 62 night sky color
 
 const SoftUIGenerator = () => {
-    const [hexColor, setHexColor] = useAsyncState("ED2939");
-    const [darkFactor, setDarkFactor] = useState(0.85);
-    const [lightFactor, setLightFactor] = useState(1.15);
+    const [Red, setRed] = useAsyncState(204);
+    const [Green, setGreen] = useAsyncState(187);
+    const [Blue, setBlue] = useAsyncState(255);
 
-    const [Red, setRed] = useAsyncState(205);
-    const [Green, setGreen] = useAsyncState(237);
-    const [Blue, setBlue] = useAsyncState(206);
+    const [darkFactor, setDarkFactor] = useState(0.85);
+    const [lightFactor, setLightFactor] = useState(1.0);
+    const version = "v. 0.4"
 
     const [Blur, setBlur] = useState(30);
     const [Radius, setRadius] = useState(12);
 
     const font = fontColor(Red, Green, Blue)
-
-    // console.log('int, hex string', parseInt('ED2939',16))
 
     function hexToRGB(color) {
         if (color.length === 3) {
@@ -55,34 +53,34 @@ const SoftUIGenerator = () => {
             setBlue(parseInt(`${color.slice(4, 6)}`,16))
         }
     }
-    function rgbToHex(hexColor, colorValue, colorName) {
+    function rgbToHex(colorValue, colorName) {
+        function toHex(colorValue){
+            let color
+            if (colorValue <= 15) {
+                color = `0${Number(colorValue).toString(16).toUpperCase()}`
+            } else {
+                color = `${Number(colorValue).toString(16).toUpperCase()}`
+            }
+            return color;
+        }
+
         switch (colorName) {
             case 'Red':
-            case 'red':
-                let hexRed = Number(colorValue).toString(16);
-                if (Number(colorValue) <= 15)
-                    return `0${hexRed.toUpperCase()}${hexColor.slice(2,6)}`
-                 else
-                    return `${hexRed.toUpperCase()}${hexColor.slice(2,6)}`
+                    return `${toHex(Red)}${toHex(Green)}${toHex(Blue)}`
             case 'Green':
-            case 'green':
-                let hexGreen = Number(colorValue).toString(16);
-                if (Number(colorValue) <= 15)
-                    return `${hexColor.slice(0,2)}0${hexGreen.toUpperCase()}${hexColor.slice(4,6)}`
-                else
-                    return `${hexColor.slice(0,2)}${hexGreen.toUpperCase()}${hexColor.slice(4,6)}`
+                    return `${toHex(Red)}${toHex(Green)}${toHex(Blue)}`
             case 'Blue':
-            case 'blue':
-                let hexBlue = Number(colorValue).toString(16);
-                if (Number(colorValue) <= 15)
-                    return `${hexColor.slice(0,4)}0${hexBlue.toUpperCase()}`
-                else
-                    return `${hexColor.slice(0,4)}${hexBlue.toUpperCase()}`
+                    return `${toHex(Red)}${toHex(Green)}${toHex(Blue)}`
             default:
-                console.log('returned default case')
-                return hexColor
+                return `${toHex(Red)}${toHex(Green)}${toHex(Blue)}`
         }
     }
+
+    console.log('hex',`${rgbToHex(Red,"Red")}`)
+    // TODO get hex value from RGB conversion
+    const [hexColor, setHexColor] = useAsyncState(
+        `${rgbToHex(Red,"Red")}`
+    );
 
     function calculateShadows(Red, Green, Blue) {
         function calculateColor(color, factor){
@@ -134,33 +132,33 @@ const SoftUIGenerator = () => {
     const onChangeRed = (event) => {
         // TODO Refactor to function which returns red value
         if (event.target.value > 255) {
-            setRed(255).then(color => setHexColor(rgbToHex(hexColor, color, "Red")))
+            setRed(255).then(color => setHexColor(rgbToHex(color, "Red")))
 
         } else if (event.target.value < 0) {
-            setRed(0).then(color => setHexColor(rgbToHex(hexColor, color, "Red")))
+            setRed(0).then(color => setHexColor(rgbToHex(color, "Red")))
         } else {
             console.log(rgbToHex(hexColor, event.target.value, "Red"))
-            setRed(event.target.value).then(color => setHexColor(rgbToHex(hexColor, color, "Red")))
+            setRed(event.target.value).then(color => setHexColor(rgbToHex(color, "Red")))
         }
     };
     const onChangeGreen = (event) => {
         // TODO Refactor to function which returns green value
         if (event.target.value > 255) {
-            setGreen(255).then(color => setHexColor(rgbToHex(hexColor, color, "Green")))
+            setGreen(255).then(color => setHexColor(rgbToHex(color, "Green")))
         } else if (event.target.value < 0) {
-            setGreen(0).then(color => setHexColor(rgbToHex(hexColor, color, "Green")))
+            setGreen(0).then(color => setHexColor(rgbToHex( color, "Green")))
         } else {
-            setGreen(event.target.value).then(color => setHexColor(rgbToHex(hexColor, color, "Green")))
+            setGreen(event.target.value).then(color => setHexColor(rgbToHex(color, "Green")))
         }
     };
     const onChangeBlue = (event) => {
         // TODO Refactor to function which returns blue value
         if (event.target.value > 255) {
-            setBlue(255).then(color => setHexColor(rgbToHex(hexColor, color, "Blue")))
+            setBlue(255).then(color => setHexColor(rgbToHex(color, "Blue")))
         } else if (event.target.value < 0) {
-            setBlue(0).then(color => setHexColor(rgbToHex(hexColor, color, "Blue")))
+            setBlue(0).then(color => setHexColor(rgbToHex(color, "Blue")))
         } else {
-            setBlue(event.target.value).then(color => setHexColor(rgbToHex(hexColor, color, "Blue")))
+            setBlue(event.target.value).then(color => setHexColor(rgbToHex(color, "Blue")))
         }
     };
     const onChangeBlur = (event) => {
@@ -225,14 +223,13 @@ const SoftUIGenerator = () => {
                     <Link to='/' style={{color:'#ed2939'}}>
                         Back to the homepage
                     </Link>
-                    <h3>Soft-UI generator</h3>
-                    <h5>Version <Badge type={'small'}>0.3</Badge></h5>
+                    <p><h3>Soft-UI generator <Badge type={'small'}>{version}</Badge></h3></p>
                     <div className='row mt-4 mb-4' style={{marginRight:'0px', marginLeft:'0px'}}>
                         <div className={'col-md-6 mb-5'}>
                             <div
                                 className={'align-self-center'}
-                                style={containerStyle}>Soft UI container
-                            </div>
+                                style={containerStyle}
+                            />
                         </div>
                         <div className={'col-md-6'}>
                             <div style={{
@@ -319,21 +316,21 @@ const SoftUIGenerator = () => {
                                 </div>
                                 <div>
                                     Light shadow:{" "}
-                                    <Badge>{lighterShadows[0]}</Badge>
-                                    <Badge color={'Green'}>{lighterShadows[1]}</Badge>
-                                    <Badge color={'Blue'}>{lighterShadows[2]}</Badge>
+                                    <Badge type={'small'}>{lighterShadows[0]}</Badge>
+                                    <Badge type={'small'} color={'Green'}>{lighterShadows[1]}</Badge>
+                                    <Badge type={'small'} color={'Blue'}>{lighterShadows[2]}</Badge>
                                     {" "}
                                     Dark shadow:{" "}
-                                    <Badge>{darkerShadows[0]}</Badge>
-                                    <Badge color={'Green'}>{darkerShadows[1]}</Badge>
-                                    <Badge color={'Blue'}>{darkerShadows[2]}</Badge>
+                                    <Badge type={'small'} >{darkerShadows[0]}</Badge>
+                                    <Badge type={'small'} color={'Green'}>{darkerShadows[1]}</Badge>
+                                    <Badge type={'small'} color={'Blue'}>{darkerShadows[2]}</Badge>
                                 </div>
                                 <div>
                                     Other:{" "}
-                                    <Badge>Blur: {Blur}px</Badge>
-                                    <Badge>Radius: {Radius}px</Badge>
-                                    <Badge>Dark shadow: {darkFactor*100}%</Badge>
-                                    <Badge>Light shadow: {Math.round(lightFactor*100)}%</Badge>
+                                    <Badge type={'small'} color={'Cyan'}>Blur: {Blur}px</Badge>
+                                    <Badge type={'small'} color={'Cyan'}>Radius: {Radius}px</Badge>
+                                    <Badge type={'small'} color={'Cyan'}>Dark shadow: {darkFactor*100}%</Badge>
+                                    <Badge type={'small'} color={'Cyan'}>Light shadow: {Math.round(lightFactor*100)}%</Badge>
                                 </div>
                             </div>
                         </div>
