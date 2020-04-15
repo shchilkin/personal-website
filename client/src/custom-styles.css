@@ -543,7 +543,7 @@ select:-webkit-autofill:focus {
 
 .page{
     height: calc(100vh);
-    padding-top: 70px;
+    padding-top: 56px;
 }
 
 /*About page related css*/
