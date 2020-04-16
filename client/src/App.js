@@ -15,7 +15,7 @@ import findOnGithub       from './components/pages/smallProjects/FindOnGithub/Fi
 import AvatarGenerator    from "./components/pages/avatarGenerator/AvatarGenerator";
 import ProjectPlaceholder from "./components/pages/smallProjects/projectPlaceholder.component";
 import Navbar from "./components/Layout/Navbar/Navbar.component";
-import SoftUIGenerator from "./components/pages/NeumorphicGenerator/SoftUIGenerator";
+import SoftUIGenerator from "./components/pages/SoftUIGenerator/SoftUIGenerator";
 
 const App = () => {
   if (localStorage.token) {
