@@ -29,9 +29,19 @@ function useAsyncState(initialValue) {
 //rgb 0 9 62 night sky color
 
 const SoftUIGenerator = () => {
+    const [color, setColor] = useAsyncState({
+        Red:204,
+        Green: 187,
+        Blue: 255,
+    })
+
+    console.log('color object', color);
     const [Red, setRed] = useAsyncState(204);
     const [Green, setGreen] = useAsyncState(187);
     const [Blue, setBlue] = useAsyncState(255);
+    // TODO get hex value from RGB conversion
+    const [hexColor, setHexColor] = useAsyncState(
+        `${rgbToHex(Red,"Red")}`);
 
     const [codeBG, setCodeBG] = useState("#121212")
     const [codeFontColor, setCodeFontColor] = useState('#f0f0f0')
@@ -82,10 +92,6 @@ const SoftUIGenerator = () => {
         }
     }
 
-    // TODO get hex value from RGB conversion
-    const [hexColor, setHexColor] = useAsyncState(
-        `${rgbToHex(Red,"Red")}`
-    );
 
     function calculateShadows(Red, Green, Blue) {
         function calculateColor(color, factor){
