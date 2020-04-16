@@ -220,6 +220,25 @@
     color: black;
 }
 
+.Light{
+    background-color: #F0F0F0;
+    color: #121212;
+}
+
+.Light-Dark {
+    background-color: #bfbfbf;
+    color: #121212;
+}
+
+.Dark{
+    background-color: #121212;
+    color: #F0F0F0;
+}
+.Dark-Dark {
+    background-color: #4b4b4b;
+    color: #F0F0F0;
+}
+
 /* Button component related css */
 
 

@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
-import Input from "../../Layout/Inputs/Input.component";
+import SoftUIGenButton from "./SoftUiGenerator_components/SoftUIGenButton";
+import SoftUIGenInput from "./SoftUiGenerator_components/SoftUIGenInput";
+import Badge from "../../Layout/Badge/Badge.component";
 
 
 function fontColor(red, green, blue) {
@@ -31,11 +33,9 @@ const SoftUIGenerator = () => {
     const [Green, setGreen] = useAsyncState(187);
     const [Blue, setBlue] = useAsyncState(255);
 
-    const [codeBG, setCodeBB] = useState("#121212")
+    const [codeBG, setCodeBG] = useState("#121212")
     const [codeFontColor, setCodeFontColor] = useState('#f0f0f0')
 
-    const [buttonActive, setButtonActive] = useState(false);
-    const [buttonHover, setButtonHover] = useState(false);
     const [hexOrRGBmode, setHexOrRGBmode] = useState(true);
 
     const [darkFactor, setDarkFactor] = useState(0.85);
@@ -44,8 +44,7 @@ const SoftUIGenerator = () => {
     const [Blur, setBlur] = useState(30);
     const [Radius, setRadius] = useState(12);
     const [shadowLength, setShadowLength] = useState(5);
-
-    const font = fontColor(Red, Green, Blue)
+    const [font, setFont] = useState(fontColor(Red, Green, Blue));
 
     function hexToRGB(color) {
         if (color.length === 3) {
@@ -126,6 +125,14 @@ const SoftUIGenerator = () => {
         }
     }
 
+    function changeFontColor(font) {
+        if (font === '#000' || font ==='#000000'){
+            setFont('#FFF')
+        } else if (font === '#FFF' || font ==='#FFFFFF'){
+            setFont('#000')
+        } else setFont(font)
+    }
+
     const shadows = calculateShadows(Red, Green, Blue);
     const lighterShadows = shadows.ligherShadowArray;
     const darkerShadows = shadows.darkerShadowArray;
@@ -137,13 +144,13 @@ const SoftUIGenerator = () => {
     // TODO Refactor to one function onChangeColor
     const onChangeRed = (event) => {
         // TODO improve code (to many repeats)
-        if (fontColor(Red, Green, Blue) === "#000"){
-            setCodeBB('#121212')
+        setFont(fontColor(Red, Green, Blue))
+        if (fontColor(Red, Green, Blue) === "#000" || fontColor(Red, Green, Blue) === "#000000"){
+            setCodeBG('#121212')
             setCodeFontColor('#f0f0f0')
         }
-
-        if (fontColor(Red, Green, Blue) === "#FFF"){
-            setCodeBB('#F0F0F0')
+        if (fontColor(Red, Green, Blue) === "#FFF" || fontColor(Red, Green, Blue) === "#FFFFFF"){
+            setCodeBG('#FFFFFF')
             setCodeFontColor('#121212')
         }
 
@@ -154,19 +161,19 @@ const SoftUIGenerator = () => {
         } else if (event.target.value < 0) {
             setRed(0).then(color => setHexColor(rgbToHex(color, "Red")))
         } else {
-            console.log(rgbToHex(hexColor, event.target.value, "Red"))
             setRed(event.target.value).then(color => setHexColor(rgbToHex(color, "Red")))
         }
     };
     const onChangeGreen = (event) => {
+        setFont(fontColor(Red, Green, Blue))
+
         // TODO improve code (to many repeats)
-        if (fontColor(Red, Green, Blue) === "#000"){
-            setCodeBB('#121212')
+        if (fontColor(Red, Green, Blue) === "#000" || fontColor(Red, Green, Blue) === "#000000"){
+            setCodeBG('#121212')
             setCodeFontColor('#f0f0f0')
         }
-
-        if (fontColor(Red, Green, Blue) === "#FFF"){
-            setCodeBB('#CCCCCC')
+        if (fontColor(Red, Green, Blue) === "#FFF" || fontColor(Red, Green, Blue) === "#FFFFFF"){
+            setCodeBG('#FFFFFF')
             setCodeFontColor('#121212')
         }
         // TODO Refactor to function which returns green value
@@ -179,14 +186,14 @@ const SoftUIGenerator = () => {
         }
     };
     const onChangeBlue = (event) => {
+        setFont(fontColor(Red, Green, Blue))
         // TODO improve code (to many repeats)
-        if (fontColor(Red, Green, Blue) === "#000"){
-            setCodeBB('#121212')
+        if (fontColor(Red, Green, Blue) === "#000" || fontColor(Red, Green, Blue) === "#000000"){
+            setCodeBG('#121212')
             setCodeFontColor('#f0f0f0')
         }
-
-        if (fontColor(Red, Green, Blue) === "#FFF"){
-            setCodeBB('#CCCCCC')
+        if (fontColor(Red, Green, Blue) === "#FFF" || fontColor(Red, Green, Blue) === "#FFFFFF"){
+            setCodeBG('#FFFFFF')
             setCodeFontColor('#121212')
         }
 
@@ -228,14 +235,14 @@ const SoftUIGenerator = () => {
         }
     };
     const onChangeColor = (event) => {
+        setFont(fontColor(Red, Green, Blue))
         // TODO improve code (to many repeats)
-        if (fontColor(Red, Green, Blue) === "#000"){
-            setCodeBB('#121212')
+        if (fontColor(Red, Green, Blue) === "#000" || fontColor(Red, Green, Blue) === "#000000"){
+            setCodeBG('#121212')
             setCodeFontColor('#f0f0f0')
         }
-
-        if (fontColor(Red, Green, Blue) === "#FFF"){
-            setCodeBB('#CCCCCC')
+        if (fontColor(Red, Green, Blue) === "#FFF" || fontColor(Red, Green, Blue) === "#FFFFFF"){
+            setCodeBG('#FFFFFF')
             setCodeFontColor('#121212')
         }
 
@@ -255,7 +262,16 @@ const SoftUIGenerator = () => {
         setDarkFactor(calculateFactor(event.target.value))
     };
 
-   const containerStyle = {
+    const componentProps = {
+        mainColor:mainColor,
+        font:font,
+        Blur:Blur,
+        shadowLength:shadowLength,
+        darkerShadow:darkerShadow,
+        lighterShadow:lighterShadow
+    }
+
+    const containerStyle = {
        width:'100%',
        height:'300px',
        minHeight:'100px',
@@ -268,104 +284,57 @@ const SoftUIGenerator = () => {
        borderRadius: `${Radius}px`
     }
 
-    const inputStyle = {
-       default: {
-           borderColor: mainColor,
-           backgroundColor: mainColor,
-           color: font,
-           boxShadow: `inset 2px 2px 10px 0 ${darkerShadow}, inset -2px -2px 10px 0 ${lighterShadow}`
-       },
-        active: {
-            borderColor: mainColor,
-            backgroundColor: mainColor,
-            color: font,
-            boxShadow: `2px 2px 10px 0 ${darkerShadow}, -2px -2px 10px 0 ${lighterShadow}`
-        }
-    }
-
-    const buttonStyle = {
-       default:{
-           width: "100%",
-           backgroundColor:mainColor,
-           transition: 'background-color .5s, color .5s',
-           border:`1px solid ${mainColor}`,
-           color:font,
-           boxShadow: `${shadowLength}px ${shadowLength}px ${Blur}px 0 ${darkerShadow},
-                   -${shadowLength}px -${shadowLength}px ${Blur}px 0 ${lighterShadow}`,
-           borderRadius: '12px',
-           padding: '.375rem .75rem',
-       },
-       active:{
-           width: "100%",
-           backgroundColor:mainColor,
-           transition: 'background-color .5s, color .5s',
-           border:`1px solid ${mainColor}`,
-           color:font,
-           boxShadow: `inset ${shadowLength}px ${shadowLength}px ${Blur}px 0 ${darkerShadow},
-                   inset -${shadowLength}px -${shadowLength}px ${Blur}px 0 ${lighterShadow}`,
-           borderRadius: '12px',
-           padding: '.375rem .75rem',
-       },
-       hover:{
-           width: "100%",
-           border:`1px solid ${mainColor}`,
-           transition: 'background-color .5s, color .5s',
-           borderRadius: '12px',
-           padding: '.375rem .75rem',
-           backgroundColor:font,
-           color:mainColor
-        }
-    }
-
-    function setButtonStyle() {
-       if (buttonActive){
-           return buttonStyle.active
-       } else if (buttonHover) {
-           return buttonStyle.hover
-       } else return buttonStyle.default
-    }
-
     const hexInput = (
         <div className={'row pt-1'}>
             <div className={'col-12'}>
-                <h6>#
-                    <span style={{color:'#ed2939', fontWeight:'bold'}}>FF</span>
-                    <span style={{color:'#0B6623', fontWeight:'bold'}}>FF</span>
-                    <span style={{color:'#0f52Ba', fontWeight:'bold'}}>FF</span></h6>
-                <Input type={'text'}
-                       onChange={onChangeColor}
-                       value={hexColor}
-                       placeholder={'#000000'}
-                       style={inputStyle.default} />
+                <h6>
+                    <Badge color={'Light'}>#
+                        <span style={{color:'#ed2939', fontWeight:'bold'}}>FF</span>
+                        <span style={{color:'#0B6623', fontWeight:'bold'}}>FF</span>
+                        <span style={{color:'#0f52Ba', fontWeight:'bold'}}>FF</span>
+                    </Badge>
+                </h6>
+                <SoftUIGenInput
+                    onChange={onChangeColor}
+                    value={hexColor}
+                    placeholder={'#000000'}
+                    props={componentProps}
+                />
             </div>
         </div>
     )
 
     const rgbInput = (
-        <div className={'row'}>
+        <div className={'row pt-1'}>
             <div className={'col-4'}>
-                <h6 style={{color:'#ed2939', fontWeight:'bold'}}>Red</h6>
-                <Input type={'number'}
-                       onChange={onChangeRed}
-                       value={Red}
-                       placeholder={Red}
-                       style={inputStyle.default}/>
+                <h6><Badge color={'Light'}><span style={{color:'#ed2939'}}>Red</span></Badge></h6>
+                <SoftUIGenInput
+                    type={'number'}
+                    onChange={onChangeRed}
+                    value={Red}
+                    placeholder={255}
+                    props={componentProps}
+                />
             </div>
             <div className={'col-4'}>
-                <h6 style={{color:'#0B6623', fontWeight:'bold'}}>Green</h6>
-                <Input type={'number'}
-                       onChange={onChangeGreen}
-                       value={Green}
-                       placeholder={Green}
-                       style={inputStyle.default} />
+                <h6><Badge color={'Light'}><span style={{color:'#0B6623'}}>Green</span></Badge></h6>
+                <SoftUIGenInput
+                    type={'number'}
+                    onChange={onChangeGreen}
+                    value={Green}
+                    placeholder={255}
+                    props={componentProps}
+                />
             </div>
             <div className={'col-4'}>
-                <h6 style={{color:'#0f52Ba', fontWeight:'bold'}} >Blue</h6>
-                <Input type={'number'}
-                       onChange={onChangeBlue}
-                       value={Blue}
-                       placeholder={Blue}
-                       style={inputStyle.default} />
+                <h6><Badge color={'Light'}><span style={{color:'#0f52Ba'}}>Blue</span></Badge></h6>
+                <SoftUIGenInput
+                    type={'number'}
+                    onChange={onChangeBlue}
+                    value={Blue}
+                    placeholder={255}
+                    props={componentProps}
+                />
             </div>
         </div>
     )
@@ -398,30 +367,48 @@ const SoftUIGenerator = () => {
                                     />
                                 </div>
                             </div>
+                            {/*Button showcase*/}
                             <div className={'row'}>
-                                <div className={'col-12'}><h6>Button</h6>
+                                <div className={'col-12'}><h6 style={{fontWeight:'bold'}}>Button</h6>
                                     <div className={'row'}>
                                         <div className={'col-md-4 mb-3'}>
-                                            <button style={buttonStyle.default}>Button</button>
+                                            <SoftUIGenButton
+                                                props={componentProps}
+                                                state={'default'}
+                                                children={'Button'}
+                                            />
                                         </div>
                                         <div className={'col-md-4 mb-3'}>
-                                            <button style={buttonStyle.active}>Active</button>
+                                            <SoftUIGenButton
+                                                state={'active'}
+                                                props={componentProps}
+                                                children={'Active'}/>
                                         </div>
                                         <div className={'col-md-4 mb-3'}>
-                                            <button style={buttonStyle.hover}>Hover</button>
+                                            <SoftUIGenButton
+                                                state={'hover'}
+                                                props={componentProps}
+                                                children={'hover'}/>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            {/*Input showcase*/}
                             <div className={'row'}>
                                 <div className={'col-12'}>
-                                    <h6>Input</h6>
+                                    <h6 style={{fontWeight:'bold'}}>Input</h6>
                                     <div className={'row'}>
                                         <div className={'col-md-6 mb-3'}>
-                                            <Input  style={inputStyle.default} placeholder={'Input field'}/>
+                                            <SoftUIGenInput
+                                                props={componentProps}
+                                                state={'blur'}
+                                                placeholder={'Input on Blur'}/>
                                         </div>
                                         <div className={'col-md-6 mb-3'}>
-                                            <Input style={inputStyle.active} placeholder={'Active'}/>
+                                            <SoftUIGenInput
+                                                props={componentProps}
+                                                state={'focus'}
+                                                placeholder={'Input on Focus'}/>
                                         </div>
                                     </div>
                                 </div>
@@ -440,69 +427,55 @@ const SoftUIGenerator = () => {
                                 className={'pt-3 pb-3 pl-3 pr-3'}>
                                 <div className={'row mb-2'}>
                                     <div className={'col-6'}>
-                                        <button
-                                            onMouseDown={() => setButtonActive(true)}
-                                            onMouseUp={() => setButtonActive(false)}
-                                            onMouseEnter={() => setButtonHover(true)}
-                                            onMouseLeave={() => setButtonHover(false)}
-                                            style={setButtonStyle()}
+                                        <SoftUIGenButton
+                                            props={componentProps}
+                                            children={hexOrRGBmode ? 'Hexadecimal' : 'RGB'}
                                             onClick={() => setHexOrRGBmode(!hexOrRGBmode)}
-                                            >{hexOrRGBmode ? 'Hexadecimal' : 'RGB'}</button>
+                                        />
                                     </div>
                                     <div className={'col-6'}>
-                                        <button
-                                            onMouseDown={() => setButtonActive(true)}
-                                            onMouseUp={() => setButtonActive(false)}
-                                            onMouseEnter={() => setButtonHover(true)}
-                                            onMouseLeave={() => setButtonHover(false)}
-                                            style={setButtonStyle()}
-                                        >{hexOrRGBmode ? 'Hexadecimal' : 'RGB'}</button>
+                                        <SoftUIGenButton
+                                            onClick={(() => changeFontColor(font))}
+                                            props={componentProps}
+                                            children={"Change font color"}
+                                        />
                                     </div>
                                 </div>
                                 {hexOrRGBmode ? hexInput : rgbInput}
                                 <div className={'row'}>
                                     <div className={'col-md-4'}>
                                         <h6>Blur</h6>
-                                        <Input type={'number'} onChange={onChangeBlur}
-                                               value={Blur}
-                                               placeholder={'30'}
-                                               style={inputStyle.default} />
+                                        <SoftUIGenInput type={'number'} onChange={onChangeBlur}
+                                               value={Blur} placeholder={'30'} props={componentProps} />
                                     </div>
                                     <div className={'col-md-4'}>
                                         <h6>Radius</h6>
-                                        <Input type={'number'}
+                                        <SoftUIGenInput type={'number'}
                                                onChange={onChangeRadius}
-                                               value={Radius}
-                                               placeholder={'12'}
-                                               style={inputStyle.default} />
+                                               value={Radius} placeholder={'12'} props={componentProps} />
                                     </div>
                                     <div className={'col-md-4'}>
                                         <h6>Shadow Length</h6>
-                                        <Input type={'number'}
+                                        <SoftUIGenInput type={'number'}
                                                onChange={onChangeShadowLength}
-                                               value={shadowLength}
-                                               placeholder={'5px'}
-                                               style={inputStyle.default} />
+                                               value={shadowLength} placeholder={'5px'} props={componentProps} />
                                     </div>
                                     <div className={'col-md-6'}>
                                         <h6>Dark Shadow</h6>
-                                        <Input type={'number'}
-                                               onChange={onChangeDarkFactor}
-                                               value={Math.round(darkFactor*100)}
-                                               placeholder={'Radius'}
-                                               style={inputStyle.default} />
+                                        <SoftUIGenInput type={'number'}
+                                                    onChange={onChangeDarkFactor} value={Math.round(darkFactor*100)}
+                                                        placeholder={'Radius'} props={componentProps} />
                                     </div>
                                     <div className={'col-md-6'}>
                                         <h6>Light Shadow</h6>
-                                        <Input type={'number'}
+                                        <SoftUIGenInput type={'number'}
                                                onChange={onChangeLightFactor}
                                                value={Math.round(lightFactor*100)}
-                                               placeholder={'Radius'}
-                                               style={inputStyle.default} />
+                                               placeholder={'Radius'} props={componentProps}/>
                                     </div>
                                 </div>
                                 <div>
-                                    <pre className={'pt-3 pb-3 pr-1 pl-3'} style={{backgroundColor:codeBG,borderRadius:'12px',boxShadow:'black 2px 2px 10px 0px inset, black -2px -2px 10px 0px inset'}}>
+                                    <pre className={'pt-3 pb-3 pr-1 pl-3'} style={{backgroundColor:codeBG, borderRadius:'12px',boxShadow:`${codeBG} 2px 2px 10px 0px inset, ${codeBG} -2px -2px 10px 0px inset`}}>
                                         <code style={{fontSize:'10px',color:codeFontColor}}>
                                             <span style={{color:'#ed2939'}} >background:</span> <span style={{color:`#${hexColor}`}}>{hexOrRGBmode ? `#${hexColor}` : `rgb(${Red}, ${Green}, ${Blue})`}</span>;<br/>
                                             <span style={{color:'#ed2939'}}>border-radius:</span> {Radius}px;<br/>
