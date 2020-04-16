@@ -48,7 +48,7 @@ const Navbar = () => {
                         <a className="nav-link" href={'#StudiesAndProjects'}>About</a>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to={'/neumorphic'}>Soft UI generator</Link>
+                        <Link className="nav-link" to={'/SoftUI-generator'}>Soft UI generator</Link>
                     </li>
                 </ul>
                 <button className={'btn'} onClick={changeTheme} >
