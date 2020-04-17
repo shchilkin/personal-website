@@ -52,18 +52,22 @@ const SoftUIGenerator = () => {
 
     function hexToRGB(hexColor) {
         if (hexColor.length === 3) {
-            setColor({
+            let newRGB = {
                 Red: parseInt(`${hexColor.slice(0, 1)}${hexColor.slice(0, 1)}`,16),
                 Green:parseInt(`${hexColor.slice(1, 2)}${hexColor.slice(1, 2)}`,16),
                 Blue:parseInt(`${hexColor.slice(2, 3)}${hexColor.slice(2, 3)}`,16)
-            })
+            }
+            setColor(newRGB)
+            return newRGB
         }
         if (hexColor.length === 6){
-            setColor({
+            let newRGB = {
                 Red:parseInt(`${hexColor.slice(0, 2)}`,16),
                 Green:parseInt(`${hexColor.slice(2, 4)}`,16),
                 Blue:parseInt(`${hexColor.slice(4, 6)}`,16)
-            })
+            }
+            setColor(newRGB)
+            return newRGB
         }
     }
 
@@ -167,22 +171,23 @@ const SoftUIGenerator = () => {
             case "Red":
                 setColor({...color, Red: numberRangeCheck(event.target.value)})
                     .then((color) => setFont(fontColor(color.Red, color.Green, color.Blue)))
-                    .then(rgbToHex)
+                    .then(rgbToHex).then(hex => setHexColor(hex))
                 break
             case "Green":
                 setColor({...color, Green: numberRangeCheck(event.target.value)})
                     .then((color) => setFont(fontColor(color.Red, color.Green, color.Blue)))
-                    .then(rgbToHex)
+                    .then(rgbToHex).then(hex => setHexColor(hex))
                 break
             case "Blue":
                 setColor({...color, Blue: numberRangeCheck(event.target.value)})
                     .then((color) => setFont(fontColor(color.Red, color.Green, color.Blue)))
-                    .then(rgbToHex)
+                    .then(rgbToHex).then(hex => setHexColor(hex))
                 break
             case "Hex":
                 let hexString = (event.target.value).replace(/#/, '')
                 setHexColor(`${hexString}`)
-                    .then(color => hexToRGB(color))
+                    .then(color => hexToRGB(color)).then(rgb => {
+                        if(rgb) {setFont(fontColor(rgb.Red, rgb.Green, rgb.Blue))}})
                 break
         }
     }
@@ -228,7 +233,7 @@ const SoftUIGenerator = () => {
         <div className={'row pt-1'}>
             <div className={'col-12'}>
                 <h6>
-                    <Badge color={'Light'}>#
+                    <Badge style={{backgroundColor:darkerShadow}}>#
                         <span style={{color:'#ed2939', fontWeight:'bold'}}>FF</span>
                         <span style={{color:'#0B6623', fontWeight:'bold'}}>FF</span>
                         <span style={{color:'#0f52Ba', fontWeight:'bold'}}>FF</span>
@@ -247,7 +252,11 @@ const SoftUIGenerator = () => {
     const rgbInput = (
         <div className={'row pt-1'}>
             <div className={'col-4'}>
-                <h6><Badge color={'Light'}><span style={{color:'#ed2939'}}>Red</span></Badge></h6>
+                <h6>
+                    <Badge style={{backgroundColor:darkerShadow}}>
+                        <span style={{color:'#ed2939'}}>Red</span>
+                    </Badge>
+                </h6>
                 <SoftUIGenInput
                     type={'number'}
                     onChange={event => onChangeColor(event,"Red")}
@@ -257,7 +266,11 @@ const SoftUIGenerator = () => {
                 />
             </div>
             <div className={'col-4'}>
-                <h6><Badge color={'Light'}><span style={{color:'#0B6623'}}>Green</span></Badge></h6>
+                <h6>
+                    <Badge style={{backgroundColor:darkerShadow}}>
+                        <span style={{color:'#0B6623'}}>Green</span>
+                    </Badge>
+                </h6>
                 <SoftUIGenInput
                     type={'number'}
                     onChange={event => onChangeColor(event,"Green")}
@@ -267,7 +280,11 @@ const SoftUIGenerator = () => {
                 />
             </div>
             <div className={'col-4'}>
-                <h6><Badge color={'Light'}><span style={{color:'#0f52Ba'}}>Blue</span></Badge></h6>
+                <h6>
+                    <Badge style={{backgroundColor:darkerShadow}}>
+                        <span style={{color:'#0f52Ba'}}>Blue</span>
+                    </Badge>
+                </h6>
                 <SoftUIGenInput
                     type={'number'}
                     onChange={event => onChangeColor(event,"Blue")}
