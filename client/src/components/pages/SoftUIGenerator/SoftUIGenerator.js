@@ -7,18 +7,6 @@ import ColorPickerSketch from "./SoftUiGenerator_components/colorPickerSketch";
 import ThemeContext from "../../../contexts/theme/ThemeContext";
 import { toHex } from "./Functions.SoftUIGenerator";
 
-
-function useAsyncState(initialValue) {
-    // https://sung.codes/blog/2018/12/07/setting-react-hooks-states-in-a-sync-like-manner/
-    const [value, setValue] = useState(initialValue);
-    const setter = x =>
-        new Promise(resolve => {
-            setValue(x);
-            resolve(x);
-        });
-    return [value, setter];
-}
-
 //rgb 0 9 62 night sky color
 // 1 161 255 rgb blue
 
@@ -31,88 +19,30 @@ const SoftUIGenerator = () => {
         shadowBlur, shadowLength,
         borderRadius: borderRadius,
         darkShadowFactor, lightShadowFactor,
-        changeColor
+        changeColor,
+        codeFontColor,
+        changeShadowBlur,
+        changeBorderRadius,
+        changeShadowLength,
+        codeBackgroundColor,
+        changeDarkShadowFactor,
+        changeLightShadowFactor,
     } = themeContext;
 
     const lighterShadows = shadows.ligherShadowArray;
     const darkerShadows = shadows.darkerShadowArray;
-
-    // TODO remove useState hooks hence all data is in state now
-    const [Blur, setBlur] = useState(shadowBlur);
-    const [color, setColor] = useAsyncState(colorRGB);
-    const [Radius, setRadius] = useState(borderRadius);
-    const [_shadowLength, setShadowLength] = useState(shadowLength);
-    const [_darkShadowFactor, setDarkShadowFactor] = useState(darkShadowFactor);
-    const [_lightShadowFactor, setLightShadowFactor] = useState(lightShadowFactor);
-
-    // Taken from theme Context
     const mainColor = `rgb(${colorRGB.Red}, ${colorRGB.Green}, ${colorRGB.Blue})`
     const lighterShadow = `rgb(${lighterShadows[0]}, ${lighterShadows[1]}, ${lighterShadows[2]})`
     const darkerShadow = `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})`
 
-
-
-    const [codeBG, setCodeBG] = useState("#121212")
-    const [codeFontColor, setCodeFontColor] = useState('#f0f0f0')
-
     // True for Hex and False for RGB
     const [colorInputMode, setColorInputMode] = useState(true);
-
-    function calculateShadowFactor(number) {
-        let factor = number / 100
-        if (factor > 2) {
-            return 2
-        } else if (factor < 0) {
-            return 0
-        } else {
-            return factor
-        }
-    }
-
-    // function changeFontColor(font) {
-    //     if (font === '#000' || font ==='#000000'){
-    //         setFont('#FFF')
-    //     } else if (font === '#FFF' || font ==='#FFFFFF'){
-    //         setFont('#000')
-    //     } else setFont(font)
-    // }
-
-
-
-    const onChangeBlur = (event) => {
-        if (event.target.value > 300) {
-            setBlur(300)
-        } else if (event.target.value < 0) {
-            setBlur(0)
-        } else {
-            setBlur(event.target.value)
-        }
-    };
-    const onChangeRadius = (event) => {
-        if (event.target.value > 200) {
-            setRadius(200)
-        } else if (event.target.value < 0) {
-            setRadius(0)
-        } else {
-            setRadius(event.target.value)
-        }
-    };
+    const onChangeBlur = (event) => changeShadowBlur(event.target.value)
+    const onChangeRadius = (event) => changeBorderRadius(event.target.value)
     const onChangeColor = (event, hexOrRGBColorName) => changeColor(hexOrRGBColorName, event.target.value);
-    const onChangeShadowLength = (event) => {
-        if (event.target.value > 150) {
-            setShadowLength(150)
-        } else if (event.target.value < 0) {
-            setShadowLength(0)
-        } else {
-            setShadowLength(event.target.value)
-        }
-    };
-    const onChangeLightShadowFactor = (event) => {
-        setLightShadowFactor(calculateShadowFactor(event.target.value))
-    };
-    const onChangeDarkShadowFactor = (event) => {
-        setDarkShadowFactor(calculateShadowFactor(event.target.value))
-    };
+    const onChangeShadowLength = (event) => changeShadowLength(event.target.value)
+    const onChangeLightShadowFactor = (event) => changeLightShadowFactor(event.target.value)
+    const onChangeDarkShadowFactor = (event) => changeDarkShadowFactor(event.target.value)
 
     const componentProps = {
         mainColor:mainColor,
@@ -203,6 +133,7 @@ const SoftUIGenerator = () => {
         </div>
     )
 
+    console.log('codeBackgroundColor',codeBackgroundColor)
     return(
         <div className={"page"}>
             <div className={'container-fluid pb-5'} style={{minHeight:'100vh',backgroundColor:mainColor, color:font}}>
@@ -335,30 +266,30 @@ const SoftUIGenerator = () => {
                                         <h6>Dark Shadow</h6>
                                         <SoftUIGenInput type={'number'}
                                                     onChange={onChangeDarkShadowFactor} value={Math.round(darkShadowFactor*100)}
-                                                        placeholder={'Radius'} props={componentProps} />
+                                                        placeholder={'dark shadow factor'} props={componentProps} />
                                     </div>
                                     <div className={'col-md-6'}>
                                         <h6>Light Shadow</h6>
                                         <SoftUIGenInput type={'number'}
                                                onChange={onChangeLightShadowFactor}
                                                value={Math.round(lightShadowFactor*100)}
-                                               placeholder={'Radius'} props={componentProps}/>
+                                               placeholder={'light shadow factor'} props={componentProps}/>
                                     </div>
                                 </div>
                                 <div>
-                                    <pre className={'pt-3 pb-3 pr-1 pl-3'} style={{backgroundColor:codeBG, borderRadius:'12px',boxShadow:`${codeBG} 2px 2px 10px 0px inset, ${codeBG} -2px -2px 10px 0px inset`}}>
+                                    <pre className={'pt-3 pb-3 pr-1 pl-3'} style={{backgroundColor:codeBackgroundColor, borderRadius:'12px',boxShadow:`${codeBackgroundColor} 2px 2px 10px 0px inset, ${codeBackgroundColor} -2px -2px 10px 0px inset`}}>
                                         <code style={{fontSize:'10px',color:codeFontColor}}>
-                                            <span style={{color:'#ed2939'}} >background:</span> <span style={{color:`rgb(${colorRGB.Red}, ${colorRGB.Green}, ${colorRGB.Blue})`}}>{colorInputMode ? `#${colorHEX}` : `rgb(${colorRGB.Red}, ${colorRGB.Green}, ${colorRGB.Blue})`}</span>;<br/>
+                                            <span style={{color:'#ed2939'}} >background:</span> <span style={{fontWeight:'bold'}}>{colorInputMode ? `#${colorHEX}` : `rgb(${colorRGB.Red}, ${colorRGB.Green}, ${colorRGB.Blue})`}</span>;<br/>
                                             <span style={{color:'#ed2939'}}>border-radius:</span> {borderRadius}px;<br/>
                                             <span style={{color:'#ed2939'}}>box-shadow:</span> {shadowLength}px {shadowLength}px {shadowBlur}px 0
-                                            {" "}<span style={{color:darkerShadow}}>
+                                            {" "}<span style={{fontWeight:'bold'}}>
                                                 {colorInputMode ?
                                                     `#${toHex(darkerShadows[0])}${toHex(darkerShadows[1])}${toHex(darkerShadows[2])}`
                                                     :
                                                     `rgb(${darkerShadows[0]}, ${darkerShadows[1]}, ${darkerShadows[2]})` }</span>,
                                             <br/>
                                             {"            "}-{shadowLength}px -{shadowLength}px {shadowBlur}px 0
-                                            {" "}<span style={{color:lighterShadow}}>
+                                            {" "}<span style={{fontWeight:'bold'}}>
                                                 {colorInputMode ?
                                                     `#${toHex(lighterShadows[0])}${toHex(lighterShadows[1])}${toHex(lighterShadows[2])}`
                                                     :

@@ -3,7 +3,12 @@ import ThemeContext from './ThemeContext';
 import ThemeReducer from './ThemeReducer';
 import {
     CHANGE_COLOR,
-    CHANGE_THEME
+    CHANGE_THEME,
+    CHANGE_SHADOW_BLUR,
+    CHANGE_BORDER_RADIUS,
+    CHANGE_SHADOW_LENGTH,
+    CHANGE_DARK_SHADOW_FACTOR,
+    CHANGE_LIGHT_SHADOW_FACTOR
 } from '../types';
 import {
     calculateShadows,
@@ -67,7 +72,8 @@ const  ThemeState = props => {
         shadowLength: 5,
         borderRadius: 12,
         darkShadowFactor: .85,
-        lightShadowFactor: 1.05
+        lightShadowFactor: 1.05,
+        codeBackgroundColor: "#AD9FD9"
     };
 
     //  Calculate hexadecimal value of the color
@@ -84,6 +90,12 @@ const  ThemeState = props => {
         initialState.Blue
     );
 
+    initialState.codeFontColor = fontColor(
+        initialState.Red,
+        initialState.Green,
+        initialState.Blue
+    );
+
     // Calculate shadows
     initialState.shadows = calculateShadows(
         initialState.Red,
@@ -92,7 +104,6 @@ const  ThemeState = props => {
         initialState.lightShadowFactor,
         initialState.darkShadowFactor
     );
-
 
     const [state, dispatch] = useReducer(ThemeReducer, initialState);
 
@@ -111,10 +122,38 @@ const  ThemeState = props => {
         });
     };
 
-    const changeBlur = (blurValue) => {
+    const changeShadowBlur = (blurValue) => {
         dispatch({
-            type: CHANGE_COLOR,
+            type: CHANGE_SHADOW_BLUR,
             payload: blurValue
+        });
+    };
+
+    const changeBorderRadius = (borderRadius) => {
+        dispatch({
+            type: CHANGE_BORDER_RADIUS,
+            payload: borderRadius
+        });
+    };
+
+    const changeShadowLength = (shadowLength) => {
+        dispatch({
+            type: CHANGE_SHADOW_LENGTH,
+            payload: shadowLength
+        });
+    };
+
+    const changeDarkShadowFactor = (darkShadowFactor) => {
+        dispatch({
+            type: CHANGE_DARK_SHADOW_FACTOR,
+            payload: darkShadowFactor
+        });
+    };
+
+    const changeLightShadowFactor = (lightShadowFactor) => {
+        dispatch({
+            type: CHANGE_LIGHT_SHADOW_FACTOR,
+            payload: lightShadowFactor
         });
     };
 
@@ -123,6 +162,11 @@ const  ThemeState = props => {
             changeTheme,
             changeColor,
             changeBackground,
+            changeShadowBlur,
+            changeBorderRadius,
+            changeShadowLength,
+            changeDarkShadowFactor,
+            changeLightShadowFactor,
             font: state.font,
             shadows: state.shadows,
             colorRGB: {
@@ -133,10 +177,12 @@ const  ThemeState = props => {
             colorHEX: state.hexColor,
             darkMode: state.darkMode,
             shadowBlur: state.shadowBlur,
+            codeFontColor: state.codeFontColor,
             shadowLength: state.shadowLength,
             borderRadius: state.borderRadius,
             darkShadowFactor: state.darkShadowFactor,
             lightShadowFactor: state.lightShadowFactor,
+            codeBackgroundColor: state.codeBackgroundColor
         }}
         >
             {props.children}
