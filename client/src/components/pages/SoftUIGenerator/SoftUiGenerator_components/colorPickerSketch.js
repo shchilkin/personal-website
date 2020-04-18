@@ -28,18 +28,29 @@ class ColorPickerSketch extends React.Component {
     };
 
     render() {
+        const colorStyle = {
+            color: {
+                width: '36px',
+                height: '36px',
+                border:'3px solid #000',
+                display: 'inline-block',
+                borderRadius: '10px',
+                background: `rgba(${ this.state.color.r }, ${ this.state.color.g }, ${ this.state.color.b }, ${ this.state.color.a })`,
+            }
+        }
 
         const styles = reactCSS({
             'default': {
                 color: {
-                    width: '38px',
-                    height: '38px',
+                    width: '30px',
+                    height: '30px',
                     display: 'inline-block',
                     borderRadius: '12px',
                     background: `rgba(${ this.state.color.r }, ${ this.state.color.g }, ${ this.state.color.b }, ${ this.state.color.a })`,
                 },
                 swatch: {
-                    height:'38px',
+                    height:'36px',
+                    width:'36px',
                     padding: '1px',
                     borderRadius: '12px',
                     boxShadow: 'rgb(173, 159, 217) 5px 5px 30px 0px, rgb(214, 196, 255) -5px -5px 30px 0px',
@@ -61,9 +72,10 @@ class ColorPickerSketch extends React.Component {
         });
 
         return (
-            <div>
+            <div style={{display: 'inline-block', verticalAlign:'-50%'}}>
                 <div style={ styles.swatch } onClick={ this.handleClick }>
-                    <div style={ styles.color } />
+                    <div style={ colorStyle.color } />
+                    {/*<div style={ styles.color } />*/}
                 </div>
                 { this.state.displayColorPicker ? <div style={ styles.popover }>
                     <div style={ styles.cover } onClick={ this.handleClose }/>
