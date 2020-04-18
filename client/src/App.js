@@ -38,7 +38,7 @@ const App = () => {
                     <Route exact path='/projects' component={ProjectPlaceholder}/>
                     <Route exact path='/projects/findOnGithub' component={findOnGithub}/>
                     <Route exact path='/projects/AvatarGenerator' component={AvatarGenerator}/>
-                    <Route exact path={'/SoftUI-generator'} component={SoftUIGenerator} />
+                    <Route exact path='/SoftUI-generator' component={SoftUIGenerator} />
                     <Route component={NotFound} />
                   </Switch>
                 </AppPage>

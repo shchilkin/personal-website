@@ -35,7 +35,8 @@ const Navbar = () => {
                 className='d-inline-block align-top'
                 alt=''
             />{" "}CrazyRedKitten</Link>
-            <button className="navbar-toggler" style={{border:"none"}} type="button" data-toggle="collapse" data-target="#navbarNav"
+            <button className="navbar-toggler"
+                    style={{border:"none"}} type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"/>
             </button>
