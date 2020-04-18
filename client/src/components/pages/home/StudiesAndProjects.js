@@ -13,7 +13,7 @@ const StudiesAndProjects = () => {
     const skills = {
         languages:['Kotlin', 'Python', 'JavaScript','C#'],
         technologies:['React', 'Node.js', 'Docker', 'Raspberry Pi', 'Arduino', 'MongoDB','Linux/UNIX',"Git",'Bootstrap'],
-        otherSkills:['Vector assets creation','Network configuration', 'Adobe Illustrator']
+        otherSkills:['Vector assets creation', 'UI/UX','Network configuration', 'Adobe Illustrator']
     };
     const description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies, nibh id facilisis\n" +
         "                  consectetur, lacus libero tincidunt tellus, quis gravida dolor magna dapibus ligula. Maecenas faucibus\n" +
@@ -65,7 +65,8 @@ const StudiesAndProjects = () => {
                                   otherSkill => <Badge
                                       key={uuidv4()}
                                       type={'normal'}
-                                      className={'Cyan'}>{otherSkill}
+                                      className={'Cyan'}>
+                                      {Icons[otherSkill] && LanguageIcon(otherSkill)} {otherSkill}
                                   </Badge>
                               )}
                           </p>
