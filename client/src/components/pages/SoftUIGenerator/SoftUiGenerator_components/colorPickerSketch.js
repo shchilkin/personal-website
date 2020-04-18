@@ -1,17 +1,15 @@
-'use strict'
-
 import React from 'react'
 import reactCSS from 'reactcss'
 import { SketchPicker } from 'react-color'
+import ThemeContext from "../../../../contexts/theme/ThemeContext";
 
 class ColorPickerSketch extends React.Component {
+    static contextType = ThemeContext;
+
     state = {
         displayColorPicker: false,
         color: {
-            r: '241',
-            g: '112',
-            b: '19',
-            a: '1',
+            hex:this.context.hexColor,
         },
     };
 
@@ -24,7 +22,9 @@ class ColorPickerSketch extends React.Component {
     };
 
     handleChange = (color) => {
-        this.setState({ color: color.rgb })
+        console.log('color picker on change',{ color: color})
+        this.context.changeColor('Hex', color.hex)
+        this.setState({ color: color.hex })
     };
 
     render() {
@@ -32,10 +32,10 @@ class ColorPickerSketch extends React.Component {
             color: {
                 width: '36px',
                 height: '36px',
-                border:'3px solid #000',
+                border:`3px solid ${this.context.font}`,
                 display: 'inline-block',
                 borderRadius: '10px',
-                background: `rgba(${ this.state.color.r }, ${ this.state.color.g }, ${ this.state.color.b }, ${ this.state.color.a })`,
+                background: this.state.background,
             }
         }
 
@@ -46,14 +46,17 @@ class ColorPickerSketch extends React.Component {
                     height: '30px',
                     display: 'inline-block',
                     borderRadius: '12px',
-                    background: `rgba(${ this.state.color.r }, ${ this.state.color.g }, ${ this.state.color.b }, ${ this.state.color.a })`,
+                    background: `rgb(${ this.context.colorRGB.Red }, ${ this.context.colorRGB.Green }, ${ this.context.colorRGB.Blue  })`,
                 },
                 swatch: {
                     height:'36px',
                     width:'36px',
                     padding: '1px',
-                    borderRadius: '12px',
-                    boxShadow: 'rgb(173, 159, 217) 5px 5px 30px 0px, rgb(214, 196, 255) -5px -5px 30px 0px',
+                    borderRadius: `${this.context.borderRadius}px`,
+                    boxShadow: `rgb(${this.context.shadows.darkerShadowArray[0]}, ${this.context.shadows.darkerShadowArray[1]}, ${this.context.shadows.darkerShadowArray[2]})
+                     ${this.context.shadowLength}px ${this.context.shadowLength}px ${this.context.shadowBlur}px 0px,
+                      rgb(${this.context.shadows.ligherShadowArray[0]}, ${this.context.shadows.ligherShadowArray[1]}, ${this.context.shadows.ligherShadowArray[2]}) 
+                      -${this.context.shadowLength}px -${this.context.shadowLength}px ${this.context.shadowBlur}px 0px`,
                     display: 'inline-block',
                     cursor: 'pointer',
                 },
@@ -71,6 +74,7 @@ class ColorPickerSketch extends React.Component {
             },
         });
 
+
         return (
             <div style={{display: 'inline-block', verticalAlign:'-50%'}}>
                 <div style={ styles.swatch } onClick={ this.handleClick }>
@@ -83,12 +87,14 @@ class ColorPickerSketch extends React.Component {
                         disableAlpha={true}
                         color={ this.state.color }
                         onChange={ this.handleChange }
+
                         presetColors ={['#D0021B', '#F5A623', '#F8E71C']}
                     />
                 </div> : null }
-
             </div>
+
         )
+
     }
 }
 
