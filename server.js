@@ -3,7 +3,7 @@ const secure = require("express-force-https");
 require('dotenv').config();
 const path = require("path");
 const connectDB = require("./db");
-
+const fs = require('fs')
 const app = express();
 
 //  JSON parser middleware
@@ -13,7 +13,7 @@ app.use(express.json({extended:false}));
 app.use(secure);
 
 //  Connect MongoDB
-connectDB();
+// connectDB();
 
 //  API Routes
 app.use("/api/users", require("./routes/users"));
@@ -26,9 +26,17 @@ if (process.env.NODE_ENV === "production") {
   //  Static folder
   app.use(express.static(path.join(__dirname, "client/build")));
 
-  app.get("*", (req, res) =>
-    res.sendfile(path.join((__dirname = "client/build/index.html")))
-  );
+    app.get("/cv", (req, res) => {
+        const data = fs.readFileSync('./cv/cv.pdf');
+        console.log(data);
+        console.log("/cv root")
+        res.contentType("application/pdf");
+        res.send(data)
+        console.log(req)
+        res.send("Hello");
+    });
+
+  app.get("*", (req, res) => res.sendfile(path.join((__dirname = "client/build/index.html"))));
 }
 
 //  Start server
