@@ -24,11 +24,13 @@ const About = () => {
                             <br className={'break'}/>
                             <span style={{color:'#ED2939'}}> Web Development</span>
                         </h3>
-                        <a href={'/cv'}>
-                            <Button>
-                                download CV
-                            </Button>
-                        </a>
+                        <div className={'mt-3 d-flex justify-content-center'}>
+                            <a href={'/cv'}>
+                                <Button>
+                                    download CV
+                                </Button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
