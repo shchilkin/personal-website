@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import ThemeContext from '../../../contexts/theme/ThemeContext'
 import smoothScroll from 'smooth-scroll'
-import Button from "../../Layout/Buttons/Button/Button.component";
+import LinkButton from "../../Layout/Buttons/Button/LinkButton.component";
 
 const About = () => {
     const themeContext = useContext(ThemeContext);
@@ -25,11 +25,7 @@ const About = () => {
                             <span style={{color:'#ED2939'}}> Web Development</span>
                         </h3>
                         <div className={'mt-3 d-flex justify-content-center'}>
-                            <a href={'/cv'}>
-                                <Button>
-                                    download CV
-                                </Button>
-                            </a>
+                            <LinkButton className={'cv'} href={'/cv'}>Download CV</LinkButton>
                         </div>
                     </div>
                 </div>
