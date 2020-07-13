@@ -13,7 +13,7 @@ const Contacts = () => {
                     className={'text-center header mb-3'}
                     style={darkMode ? {color:"#F0F0F0"} : {color:"#303030"}}
                 >
-                    Contact me
+                    Find me
                 </h4>
             </div>
             <div className='d-flex justify-content-center pb-5'>
@@ -41,6 +41,9 @@ const Contacts = () => {
                     </li>
                     <li className='mb-2' style={{ display: "inline-block" }}>
                         <ContactLink icon='LinkedIn' link={"https://www.linkedin.com/in/crazyredkitten/"}/>
+                    </li>
+                    <li className='mb-2' style={{ display: "inline-block" }}>
+                        <ContactLink icon='Dribbble' link={"https://dribbble.com/CrazyRedKitten"}/>
                     </li>
                     <li className='mb-2' style={{ display: "inline-block" }}>
                         <ContactLink icon='Email' link={"/Contact"} internalLink={true}/>

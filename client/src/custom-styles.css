@@ -797,8 +797,16 @@ select:-webkit-autofill:focus {
     background-color: #1da1f2;
 }
 
+.Twitter:active{
+    background-color: unset;
+}
+
 .YouTube:hover{
     background-color: red;
+}
+
+.YouTube:active{
+    background-color: unset;
 }
 
 .Github:hover{
@@ -808,29 +816,58 @@ select:-webkit-autofill:focus {
     fill: #fafafa;
     transition: background-color 1s, color 1s;
 }
+.Github:active{
+    background-color: unset;
+}
 
 .VK:hover{
     background-color: #4680C2;
 }
+.VK:active{
+    background-color: unset;
+}
+
 .Facebook:hover{
     background-color: #4267B2;
+}
+.Facebook:active{
+    background-color: unset;
 }
 
 .LinkedIn:hover{
     background-color: #0077b5;
 }
+.LinkedIn:active{
+    background-color: unset;
+}
 
 .Snapchat:hover{
     background-color: #FFFC00;
 }
+
 .Snapchat:hover .ContactLink-Dark-Image{
     fill: black;
     transition: background-color 1s, color 1s;
 }
 
+.Snapchat:active{
+    background-color: unset;
+}
+
 .Instagram:hover{
     transition: background 1s, opacity 1s;
     background-image: linear-gradient(90deg, #fd1d1d, #e1306c);
+}
+
+.Instagram:active{
+    background-color: unset;
+}
+
+.Dribbble:hover{
+    background-color: #ea4c89;
+}
+.Dribbble:active{
+    background-color: unset;
 }
 
 .Link-light:hover {
