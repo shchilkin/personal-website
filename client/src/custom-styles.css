@@ -870,6 +870,13 @@ select:-webkit-autofill:focus {
     background-color: unset;
 }
 
+.Behance:hover{
+    background-color: #1769ff;
+}
+.Behance:active{
+    background-color: unset;
+}
+
 .Link-light:hover {
     text-decoration: none;
     color: var(--bg-color-dark);

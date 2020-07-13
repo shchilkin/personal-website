@@ -46,6 +46,9 @@ const Contacts = () => {
                         <ContactLink icon='Dribbble' link={"https://dribbble.com/CrazyRedKitten"}/>
                     </li>
                     <li className='mb-2' style={{ display: "inline-block" }}>
+                        <ContactLink icon='Behance' link={"https://www.behance.net/crazyredkitten"}/>
+                    </li>
+                    <li className='mb-2' style={{ display: "inline-block" }}>
                         <ContactLink icon='Email' link={"/Contact"} internalLink={true}/>
                     </li>
                 </div>
