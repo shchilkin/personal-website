@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import ThemeContext from "../../../../contexts/theme/ThemeContext";
 
-const LinkButton = ({onClick, disabled = false, style, children, block = false, className = '', href}) => {
+const LinkButton = ({ style, children, block = false, className = '', href }) => {
     const themeContext =  useContext(ThemeContext);
     const {darkMode} = themeContext;
 

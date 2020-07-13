@@ -7,6 +7,8 @@ const ContactLink = ({icon, link, width = '2rem', height = '2rem', internalLink 
     const themeContext =  useContext(ThemeContext);
     const {darkMode} = themeContext;
 
+    console.log(icon, Icons[icon].Name)
+
     const contactLinkButton = (
         <button className={`${darkMode ? 'ContactLink-Dark'  : 'ContactLink-Light'} ${Icons[icon].Name}`}>
             <div style={{width:width, height:height}}>
