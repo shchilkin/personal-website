@@ -40,10 +40,10 @@ const Contacts = () => {
                         <ContactLink icon='Facebook' link={"https://www.facebook.com/crazyredkitten"}/>
                     </li>
                     <li className='mb-2' style={{ display: "inline-block" }}>
-                        <ContactLink icon='LinkedIn' link={"https://www.linkedin.com/in/crazyredkitten/"}/>
+                        <ContactLink icon='LinkedIn' link={"https://www.linkedin.com/in/aleksandrshchilkin/"}/>
                     </li>
                     <li className='mb-2' style={{ display: "inline-block" }}>
-                        <ContactLink icon='Dribbble' link={"https://dribbble.com/CrazyRedKitten"}/>
+                        <ContactLink icon='Dribbble' link={"https://dribbble.com/AleksandrShchilkin"}/>
                     </li>
                     <li className='mb-2' style={{ display: "inline-block" }}>
                         <ContactLink icon='Behance' link={"https://www.behance.net/crazyredkitten"}/>
