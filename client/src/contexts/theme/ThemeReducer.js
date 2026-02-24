@@ -8,5 +8,7 @@ export default (state, action) => {
                 ...state,
                 darkMode: !state.darkMode
             };
+        default:
+            return state;
     }
 };
